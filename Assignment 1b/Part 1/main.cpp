@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "Superhero.h"
+#include "AddHero.h"
 
 using namespace std;
 
@@ -14,34 +16,32 @@ int main()
         cout << "Press 'q' to quit" << endl;
         cin >> choose;
 
-        switch(choose){
-        case 'c':
+        if (choose == 'c' || choose == 'C')
+        {
             string nafn = "";
             int aldur = 0;
             char ofurkraftur = 'n';
 
             cout << "Enter name of superhero: " << endl;
-            cin >> nafn;
+            cin >> ws;
+            getline(cin, nafn);
             cout << "Enter age of superhero: " << endl;
             cin >> aldur;
             cout << "Enter special ability of superhero, flying, giant, hacker, none" << endl;
             cin >> ofurkraftur;
 
             Superhero s(nafn, aldur, ofurkraftur);
-            s.addHero(s);
-            break;
-
-//        case 'd':
-//            //cout << s << endl;
-//            break;
-//
-//        case 'w':
-//            ofstream file;
-//            file.open("superhero.txt", ios_base::app);
-//            file << s;
-//            file.close();
-//            break;
-
+            AddHero add;
+            add.write(s);
+        }
+        else if(choose == 'd' || choose == 'D')
+        {
+            AddHero add;
+            vector<string> superheroVector = add.read();
+            for (unsigned int i = 0; i < superheroVector.size(); i++)
+            {
+                cout << superheroVector[i] << endl;
+            }
         }
 
     }while(choose != 'q');

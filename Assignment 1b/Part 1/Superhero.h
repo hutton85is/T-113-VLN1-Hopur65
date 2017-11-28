@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include "AddHero.h"
 
 using namespace std;
 
@@ -13,8 +12,6 @@ class Superhero
         Superhero();
         Superhero(string nafn, int aldur, char ofurkraftur);
         virtual ~Superhero();
-
-        void addHero(Superhero s);
 
         friend ostream& operator <<(ostream &outs, Superhero& superhero);
         friend istream& operator >>(istream &ins, Superhero& superhero);

@@ -19,17 +19,9 @@ Superhero::~Superhero()
     //dtor
 }
 
-void Superhero::addHero(Superhero s)
-{
-    AddHero add;
-    istream& ins;
-    ins >> s;
-    add.write(ins);
-}
-
 ostream& operator <<(ostream &outs, Superhero& superhero)
 {
-    outs << superhero.nafn << " " << superhero.aldur << ": " << superhero.ofurkraftur << endl;
+    outs << superhero.nafn << " " << superhero.aldur << " " << superhero.ofurkraftur << endl;
     return outs;
 }
 
