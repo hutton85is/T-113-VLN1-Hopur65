@@ -13,6 +13,8 @@ class Superhero
         Superhero(string nafn, int aldur, char ofurkraftur);
         virtual ~Superhero();
 
+        void print(ostream& outs);
+
         friend ostream& operator <<(ostream &outs, Superhero& superhero);
         friend istream& operator >>(istream &ins, Superhero& superhero);
 
@@ -20,6 +22,7 @@ class Superhero
         string nafn;
         int aldur;
         char ofurkraftur;
+        string getPower();
 };
 
 #endif // SUPERHERO_H

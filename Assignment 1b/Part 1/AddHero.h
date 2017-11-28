@@ -14,10 +14,13 @@ class AddHero
     public:
         AddHero();
         void write(Superhero& s);
-        vector<string> read();
+        void print();
         virtual ~AddHero();
+        friend ostream& operator <<(ostream& outs, AddHero& hero);
+        vector<Superhero> heroesVector;
 
     private:
+
 };
 
 #endif // ADDHERO_H

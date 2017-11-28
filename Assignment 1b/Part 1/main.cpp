@@ -8,6 +8,7 @@ using namespace std;
 
 int main()
 {
+    AddHero add;
     char choose;
     do{
         cout << "Enter what you wish to do:" << endl;
@@ -23,25 +24,18 @@ int main()
             char ofurkraftur = 'n';
 
             cout << "Enter name of superhero: " << endl;
-            cin >> ws;
-            getline(cin, nafn);
+            cin >> nafn;
             cout << "Enter age of superhero: " << endl;
             cin >> aldur;
             cout << "Enter special ability of superhero, flying, giant, hacker, none" << endl;
             cin >> ofurkraftur;
 
             Superhero s(nafn, aldur, ofurkraftur);
-            AddHero add;
             add.write(s);
         }
         else if(choose == 'd' || choose == 'D')
         {
-            AddHero add;
-            vector<string> superheroVector = add.read();
-            for (unsigned int i = 0; i < superheroVector.size(); i++)
-            {
-                cout << superheroVector[i] << endl;
-            }
+            cout << add << endl;
         }
 
     }while(choose != 'q');
