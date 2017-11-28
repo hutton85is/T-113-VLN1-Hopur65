@@ -26,6 +26,15 @@
 *.a
 *.lib
 
+# Codeblocks files
+*.cbp
+*.depend
+*.layout
+
+# Text files and dat files
+*.txt
+*.dat
+
 # Executables
 *.exe
 *.out
