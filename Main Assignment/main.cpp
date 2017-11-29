@@ -6,6 +6,11 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    Umsjon u;
+    u.enterCrust();
+
+    Umsjon e;
+    e.enterToppings();
+
     return 0;
 }
