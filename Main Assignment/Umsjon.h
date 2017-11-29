@@ -2,6 +2,10 @@
 #define UMSJON_H
 
 #include <iostream>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 365c2446da153555747210bf1228738c20142678
 #include "Pizza.h"
 
 using namespace std;
@@ -14,10 +18,16 @@ class Umsjon
         void enterCrust();
         void enterToppings();
 
+        void enterPizzaSize();
+
+        void print();
+
+    protected:
 
     private:
-        //vector <pair <string,int> > pizzaSize;
         Pizza p;
+
+    private:
 };
 
 #endif // UMSJON_H
