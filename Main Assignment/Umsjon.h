@@ -2,7 +2,7 @@
 #define UMSJON_H
 
 #include <iostream>
-#include <vector>
+#include "Pizza.h"
 
 using namespace std;
 

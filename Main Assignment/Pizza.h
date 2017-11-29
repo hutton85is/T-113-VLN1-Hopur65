@@ -1,6 +1,9 @@
 #ifndef PIZZA_H
 #define PIZZA_H
 
+#include <vector>
+#include <iostream>
+#include <utility>
 
 class Pizza
 {
