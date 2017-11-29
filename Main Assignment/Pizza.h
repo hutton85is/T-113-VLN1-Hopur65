@@ -6,10 +6,6 @@
 #include <iostream>
 #include <utility>
 
-#include <iostream>
-#include <vector>
-#include <utility>
-
 using namespace std;
 
 class Pizza
