@@ -17,8 +17,7 @@ class Umsjon
 
 
     private:
-        //pizza p;
+        Pizza p;
 
-};
 
 #endif // UMSJON_H

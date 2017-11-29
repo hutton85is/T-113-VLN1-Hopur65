@@ -43,4 +43,15 @@ void Umsjon::enterToppings(){
     pizzaToppings.push_back(par);
 }
 
+void Umsjon::enterMenu(){
+
+    pair <char[32],int> par(){
+
+    cout << "Enter pizza name: ";
+
+
+    }
+
+}
+
 
