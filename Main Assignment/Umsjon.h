@@ -17,8 +17,7 @@ class Umsjon
 
     private:
         //vector <pair <string,int> > pizzaSize;
-        vector <pair <char[32],int> > pizzaBotn;
-        vector <pair <char[32],int> > alegg;
+        Pizza p;
 };
 
 #endif // UMSJON_H
