@@ -1,6 +1,11 @@
 #ifndef PIZZA_H
 #define PIZZA_H
 
+#include <iostream>
+#include <vector>
+#include <utility>
+
+using namespace std;
 
 class Pizza
 {
