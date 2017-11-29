@@ -2,32 +2,19 @@
 
 AddHero::AddHero()
 {
-    if(!loadFile())
-    {
-        throw -1;
-    }
-}
-
-bool AddHero::loadFile()
-{
     ifstream file;
     file.open("superhero.txt");
-    if(file.is_open())
+    while(true)
     {
-        while(true)
+        Superhero readHero;
+        file >> readHero;
+        if (file.eof())
         {
-            Superhero readHero;
-            file >> readHero;
-            if (file.eof())
-            {
-                break;
-            }
-            heroesVector.push_back(readHero);
+            break;
         }
-        file.close();
-        return true;
+        heroesVector.push_back(readHero);
     }
-    return false;
+    file.close();
 }
 
 ostream& operator <<(ostream& outs, AddHero& hero)

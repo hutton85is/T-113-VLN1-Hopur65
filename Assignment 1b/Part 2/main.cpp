@@ -38,30 +38,22 @@ Superhero newSuperhero()
 
 int main()
 {
-    try
-    {
-        AddHero add;
-        char choose;
+    AddHero add;
+    char choose;
 
-        do
-        {
-            choose = mainMenu();
-            if (choose == 'c' || choose == 'C')
-            {
-                Superhero s = newSuperhero();
-                add.write(s);
-            }
-            else if(choose == 'd' || choose == 'D')
-            {
-                cout << add << endl;
-            }
-        }while(choose != 'q');
-    }
-    catch(int e)
+    do
     {
-        cout << "There is no file to read" << endl;
-        return 0;
-    }
+        choose = mainMenu();
+        if (choose == 'c' || choose == 'C')
+        {
+            Superhero s = newSuperhero();
+            add.write(s);
+        }
+        else if(choose == 'd' || choose == 'D')
+        {
+            cout << add << endl;
+        }
+    }while(choose != 'q');
 
     return 0;
 }
