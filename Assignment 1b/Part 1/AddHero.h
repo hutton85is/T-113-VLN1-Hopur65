@@ -14,12 +14,12 @@ class AddHero
     public:
         AddHero();
         void write(Superhero& s);
-        void print();
         virtual ~AddHero();
         friend ostream& operator <<(ostream& outs, AddHero& hero);
-        vector<Superhero> heroesVector;
 
     private:
+        vector<Superhero> heroesVector;
+        void print();
 
 };
 
