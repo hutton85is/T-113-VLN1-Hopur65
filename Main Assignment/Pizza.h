@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <utility>
+#include <fstream>
 
 using namespace std;
 
@@ -19,6 +20,10 @@ class Pizza
         vector <pair <char[32], int> > menuExtras;
         vector <pair <char[32], int> > menuPizzas;
         vector <pair <char[32], int> > menuLocation;
+
+        bool loadFile();
+        void writeFile(Pizza& p);
+        void displayVector(vector <pair <char[32], int> >& vec);
 
     protected:
 
