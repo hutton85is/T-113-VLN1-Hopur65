@@ -10,18 +10,21 @@ class Superhero
 {
     public:
         Superhero();
-        Superhero(string nafn, int aldur, char ofurkraftur);
+        Superhero(/*char nafn[32], */int aldur, char ofurkraftur);
         virtual ~Superhero();
 
         void print(ostream& outs);
+
+        char nafn[32];
+        int aldur;
+        char ofurkraftur;
 
         friend ostream& operator <<(ostream &outs, Superhero& superhero);
         friend istream& operator >>(istream &ins, Superhero& superhero);
 
     private:
-        string nafn;
-        int aldur;
-        char ofurkraftur;
+        //char* nafn;
+
         string getPower();
 };
 

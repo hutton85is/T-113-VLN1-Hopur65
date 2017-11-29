@@ -2,14 +2,15 @@
 
 Superhero::Superhero()
 {
-    nafn = "";
+    nafn[0] = '0';
     aldur = 0;
     ofurkraftur = 'n';
 }
 
-Superhero::Superhero(string nafn, int aldur, char ofurkraftur)
+Superhero::Superhero(/*char nafn[32], */int aldur, char ofurkraftur)
 {
-    this->nafn = nafn;
+    //nafn[31] = '\0';
+    //this->nafn = nafn;
     this->aldur = aldur;
     this->ofurkraftur = ofurkraftur;
 }

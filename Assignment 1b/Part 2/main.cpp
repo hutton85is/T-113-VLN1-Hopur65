@@ -20,40 +20,51 @@ char mainMenu()
 
 Superhero newSuperhero()
 {
-    string nafn = "";
-    int aldur = 0;
-    char ofurkraftur = 'n';
+    //char nafn[32];
+    //int aldur = 0;
+    //char ofurkraftur = 'n';
+
+    Superhero s;
 
     cout << "Enter name of superhero: " << endl;
-    cin >> nafn;
+    cin >> s.nafn;
     cout << "Enter age of superhero: " << endl;
-    cin >> aldur;
+    cin >> s.aldur;
     cout << "Enter special ability of superhero, flying, giant, hacker, none" << endl;
-    cin >> ofurkraftur;
+    cin >> s.ofurkraftur;
 
-    Superhero s(nafn, aldur, ofurkraftur);
+    //Superhero s(/*nafn, */aldur, ofurkraftur);
 
     return s;
 }
 
 int main()
 {
-    AddHero add;
-    char choose;
-
-    do
+    try
     {
-        choose = mainMenu();
-        if (choose == 'c' || choose == 'C')
+        AddHero add;
+        char choose;
+
+        do
         {
-            Superhero s = newSuperhero();
-            add.write(s);
-        }
-        else if(choose == 'd' || choose == 'D')
-        {
-            cout << add << endl;
-        }
-    }while(choose != 'q');
+            choose = mainMenu();
+            if (choose == 'c' || choose == 'C')
+            {
+                Superhero s = newSuperhero();
+                add.write(s);
+            }
+            else if(choose == 'd' || choose == 'D')
+            {
+                cout << add << endl;
+            }
+        }while(choose != 'q');
+    }
+
+    catch(int e)
+    {
+        cout << "There is no file to read" << endl;
+        return 0;
+    }
 
     return 0;
 }

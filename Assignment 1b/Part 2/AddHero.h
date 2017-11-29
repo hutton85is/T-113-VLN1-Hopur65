@@ -20,6 +20,7 @@ class AddHero
     private:
         vector<Superhero> heroesVector;
         void print();
+        bool loadFile();
 
 };
 
