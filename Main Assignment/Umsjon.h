@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <utility>
 
 using namespace std;
 
@@ -12,10 +13,14 @@ class Umsjon
         Umsjon();
         virtual ~Umsjon();
 
+        void enterPizzaSize();
+
+        void print();
+
     protected:
 
     private:
-        vector<int, string> pizzaSize;
+        Pizza p;
 };
 
 #endif // UMSJON_H

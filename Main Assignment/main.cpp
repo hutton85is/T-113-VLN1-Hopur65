@@ -6,6 +6,9 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    Umsjon u;
+    Pizza p;
+    u.enterPizzaSize();
+    u.print();
     return 0;
 }
