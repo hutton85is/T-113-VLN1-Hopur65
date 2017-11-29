@@ -9,13 +9,12 @@ int main()
     Umsjon u;
 
     Pizza p;
-    u.enterPizzaSize();
-    u.print();
+    u.enterPizzaSize(p);
 
-    u.enterCrust();
+    u.enterCrust(p);
 
-    Umsjon e;
-    e.enterToppings();
+
+    u.enterToppings(p);
 
 
     return 0;
