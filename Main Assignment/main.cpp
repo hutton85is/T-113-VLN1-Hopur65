@@ -6,16 +6,19 @@ using namespace std;
 
 int main()
 {
-    //Umsjon u;
+    Umsjon u;
 
     Pizza p;
+    p = p.loadFile(p);
 
-    //u.enterPizzaSize(p);
+    /*u.enterPizzaSize(p);
 
-    //u.enterCrust(p);
+    u.enterCrust(p);
 
-    //u.enterToppings(p);
-    p.displayVector(p.menuToppings);
+    u.enterToppings(p);*/
+    cout << "herne" << endl;
+    cout << endl;
+    //p.displayVector(p.menuToppings);
 
 
 

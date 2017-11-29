@@ -2,10 +2,6 @@
 
 Pizza::Pizza()
 {
-    if(!loadFile())
-    {
-        throw -1;
-    }
 }
 
 Pizza::~Pizza()
@@ -15,29 +11,31 @@ Pizza::~Pizza()
 
 void Pizza::displayVector(vector <pair <char[32], int> >& vec)
 {
+    cout << "elements in vector: " << vec.size() << endl;
     for(unsigned int i = 0; i < vec.size(); i++)
     {
+        cout << "i: " << i << endl;
         cout << vec[i].first << " : " << vec[i].second << endl;
     }
 }
 
-bool Pizza::loadFile()
+Pizza& Pizza::loadFile(Pizza& p)
 {
     ifstream file;
-    file.open("pizza.dat", ios::binary);
+    file.open("pizza.dat", ios_base::binary);
     if(file.is_open())
     {
-        file.seekg(0, ios::end); // put the "cursor" at the end of the file
+        file.seekg(0, file.end); // put the "cursor" at the end of the file
         int length = file.tellg(); // find the position of the cursor
+        file.seekg(0, file.beg);
         if (length != 0)
         {
-            Pizza readPizza;
-            file.read((char*) (&readPizza), sizeof(Pizza));
-            file.close();
+            file.read((char*) (&p), sizeof(Pizza));
         }
-        return true;
+        file.close();
+        return p;
     }
-    return false;
+    return p;
 }
 
 void Pizza::writeFile(Pizza& p)

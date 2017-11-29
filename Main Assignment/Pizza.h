@@ -21,7 +21,7 @@ class Pizza
         vector <pair <char[32], int> > menuPizzas;
         vector <pair <char[32], int> > menuLocation;
 
-        bool loadFile();
+        Pizza& loadFile(Pizza& p);
         void writeFile(Pizza& p);
         void displayVector(vector <pair <char[32], int> >& vec);
 
