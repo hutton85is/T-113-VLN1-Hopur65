@@ -38,6 +38,7 @@ void Umsjon::enterToppings(Pizza& p){
     cout << "Enter price: ";
     cin >> tempPair.second;
     p.menuToppings.push_back(tempPair);
+    p.writeFile(p);
 }
 
 void Umsjon::enterMenu(Pizza& p){
