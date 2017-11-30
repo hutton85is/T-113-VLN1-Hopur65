@@ -15,7 +15,6 @@
 
 using namespace std;
 
-
 class Pizza
 {
     public:

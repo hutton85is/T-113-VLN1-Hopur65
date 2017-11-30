@@ -4,6 +4,12 @@
 #include <iostream>
 
 #include "Pizza.h"
+#include "PizzaSize.h"
+#include "pizzatoppings.h"
+#include "pizzacrust.h"
+#include "pizzaextras.h"
+#include "pizzalocations.h"
+#include "pizzamenu.h"
 
 using namespace std;
 

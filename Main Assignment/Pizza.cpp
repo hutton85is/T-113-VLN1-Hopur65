@@ -8,12 +8,7 @@ Pizza::~Pizza()
 {
     //dtor
 }
-/*
-void Pizza::displaySize(vector <pizzaSize>& vec)
-{
 
-}
-*/
 bool Pizza::loadFile(Pizza& p)
 {
     ifstream file;

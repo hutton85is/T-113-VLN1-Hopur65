@@ -2,6 +2,7 @@
 
 Umsjon::Umsjon()
 {
+    p.loadFile(p);
 }
 
 Umsjon::~Umsjon()
@@ -11,18 +12,22 @@ Umsjon::~Umsjon()
 
 void Umsjon::enterPizzaSize()
 {
-    char tmpSize[32];
+    PizzaSize newSize;
     cout << "enter pizza size" << endl;
-    cin >> tempSize;
-    p.setSize(tempSize);
+    cin >> newSize.p_size;
+    cout << "Enter price of pizza size: " << newSize.p_size << endl;
+    cin >> newSize.price;
+    p.psize.push_back(newSize);
 }
 
-void Umsjon::enterCrust(){
-
-
+void Umsjon::enterCrust()
+{
+    PizzaCrust newCrust;
     cout << "What kind of crust do you want: ";
-    cin >> tempCrust;
-    p.setCrust(tempCrust);
+    cin >> newCrust.crust_type;
+    cout << "What is the price of " << newCrust.crust_type << endl;
+    cin >> newCrust.price;
+    p.psize.push_back(newCrust);
 }
 
 void Umsjon::enterToppings(){
