@@ -12,29 +12,17 @@ Umsjon::~Umsjon()
 
 void Umsjon::enterPizzaSize(char tmpSize[32], int tmpprice)
 {
-<<<<<<< HEAD
-=======
     PizzaSize newSize;
-<<<<<<< HEAD
->>>>>>> 91c2f4539886b891f330e0e805b450fc9c6c910a
-    cout << "enter pizza size" << endl;
-=======
     cout << "Enter pizza size" << endl;
->>>>>>> c21c3f09a7f5679a6b948cd0e2bc547bc4b06571
     cin >> newSize.p_size;
     cout << "Enter price of pizza size: " << newSize.p_size << endl;
     cin >> newSize.price;
     p.psize.push_back(newSize);
 }
 
-<<<<<<< HEAD
-void Umsjon::enterCrust(char tmpSize[32], int tmpprice){
-
-=======
 void Umsjon::enterCrust()
 {
     PizzaCrust newCrust;
->>>>>>> 91c2f4539886b891f330e0e805b450fc9c6c910a
     cout << "What kind of crust do you want: ";
     cin >> newCrust.crust_type;
     cout << "What is the price of " << newCrust.crust_type << endl;
@@ -42,7 +30,6 @@ void Umsjon::enterCrust()
     p.menuCrust.push_back(newCrust);
 }
 
-<<<<<<< HEAD
 void Umsjon::enterToppings(char tmpSize[32], int tmpprice){
 
     cout << "Enter toppings. If none press x: ";
@@ -50,8 +37,6 @@ void Umsjon::enterToppings(char tmpSize[32], int tmpprice){
     p.setToppings(tempToppings);
 }
 
-void Umsjon::enterMenu(char tmpSize[32], int tmpprice){
-=======
 void Umsjon::enterToppings()
 {
     PizzaToppings newToppings;
@@ -60,13 +45,9 @@ void Umsjon::enterToppings()
     cout << "What is the price of " << newToppings.toppings << endl;
     cin >> newToppings.price;
     p.menuToppings.push_back(newToppings);
->>>>>>> c21c3f09a7f5679a6b948cd0e2bc547bc4b06571
 
 }
 
-<<<<<<< HEAD
-void Umsjon::enterExtras(char tmpSize[32], int tmpprice){
-=======
 void Umsjon::enterMenu()
 {
     PizzaMenu newMenu;
@@ -77,7 +58,6 @@ void Umsjon::enterMenu()
     p.menuPizzas.push_back(newMenu);
 
 }
->>>>>>> c21c3f09a7f5679a6b948cd0e2bc547bc4b06571
 
 void Umsjon::enterExtras()
 {
@@ -87,17 +67,12 @@ void Umsjon::enterExtras()
     cout << "What is the price of " << newExtra.extras_type << endl;
     cin >> newExtra.price;
     p.menuExtras.push_back(newExtra);
-
-<<<<<<< HEAD
-void Umsjon::enterLocation(char tmpSize[32], int tmpprice){
-=======
 }
 
 void Umsjon::enterLocation()
 {
     PizzaLocations newLocation;
     char yesOrno;
->>>>>>> c21c3f09a7f5679a6b948cd0e2bc547bc4b06571
 
     cout << "Enter new location: ";
     cin >> newLocation.pick_up;
