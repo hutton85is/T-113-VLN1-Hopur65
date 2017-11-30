@@ -8,6 +8,11 @@ class PizzaMenu
         PizzaMenu();
         virtual ~PizzaMenu();
 
+        friend ostream& operator <<(ostream& outs, PizzaMenu& p_menu);
+
+        int price;
+        char choose_pizza[32];
+
     protected:
 
     private:
