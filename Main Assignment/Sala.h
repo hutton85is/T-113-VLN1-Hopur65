@@ -1,6 +1,14 @@
 #ifndef SALA_H
 #define SALA_H
 
+#include "Pizza.h"
+#include "PizzaSize.h"
+#include "pizzatoppings.h"
+#include "pizzacrust.h"
+#include "pizzaextras.h"
+#include "pizzalocations.h"
+#include "pizzamenu.h"
+
 
 class Sala
 {
@@ -17,7 +25,8 @@ class Sala
 
 
     private:
-        Pizza p;
+        Pizza lager, order;
+
 };
 
 #endif // SALA_H
