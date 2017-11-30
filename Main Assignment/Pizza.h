@@ -6,7 +6,12 @@
 #include <utility>
 #include <fstream>
 
-//#include "pizzaSize.h"
+#include "PizzaSize.h"
+#include "pizzatoppings.h"
+#include "pizzacrust.h"
+#include "pizzaextras.h"
+#include "pizzalocations.h"
+#include "pizzamenu.h"
 
 using namespace std;
 
@@ -17,12 +22,12 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
-        vector<pizzaSize> Size;
-        vector<pizzaToppings> Toppings;
-        vector<pizzaCrust> Crust;
-        vector<pizzaExtras> Extras;
-        vector<pizzaPizzas> Pizzas;
-        vector<pizzaLocation> Location;
+        vector <PizzaToppings> ptoppings;
+        vector <PizzaSize> psize;
+        vector <PizzaCrust> pcrust;
+        vector <PizzaExtras> pextras;
+        vector <PizzaMenu> pmenu;
+        vector <PizzaLocations> plocations;
 
         bool loadFile(Pizza& p);
         void writeFile(Pizza& p);

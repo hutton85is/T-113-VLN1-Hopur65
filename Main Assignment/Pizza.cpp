@@ -14,8 +14,6 @@ void Pizza::displaySize(vector <pizzaSize>& vec)
 
 }
 
-void print()
-
 bool Pizza::loadFile(Pizza& p)
 {
     ifstream file;
