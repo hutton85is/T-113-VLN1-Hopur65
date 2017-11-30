@@ -6,15 +6,15 @@ using namespace std;
 
 int main()
 {
-    //Umsjon u;
+    Umsjon u;
 
     Pizza p;
 
-    //u.enterPizzaSize(p);
+    u.enterPizzaSize();
 
-    //u.enterCrust(p);
+    u.enterCrust();
 
-    //u.enterToppings(p);
+    u.enterToppings();
     p.displayVector(p.menuToppings);
 
 

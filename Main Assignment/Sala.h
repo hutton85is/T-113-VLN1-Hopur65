@@ -1,17 +1,12 @@
-#ifndef UMSJON_H
-#define UMSJON_H
+#ifndef SALA_H
+#define SALA_H
 
-#include <iostream>
 
-#include "Pizza.h"
-
-using namespace std;
-
-class Umsjon
+class Sala
 {
     public:
-        Umsjon();
-        virtual ~Umsjon();
+        Sala();
+        virtual ~Sala();
         void enterCrust();
         void enterToppings();
         void enterPizzaSize();
@@ -20,11 +15,9 @@ class Umsjon
         void enterLocation();
 
 
+
     private:
         Pizza p;
-
-
-
 };
 
-#endif // UMSJON_H
+#endif // SALA_H
