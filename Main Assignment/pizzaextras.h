@@ -8,6 +8,11 @@ class PizzaExtras
         PizzaExtras();
         virtual ~PizzaExtras();
 
+        friend ostream& operator <<(ostream& outs, PizzaExtras& p_extras);
+
+        int price;
+        char extras_type[32];
+
     protected:
 
     private:

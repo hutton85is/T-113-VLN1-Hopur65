@@ -8,6 +8,11 @@ class PizzaSize
         PizzaSize();
         virtual ~PizzaSize();
 
+        friend ostream& operator <<(ostream& outs, PizzaSize& p_size);
+
+        int price;
+        char p_size[32];
+
     protected:
 
     private:

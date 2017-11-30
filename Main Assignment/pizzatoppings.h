@@ -8,6 +8,11 @@ class PizzaToppings
         PizzaToppings();
         virtual ~PizzaToppings();
 
+        friend ostream& operator <<(ostream& outs, PizzaToppings& p_toppings);
+
+        int price;
+        char toppings[32];
+
     protected:
 
     private:
