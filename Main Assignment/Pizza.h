@@ -6,6 +6,13 @@
 #include <utility>
 #include <fstream>
 
+#include "PizzaSize.h"
+#include "pizzatoppings.h"
+#include "pizzacrust.h"
+#include "pizzaextras.h"
+#include "pizzalocations.h"
+#include "pizzamenu.h"
+
 using namespace std;
 
 class Pizza
@@ -14,18 +21,17 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
-        vector <pair <char[32], int> > menuSize;
-        vector <pair <char[32], int> > menuToppings;
-        vector <pair <char[32], int> > menuCrust;
-        vector <pair <char[32], int> > menuExtras;
-        vector <pair <char[32], int> > menuPizzas;
-        vector <pair <char[32], int> > menuLocation;
+        vector <PizzaToppings> ptoppings;
+        vector <PizzaSize> psize;
+        vector <PizzaCrust> pcrust;
+        vector <PizzaExtras> pextras;
+        vector <PizzaMenu> pmenu;
+        vector <PizzaLocations> plocations;
 
-        bool loadFile();
+        bool loadFile(Pizza& p);
         void writeFile(Pizza& p);
-        void displayVector(vector <pair <char[32], int> >& vec);
-
-    protected:
+        void displaySize(vector <PizzaSize>& vec);
+        friend istream& operator >>(istream &ins, Pizza& p);
 
     private:
 };

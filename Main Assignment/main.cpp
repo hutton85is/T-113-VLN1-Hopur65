@@ -10,14 +10,5 @@ int main()
 
     Pizza p;
 
-    u.enterPizzaSize();
-
-    u.enterCrust();
-
-    u.enterToppings();
-    p.displayVector(p.menuToppings);
-
-
-
     return 0;
 }
