@@ -28,13 +28,10 @@ istream& operator >>(istream &ins, Pizza& p)
     return ins;
 }
 
-void Pizza::writeFile(Pizza& p)
+void Pizza::writePizzaToppings(PizzaToppings& ptop)
 {
     ofstream file;
-    file.open("/data/pizzaSize", ios_base::binary);
-    for (unsigned int i = 0; i < p.ptoppings.size(); i++)
-    {
-        file.write((char*)(&p.ptoppings[i]), sizeof(PizzaToppings));
-    }
+    file.open("/data/toppings", ios_base::binary|ios_base::app);
+    file.write((char*)(&ptop), sizeof(PizzaToppings));
     file.close();
 }

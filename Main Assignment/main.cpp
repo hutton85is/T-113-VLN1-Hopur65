@@ -7,8 +7,7 @@ using namespace std;
 int main()
 {
     Umsjon u;
-
-    Pizza p;
-
+    u.enterToppings();
+    cout << u.p.ptoppings[0].toppings << endl;
     return 0;
 }

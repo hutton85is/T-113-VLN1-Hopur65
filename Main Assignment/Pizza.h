@@ -29,7 +29,7 @@ class Pizza
         vector <PizzaLocations> plocations;
 
         bool loadFile(Pizza& p);
-        void writeFile(Pizza& p);
+        void writePizzaToppings(PizzaToppings& ptop);
         void displaySize(vector <PizzaSize>& vec);
         friend istream& operator >>(istream &ins, Pizza& p);
 
