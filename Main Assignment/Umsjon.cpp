@@ -2,7 +2,7 @@
 
 Umsjon::Umsjon()
 {
-    p.loadFile(p);
+    p.loadVectors(p);
 }
 
 Umsjon::~Umsjon()

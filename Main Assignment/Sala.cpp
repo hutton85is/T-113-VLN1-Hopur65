@@ -2,7 +2,7 @@
 
 Sala::Sala()
 {
-    lager.loadFile(lager);
+    lager.loadVectors(lager);
 }
 
 Sala::~Sala()
