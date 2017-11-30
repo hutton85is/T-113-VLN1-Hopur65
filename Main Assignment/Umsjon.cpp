@@ -9,64 +9,48 @@ Umsjon::~Umsjon()
     //dtor
 }
 
-void Umsjon::enterPizzaSize(Pizza& p)
+void Umsjon::enterPizzaSize()
 {
-    pair <char[32], int> tempPair;
+    char tmpSize[32];
     cout << "enter pizza size" << endl;
-    cin >> tempPair.first;
-    cout << "enter prize of pizza" << endl;
-    cin >> tempPair.second;
-    p.menuSize.push_back(tempPair);
+    cin >> tempSize;
+    p.setSize(tempSize);
 }
 
+void Umsjon::enterCrust(){
 
-void Umsjon::enterCrust(Pizza& p){
 
-    pair <char[32],int> tempPair;
     cout << "What kind of crust do you want: ";
-    cin >> tempPair.first;
-    cout << "Enter price: ";
-    cin >> tempPair.second;
-    p.menuCrust.push_back(tempPair);
+    cin >> tempCrust;
+    p.setCrust(tempCrust);
 }
 
-void Umsjon::enterToppings(Pizza& p){
+void Umsjon::enterToppings(){
 
-    pair <char[32],int> tempPair;
     cout << "Enter toppings. If none press x: ";
-    cin >> tempPair.first;
-    cout << "Enter price: ";
-    cin >> tempPair.second;
-    p.menuToppings.push_back(tempPair);
-    p.writeFile(p);
+    cin >> tempToppings;
+    p.setToppings(tempToppings);
 }
 
-void Umsjon::enterMenu(Pizza& p){
+void Umsjon::enterMenu(){
 
-    pair <char[32],int> tempPair;
     cout << "Enter a new pizza: ";
-    cin >> tempPair.first;
-    cout << "Enter price: ";
-    cin >> tempPair.second;
-    p.menuPizzas.push_back(tempPair);
+    cin >> tempMenu;
+    p.setPizzas(tempMenu);
 }
 
-void Umsjon::enterExtras(Pizza& p){
+void Umsjon::enterExtras(){
 
-    pair <char[32],int> tempPair;
+
     cout << "Enter a new extra: ";
-    cin >> tempPair.first;
-    cout << "Enter price: ";
-    cin >> tempPair.second;
-    p.menuExtras.push_back(tempPair);
+    cin >> tempExtras;
+    p.setExtrax(tempExtras);
 }
 
-void Umsjon::enterLocation(Pizza& p){
+void Umsjon::enterLocation(){
 
-    pair <char[32],int> tempPair;
+
     cout << "Enter new location: ";
-    cin >> tempPair.first;
-    cout << "Enter price: ";
-    cin >> tempPair.second;
-    p.menuLocation.push_back(tempPair);
+    cin >> tempLocation;
+    p.setLocation(tempLocation);
 }
