@@ -6,7 +6,10 @@
 #include <utility>
 #include <fstream>
 
+//#include "pizzaSize.h"
+
 using namespace std;
+
 
 class Pizza
 {
@@ -14,18 +17,17 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
-        vector <pair <char[32], int> > menuSize;
-        vector <pair <char[32], int> > menuToppings;
-        vector <pair <char[32], int> > menuCrust;
-        vector <pair <char[32], int> > menuExtras;
-        vector <pair <char[32], int> > menuPizzas;
-        vector <pair <char[32], int> > menuLocation;
+        vector<pizzaSize> Size;
+        vector<pizzaToppings> Toppings;
+        vector<pizzaCrust> Crust;
+        vector<pizzaExtras> Extras;
+        vector<pizzaPizzas> Pizzas;
+        vector<pizzaLocation> Location;
 
-        Pizza& loadFile(Pizza& p);
+        bool loadFile(Pizza& p);
         void writeFile(Pizza& p);
-        void displayVector(vector <pair <char[32], int> >& vec);
-
-    protected:
+        void displaySize(vector <pizzaSize>& vec);
+        friend istream& operator >>(istream &ins, Pizza& p);
 
     private:
 };
