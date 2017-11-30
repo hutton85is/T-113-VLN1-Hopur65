@@ -1,6 +1,9 @@
 #ifndef PIZZACRUST_H
 #define PIZZACRUST_H
 
+#include <iostream>
+
+using namespace std;
 
 class PizzaCrust
 {

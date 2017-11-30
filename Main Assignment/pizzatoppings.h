@@ -1,6 +1,9 @@
 #ifndef PIZZATOPPINGS_H
 #define PIZZATOPPINGS_H
 
+#include <iostream>
+
+using namespace std;
 
 class PizzaToppings
 {

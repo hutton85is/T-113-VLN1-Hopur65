@@ -17,8 +17,6 @@ int main()
 
     u.enterToppings(p);
 
-    p.displayVector(p.menuToppings);
-
 
 
     return 0;

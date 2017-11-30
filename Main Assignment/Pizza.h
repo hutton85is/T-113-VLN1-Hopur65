@@ -31,7 +31,7 @@ class Pizza
 
         bool loadFile(Pizza& p);
         void writeFile(Pizza& p);
-        void displaySize(vector <pizzaSize>& vec);
+        void displaySize(vector <PizzaSize>& vec);
         friend istream& operator >>(istream &ins, Pizza& p);
 
     private:

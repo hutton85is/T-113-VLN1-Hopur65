@@ -1,6 +1,9 @@
 #ifndef PIZZALOCATIONS_H
 #define PIZZALOCATIONS_H
 
+#include <iostream>
+
+using namespace std;
 
 class PizzaLocations
 {

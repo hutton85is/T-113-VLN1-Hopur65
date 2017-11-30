@@ -1,6 +1,9 @@
 #ifndef PIZZASIZE_H
 #define PIZZASIZE_H
 
+#include <iostream>
+
+using namespace std;
 
 class PizzaSize
 {
