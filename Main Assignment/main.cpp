@@ -1,13 +1,16 @@
 #include <iostream>
 
 #include "Umsjon.h"
+#include "UmsjonUI.h"
+#include "SalaUI.h"
 
 using namespace std;
 
 int main()
 {
-    Umsjon u;
-    u.enterToppings();
-    cout << u.p.ptoppings[0].toppings << endl;
+    SalaUI s;
+    s.mainOrder();
     return 0;
+
+
 }

@@ -70,17 +70,5 @@ void Umsjon::enterLocation()
 
     cout << "Enter new location: ";
     cin >> newLocation.pick_up;
-    cout << "Do you want to get your order delivered? y or no? " << endl;
-    cin >> yn;
-    if ('y' == yn)
-    {
-     cout << "We will be there soon with your warm pizza!" << endl;
-     newLocation.pick_up = 1;
-    }
-    else
-    {
-     cout << "You can pick up your delicious pizza at " << newLocation.pick_up << endl;
-     newLocation.pick_up = 0;
-    }
     p.plocations.push_back(newLocation);
 }

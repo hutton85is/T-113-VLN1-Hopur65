@@ -20,12 +20,17 @@ void UmsjonUI::main(){
     char input = 'y';
 
     while(true){
-        cout << "Press 1 to add a new pizza size: ";
-        cout << "Press 2 to add a new crust: ";
-        cout << "Press 3 to add a new topping: ";
-        cout << "Press 4 to add a new pizza to the menu: ";
-        cout << "Press 5 to add a new extra: ";
-        cout << "Press 6 to add a new location: ";
+
+        int input;
+
+        cout << "Press 1 to add a new pizza size " << endl;
+        cout << "Press 2 to add a new crust " << endl;
+        cout << "Press 3 to add a new topping " << endl;
+        cout << "Press 4 to add a new pizza to the menu " << endl;
+        cout << "Press 5 to add a new extra " << endl;
+        cout << "Press 6 to add a new location " << endl;
+
+        cin >> input;
 
         Umsjon u;
         if(input == 1){
