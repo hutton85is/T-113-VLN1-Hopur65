@@ -29,6 +29,7 @@ void Umsjon::enterCrust()
     cout << "What is the price of " << newCrust.crust_type << ": " << endl;
     cin >> newCrust.price;
     lager.pcrust.push_back(newCrust);
+    lager.writeCrustVector(newCrust);
 }
 
 void Umsjon::enterToppings()
@@ -50,6 +51,7 @@ void Umsjon::enterMenu()
     cout << "What is the price of " << newMenu.choose_pizza << ": " << endl;
     cin >> newMenu.price;
     lager.pmenu.push_back(newMenu);
+    lager.writeMenuVector(newMenu);
 }
 
 void Umsjon::enterExtras()
@@ -60,7 +62,7 @@ void Umsjon::enterExtras()
     cout << "What is the price of " << newExtra.extras_type << endl;
     cin >> newExtra.price;
     lager.pextras.push_back(newExtra);
-
+    lager.writeExtrasVector(newExtra);
 }
 
 void Umsjon::enterLocation()
@@ -70,4 +72,5 @@ void Umsjon::enterLocation()
     cout << "Enter new location: ";
     cin >> newLocation.pick_up;
     lager.plocations.push_back(newLocation);
+    lager.writeLocationsVector(newLocation);
 }
