@@ -69,8 +69,8 @@ void Umsjon::enterLocation()
 {
     PizzaLocations newLocation;
 
-    cout << "Enter new location: ";
-    cin >> newLocation.pick_up;
+    cout << "Enter new location: " << endl;
+    cin >> newLocation.place;
     lager.plocations.push_back(newLocation);
     lager.writeLocationsVector(newLocation);
 }
