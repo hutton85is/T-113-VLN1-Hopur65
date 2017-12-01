@@ -8,8 +8,7 @@ using namespace std;
 
 int main()
 {
-    SalaUI s;
-    s.mainOrder();
+
     return 0;
 
 

@@ -56,7 +56,7 @@ void Sala::enterExtras(){
     cout << "Would you like any extras? ";
     cin >> newExtra.extras_type;
     unsigned int i = 0;
-    for (; i < lager.pextras.size() || newExtra.extras_type == lager.pextras[i].extras_type; i++)
+    for (; i < lager.pextras.size() || newExtra.extras_type == lager.pextras[i].extras_type; i++);
     order.pextras.push_back(lager.pextras[i]);
 }
 
@@ -66,6 +66,10 @@ void Sala::enterLocation(){
     int choose;
     char yn;
     cout << "Choose your location." << endl;
+    for(unsigned int i = 0; i < lager.plocations.size();i++){
+        cout << i;
+        cout << lager.plocations[i].place << endl;
+    }
     cin >> choose;
     newLocation = order.plocations[choose];
 

@@ -17,8 +17,6 @@ bool SalaUI::yorn(char answer){
 
 void SalaUI::mainOrder(){
 
-    char input = 'y';
-
     while(true){
 
         int input;
