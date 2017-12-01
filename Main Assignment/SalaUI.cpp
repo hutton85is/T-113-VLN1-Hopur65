@@ -16,6 +16,7 @@ bool SalaUI::yorn(char answer){
 }
 
 void SalaUI::mainOrder(){
+    Sala s;
 
     while(true){
 
@@ -30,8 +31,6 @@ void SalaUI::mainOrder(){
 
         cin >> input;
 
-
-        Sala s;
         if(input == 1){
             s.enterPizzaSize();
         }

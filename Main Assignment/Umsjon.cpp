@@ -2,7 +2,7 @@
 
 Umsjon::Umsjon()
 {
-    p.loadAllVectors(p);
+    lager.loadAllVectors(lager);
 }
 
 Umsjon::~Umsjon()
@@ -17,7 +17,8 @@ void Umsjon::enterPizzaSize()
     cin >> newSize.p_size;
     cout << "Enter price of pizza size: " << newSize.p_size << endl;
     cin >> newSize.price;
-    p.psize.push_back(newSize);
+    lager.psize.push_back(newSize);
+    lager.writeSizeVector(newSize);
 }
 
 void Umsjon::enterCrust()
@@ -27,7 +28,7 @@ void Umsjon::enterCrust()
     cin >> newCrust.crust_type;
     cout << "What is the price of " << newCrust.crust_type << ": " << endl;
     cin >> newCrust.price;
-    p.pcrust.push_back(newCrust);
+    lager.pcrust.push_back(newCrust);
 }
 
 void Umsjon::enterToppings()
@@ -37,8 +38,8 @@ void Umsjon::enterToppings()
     cin >> newToppings.toppings;
     cout << "What is the price of " << newToppings.toppings << ": " << endl;
     cin >> newToppings.price;
-    p.ptoppings.push_back(newToppings);
-    p.writeToppingsVector(newToppings);
+    lager.ptoppings.push_back(newToppings);
+    lager.writeToppingsVector(newToppings);
 }
 
 void Umsjon::enterMenu()
@@ -48,7 +49,7 @@ void Umsjon::enterMenu()
     cin >> newMenu.choose_pizza;
     cout << "What is the price of " << newMenu.choose_pizza << ": " << endl;
     cin >> newMenu.price;
-    p.pmenu.push_back(newMenu);
+    lager.pmenu.push_back(newMenu);
 }
 
 void Umsjon::enterExtras()
@@ -58,16 +59,15 @@ void Umsjon::enterExtras()
     cin >> newExtra.extras_type;
     cout << "What is the price of " << newExtra.extras_type << endl;
     cin >> newExtra.price;
-    p.pextras.push_back(newExtra);
+    lager.pextras.push_back(newExtra);
 
 }
 
 void Umsjon::enterLocation()
 {
     PizzaLocations newLocation;
-    char yn;
 
     cout << "Enter new location: ";
     cin >> newLocation.pick_up;
-    p.plocations.push_back(newLocation);
+    lager.plocations.push_back(newLocation);
 }

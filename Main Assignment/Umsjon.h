@@ -25,9 +25,8 @@ class Umsjon
         void enterExtras();
         void enterLocation();
 
-        Pizza p;
     private:
-
+        Pizza lager;
 
 };
 

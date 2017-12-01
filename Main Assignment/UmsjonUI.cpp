@@ -17,8 +17,6 @@ bool UmsjonUI::yorn(char answer){
 
 void UmsjonUI::main(){
 
-    char input = 'y';
-
     while(true){
 
         int input;

@@ -3,6 +3,7 @@
 Sala::Sala()
 {
     lager.loadAllVectors(lager);
+    order.loadAllVectors(order);
 }
 
 Sala::~Sala()
@@ -13,11 +14,21 @@ Sala::~Sala()
 void Sala::enterPizzaSize(){
 
     PizzaSize newSize;
+
     cout << "What size do you want? " << endl;
+    for (unsigned int i = 0; i < lager.psize.size(); i++)
+    {
+        cout << i << " : " << lager.psize[i].p_size << " " << lager.psize[i].price << endl;
+    }
+
     cin >> newSize.p_size;
     unsigned int i = 0;
-    for (; i < lager.psize.size() || newSize.p_size == lager.psize[i].p_size; i++);
-    order.psize.push_back(lager.psize[i]);
+    for (; i < lager.psize.size() || newSize.p_size == lager.psize[i].p_size; i++)
+
+    if (i != lager.psize.size())
+    {
+        order.psize.push_back(lager.psize[i]);
+    }
 }
 
 void Sala::enterCrust(){
