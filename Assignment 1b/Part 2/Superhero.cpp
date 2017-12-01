@@ -7,10 +7,8 @@ Superhero::Superhero()
     ofurkraftur = 'n';
 }
 
-Superhero::Superhero(/*char nafn[32], */int aldur, char ofurkraftur)
+Superhero::Superhero(int aldur, char ofurkraftur)
 {
-    //nafn[31] = '\0';
-    //this->nafn = nafn;
     this->aldur = aldur;
     this->ofurkraftur = ofurkraftur;
 }

@@ -15,16 +15,16 @@ bool AddHero::loadFile()
     if(file.is_open())
     {
         file.seekg(0, ios::end); // put the "cursor" at the end of the file
-        int length = file.tellg(); // find the position of the cursor
+        int length = file.tellg(); // find the position of the cursor, which tells the size of the file
         if (length != 0)
         {
             Superhero readHero;
-            file.seekg(0, file.end);
-            int records = file.tellg() / sizeof(Superhero);
-            file.seekg(0, file.beg);
+            int records = file.tellg() / sizeof(Superhero); //find how many entries are in the file
+            file.seekg(0, file.beg); // Go back with the cursor to beginning of a file for reading
             for(int i = 0; i < records; i++)
             {
                 file.read((char*) (&readHero), sizeof(Superhero));
+                // push hero read from file at the back of the vector
                 heroesVector.push_back(readHero);
             }
 
@@ -37,8 +37,6 @@ bool AddHero::loadFile()
 
 ostream& operator <<(ostream& outs, AddHero& hero)
 {
-    //outs << hero.heroesVector.size();
-    cout << hero.heroesVector.size() << endl;
     for(unsigned int i = 0; i < hero.heroesVector.size(); i++)
     {
         hero.heroesVector[i].print(outs);

@@ -32,7 +32,6 @@ bool AddHero::loadFile()
 
 ostream& operator <<(ostream& outs, AddHero& hero)
 {
-    //outs << hero.heroesVector.size();
     for(unsigned int i = 0; i < hero.heroesVector.size(); i++)
     {
         hero.heroesVector[i].print(outs);
