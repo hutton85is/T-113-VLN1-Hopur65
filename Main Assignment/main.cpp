@@ -10,8 +10,9 @@ int main()
     UmsjonUI u;
     SalaUI a;
 
-    //u.main();
-    a.mainOrder();
+    while(true)
+    u.main();
+    //a.mainOrder();
 
     return 0;
 }

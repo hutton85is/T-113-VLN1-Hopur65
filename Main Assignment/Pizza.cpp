@@ -17,34 +17,7 @@ void Pizza::loadAllVectors(Pizza& p)
     loadSizeVector(p);
     loadToppingsVector(p);
     loadMenuVector(p);
-    //loadSpecificVector(p, sizeof(PizzaCrust), "crust", PizzaCrust p);
 }
-
-/*template <typename pizzaClass>
-bool Pizza::loadSpecificVector(Pizza& p, unsigned int classSize, string fileName, pizzaClass pSize)
-{
-    //p.psize
-    //PizzaSize pSize;
-    PizzaClass pSize;
-    ifstream file;
-    file.open("data/" + fileName + ".dat", ios_base::binary);
-
-    if(file.is_open())
-    {
-        file.seekg(0, file.end);
-        int records = file.tellg() / sizeof(classSize);
-        file.seekg(0, file.beg);
-
-        for(int i = 0; i < records; i++)
-        {
-            file.read((char*)(&pSize), sizeof(classSize));
-            p.psize.push_back(pSize);
-        }
-        file.close();
-        return true;
-    }
-    return false;
-}*/
 
 bool Pizza::loadSizeVector(Pizza& p)
 {
@@ -188,6 +161,13 @@ void Pizza::writeToppingsVector(PizzaToppings& wToppings)
 {
     ofstream file;
     file.open("data/toppings.dat", ios_base::binary|ios_base::app);
+    if(!file.is_open())
+    {
+        ifstream createFile;
+        createFile.open("data/toppings.dat", ios_base::binary);
+        createFile.close();
+        file.open("data/toppings.dat", ios_base::binary|ios_base::app);
+    }
     file.write((char*)(&wToppings), sizeof(PizzaToppings));
     file.close();
 }
@@ -196,6 +176,13 @@ void Pizza::writeCrustVector(PizzaCrust& wCrust)
 {
     ofstream file;
     file.open("data/crust.dat", ios_base::binary|ios_base::app);
+    if(!file.is_open())
+    {
+        ifstream createFile;
+        createFile.open("data/crust.dat", ios_base::binary);
+        createFile.close();
+        file.open("data/crust.dat", ios_base::binary|ios_base::app);
+    }
     file.write((char*)(&wCrust), sizeof(PizzaCrust));
     file.close();
 }
@@ -204,6 +191,13 @@ void Pizza::writeSizeVector(PizzaSize& wSize)
 {
     ofstream file;
     file.open("data/size.dat", ios_base::binary|ios_base::app);
+    if(!file.is_open())
+    {
+        ifstream createFile;
+        createFile.open("data/size.dat", ios_base::binary);
+        createFile.close();
+        file.open("data/size.dat", ios_base::binary|ios_base::app);
+    }
     file.write((char*)(&wSize), sizeof(PizzaSize));
     file.close();
 }
@@ -212,6 +206,13 @@ void Pizza::writeExtrasVector(PizzaExtras& wExtras)
 {
     ofstream file;
     file.open("data/extras.dat", ios_base::binary|ios_base::app);
+    if(!file.is_open())
+    {
+        ifstream createFile;
+        createFile.open("data/extras.dat", ios_base::binary);
+        createFile.close();
+        file.open("data/extras.dat", ios_base::binary|ios_base::app);
+    }
     file.write((char*)(&wExtras), sizeof(PizzaExtras));
     file.close();
 }
@@ -220,6 +221,13 @@ void Pizza::writeMenuVector(PizzaMenu& wMenu)
 {
     ofstream file;
     file.open("data/menu.dat", ios_base::binary|ios_base::app);
+    if(!file.is_open())
+    {
+        ifstream createFile;
+        createFile.open("data/menu.dat", ios_base::binary);
+        createFile.close();
+        file.open("data/menu.dat", ios_base::binary|ios_base::app);
+    }
     file.write((char*)(&wMenu), sizeof(PizzaMenu));
     file.close();
 }
@@ -228,6 +236,13 @@ void Pizza::writeLocationsVector(PizzaLocations& wLocation)
 {
     ofstream file;
     file.open("data/locations.dat", ios_base::binary|ios_base::app);
+    if(!file.is_open())
+    {
+        ifstream createFile;
+        createFile.open("data/locations.dat", ios_base::binary);
+        createFile.close();
+        file.open("data/locations.dat", ios_base::binary|ios_base::app);
+    }
     file.write((char*)(&wLocation), sizeof(PizzaLocations));
     file.close();
 }
