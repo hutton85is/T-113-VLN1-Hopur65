@@ -2,7 +2,7 @@
 
 PizzaLocations::PizzaLocations()
 {
-          price = 0;
+          place[0] = '\0';
           pick_up = 0;
     //ctor
 }
@@ -13,6 +13,6 @@ PizzaLocations::~PizzaLocations()
 }
 ostream& operator <<(ostream& outs, PizzaLocations& p_locations)
 {
-    outs << p_locations.pick_up << " : "  << endl;
+    outs << p_locations.pick_up << endl;
     return outs;
 }

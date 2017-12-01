@@ -17,7 +17,10 @@ class PizzaMenu
         char choose_pizza[32];
 
 
+<<<<<<< HEAD
     protected:
+=======
+>>>>>>> 8bdcee357f086540e6c22a3b0bd1ab7b5e2bfb3a
 
     private:
 };
