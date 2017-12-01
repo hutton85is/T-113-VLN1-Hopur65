@@ -28,6 +28,7 @@ void SalaUI::mainOrder(){
         cout << "Press 4 to choose a pizza from the menu " << endl;
         cout << "Press 5 to choose extras " << endl;
         cout << "Press 6 to choose location " << endl;
+        cout << "Press 7 to enter name for order" << endl;
 
         cin >> input;
 
@@ -48,6 +49,9 @@ void SalaUI::mainOrder(){
         }
         if(input == 6){
             s.enterLocation();
+        }
+        if(input == 7){
+
         }
     }
 }

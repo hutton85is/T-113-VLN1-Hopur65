@@ -12,11 +12,6 @@ class UmsjonUI
         bool yorn(char answer);
         void main();
 
-
-
-
-
-
     private:
 };
 
