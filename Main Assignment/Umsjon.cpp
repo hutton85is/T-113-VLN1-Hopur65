@@ -13,7 +13,7 @@ Umsjon::~Umsjon()
 void Umsjon::enterPizzaSize()
 {
     PizzaSize newSize;
-    cout << "enter pizza size" << endl;
+    cout << "Enter pizza size: " << endl;
     cin >> newSize.p_size;
     cout << "Enter price of pizza size: " << newSize.p_size << endl;
     cin >> newSize.price;
@@ -25,7 +25,7 @@ void Umsjon::enterCrust()
     PizzaCrust newCrust;
     cout << "What kind of crust do you want: ";
     cin >> newCrust.crust_type;
-    cout << "What is the price of " << newCrust.crust_type << endl;
+    cout << "What is the price of " << newCrust.crust_type << ": " << endl;
     cin >> newCrust.price;
     p.pcrust.push_back(newCrust);
 }
@@ -33,9 +33,9 @@ void Umsjon::enterCrust()
 void Umsjon::enterToppings()
 {
     PizzaToppings newToppings;
-    cout << "Enter toppings. If none press x: ";
+    cout << "Enter toppings. If none press x: " << endl;
     cin >> newToppings.toppings;
-    cout << "What is the price of " << newToppings.toppings << endl;
+    cout << "What is the price of " << newToppings.toppings << ": " << endl;
     cin >> newToppings.price;
     p.ptoppings.push_back(newToppings);
     p.writePizzaToppings(newToppings);
@@ -45,9 +45,9 @@ void Umsjon::enterToppings()
 void Umsjon::enterMenu()
 {
     PizzaMenu newMenu;
-    cout << "Enter a new pizza: ";
+    cout << "Enter a new pizza: " << endl;
     cin >> newMenu.choose_pizza;
-    cout << "What is the price of " << newMenu.choose_pizza << endl;
+    cout << "What is the price of " << newMenu.choose_pizza << ": " << endl;
     cin >> newMenu.price;
     p.pmenu.push_back(newMenu);
 }
@@ -55,7 +55,7 @@ void Umsjon::enterMenu()
 void Umsjon::enterExtras()
 {
     PizzaExtras newExtra;
-    cout << "Enter a new extra: ";
+    cout << "Enter a new extra: " << endl;
     cin >> newExtra.extras_type;
     cout << "What is the price of " << newExtra.extras_type << endl;
     cin >> newExtra.price;
