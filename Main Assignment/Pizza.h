@@ -28,12 +28,26 @@ class Pizza
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
 
-        bool loadVectors(Pizza& p);
-        void writePizzaToppings(PizzaToppings& ptop);
+
+        void writeToppingsVector(PizzaToppings& wToppings);
+        void writeSizeVector(PizzaSize& wSize);
+        void writeCrustVector(PizzaCrust& wCrust);
+        void writeExtrasVector(PizzaExtras& wExtras);
+        void writeMenuVector(PizzaMenu& wMenu);
+        void writeLocationsVector(PizzaLocations& wLocation);
+
+        void loadAllVectors(Pizza& p);
         void displayToppings(vector <PizzaToppings>& vec);
-        friend istream& operator >>(istream &ins, Pizza& p);
 
     private:
+        /*template <typename pizzaClass>
+        bool loadSpecificVector(Pizza& p, unsigned int classSize, string fileName, pizzaClass p);*/
+        bool loadToppingsVector(Pizza& p);
+        bool loadSizeVector(Pizza& p);
+        bool loadCrustVector(Pizza& p);
+        bool loadExtrasVector(Pizza& p);
+        bool loadMenuVector(Pizza& p);
+        bool loadLocationsVector(Pizza& p);
 };
 
 #endif // PIZZA_H

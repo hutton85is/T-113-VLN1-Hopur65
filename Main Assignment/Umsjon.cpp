@@ -2,7 +2,7 @@
 
 Umsjon::Umsjon()
 {
-    p.loadVectors(p);
+    p.loadAllVectors(p);
 }
 
 Umsjon::~Umsjon()
@@ -38,8 +38,7 @@ void Umsjon::enterToppings()
     cout << "What is the price of " << newToppings.toppings << endl;
     cin >> newToppings.price;
     p.ptoppings.push_back(newToppings);
-    p.writePizzaToppings(newToppings);
-
+    p.writeToppingsVector(newToppings);
 }
 
 void Umsjon::enterMenu()
