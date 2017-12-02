@@ -19,6 +19,8 @@ void UmsjonUI::main(){
 
     while(true){
 
+        system("CLS");
+
         int input;
 
         cout << "Press 1 to add a new pizza size " << endl;
@@ -33,21 +35,27 @@ void UmsjonUI::main(){
         Umsjon u;
         if(input == 1){
             u.enterPizzaSize();
+            system("CLS");
         }
         if(input == 2){
             u.enterCrust();
+            system("CLS");
         }
         if(input == 3){
             u.enterToppings();
+            system("CLS");
         }
         if(input == 4){
             u.enterMenu();
+            system("CLS");
         }
         if(input == 5){
             u.enterExtras();
+            system("CLS");
         }
         if(input == 6){
             u.enterLocation();
+            system("CLS");
         }
         break;
     }

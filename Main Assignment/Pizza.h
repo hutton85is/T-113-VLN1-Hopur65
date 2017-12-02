@@ -28,31 +28,16 @@ class Pizza
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
 
-        template <typename ss>
-        void vasi(ss breyta);
-
-        template <typename pizzaClass, typename filename>
-        void writeClassToFile(pizzaClass& classToWrite, filename fname);
-/*
-        void writeToppingsVector(PizzaToppings& wToppings);
-        void writeSizeVector(PizzaSize& wSize);
-        void writeCrustVector(PizzaCrust& wCrust);
-        void writeExtrasVector(PizzaExtras& wExtras);
-        void writeMenuVector(PizzaMenu& wMenu);
-        void writeLocationsVector(PizzaLocations& wLocation);*/
+        template <typename pizzaClass>
+        void writeClassToFile(pizzaClass& classToWrite, const char* fname);
 
         void loadAllVectors(Pizza& p);
-        void displayToppings(vector <PizzaToppings>& vec);
+
+        void haha();
 
     private:
-        /*template <typename pizzaClass>
-        bool loadSpecificVector(Pizza& p, unsigned int classSize, string fileName, pizzaClass p);*/
-        bool loadToppingsVector(Pizza& p);
-        bool loadSizeVector(Pizza& p);
-        bool loadCrustVector(Pizza& p);
-        bool loadExtrasVector(Pizza& p);
-        bool loadMenuVector(Pizza& p);
-        bool loadLocationsVector(Pizza& p);
+        template <typename pizzaClass>
+        bool loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass);
 };
 
 #endif // PIZZA_H

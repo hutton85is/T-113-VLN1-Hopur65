@@ -34,24 +34,30 @@ void SalaUI::mainOrder(){
 
         if(input == 1){
             s.enterPizzaSize();
+            system("CLS");
         }
         if(input == 2){
             s.enterCrust();
+            system("CLS");
         }
         if(input == 3){
             s.enterToppings();
+            system("CLS");
         }
         if(input == 4){
             s.enterMenu();
+            system("CLS");
         }
         if(input == 5){
             s.enterExtras();
+            system("CLS");
         }
         if(input == 6){
             s.enterLocation();
+            system("CLS");
         }
         if(input == 7){
-
+            system("CLS");
         }
     }
 }

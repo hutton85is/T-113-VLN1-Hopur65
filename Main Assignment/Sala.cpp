@@ -3,7 +3,6 @@
 Sala::Sala()
 {
     lager.loadAllVectors(lager);
-    order.loadAllVectors(order);
 }
 
 Sala::~Sala()
@@ -138,7 +137,7 @@ void Sala::enterLocation(){
         cout << lager.plocations[i].place << endl;
     }
     cin >> choose;
-    newLocation = order.plocations[choose];
+    newLocation = lager.plocations[choose];
 
     cout << "Do you want to get your order delivered? yes or no? " << endl;
     cin >> yn;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 
 #include "UmsjonUI.h"
 #include "SalaUI.h"
@@ -30,6 +31,7 @@ int main()
         {
             a.mainOrder();
         }
+        system("CLS");
     }
 
     return 0;

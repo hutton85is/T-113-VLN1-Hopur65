@@ -2,6 +2,7 @@
 #define SALAUI_H
 
 #include "Sala.h"
+#include <stdlib.h>
 
 
 class SalaUI
@@ -11,8 +12,6 @@ class SalaUI
         virtual ~SalaUI();
         bool yorn(char answer);
         void mainOrder();
-
-
 
     private:
 };
