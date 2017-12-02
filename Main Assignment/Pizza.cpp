@@ -157,6 +157,23 @@ bool Pizza::loadToppingsVector(Pizza& p)
     return false;
 }
 
+template <typename pizzaClass, typename filename>
+void Pizza::writeClassToFile(pizzaClass& classToWrite, filename fname)
+{
+    ofstream file;
+    string name(fname.begin(), fname.end());
+    file.open(fname, ios_base::binary|ios_base::app);
+    if(!file.is_open())
+    {
+        ifstream createFile;
+        createFile.open(fname, ios_base::binary);
+        createFile.close();
+        file.open(fname, ios_base::binary|ios_base::app);
+    }
+    file.write((char*)(&classToWrite), sizeof(pizzaClass));
+    file.close();
+}
+/*
 void Pizza::writeToppingsVector(PizzaToppings& wToppings)
 {
     ofstream file;
@@ -246,3 +263,4 @@ void Pizza::writeLocationsVector(PizzaLocations& wLocation)
     file.write((char*)(&wLocation), sizeof(PizzaLocations));
     file.close();
 }
+*/

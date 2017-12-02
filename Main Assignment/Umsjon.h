@@ -2,6 +2,7 @@
 #define UMSJON_H
 
 #include <iostream>
+#include <vector>
 
 #include "Pizza.h"
 #include "PizzaSize.h"

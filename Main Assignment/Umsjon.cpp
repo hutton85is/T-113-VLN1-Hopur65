@@ -17,8 +17,12 @@ void Umsjon::enterPizzaSize()
     cin >> newSize.p_size;
     cout << "Enter price of pizza size: " << newSize.p_size << endl;
     cin >> newSize.price;
+
     lager.psize.push_back(newSize);
-    lager.writeSizeVector(newSize);
+
+    string name = "data/size.dat";
+    vector<char> fname(name.begin(), name.end());
+    lager.writeClassToFile(newSize, fname);
 }
 
 void Umsjon::enterCrust()
@@ -28,8 +32,12 @@ void Umsjon::enterCrust()
     cin >> newCrust.crust_type;
     cout << "What is the price of " << newCrust.crust_type << ": " << endl;
     cin >> newCrust.price;
+
     lager.pcrust.push_back(newCrust);
-    lager.writeCrustVector(newCrust);
+
+    string name = "data/crust.dat";
+    vector<char> fname(name.begin(), name.end());
+    lager.writeClassToFile(newCrust, fname);
 }
 
 void Umsjon::enterToppings()
@@ -40,7 +48,10 @@ void Umsjon::enterToppings()
     cout << "What is the price of " << newToppings.toppings << ": " << endl;
     cin >> newToppings.price;
     lager.ptoppings.push_back(newToppings);
-    lager.writeToppingsVector(newToppings);
+
+    string name = "toppings";
+    vector<char> fname(name.begin(), name.end());
+    lager.writeClassToFile(newToppings, fname);
 }
 
 void Umsjon::enterMenu()
@@ -51,7 +62,10 @@ void Umsjon::enterMenu()
     cout << "What is the price of " << newMenu.choose_pizza << ": " << endl;
     cin >> newMenu.price;
     lager.pmenu.push_back(newMenu);
-    lager.writeMenuVector(newMenu);
+
+    string name = "menu";
+    vector<char> fname(name.begin(), name.end());
+    lager.writeClassToFile(newMenu, fname);
 }
 
 void Umsjon::enterExtras()
@@ -62,7 +76,10 @@ void Umsjon::enterExtras()
     cout << "What is the price of " << newExtra.extras_type << endl;
     cin >> newExtra.price;
     lager.pextras.push_back(newExtra);
-    lager.writeExtrasVector(newExtra);
+
+    string name = "extra";
+    vector<char> fname(name.begin(), name.end());
+    lager.writeClassToFile(newExtra, fname);
 }
 
 void Umsjon::enterLocation()
@@ -72,5 +89,8 @@ void Umsjon::enterLocation()
     cout << "Enter new location: " << endl;
     cin >> newLocation.place;
     lager.plocations.push_back(newLocation);
-    lager.writeLocationsVector(newLocation);
+
+    string name = "locations";
+    vector<char> fname(name.begin(), name.end());
+    lager.writeClassToFile(newLocation, fname);
 }

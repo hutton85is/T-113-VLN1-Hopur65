@@ -28,13 +28,18 @@ class Pizza
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
 
+        template <typename ss>
+        void vasi(ss breyta);
 
+        template <typename pizzaClass, typename filename>
+        void writeClassToFile(pizzaClass& classToWrite, filename fname);
+/*
         void writeToppingsVector(PizzaToppings& wToppings);
         void writeSizeVector(PizzaSize& wSize);
         void writeCrustVector(PizzaCrust& wCrust);
         void writeExtrasVector(PizzaExtras& wExtras);
         void writeMenuVector(PizzaMenu& wMenu);
-        void writeLocationsVector(PizzaLocations& wLocation);
+        void writeLocationsVector(PizzaLocations& wLocation);*/
 
         void loadAllVectors(Pizza& p);
         void displayToppings(vector <PizzaToppings>& vec);
