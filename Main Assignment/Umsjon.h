@@ -1,16 +1,9 @@
 #ifndef UMSJON_H
 #define UMSJON_H
 
-#include <iostream>
-#include <vector>
+#include <typeinfo>
 
 #include "Pizza.h"
-#include "PizzaSize.h"
-#include "pizzatoppings.h"
-#include "pizzacrust.h"
-#include "pizzaextras.h"
-#include "pizzalocations.h"
-#include "pizzamenu.h"
 
 using namespace std;
 
@@ -19,15 +12,23 @@ class Umsjon
     public:
         Umsjon();
         virtual ~Umsjon();
-        void enterCrust();
-        void enterToppings();
-        void enterPizzaSize();
-        void enterMenu();
-        void enterExtras();
-        void enterLocation();
+        void createCrust();
+        void createToppings();
+        void createPizzaSize();
+        void createMenu();
+        void createExtras();
+        void createLocation();
+
+        /*
+        * A template function that returns a copy of a vector of type pizzaClass, from class 'Pizza'
+        */
+        template<typename pizzaClass>
+        void getVector(vector<pizzaClass>& vec);
+        //vector<pizzaClass> getVector(pizzaClass tempClass);
 
     private:
         Pizza lager;
+        void loaderDummy();
 
 };
 

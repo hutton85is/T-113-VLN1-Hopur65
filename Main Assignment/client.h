@@ -9,12 +9,13 @@ class client
         client();
         virtual ~client();
 
-        Pizza order;
         char name[64];
         char address[32];
         int addressNumber;
 
     private:
+        Pizza lager;
+        Pizza order;
 };
 
 #endif // CLIENT_H

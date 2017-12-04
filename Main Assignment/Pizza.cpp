@@ -59,26 +59,8 @@ bool Pizza::loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileN
     return false;
 }
 
-void Pizza::haha()
-{
-    PizzaToppings newToppings;
-    PizzaCrust newCrust;
-    PizzaMenu newMenu;
-    PizzaExtras newExtras;
-    PizzaLocations newLocations;
-    PizzaSize newSize;
-
-    const char* fname = "s";
-    writeClassToFile<PizzaCrust>(newCrust, fname);
-    writeClassToFile<PizzaToppings>(newToppings, fname);
-    writeClassToFile<PizzaSize>(newSize, fname);
-    writeClassToFile<PizzaMenu>(newMenu, fname);
-    writeClassToFile<PizzaLocations>(newLocations, fname);
-    writeClassToFile<PizzaExtras>(newExtras, fname);
-}
-
 template <typename pizzaClass>
-void Pizza::writeClassToFile(pizzaClass& classToWrite, const char* fname)
+void Pizza::writeSpecificClassToFile(pizzaClass& classToWrite, const char* fname)
 {
     ofstream file;
     file.open(fname, ios_base::binary|ios_base::app);
@@ -91,4 +73,25 @@ void Pizza::writeClassToFile(pizzaClass& classToWrite, const char* fname)
     }
     file.write((char*) (&classToWrite), sizeof(pizzaClass));
     file.close();
+}
+
+/*Afhverju þarf þetta að vera, það er aldrei kallað í þetta fall en það
+* kemur reference villa þegar reynt er að kalla í writeClassToFile
+* fallið ef þetta er ekki*/
+void Pizza::loaderDummy()
+{
+    PizzaToppings newToppings;
+    PizzaCrust newCrust;
+    PizzaMenu newMenu;
+    PizzaExtras newExtras;
+    PizzaLocations newLocations;
+    PizzaSize newSize;
+
+    const char* fname = "s";
+    writeSpecificClassToFile<PizzaCrust>(newCrust, fname);
+    writeSpecificClassToFile<PizzaToppings>(newToppings, fname);
+    writeSpecificClassToFile<PizzaSize>(newSize, fname);
+    writeSpecificClassToFile<PizzaMenu>(newMenu, fname);
+    writeSpecificClassToFile<PizzaLocations>(newLocations, fname);
+    writeSpecificClassToFile<PizzaExtras>(newExtras, fname);
 }

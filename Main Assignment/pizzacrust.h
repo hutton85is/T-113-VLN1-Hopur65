@@ -16,8 +16,6 @@ class PizzaCrust
         int price;
         char crust_type[32];
 
-    protected:
-
     private:
 };
 

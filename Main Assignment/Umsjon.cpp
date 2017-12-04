@@ -10,7 +10,70 @@ Umsjon::~Umsjon()
     //dtor
 }
 
-void Umsjon::enterPizzaSize()
+void Umsjon::loaderDummy()
+{
+    PizzaToppings newToppings;
+    PizzaCrust newCrust;
+    PizzaMenu newMenu;
+    PizzaExtras newExtras;
+    PizzaLocations newLocations;
+    PizzaSize newSize;
+
+    vector<PizzaCrust> b;
+    getVector<PizzaCrust>(b);
+    vector<PizzaToppings> a;
+    getVector<PizzaToppings>(a);
+    vector<PizzaMenu> c;
+    getVector<PizzaMenu>(c);
+    vector<PizzaExtras> d;
+    getVector<PizzaExtras>(d);
+    vector<PizzaToppings> e;
+    getVector<PizzaToppings>(e);
+    vector<PizzaSize> f;
+    getVector<PizzaSize>(f);
+}
+
+template<typename pizzaClass>
+void Umsjon::getVector(vector<pizzaClass>& vec)
+//vector<pizzaClass> Umsjon::getVector(pizzaClass tempClass)
+{
+    if(typeid(pizzaClass) == typeid(PizzaCrust))
+    {
+        //return lager.pcrust;
+        vec = lager.pcrust;
+    }
+    else if(typeid(pizzaClass) == typeid(PizzaExtras))
+    {
+        //return lager.pextras;
+        vec = lager.pextras;
+    }
+    else if(typeid(pizzaClass) == typeid(PizzaLocations))
+    {
+        //return lager.plocations;
+        vec = lager.plocations;
+    }
+    else if(typeid(pizzaClass) == typeid(PizzaMenu))
+    {
+        //return lager.pmenu;
+        vec = lager.pmenu;
+    }
+    else if(typeid(pizzaClass) == typeid(PizzaSize))
+    {
+        //return lager.psize;
+        vec = lager.psize;
+    }
+    else if(typeid(pizzaClass) == typeid(PizzaToppings))
+    {
+        //return lager.ptoppings;
+        vec = lager.ptoppings;
+    }
+
+    //If no vector is found from pizza class then return a copy of a vector of type pizzaClass
+    //vector<pizzaClass> noclassfound;
+    //return noclassfound;
+}
+
+void Umsjon::createPizzaSize()
 {
     PizzaSize newSize;
     for(unsigned int i = 0; i < lager.psize.size();i++){
@@ -26,13 +89,13 @@ void Umsjon::enterPizzaSize()
     lager.psize.push_back(newSize);
 
     const char* fname = "data/size.dat";
-    lager.writeClassToFile<PizzaSize>(newSize, fname);
+    lager.writeSpecificClassToFile<PizzaSize>(newSize, fname);
 }
 
-void Umsjon::enterCrust()
+void Umsjon::createCrust()
 {
     PizzaCrust newCrust;
-    for(unsigned int i = 0; i < lager.pcrust.size();i++){
+    for(unsigned int i = 0; i < lager.pcrust.size(); i++){
         cout << i << " : ";
         cout << lager.pcrust[i].crust_type << " " << lager.pcrust[i].price;
     }
@@ -45,13 +108,13 @@ void Umsjon::enterCrust()
     lager.pcrust.push_back(newCrust);
 
     const char* fname = "data/crust.dat";
-    lager.writeClassToFile<PizzaCrust>(newCrust, fname);
+    lager.writeSpecificClassToFile<PizzaCrust>(newCrust, fname);
 }
 
-void Umsjon::enterToppings()
+void Umsjon::createToppings()
 {
     PizzaToppings newToppings;
-    for(unsigned int i = 0; i < lager.ptoppings.size();i++){
+    for(unsigned int i = 0; i < lager.ptoppings.size(); i++){
         cout << i << " : ";
         cout << lager.ptoppings[i].toppings << " " << lager.ptoppings[i].price << endl;
     }
@@ -64,13 +127,13 @@ void Umsjon::enterToppings()
     lager.ptoppings.push_back(newToppings);
 
     const char* fname = "data/toppings.dat";
-    lager.writeClassToFile<PizzaToppings>(newToppings, fname);
+    lager.writeSpecificClassToFile<PizzaToppings>(newToppings, fname);
 }
 
-void Umsjon::enterMenu()
+void Umsjon::createMenu()
 {
     PizzaMenu newMenu;
-    for(unsigned int i = 0; i < lager.pmenu.size();i++){
+    for(unsigned int i = 0; i < lager.pmenu.size(); i++){
         cout << i << " : ";
         cout << lager.pmenu[i].choose_pizza << " " << lager.pmenu[i].price << endl;
     }
@@ -83,13 +146,13 @@ void Umsjon::enterMenu()
     lager.pmenu.push_back(newMenu);
 
     const char* fname = "data/menu.dat";
-    lager.writeClassToFile<PizzaMenu>(newMenu, fname);
+    lager.writeSpecificClassToFile<PizzaMenu>(newMenu, fname);
 }
 
-void Umsjon::enterExtras()
+void Umsjon::createExtras()
 {
     PizzaExtras newExtra;
-    for(unsigned int i = 0; i < lager.pextras.size();i++){
+    for(unsigned int i = 0; i < lager.pextras.size(); i++){
         cout << i << " : ";
         cout << lager.pextras[i].extras_type << " " << lager.pextras[i].price << endl;
     }
@@ -102,13 +165,13 @@ void Umsjon::enterExtras()
     lager.pextras.push_back(newExtra);
 
     const char* fname = "data/extra.dat";
-    lager.writeClassToFile<PizzaExtras>(newExtra, fname);
+    lager.writeSpecificClassToFile<PizzaExtras>(newExtra, fname);
 }
 
-void Umsjon::enterLocation()
+void Umsjon::createLocation()
 {
     PizzaLocations newLocation;
-    for(unsigned int i = 0; i < lager.plocations.size();i++){
+    for(unsigned int i = 0; i < lager.plocations.size(); i++){
         cout << i << " : ";
         cout << lager.plocations[i].place << endl;
     }
@@ -119,5 +182,5 @@ void Umsjon::enterLocation()
     lager.plocations.push_back(newLocation);
 
     const char* fname = "data/locations.dat";
-    lager.writeClassToFile<PizzaLocations>(newLocation, fname);
+    lager.writeSpecificClassToFile<PizzaLocations>(newLocation, fname);
 }

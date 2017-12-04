@@ -1,9 +1,7 @@
 #ifndef PIZZA_H
 #define PIZZA_H
 
-#include <iostream>
 #include <vector>
-#include <utility>
 #include <fstream>
 
 #include "PizzaSize.h"
@@ -21,6 +19,7 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
+        //PizzaClass vectors
         vector <PizzaToppings> ptoppings;
         vector <PizzaSize> psize;
         vector <PizzaCrust> pcrust;
@@ -29,15 +28,14 @@ class Pizza
         vector <PizzaLocations> plocations;
 
         template <typename pizzaClass>
-        void writeClassToFile(pizzaClass& classToWrite, const char* fname);
+        void writeSpecificClassToFile(pizzaClass& classToWrite, const char* fname);
 
         void loadAllVectors(Pizza& p);
-
-        void haha();
 
     private:
         template <typename pizzaClass>
         bool loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass);
+        void loaderDummy();
 };
 
 #endif // PIZZA_H

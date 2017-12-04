@@ -1,9 +1,8 @@
 #ifndef UMSJONUI_H
 #define UMSJONUI_H
 
-#include "Umsjon.h"
 #include <stdlib.h>
-
+#include "Umsjon.h"
 
 class UmsjonUI
 {
@@ -14,6 +13,12 @@ class UmsjonUI
         void main();
 
     private:
+        void addCrust();
+        void addToppings();
+        void addExtras();
+        void addMenu();
+        void addLocation();
+        void addSize();
 };
 
 #endif // UMSJONUI_H
