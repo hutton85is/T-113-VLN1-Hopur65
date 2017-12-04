@@ -13,6 +13,6 @@ PizzaSize::~PizzaSize()
 }
 ostream& operator <<(ostream& outs, PizzaSize& p_size)
 {
-    outs << p_size.p_size << " : " << p_size.price << endl;
+    outs << p_size.p_size << " : " << p_size.price;
     return outs;
 }

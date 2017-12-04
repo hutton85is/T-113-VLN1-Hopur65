@@ -15,14 +15,19 @@ class Sala
     public:
         Sala();
         virtual ~Sala();
-        void enterCrust();
-        void enterToppings();
-        void enterPizzaSize();
-        void enterMenu();
-        void enterExtras();
-        void enterLocation();
+        bool enterPizzaSize(int input);
+        bool enterCrust(int input);
+        bool enterToppings(int input);
+        bool enterMenu(int input);
+        bool enterExtras(int input);
+        bool enterLocation(int input);
 
-
+        vector<PizzaCrust> getpcrust();
+        vector<PizzaExtras> getpextras();
+        vector<PizzaLocations> getplocations();
+        vector<PizzaMenu> getpMenu();
+        vector<PizzaSize> getpsize();
+        vector<PizzaToppings> getptoppings();
 
     private:
         Pizza lager, order;

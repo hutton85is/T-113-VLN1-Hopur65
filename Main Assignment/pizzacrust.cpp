@@ -14,6 +14,6 @@ PizzaCrust::~PizzaCrust()
 
 ostream& operator <<(ostream& outs, PizzaCrust& p_crust)
 {
-    outs << p_crust.crust_type << " : " << p_crust.price << endl;
+    outs << p_crust.crust_type << " : " << p_crust.price;
     return outs;
 }

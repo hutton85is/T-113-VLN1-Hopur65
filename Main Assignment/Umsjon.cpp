@@ -10,18 +10,42 @@ Umsjon::~Umsjon()
     //dtor
 }
 
-void Umsjon::createPizzaSize()
+vector<PizzaCrust> Umsjon::getpcrust()
+{
+    return lager.pcrust;
+}
+
+vector<PizzaExtras> Umsjon::getpextras()
+{
+    return lager.pextras;
+}
+
+vector<PizzaLocations> Umsjon::getplocations()
+{
+    return lager.plocations;
+}
+
+vector<PizzaMenu> Umsjon::getpMenu()
+{
+    return lager.pmenu;
+}
+
+vector<PizzaSize> Umsjon::getpsize()
+{
+    return lager.psize;
+}
+
+vector<PizzaToppings> Umsjon::getptoppings()
+{
+    return lager.ptoppings;
+}
+
+void Umsjon::createPizzaSize(char p_size[32], int price)
 {
     PizzaSize newSize;
-    for(unsigned int i = 0; i < lager.psize.size();i++){
-        cout << i << " : ";
-        cout << lager.psize[i].p_size << " " << lager.psize[i].price << endl;
-    }
-    cout << endl;
-    cout << "Enter new pizza size: ";
-    cin >> newSize.p_size;
-    cout << "Enter price of " << newSize.p_size << " size: ";
-    cin >> newSize.price;
+
+    strcpy (newSize.p_size, p_size);
+    newSize.price = price;
 
     lager.psize.push_back(newSize);
 
@@ -29,18 +53,12 @@ void Umsjon::createPizzaSize()
     lager.writeClassToFile<PizzaSize>(newSize, fname);
 }
 
-void Umsjon::createCrust()
+void Umsjon::createCrust(char crust_type[32], int price)
 {
     PizzaCrust newCrust;
-    for(unsigned int i = 0; i < lager.pcrust.size();i++){
-        cout << i << " : ";
-        cout << lager.pcrust[i].crust_type << " " << lager.pcrust[i].price;
-    }
-    cout << endl;
-    cout << "What kind of crust do you want to add: ";
-    cin >> newCrust.crust_type;
-    cout << "What is the price of " << newCrust.crust_type << ": ";
-    cin >> newCrust.price;
+
+    strcpy(newCrust.crust_type, crust_type);
+    newCrust.price = price;
 
     lager.pcrust.push_back(newCrust);
 
@@ -48,18 +66,12 @@ void Umsjon::createCrust()
     lager.writeClassToFile<PizzaCrust>(newCrust, fname);
 }
 
-void Umsjon::createToppings()
+void Umsjon::createToppings(char toppings[32], int price)
 {
     PizzaToppings newToppings;
-    for(unsigned int i = 0; i < lager.ptoppings.size();i++){
-        cout << i << " : ";
-        cout << lager.ptoppings[i].toppings << " " << lager.ptoppings[i].price << endl;
-    }
-    cout << endl;
-    cout << "Enter new topping ";
-    cin >> newToppings.toppings;
-    cout << "What is the price of " << newToppings.toppings << ": ";
-    cin >> newToppings.price;
+
+    strcpy(newToppings.toppings, toppings);
+    newToppings.price = price;
 
     lager.ptoppings.push_back(newToppings);
 
@@ -67,18 +79,12 @@ void Umsjon::createToppings()
     lager.writeClassToFile<PizzaToppings>(newToppings, fname);
 }
 
-void Umsjon::createMenu()
+void Umsjon::createMenu(char choose_pizza[32], int price)
 {
     PizzaMenu newMenu;
-    for(unsigned int i = 0; i < lager.pmenu.size();i++){
-        cout << i << " : ";
-        cout << lager.pmenu[i].choose_pizza << " " << lager.pmenu[i].price << endl;
-    }
-    cout << endl;
-    cout << "Enter a new pizza to the menu: ";
-    cin >> newMenu.choose_pizza;
-    cout << "What is the price of " << newMenu.choose_pizza << " pizza: ";
-    cin >> newMenu.price;
+
+    strcpy(newMenu.choose_pizza, choose_pizza);
+    newMenu.price = price;
 
     lager.pmenu.push_back(newMenu);
 
@@ -86,18 +92,12 @@ void Umsjon::createMenu()
     lager.writeClassToFile<PizzaMenu>(newMenu, fname);
 }
 
-void Umsjon::createExtras()
+void Umsjon::createExtras(char extras_type[32], int price)
 {
     PizzaExtras newExtra;
-    for(unsigned int i = 0; i < lager.pextras.size();i++){
-        cout << i << " : ";
-        cout << lager.pextras[i].extras_type << " " << lager.pextras[i].price << endl;
-    }
-    cout << endl;
-    cout << "Enter a new extra: ";
-    cin >> newExtra.extras_type;
-    cout << "What is the price of " << newExtra.extras_type << ": ";
-    cin >> newExtra.price;
+
+    strcpy(newExtra.extras_type, extras_type);
+    newExtra.price = price;
 
     lager.pextras.push_back(newExtra);
 
@@ -105,16 +105,11 @@ void Umsjon::createExtras()
     lager.writeClassToFile<PizzaExtras>(newExtra, fname);
 }
 
-void Umsjon::createLocation()
+void Umsjon::createLocation(char place[32])
 {
     PizzaLocations newLocation;
-    for(unsigned int i = 0; i < lager.plocations.size();i++){
-        cout << i << " : ";
-        cout << lager.plocations[i].place << endl;
-    }
-    cout << endl;
-    cout << "Enter new location: ";
-    cin >> newLocation.place;
+
+    strcpy(newLocation.place, place);
 
     lager.plocations.push_back(newLocation);
 

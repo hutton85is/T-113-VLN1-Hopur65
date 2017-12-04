@@ -33,11 +33,11 @@ class Pizza
 
         void loadAllVectors(Pizza& p);
 
-        void dummyLoader();
-
     private:
         template <typename pizzaClass>
         bool loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass);
+
+        void dummyLoader();
 };
 
 #endif // PIZZA_H

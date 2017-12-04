@@ -16,7 +16,6 @@ bool SalaUI::yorn(char answer){
 }
 
 void SalaUI::mainOrder(){
-    Sala s;
 
     while(true){
 
@@ -32,31 +31,99 @@ void SalaUI::mainOrder(){
 
         cin >> input;
 
-        if(input == 1){
-            s.enterPizzaSize();
+        Sala s;
+
+        if(input == 1)
+        {
+            vector<PizzaSize> vec = s.getpsize();
+            for (unsigned int i = 0; i < vec.size(); i++)
+            {
+                cout << i << " : " << vec[i] << endl;
+            }
+            cout << endl;
+
+            cout << "Enter what size pizza you would like: ";
+            cin >> input;
+
+            s.enterPizzaSize(input);
             system("CLS");
         }
-        if(input == 2){
-            s.enterCrust();
+        else if(input == 2)
+        {
+            vector<PizzaCrust> vec = s.getpcrust();
+            for (unsigned int i = 0; i < vec.size(); i++)
+            {
+                cout << i << " : " << vec[i] << endl;
+            }
+            cout << endl;
+
+            cout << "Enter what type of crust you would like: ";
+            cin >> input;
+
+            s.enterCrust(input);
             system("CLS");
         }
-        if(input == 3){
-            s.enterToppings();
+        else if(input == 3)
+        {
+            vector<PizzaToppings> vec = s.getptoppings();
+            for (unsigned int i = 0; i < vec.size(); i++)
+            {
+                cout << i << " : " << vec[i] << endl;
+            }
+            cout << endl;
+
+            cout << "What toppings would you like on your pizza: ";
+            cin >> input;
+
+            s.enterToppings(input);
             system("CLS");
         }
-        if(input == 4){
-            s.enterMenu();
+        else if(input == 4)
+        {
+            vector<PizzaMenu> vec = s.getpMenu();
+            for (unsigned int i = 0; i < vec.size(); i++)
+            {
+                cout << i << " : " << vec[i] << endl;
+            }
+            cout << endl;
+
+            cout << "Enter what pizza you would like from the menu: ";
+            cin >> input;
+
+            s.enterMenu(input);
             system("CLS");
         }
-        if(input == 5){
-            s.enterExtras();
+        else if(input == 5)
+        {
+            vector<PizzaExtras> vec = s.getpextras();
+            for (unsigned int i = 0; i < vec.size(); i++)
+            {
+                cout << i << " : " << vec[i] << endl;
+            }
+            cout << endl;
+
+            cout << "Enter what extras you would like: ";
+            cin >> input;
+
+            s.enterExtras(input);
             system("CLS");
         }
-        if(input == 6){
-            s.enterLocation();
+        else if(input == 6)
+        {
+            vector<PizzaLocations> vec = s.getplocations();
+            for (unsigned int i = 0; i < vec.size(); i++)
+            {
+                cout << i << " : " << vec[i] << endl;
+            }
+            cout << endl;
+
+            cout << "Enter what location you want to order from: ";
+            cin >> input;
+
+            s.enterLocation(input);
             system("CLS");
         }
-        if(input == 7){
+        else if(input == 7){
             system("CLS");
         }
     }

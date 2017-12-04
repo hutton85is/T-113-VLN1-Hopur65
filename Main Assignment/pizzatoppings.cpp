@@ -13,6 +13,6 @@ PizzaToppings::~PizzaToppings()
 }
 ostream& operator <<(ostream& outs, PizzaToppings& p_toppings)
 {
-    outs << p_toppings.toppings << " : " << p_toppings.price << endl;
+    outs << p_toppings.toppings << " : " << p_toppings.price;
     return outs;
 }
