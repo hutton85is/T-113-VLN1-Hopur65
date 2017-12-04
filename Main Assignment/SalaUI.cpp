@@ -19,7 +19,7 @@ void SalaUI::mainOrder(){
 
     while(true){
 
-        int input;
+        unsigned int input;
 
         cout << "Press 1 to choose your pizza size " << endl;
         cout << "Press 2 to choose your crust " << endl;

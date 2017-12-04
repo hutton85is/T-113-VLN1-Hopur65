@@ -13,15 +13,27 @@
 class Sala
 {
     public:
+        /*
+        * Make the constructor load variable lager with all available items for sale
+        */
         Sala();
         virtual ~Sala();
-        bool enterPizzaSize(int input);
-        bool enterCrust(int input);
-        bool enterToppings(int input);
-        bool enterMenu(int input);
-        bool enterExtras(int input);
-        bool enterLocation(int input);
 
+        /*
+        * Receive input choice from user, of different order choices and push it to on the corresponding vector
+        * Return true if input is a valid integer.
+        * Return false if input is an invalid integer.
+        */
+        bool enterPizzaSize(unsigned int input);
+        bool enterCrust(unsigned int input);
+        bool enterToppings(unsigned int input);
+        bool enterMenu(unsigned int input);
+        bool enterExtras(unsigned int input);
+        bool enterLocation(unsigned int input);
+
+        /*
+        * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI
+        */
         vector<PizzaCrust> getpcrust();
         vector<PizzaExtras> getpextras();
         vector<PizzaLocations> getplocations();
@@ -30,6 +42,8 @@ class Sala
         vector<PizzaToppings> getptoppings();
 
     private:
+        // variable lager contains all items available to sell
+        // variable order contains all items a customer has ordered
         Pizza lager, order;
 
 };

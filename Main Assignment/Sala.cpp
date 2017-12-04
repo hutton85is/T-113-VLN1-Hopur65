@@ -40,9 +40,9 @@ vector<PizzaToppings> Sala::getptoppings()
     return lager.ptoppings;
 }
 
-bool Sala::enterPizzaSize(int input)
+bool Sala::enterPizzaSize(unsigned int input)
 {
-    if (input < sizeof(lager.psize) && -1 < input)
+    if (input < sizeof(lager.psize) && 0 <= input)
     {
         order.psize.push_back(lager.psize[input]);
         return true;
@@ -51,9 +51,9 @@ bool Sala::enterPizzaSize(int input)
     return false;
 }
 
-bool Sala::enterCrust(int input)
+bool Sala::enterCrust(unsigned int input)
 {
-    if (input < sizeof(lager.pcrust) && -1 < input)
+    if (input < sizeof(lager.pcrust) && 0 <= input)
     {
         order.pcrust.push_back(lager.pcrust[input]);
         return true;
@@ -62,9 +62,9 @@ bool Sala::enterCrust(int input)
     return false;
 }
 
-bool Sala::enterToppings(int input)
+bool Sala::enterToppings(unsigned int input)
 {
-    if (input < sizeof(lager.ptoppings) && -1 < input)
+    if (input < sizeof(lager.ptoppings) && 0 <= input)
     {
         order.ptoppings.push_back(lager.ptoppings[input]);
         return true;
@@ -73,9 +73,9 @@ bool Sala::enterToppings(int input)
     return false;
 }
 
-bool Sala::enterMenu(int input)
+bool Sala::enterMenu(unsigned int input)
 {
-    if (input < sizeof(lager.pmenu) && -1 < input)
+    if (input < sizeof(lager.pmenu) && 0 <= input)
     {
         order.pmenu.push_back(lager.pmenu[input]);
         return true;
@@ -84,9 +84,9 @@ bool Sala::enterMenu(int input)
     return false;
 }
 
-bool Sala::enterExtras(int input)
+bool Sala::enterExtras(unsigned int input)
 {
-    if (input < sizeof(lager.pextras) && -1 < input)
+    if (input < sizeof(lager.pextras) && 0 <= input)
     {
         order.pextras.push_back(lager.pextras[input]);
         return true;
@@ -95,9 +95,9 @@ bool Sala::enterExtras(int input)
     return false;
 }
 
-bool Sala::enterLocation(int input)
+bool Sala::enterLocation(unsigned int input)
 {
-    if (input < sizeof(lager.plocations) && -1 < input)
+    if (input < sizeof(lager.plocations) && 0 <= input)
     {
         order.plocations.push_back(lager.plocations[input]);
         return true;
@@ -105,6 +105,3 @@ bool Sala::enterLocation(int input)
 
     return false;
 }
-
-
-

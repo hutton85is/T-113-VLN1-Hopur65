@@ -21,12 +21,15 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
+        //Vectors containing classes of available items for sale
         vector <PizzaToppings> ptoppings;
         vector <PizzaSize> psize;
         vector <PizzaCrust> pcrust;
         vector <PizzaExtras> pextras;
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
+
+        Pizza order(const char* name);
 
         template <typename pizzaClass>
         void writeClassToFile(pizzaClass& classToWrite, const char* fname);

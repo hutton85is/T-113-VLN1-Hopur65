@@ -10,6 +10,16 @@ UmsjonUI::~UmsjonUI()
     //dtor
 }
 
+template<typename Pizzaclass>
+void UmsjonUI::displayVector(vector<Pizzaclass> vec)
+{
+    for (unsigned int i = 0; i < vec.size(); i++)
+    {
+        cout << vec[i] << endl;
+    }
+    cout << endl;
+}
+
 bool UmsjonUI::yorn(char answer){
 
     return answer == 'y';
@@ -36,13 +46,7 @@ void UmsjonUI::main(){
 
         if(input == 1)
         {
-            vector<PizzaSize> vec = u.getpsize();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << vec[i] << endl;
-            }
-            cout << endl;
-
+            displayVector(u.getpsize());
             cout << "Enter new pizza size: ";
             char p_size[32];
             cin >> p_size;
@@ -54,13 +58,7 @@ void UmsjonUI::main(){
         }
         else if(input == 2)
         {
-            vector<PizzaCrust> vec = u.getpcrust();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << vec[i] << endl;
-            }
-            cout << endl;
-
+            displayVector(u.getpcrust());
             cout << "Enter new type of pizza crust: ";
             char crust_type[32];
             cin >> crust_type;
@@ -72,13 +70,7 @@ void UmsjonUI::main(){
         }
         else if(input == 3)
         {
-            vector<PizzaToppings> vec = u.getptoppings();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << vec[i] << endl;
-            }
-            cout << endl;
-
+            displayVector(u.getptoppings());
             cout << "Enter new type of topping: ";
             char toppings[32];
             cin >> toppings;
@@ -90,13 +82,7 @@ void UmsjonUI::main(){
         }
         else if(input == 4)
         {
-            vector<PizzaMenu> vec = u.getpMenu();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << vec[i] << endl;
-            }
-            cout << endl;
-
+            displayVector(u.getpMenu());
             cout << "Enter new pizza to the menu: ";
             char choose_pizza[32];
             cin >> choose_pizza;
@@ -107,12 +93,7 @@ void UmsjonUI::main(){
             system("CLS");
         }
         else if(input == 5){
-            vector<PizzaExtras> vec = u.getpextras();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << vec[i] << endl;
-            }
-            cout << endl;
+            displayVector(u.getpextras());
 
             cout << "Enter new type of extras: ";
             char extras_type[32];
@@ -125,12 +106,7 @@ void UmsjonUI::main(){
         }
         else if(input == 6)
         {
-            vector<PizzaLocations> vec = u.getplocations();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << vec[i] << endl;
-            }
-            cout << endl;
+            displayVector(u.getplocations());
 
             cout << "Enter new location: ";
             char place[32];

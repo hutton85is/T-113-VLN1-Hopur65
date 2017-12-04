@@ -14,6 +14,8 @@ class UmsjonUI
         void main();
 
     private:
+        template <typename Pizzaclass>
+        void displayVector(vector<Pizzaclass> vec);
 };
 
 #endif // UMSJONUI_H
