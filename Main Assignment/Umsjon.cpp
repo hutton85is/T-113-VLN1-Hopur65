@@ -10,7 +10,7 @@ Umsjon::~Umsjon()
     //dtor
 }
 
-void Umsjon::enterPizzaSize()
+void Umsjon::createPizzaSize()
 {
     PizzaSize newSize;
     for(unsigned int i = 0; i < lager.psize.size();i++){
@@ -29,7 +29,7 @@ void Umsjon::enterPizzaSize()
     lager.writeClassToFile<PizzaSize>(newSize, fname);
 }
 
-void Umsjon::enterCrust()
+void Umsjon::createCrust()
 {
     PizzaCrust newCrust;
     for(unsigned int i = 0; i < lager.pcrust.size();i++){
@@ -48,7 +48,7 @@ void Umsjon::enterCrust()
     lager.writeClassToFile<PizzaCrust>(newCrust, fname);
 }
 
-void Umsjon::enterToppings()
+void Umsjon::createToppings()
 {
     PizzaToppings newToppings;
     for(unsigned int i = 0; i < lager.ptoppings.size();i++){
@@ -67,7 +67,7 @@ void Umsjon::enterToppings()
     lager.writeClassToFile<PizzaToppings>(newToppings, fname);
 }
 
-void Umsjon::enterMenu()
+void Umsjon::createMenu()
 {
     PizzaMenu newMenu;
     for(unsigned int i = 0; i < lager.pmenu.size();i++){
@@ -86,7 +86,7 @@ void Umsjon::enterMenu()
     lager.writeClassToFile<PizzaMenu>(newMenu, fname);
 }
 
-void Umsjon::enterExtras()
+void Umsjon::createExtras()
 {
     PizzaExtras newExtra;
     for(unsigned int i = 0; i < lager.pextras.size();i++){
@@ -105,7 +105,7 @@ void Umsjon::enterExtras()
     lager.writeClassToFile<PizzaExtras>(newExtra, fname);
 }
 
-void Umsjon::enterLocation()
+void Umsjon::createLocation()
 {
     PizzaLocations newLocation;
     for(unsigned int i = 0; i < lager.plocations.size();i++){

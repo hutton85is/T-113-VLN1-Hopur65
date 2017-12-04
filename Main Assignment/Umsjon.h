@@ -19,12 +19,12 @@ class Umsjon
     public:
         Umsjon();
         virtual ~Umsjon();
-        void enterCrust();
-        void enterToppings();
-        void enterPizzaSize();
-        void enterMenu();
-        void enterExtras();
-        void enterLocation();
+        void createCrust();
+        void createToppings();
+        void createPizzaSize();
+        void createMenu();
+        void createExtras();
+        void createLocation();
 
     private:
         Pizza lager;

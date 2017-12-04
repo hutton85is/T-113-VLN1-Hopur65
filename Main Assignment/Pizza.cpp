@@ -59,7 +59,7 @@ bool Pizza::loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileN
     return false;
 }
 
-void Pizza::haha()
+void Pizza::dummyLoader()
 {
     PizzaToppings newToppings;
     PizzaCrust newCrust;

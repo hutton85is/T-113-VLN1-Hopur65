@@ -33,7 +33,7 @@ class Pizza
 
         void loadAllVectors(Pizza& p);
 
-        void haha();
+        void dummyLoader();
 
     private:
         template <typename pizzaClass>

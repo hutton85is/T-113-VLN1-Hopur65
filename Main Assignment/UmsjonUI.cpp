@@ -34,27 +34,27 @@ void UmsjonUI::main(){
 
         Umsjon u;
         if(input == 1){
-            u.enterPizzaSize();
+            u.createPizzaSize();
             system("CLS");
         }
         if(input == 2){
-            u.enterCrust();
+            u.createCrust();
             system("CLS");
         }
         if(input == 3){
-            u.enterToppings();
+            u.createToppings();
             system("CLS");
         }
         if(input == 4){
-            u.enterMenu();
+            u.createMenu();
             system("CLS");
         }
         if(input == 5){
-            u.enterExtras();
+            u.createExtras();
             system("CLS");
         }
         if(input == 6){
-            u.enterLocation();
+            u.createLocation();
             system("CLS");
         }
         break;
