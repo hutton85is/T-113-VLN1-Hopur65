@@ -7,6 +7,13 @@ client::client()
     addressNumber =  0;
 }
 
+client::client(const char name[64], const char address[32], int number)
+{
+    //this->name = name;
+//    this->address = address;
+    addressNumber = number;
+}
+
 client::~client()
 {
     //dtor

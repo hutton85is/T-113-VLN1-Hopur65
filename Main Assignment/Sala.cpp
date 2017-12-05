@@ -2,7 +2,8 @@
 
 Sala::Sala()
 {
-    lager.loadAllVectors(lager);
+    readWriteClass rw;
+    rw.loadAllVectors(lager);
 }
 
 Sala::~Sala()
