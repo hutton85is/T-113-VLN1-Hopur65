@@ -3,7 +3,7 @@
 
 #include "Sala.h"
 #include <stdlib.h>
-
+#include <windows.h>
 
 class SalaUI
 {

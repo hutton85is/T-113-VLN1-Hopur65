@@ -15,22 +15,25 @@ bool SalaUI::yorn(char answer){
     return answer == 'y';
 }
 
-void SalaUI::mainOrder(){
-
-    while(true){
+void SalaUI::mainOrder()
+{
+    while(true)
+    {
+        system("CLS");
 
         unsigned int input;
 
-        cout << "Press 1 to choose your pizza size " << endl;
-        cout << "Press 2 to choose your crust " << endl;
-        cout << "Press 3 to choose toppings " << endl;
-        cout << "Press 4 to choose a pizza from the menu " << endl;
-        cout << "Press 5 to choose extras " << endl;
-        cout << "Press 6 to choose location " << endl;
-        cout << "Press 7 to enter name for order" << endl;
+        cout << "Press 1 to choose your pizza size" << endl;
+        cout << "Press 2 to choose your crust" << endl;
+        cout << "Press 3 to choose toppings" << endl;
+        cout << "Press 4 to choose a pizza from the menu" << endl;
+        cout << "Press 5 to choose extras" << endl;
+        cout << "Press 6 to choose location" << endl;
+        cout << "Press 7 to finish an order" << endl;
+        cout << "Press 8 to cancel the order" << endl;
 
         cin >> input;
-
+        system("CLS");
         Sala s;
 
         if(input == 1)
@@ -46,7 +49,6 @@ void SalaUI::mainOrder(){
             cin >> input;
 
             s.enterPizzaSize(input);
-            system("CLS");
         }
         else if(input == 2)
         {
@@ -61,7 +63,6 @@ void SalaUI::mainOrder(){
             cin >> input;
 
             s.enterCrust(input);
-            system("CLS");
         }
         else if(input == 3)
         {
@@ -76,7 +77,6 @@ void SalaUI::mainOrder(){
             cin >> input;
 
             s.enterToppings(input);
-            system("CLS");
         }
         else if(input == 4)
         {
@@ -91,7 +91,6 @@ void SalaUI::mainOrder(){
             cin >> input;
 
             s.enterMenu(input);
-            system("CLS");
         }
         else if(input == 5)
         {
@@ -106,7 +105,6 @@ void SalaUI::mainOrder(){
             cin >> input;
 
             s.enterExtras(input);
-            system("CLS");
         }
         else if(input == 6)
         {
@@ -121,10 +119,24 @@ void SalaUI::mainOrder(){
             cin >> input;
 
             s.enterLocation(input);
-            system("CLS");
         }
-        else if(input == 7){
-            system("CLS");
+        else if(input == 7)
+        {
+            string name;
+            cout << "Enter name for order: ";
+            getline(cin, name);
+
+            char address[32];
+            cout << "Enter street address: ";
+            cin >> address;
+
+            int number;
+            cout << "Enter address number";
+            cin >> number;
+        }
+        else if (input == 8)
+        {
+            break;
         }
     }
 }
