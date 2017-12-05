@@ -34,12 +34,20 @@ class Sala
         /*
         * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI
         */
-        vector<PizzaCrust> getpcrust();
-        vector<PizzaExtras> getpextras();
-        vector<PizzaLocations> getplocations();
-        vector<PizzaMenu> getpMenu();
-        vector<PizzaSize> getpsize();
-        vector<PizzaToppings> getptoppings();
+        vector<PizzaCrust> getLagerpcrust();
+        vector<PizzaExtras> getLagerpextras();
+        vector<PizzaLocations> getLagerplocations();
+        vector<PizzaMenu> getLagerpMenu();
+        vector<PizzaSize> getLagerpsize();
+        vector<PizzaToppings> getLagerptoppings();
+
+
+        vector<PizzaCrust> getOrderpcrust();
+        vector<PizzaExtras> getOrderpextras();
+        vector<PizzaLocations> getOrderplocations();
+        vector<PizzaMenu> getOrderpMenu();
+        vector<PizzaSize> getOrderpsize();
+        vector<PizzaToppings> getOrderptoppings();
 
     private:
         // variable lager contains all items available to sell
