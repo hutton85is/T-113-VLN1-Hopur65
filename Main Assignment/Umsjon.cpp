@@ -2,7 +2,8 @@
 
 Umsjon::Umsjon()
 {
-    lager.loadAllVectors(lager);
+    readWriteClass rw;
+    rw.loadAllVectors(lager);
 }
 
 Umsjon::~Umsjon()
@@ -50,7 +51,8 @@ void Umsjon::createPizzaSize(char p_size[32], int price)
     lager.psize.push_back(newSize);
 
     const char* fname = "data/size.dat";
-    lager.writeClassToFile<PizzaSize>(newSize, fname);
+    readWriteClass rw;
+    rw.writeClassToFile<PizzaSize>(newSize, fname);
 }
 
 void Umsjon::createCrust(char crust_type[32], int price)
@@ -63,7 +65,8 @@ void Umsjon::createCrust(char crust_type[32], int price)
     lager.pcrust.push_back(newCrust);
 
     const char* fname = "data/crust.dat";
-    lager.writeClassToFile<PizzaCrust>(newCrust, fname);
+    readWriteClass rw;
+    rw.writeClassToFile<PizzaCrust>(newCrust, fname);
 }
 
 void Umsjon::createToppings(char toppings[32], int price)
@@ -76,7 +79,8 @@ void Umsjon::createToppings(char toppings[32], int price)
     lager.ptoppings.push_back(newToppings);
 
     const char* fname = "data/toppings.dat";
-    lager.writeClassToFile<PizzaToppings>(newToppings, fname);
+    readWriteClass rw;
+    rw.writeClassToFile<PizzaToppings>(newToppings, fname);
 }
 
 void Umsjon::createMenu(char choose_pizza[32], int price)
@@ -89,7 +93,8 @@ void Umsjon::createMenu(char choose_pizza[32], int price)
     lager.pmenu.push_back(newMenu);
 
     const char* fname = "data/menu.dat";
-    lager.writeClassToFile<PizzaMenu>(newMenu, fname);
+    readWriteClass rw;
+    rw.writeClassToFile<PizzaMenu>(newMenu, fname);
 }
 
 void Umsjon::createExtras(char extras_type[32], int price)
@@ -102,7 +107,8 @@ void Umsjon::createExtras(char extras_type[32], int price)
     lager.pextras.push_back(newExtra);
 
     const char* fname = "data/extra.dat";
-    lager.writeClassToFile<PizzaExtras>(newExtra, fname);
+    readWriteClass rw;
+    rw.writeClassToFile<PizzaExtras>(newExtra, fname);
 }
 
 void Umsjon::createLocation(char place[32])
@@ -114,5 +120,6 @@ void Umsjon::createLocation(char place[32])
     lager.plocations.push_back(newLocation);
 
     const char* fname = "data/locations.dat";
-    lager.writeClassToFile<PizzaLocations>(newLocation, fname);
+    readWriteClass rw;
+    rw.writeClassToFile<PizzaLocations>(newLocation, fname);
 }
