@@ -38,7 +38,7 @@ void SalaUI::mainOrder()
 
         if(input == 1)
         {
-            vector<PizzaSize> vec = s.getpsize();
+            vector<PizzaSize> vec = s.getOrderpsize();
             for (unsigned int i = 0; i < vec.size(); i++)
             {
                 cout << i << " : " << vec[i] << endl;
@@ -52,7 +52,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 2)
         {
-            vector<PizzaCrust> vec = s.getpcrust();
+            vector<PizzaCrust> vec = s.getOrderpcrust();
             for (unsigned int i = 0; i < vec.size(); i++)
             {
                 cout << i << " : " << vec[i] << endl;
@@ -66,7 +66,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 3)
         {
-            vector<PizzaToppings> vec = s.getptoppings();
+            vector<PizzaToppings> vec = s.getOrderptoppings();
             for (unsigned int i = 0; i < vec.size(); i++)
             {
                 cout << i << " : " << vec[i] << endl;
@@ -80,7 +80,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 4)
         {
-            vector<PizzaMenu> vec = s.getpMenu();
+            vector<PizzaMenu> vec = s.getOrderpMenu();
             for (unsigned int i = 0; i < vec.size(); i++)
             {
                 cout << i << " : " << vec[i] << endl;
@@ -94,7 +94,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 5)
         {
-            vector<PizzaExtras> vec = s.getpextras();
+            vector<PizzaExtras> vec = s.getOrderpextras();
             for (unsigned int i = 0; i < vec.size(); i++)
             {
                 cout << i << " : " << vec[i] << endl;
@@ -108,7 +108,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 6)
         {
-            vector<PizzaLocations> vec = s.getplocations();
+            vector<PizzaLocations> vec = s.getOrderplocations();
             for (unsigned int i = 0; i < vec.size(); i++)
             {
                 cout << i << " : " << vec[i] << endl;

@@ -11,32 +11,62 @@ Sala::~Sala()
     //dtor
 }
 
-vector<PizzaCrust> Sala::getpcrust()
+vector<PizzaCrust> Sala::getLagerpcrust()
 {
     return lager.pcrust;
 }
 
-vector<PizzaExtras> Sala::getpextras()
+vector<PizzaExtras> Sala::getLagerpextras()
 {
     return lager.pextras;
 }
 
-vector<PizzaLocations> Sala::getplocations()
+vector<PizzaLocations> Sala::getLagerplocations()
 {
     return lager.plocations;
 }
 
-vector<PizzaMenu> Sala::getpMenu()
+vector<PizzaMenu> Sala::getLagerpMenu()
 {
     return lager.pmenu;
 }
 
-vector<PizzaSize> Sala::getpsize()
+vector<PizzaSize> Sala::getLagerpsize()
 {
     return lager.psize;
 }
 
-vector<PizzaToppings> Sala::getptoppings()
+vector<PizzaToppings> Sala::getLagerptoppings()
+{
+    return lager.ptoppings;
+}
+
+vector<PizzaCrust> Sala::getOrderpcrust()
+{
+    return lager.pcrust;
+}
+
+vector<PizzaExtras> Sala::getOrderpextras()
+{
+    return lager.pextras;
+}
+
+vector<PizzaLocations> Sala::getOrderplocations()
+{
+    return lager.plocations;
+}
+
+vector<PizzaMenu> Sala::getOrderpMenu()
+{
+    return lager.pmenu;
+}
+
+vector<PizzaSize> Sala::getOrderpsize()
+{
+    return lager.psize;
+}
+
+vector<PizzaToppings> Sala::getOrderptoppings()
 {
     return lager.ptoppings;
 }
