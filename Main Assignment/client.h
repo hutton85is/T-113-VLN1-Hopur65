@@ -7,7 +7,6 @@ class client
 {
     public:
         client();
-        client(const char name[], const char address[], int number);
         virtual ~client();
 
         Pizza order;
@@ -15,7 +14,13 @@ class client
         char address[32];
         int addressNumber;
 
-    private:
+        unsigned int orderCounter;
+        unsigned int crustCounter;
+        unsigned int toppingsCounter;
+        unsigned int extrasCounter;
+        unsigned int menuCounter;
+        unsigned int locationCounter;
+        unsigned int sizeCounter;
 };
 
 #endif // CLIENT_H

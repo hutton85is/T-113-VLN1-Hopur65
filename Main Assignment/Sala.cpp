@@ -43,32 +43,32 @@ vector<PizzaToppings> Sala::getLagerptoppings()
 
 vector<PizzaCrust> Sala::getOrderpcrust()
 {
-    return lager.pcrust;
+    return order.pcrust;
 }
 
 vector<PizzaExtras> Sala::getOrderpextras()
 {
-    return lager.pextras;
+    return order.pextras;
 }
 
 vector<PizzaLocations> Sala::getOrderplocations()
 {
-    return lager.plocations;
+    return order.plocations;
 }
 
 vector<PizzaMenu> Sala::getOrderpMenu()
 {
-    return lager.pmenu;
+    return order.pmenu;
 }
 
 vector<PizzaSize> Sala::getOrderpsize()
 {
-    return lager.psize;
+    return order.psize;
 }
 
 vector<PizzaToppings> Sala::getOrderptoppings()
 {
-    return lager.ptoppings;
+    return order.ptoppings;
 }
 
 bool Sala::enterPizzaSize(unsigned int input)
@@ -76,8 +76,9 @@ bool Sala::enterPizzaSize(unsigned int input)
     if (input < sizeof(lager.psize) && 0 <= input)
     {
         order.psize.push_back(lager.psize[input]);
-        readWriteClass rw;
-        rw.writeClassToFile(lager.psize[input],"Order/psize.dat");
+
+        newCustomer.sizeCounter++;
+
         return true;
     }
 
@@ -89,8 +90,9 @@ bool Sala::enterCrust(unsigned int input)
     if (input < sizeof(lager.pcrust) && 0 <= input)
     {
         order.pcrust.push_back(lager.pcrust[input]);
-        readWriteClass rw;
-        rw.writeClassToFile(lager.pcrust[input],"Order/pcrust.dat");
+
+        newCustomer.crustCounter++;
+
         return true;
     }
 
@@ -102,8 +104,9 @@ bool Sala::enterToppings(unsigned int input)
     if (input < sizeof(lager.ptoppings) && 0 <= input)
     {
         order.ptoppings.push_back(lager.ptoppings[input]);
-        readWriteClass rw;
-        rw.writeClassToFile(lager.ptoppings[input],"Order/ptoppings.dat");
+
+        newCustomer.toppingsCounter++;
+
         return true;
     }
 
@@ -115,8 +118,9 @@ bool Sala::enterMenu(unsigned int input)
     if (input < sizeof(lager.pmenu) && 0 <= input)
     {
         order.pmenu.push_back(lager.pmenu[input]);
-        readWriteClass rw;
-        rw.writeClassToFile(lager.pmenu[input],"Order/pmenu.dat");
+
+        newCustomer.menuCounter++;
+
         return true;
     }
 
@@ -128,8 +132,9 @@ bool Sala::enterExtras(unsigned int input)
     if (input < sizeof(lager.pextras) && 0 <= input)
     {
         order.pextras.push_back(lager.pextras[input]);
-        readWriteClass rw;
-        rw.writeClassToFile(lager.pextras[input],"Order/pextras.dat");
+
+        newCustomer.extrasCounter++;
+
         return true;
     }
 
@@ -141,10 +146,65 @@ bool Sala::enterLocation(unsigned int input)
     if (input < sizeof(lager.plocations) && 0 <= input)
     {
         order.plocations.push_back(lager.plocations[input]);
-        readWriteClass rw;
-        rw.writeClassToFile(lager.plocations[input],"Order/plocations.dat");
+
+        newCustomer.locationCounter++;
+
         return true;
     }
 
     return false;
+}
+
+bool Sala::createOrder(string name, string address, int number)
+{
+    //Assign name, address and addressnumber for newCustomer
+    strncpy(newCustomer.name, name.c_str(), sizeof(newCustomer.name) - 1);
+    strncpy(newCustomer.address, address.c_str(), sizeof(newCustomer.address) - 1);
+    newCustomer.addressNumber = number;
+
+    // create a path with file name in variable tempname and enter it to variable fname
+    string tempname = "order/" + name + ".dat";
+    const char* fname = tempname.c_str();
+
+    readWriteClass rw;
+    // Write client class to file and path 'fname'
+    rw.writeClassToFile(newCustomer, fname);
+
+    // Write pizzatoppings class to file and path 'fname'
+    for (unsigned int i = 0; i < newCustomer.toppingsCounter; i++)
+    {
+        rw.writeClassToFile(order.ptoppings[i], fname);
+    }
+
+    // Write pizzasize class to file and path 'fname'
+    if (newCustomer.sizeCounter)
+    {
+        rw.writeClassToFile(order.psize[0], fname);
+    }
+
+    // Write pizzacrust class to file and path 'fname'
+    if (newCustomer.crustCounter)
+    {
+        rw.writeClassToFile(order.pcrust[0], fname);
+    }
+
+    // Write pizzaextras class to file and path 'fname'
+    for (unsigned int i = 0; i < newCustomer.extrasCounter; i++)
+    {
+        rw.writeClassToFile(order.pextras[i], fname);
+    }
+
+    // Write pizzamenu class to file and path 'fname'
+    for (unsigned int i = 0; i < newCustomer.orderCounter; i++)
+    {
+        rw.writeClassToFile(order.pmenu[i], fname);
+    }
+
+    // Write pizzalocations class to file and path 'fname'
+    if (newCustomer.locationCounter)
+    {
+        rw.writeClassToFile(order.plocations[0], fname);
+    }
+
+    return true;
 }
