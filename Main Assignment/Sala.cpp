@@ -2,7 +2,7 @@
 
 Sala::Sala()
 {
-    lager.loadFile(lager);
+    lager.loadAllVectors(lager);
 }
 
 Sala::~Sala()
@@ -10,51 +10,98 @@ Sala::~Sala()
     //dtor
 }
 
-void Sala::enterPizzaSize(){
-
-    PizzaSize newSize;
-    cout << "What size do you want? " << endl;
-    cin >> newSize.p_size;
-    order.psize.push_back(newSize);
+vector<PizzaCrust> Sala::getpcrust()
+{
+    return lager.pcrust;
 }
 
-void Sala::enterCrust(){
-
-    PizzaCrust newCrust;
-    cout << "What kind of crust would you like? ";
-    cin >> newCrust.crust_type;
-    order.pcrust.push_back(newCrust);
+vector<PizzaExtras> Sala::getpextras()
+{
+    return lager.pextras;
 }
 
-void Sala::enterToppings(){
-
-    PizzaToppings newToppings;
-    cout << "Enter toppings. If none press x: ";
-    cin >> newToppings.toppings;
-    order.ptoppings.push_back(newToppings);
+vector<PizzaLocations> Sala::getplocations()
+{
+    return lager.plocations;
 }
 
-void Sala::enterMenu(){
-
-    PizzaMenu newMenu;
-    cout << "Check out our menu and choose your pizza";
-    cin >> newMenu.choose_pizza;
-    order.pmenu.push_back(newMenu);
+vector<PizzaMenu> Sala::getpMenu()
+{
+    return lager.pmenu;
 }
 
-void Sala::enterExtras(){
-
-    PizzaExtras newExtra;
-    cout << "Would you like any extras? ";
-    cin >> newExtra.extras_type;
-    order.pextras.push_back(newExtra);
+vector<PizzaSize> Sala::getpsize()
+{
+    return lager.psize;
 }
 
-void Sala::enterLocation(){
-
-    PizzaLocations newLocation;
-    cout << "Where would you like to pick up your pizza? ";
-    cin >> newLocation.pick_up;
-    order.plocations.push_back(newLocation);
+vector<PizzaToppings> Sala::getptoppings()
+{
+    return lager.ptoppings;
 }
 
+bool Sala::enterPizzaSize(unsigned int input)
+{
+    if (input < sizeof(lager.psize) && 0 <= input)
+    {
+        order.psize.push_back(lager.psize[input]);
+        return true;
+    }
+
+    return false;
+}
+
+bool Sala::enterCrust(unsigned int input)
+{
+    if (input < sizeof(lager.pcrust) && 0 <= input)
+    {
+        order.pcrust.push_back(lager.pcrust[input]);
+        return true;
+    }
+
+    return false;
+}
+
+bool Sala::enterToppings(unsigned int input)
+{
+    if (input < sizeof(lager.ptoppings) && 0 <= input)
+    {
+        order.ptoppings.push_back(lager.ptoppings[input]);
+        return true;
+    }
+
+    return false;
+}
+
+bool Sala::enterMenu(unsigned int input)
+{
+    if (input < sizeof(lager.pmenu) && 0 <= input)
+    {
+        order.pmenu.push_back(lager.pmenu[input]);
+        return true;
+    }
+
+    return false;
+}
+
+bool Sala::enterExtras(unsigned int input)
+{
+    if (input < sizeof(lager.pextras) && 0 <= input)
+    {
+        order.pextras.push_back(lager.pextras[input]);
+        return true;
+    }
+
+    return false;
+}
+
+bool Sala::enterLocation(unsigned int input)
+{
+    if (input < sizeof(lager.plocations) && 0 <= input)
+    {
+        order.plocations.push_back(lager.plocations[input]);
+        return true;
+    }
+
+    return false;
+}

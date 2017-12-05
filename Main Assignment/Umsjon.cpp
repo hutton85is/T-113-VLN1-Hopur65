@@ -2,7 +2,7 @@
 
 Umsjon::Umsjon()
 {
-    p.loadFile(p);
+    lager.loadAllVectors(lager);
 }
 
 Umsjon::~Umsjon()
@@ -10,77 +10,109 @@ Umsjon::~Umsjon()
     //dtor
 }
 
-void Umsjon::enterPizzaSize()
+vector<PizzaCrust> Umsjon::getpcrust()
+{
+    return lager.pcrust;
+}
+
+vector<PizzaExtras> Umsjon::getpextras()
+{
+    return lager.pextras;
+}
+
+vector<PizzaLocations> Umsjon::getplocations()
+{
+    return lager.plocations;
+}
+
+vector<PizzaMenu> Umsjon::getpMenu()
+{
+    return lager.pmenu;
+}
+
+vector<PizzaSize> Umsjon::getpsize()
+{
+    return lager.psize;
+}
+
+vector<PizzaToppings> Umsjon::getptoppings()
+{
+    return lager.ptoppings;
+}
+
+void Umsjon::createPizzaSize(char p_size[32], int price)
 {
     PizzaSize newSize;
-    cout << "enter pizza size" << endl;
-    cin >> newSize.p_size;
-    cout << "Enter price of pizza size: " << newSize.p_size << endl;
-    cin >> newSize.price;
-    p.psize.push_back(newSize);
+
+    strcpy (newSize.p_size, p_size);
+    newSize.price = price;
+
+    lager.psize.push_back(newSize);
+
+    const char* fname = "data/size.dat";
+    lager.writeClassToFile<PizzaSize>(newSize, fname);
 }
 
-void Umsjon::enterCrust()
+void Umsjon::createCrust(char crust_type[32], int price)
 {
     PizzaCrust newCrust;
-    cout << "What kind of crust do you want: ";
-    cin >> newCrust.crust_type;
-    cout << "What is the price of " << newCrust.crust_type << endl;
-    cin >> newCrust.price;
-    p.pcrust.push_back(newCrust);
+
+    strcpy(newCrust.crust_type, crust_type);
+    newCrust.price = price;
+
+    lager.pcrust.push_back(newCrust);
+
+    const char* fname = "data/crust.dat";
+    lager.writeClassToFile<PizzaCrust>(newCrust, fname);
 }
 
-void Umsjon::enterToppings()
+void Umsjon::createToppings(char toppings[32], int price)
 {
     PizzaToppings newToppings;
-    cout << "Enter toppings. If none press x: ";
-    cin >> newToppings.toppings;
-    cout << "What is the price of " << newToppings.toppings << endl;
-    cin >> newToppings.price;
-    p.ptoppings.push_back(newToppings);
-    p.writePizzaToppings(newToppings);
 
+    strcpy(newToppings.toppings, toppings);
+    newToppings.price = price;
+
+    lager.ptoppings.push_back(newToppings);
+
+    const char* fname = "data/toppings.dat";
+    lager.writeClassToFile<PizzaToppings>(newToppings, fname);
 }
 
-void Umsjon::enterMenu()
+void Umsjon::createMenu(char choose_pizza[32], int price)
 {
     PizzaMenu newMenu;
-    cout << "Enter a new pizza: ";
-    cin >> newMenu.choose_pizza;
-    cout << "What is the price of " << newMenu.choose_pizza << endl;
-    cin >> newMenu.price;
-    p.pmenu.push_back(newMenu);
+
+    strcpy(newMenu.choose_pizza, choose_pizza);
+    newMenu.price = price;
+
+    lager.pmenu.push_back(newMenu);
+
+    const char* fname = "data/menu.dat";
+    lager.writeClassToFile<PizzaMenu>(newMenu, fname);
 }
 
-void Umsjon::enterExtras()
+void Umsjon::createExtras(char extras_type[32], int price)
 {
     PizzaExtras newExtra;
-    cout << "Enter a new extra: ";
-    cin >> newExtra.extras_type;
-    cout << "What is the price of " << newExtra.extras_type << endl;
-    cin >> newExtra.price;
-    p.pextras.push_back(newExtra);
 
+    strcpy(newExtra.extras_type, extras_type);
+    newExtra.price = price;
+
+    lager.pextras.push_back(newExtra);
+
+    const char* fname = "data/extra.dat";
+    lager.writeClassToFile<PizzaExtras>(newExtra, fname);
 }
 
-void Umsjon::enterLocation()
+void Umsjon::createLocation(char place[32])
 {
     PizzaLocations newLocation;
-    char yn;
 
-    cout << "Enter new location: ";
-    cin >> newLocation.pick_up;
-    cout << "Do you want to get your order delivered? y or no? " << endl;
-    cin >> yn;
-    if ('y' == yn)
-    {
-     cout << "We will be there soon with your warm pizza!" << endl;
-     newLocation.pick_up = 1;
-    }
-    else
-    {
-     cout << "You can pick up your delicious pizza at " << newLocation.pick_up << endl;
-     newLocation.pick_up = 0;
-    }
-    p.plocations.push_back(newLocation);
+    strcpy(newLocation.place, place);
+
+    lager.plocations.push_back(newLocation);
+
+    const char* fname = "data/locations.dat";
+    lager.writeClassToFile<PizzaLocations>(newLocation, fname);
 }

@@ -13,10 +13,8 @@ class PizzaLocations
 
         friend ostream& operator <<(ostream& outs, PizzaLocations& p_locations);
 
-        int price;
+        char place[32];
         bool pick_up;
-
-    protected:
 
     private:
 };

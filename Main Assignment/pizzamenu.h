@@ -16,8 +16,6 @@ class PizzaMenu
         int price;
         char choose_pizza[32];
 
-    protected:
-
     private:
 };
 
