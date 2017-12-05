@@ -35,6 +35,8 @@ class Sala
         bool enterLocation(unsigned int input);
         bool createOrder(string name, string address, int number);
 
+        void getCustomer(const char* fname);
+
         /*
         * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI
         */

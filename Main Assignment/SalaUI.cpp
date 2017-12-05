@@ -40,10 +40,14 @@ void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 void SalaUI::mainOrder()
 {
     Sala s;
+    const char* fname = "order/John Russell Hutton.dat";
+    s.getCustomer(fname);
 
     while(true)
     {
         unsigned int input;
+
+        displayFullOrder(s);
 
         cout << "Press 1 to choose your pizza size" << endl;
         cout << "Press 2 to choose your crust" << endl;

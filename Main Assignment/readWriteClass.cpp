@@ -37,7 +37,7 @@ void readWriteClass::loadAllVectors(Pizza& p)
     loadSpecificVector<PizzaMenu>(p.pmenu, fname, menu);
 }
 
-bool loadCustomer(Pizza& order, client& customer, const char* fname)
+bool readWriteClass::loadCustomer(Pizza& order, client& customer, const char* fname)
 {
     ifstream file;
     file.open(fname, ios_base::binary|ios_base::app);

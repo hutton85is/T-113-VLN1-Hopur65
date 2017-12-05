@@ -155,6 +155,12 @@ bool Sala::enterLocation(unsigned int input)
     return false;
 }
 
+void Sala::getCustomer(const char* fname)
+{
+    readWriteClass rw;
+    rw.loadCustomer(order, newCustomer, fname);
+}
+
 bool Sala::createOrder(string name, string address, int number)
 {
     //Assign name, address and addressnumber for newCustomer
