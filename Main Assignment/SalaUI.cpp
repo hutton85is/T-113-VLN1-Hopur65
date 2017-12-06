@@ -40,8 +40,6 @@ void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 void SalaUI::mainOrder()
 {
     Sala s;
-    const char* fname = "order/John Russell Hutton.dat";
-    s.getCustomer(fname);
 
     while(true)
     {

@@ -158,6 +158,8 @@ bool Sala::enterLocation(unsigned int input)
 void Sala::getCustomer(const char* fname)
 {
     readWriteClass rw;
+    // Load customer into variable newCustomer and his order into variable order,
+    // fname contains the path and filename for his order
     rw.loadCustomer(order, newCustomer, fname);
 }
 
@@ -213,4 +215,12 @@ bool Sala::createOrder(string name, string address, int number)
     }
 
     return true;
+}
+
+ostream& operator <<(ostream& outs, Sala& s)
+{
+    outs << s.newCustomer.name << cout;
+    outs << s.newCustomer.address << " " << s.newCustomer.addressNumber << endl;
+    outs << "----ORDER----" << endl;
+    return outs;
 }

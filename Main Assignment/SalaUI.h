@@ -14,8 +14,19 @@ class SalaUI
         void mainOrder();
 
     private:
+
+        /*
+        * display all contents of a vector
+        * vector<Pizzaclass vec: is the template vector to display
+        * bool choice: is a variable if valid displays its current position in the vector
+        */
         template <typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool choice);
+
+        /*
+        * A function to display the full order made
+        * Sala s: contains the class storing all contents of the order to display
+        */
         void displayFullOrder(Sala s);
 };
 
