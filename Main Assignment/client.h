@@ -7,7 +7,7 @@ class client
 {
     public:
         client();
-        client(const char name[], const char address[], int number);
+        client(char name[], char address[], int number);
         virtual ~client();
 
         Pizza order;

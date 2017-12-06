@@ -7,14 +7,22 @@ client::client()
     addressNumber =  0;
 }
 
-client::client(const char name[64], const char address[32], int number)
+client::client(char nam[64], char addres[32], int number)
 {
-    //this->name = name;
-//    this->address = address;
+    name = nam;
+    address = addres;
     addressNumber = number;
 }
 
 client::~client()
 {
     //dtor
+}
+
+ostream& operator <<(ostream& outs, client& addressInfo)
+{
+    outs << addressInfo.name << " : ";
+    outs << addressInfo.address << " : ";
+    outs << addressInfo.addressNumber << " : ";
+    return outs;
 }

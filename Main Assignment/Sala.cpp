@@ -43,32 +43,32 @@ vector<PizzaToppings> Sala::getLagerptoppings()
 
 vector<PizzaCrust> Sala::getOrderpcrust()
 {
-    return lager.pcrust;
+    return order.pcrust;
 }
 
 vector<PizzaExtras> Sala::getOrderpextras()
 {
-    return lager.pextras;
+    return order.pextras;
 }
 
 vector<PizzaLocations> Sala::getOrderplocations()
 {
-    return lager.plocations;
+    return order.plocations;
 }
 
 vector<PizzaMenu> Sala::getOrderpMenu()
 {
-    return lager.pmenu;
+    return order.pmenu;
 }
 
 vector<PizzaSize> Sala::getOrderpsize()
 {
-    return lager.psize;
+    return order.psize;
 }
 
 vector<PizzaToppings> Sala::getOrderptoppings()
 {
-    return lager.ptoppings;
+    return order.ptoppings;
 }
 
 bool Sala::enterPizzaSize(unsigned int input)
