@@ -2,7 +2,7 @@
 
 SalaUI::SalaUI()
 {
-    //ctor
+
 }
 
 SalaUI::~SalaUI()
@@ -15,13 +15,39 @@ bool SalaUI::yorn(char answer){
     return answer == 'y';
 }
 
+void SalaUI::displayFullOrder(Sala s)
+{
+    displayVector(s.getOrderpsize(), false);
+    displayVector(s.getOrderpcrust(), false);
+    displayVector(s.getOrderpMenu(), false);
+    displayVector(s.getOrderptoppings(), false);
+    displayVector(s.getOrderplocations(), false);
+}
+
+template<typename Pizzaclass>
+void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
+{
+    for (unsigned int i = 0; i < vec.size(); i++)
+    {
+        if (choice)
+        {
+            cout << i << ". ";
+        }
+        cout << vec[i] << endl;
+    }
+}
+
 void SalaUI::mainOrder()
 {
+    Sala s;
+
     while(true)
     {
-        system("CLS");
-
         unsigned int input;
+
+        cout << "Your current order" << endl;
+        displayFullOrder(s);
+        cout << "*************************" << endl;
 
         cout << "Press 1 to choose your pizza size" << endl;
         cout << "Press 2 to choose your crust" << endl;
@@ -34,16 +60,10 @@ void SalaUI::mainOrder()
 
         cin >> input;
         system("CLS");
-        Sala s;
 
         if(input == 1)
         {
-            vector<PizzaSize> vec = s.getOrderpsize();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << i << " : " << vec[i] << endl;
-            }
-            cout << endl;
+            displayVector(s.getLagerpsize(), true);
 
             cout << "Enter what size pizza you would like: ";
             cin >> input;
@@ -52,11 +72,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 2)
         {
-            vector<PizzaCrust> vec = s.getOrderpcrust();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << i << " : " << vec[i] << endl;
-            }
+            displayVector(s.getLagerpcrust(), true);
             cout << endl;
 
             cout << "Enter what type of crust you would like: ";
@@ -66,11 +82,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 3)
         {
-            vector<PizzaToppings> vec = s.getOrderptoppings();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << i << " : " << vec[i] << endl;
-            }
+            displayVector(s.getLagerptoppings(), true);
             cout << endl;
 
             cout << "What toppings would you like on your pizza: ";
@@ -80,11 +92,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 4)
         {
-            vector<PizzaMenu> vec = s.getOrderpMenu();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << i << " : " << vec[i] << endl;
-            }
+            displayVector(s.getLagerpMenu(), true);
             cout << endl;
 
             cout << "Enter what pizza you would like from the menu: ";
@@ -94,11 +102,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 5)
         {
-            vector<PizzaExtras> vec = s.getOrderpextras();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << i << " : " << vec[i] << endl;
-            }
+            displayVector(s.getLagerpextras(), true);
             cout << endl;
 
             cout << "Enter what extras you would like: ";
@@ -108,11 +112,7 @@ void SalaUI::mainOrder()
         }
         else if(input == 6)
         {
-            vector<PizzaLocations> vec = s.getOrderplocations();
-            for (unsigned int i = 0; i < vec.size(); i++)
-            {
-                cout << i << " : " << vec[i] << endl;
-            }
+            displayVector(s.getLagerplocations(), true);
             cout << endl;
 
             cout << "Enter what location you want to order from: ";
@@ -124,20 +124,36 @@ void SalaUI::mainOrder()
         {
             string name;
             cout << "Enter name for order: ";
+            cin >> ws;
             getline(cin, name);
 
-            char address[32];
+            string address;
             cout << "Enter street address: ";
             cin >> address;
 
             int number;
-            cout << "Enter address number";
+            cout << "Enter address number: ";
             cin >> number;
+
+            s.createOrder(name, address, number);
+
+            system("CLS");
+            cout << "HERE IS YOUR ORDER" << endl;
+            cout << "----------------------------" << endl;
+            displayFullOrder(s);
+            cout << "----------------------------" << endl;
+            cout << endl;
+            cout << endl;
+            cout << endl;
+
+            system("pause");
+            break;
         }
         else if (input == 8)
         {
             break;
         }
+        system("CLS");
     }
 }
 

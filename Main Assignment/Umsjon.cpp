@@ -66,7 +66,7 @@ void Umsjon::createCrust(char crust_type[32], int price)
 
     const char* fname = "data/crust.dat";
     readWriteClass rw;
-    rw.writeClassToFile<PizzaCrust>(newCrust, fname);
+    rw.writeClassToFile(newCrust, fname);
 }
 
 void Umsjon::createToppings(char toppings[32], int price)

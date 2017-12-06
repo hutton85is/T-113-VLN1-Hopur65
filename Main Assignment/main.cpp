@@ -9,11 +9,15 @@ using namespace std;
 
 int mainMenu()
 {
+    system("CLS");
     int val;
     cout << "1 : Umsjon" << endl;
     cout << "2 : Sala" << endl;
-    cout << "3 : Exit" << endl;
+    cout << "3 : Virkar pantanir" << endl;
+    cout << "4 : Exit" << endl;
     cin >> val;
+    system("CLS");
+
     return val;
 }
 
@@ -35,9 +39,12 @@ int main()
         }
         else if (val == 3)
         {
+
+        }
+        else if (val == 4)
+        {
             exit(0);
         }
-        system("CLS");
     }
 
     return 0;

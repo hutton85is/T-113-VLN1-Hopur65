@@ -5,13 +5,14 @@ client::client()
     name[0] = '\0';
     address[0] = '\0';
     addressNumber =  0;
-}
 
-client::client(char nam[64], char addres[32], int number)
-{
-    name = nam;
-    address = addres;
-    addressNumber = number;
+    orderCounter = 0;
+    toppingsCounter = 0;
+    extrasCounter = 0;
+    menuCounter = 0;
+    locationCounter = 0;
+    sizeCounter = 0;
+    crustCounter = 0;
 }
 
 client::~client()
@@ -21,8 +22,7 @@ client::~client()
 
 ostream& operator <<(ostream& outs, client& addressInfo)
 {
-    outs << addressInfo.name << " : ";
-    outs << addressInfo.address << " : ";
-    outs << addressInfo.addressNumber << " : ";
+    outs << addressInfo.name << endl;
+    outs << addressInfo.address << " " << addressInfo.addressNumber;
     return outs;
 }

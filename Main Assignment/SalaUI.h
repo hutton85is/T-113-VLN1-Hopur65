@@ -14,6 +14,9 @@ class SalaUI
         void mainOrder();
 
     private:
+        template <typename Pizzaclass>
+        void displayVector(vector<Pizzaclass> vec, bool choice);
+        void displayFullOrder(Sala s);
 };
 
 #endif // SALAUI_H
