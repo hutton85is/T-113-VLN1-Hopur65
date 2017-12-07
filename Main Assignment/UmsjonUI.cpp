@@ -33,12 +33,12 @@ void UmsjonUI::main(){
 
         int input;
 
-        cout << "Press 1 to add a new pizza size " << endl;
-        cout << "Press 2 to add a new crust " << endl;
-        cout << "Press 3 to add a new topping " << endl;
-        cout << "Press 4 to add a new pizza to the menu " << endl;
-        cout << "Press 5 to add a new extra " << endl;
-        cout << "Press 6 to add a new location " << endl;
+        cout << "Til thess ad skra nyja pizza staerd veldu       1." << endl;
+        cout << "Til thess ad skra nyja pizza crust veldu        2." << endl;
+        cout << "Til thess ad skra nytt alegg veldu              3." << endl;
+        cout << "Til thess ad skra nyja pizzu a matsedil veldu   4." << endl;
+        cout << "Til thess ad skra nytt medlaeti veldu           5." << endl;
+        cout << "Til thess ad skra nyjan afhendingarstad veldu   6." << endl;
 
         cin >> input;
 

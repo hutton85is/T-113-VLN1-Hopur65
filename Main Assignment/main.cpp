@@ -8,18 +8,40 @@
 
 using namespace std;
 
-int mainMenu()
+void mainMenu()
 {
-    system("CLS");
-    int val;
-    cout << "1 : Umsjon" << endl;
-    cout << "2 : Sala" << endl;
-    cout << "3 : Bakari" << endl;
-    cout << "4 : Exit" << endl;
-    cin >> val;
-    system("CLS");
+    cout << "---------------------------------------------------------" << endl;
+    cout << "               Velkomin/nn a Pizzastadinn!               " << endl;
+    cout << "---------------------------------------------------------" << endl;
+    cout << "    Til thess ad skra thig inn veldu :                   " << endl;
+    cout << "                                                         " << endl;
+    cout << " 1. Fyrir umsjon                                         " << endl;
+    cout << " 2. Fyrir bakara                                         " << endl;
+    cout << " 3. Fyrir pontun                                         " << endl;
+    cout << " 4. Til ad haetta                                        " << endl;
+    cout << "                                                         " << endl;
 
-    return val;
+    char innskraning;
+    cin >> innskraning ;
+
+    if ( innskraning == '1') {
+        UmsjonUI u;
+        u.main();
+    }
+    else if ( innskraning == '2') {
+        BakerUI b;
+        b.main();
+    }
+    else if ( innskraning == '3') {
+        SalaUI s;
+        s.mainOrder();
+    }
+    else if (innskraning == '4')
+    {
+        exit(0);
+    }
+
+    system("CLS");
 }
 
 int main()
@@ -27,26 +49,7 @@ int main()
 
     while(true)
     {
-        int val = mainMenu();
-        if (val == 1)
-        {
-            UmsjonUI u;
-            u.main();
-        }
-        else if (val == 2)
-        {
-            SalaUI s;
-            s.mainOrder();
-        }
-        else if (val == 3)
-        {
-            BakerUI b;
-            b.main();
-        }
-        else if (val == 4)
-        {
-            exit(0);
-        }
+        mainMenu();
     }
 
     return 0;

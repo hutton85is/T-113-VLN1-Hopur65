@@ -12,7 +12,11 @@ BakerUI::~BakerUI()
 
 void BakerUI::main()
 {
-    displayClient();
+    cout << "Til thess ad velja pontun ad skoda veldu                  1. "  << endl;
+    cout << "Til thess ad velja pontun til ad afgreida veldur          2. "  << endl;
+    cout << endl;
+
+    //displayClient();
     system("pause");
 }
 

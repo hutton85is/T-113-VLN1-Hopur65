@@ -77,15 +77,19 @@ void SalaUI::mainOrder()
 
         displayFullOrder(s);
 
-        cout << "Press 1 to choose your pizza size" << endl;
-        cout << "Press 2 to choose your crust" << endl;
-        cout << "Press 3 to choose toppings" << endl;
-        cout << "Press 4 to choose a pizza from the menu" << endl;
-        cout << "Press 5 to choose extras" << endl;
-        cout << "Press 6 to add another pizza" << endl;
-        cout << "Press 7 to choose location" << endl;
-        cout << "Press 8 to finish an order" << endl;
-        cout << "Press 9 to cancel the order" << endl;
+        cout << "Skradu thina pontun : " << endl;
+        cout << "Til thess ad velja pizza staerd veldu           1." << endl;
+        cout << "Til thess ad velja pizza crust veldu            2." << endl;
+        cout << "Til thess ad velja alegg a pizzuna veldu        3." << endl;
+        cout << "Til thess ad velja pizzu af matsedli veldu      4." << endl;
+        cout << "Til thess ad panta medlaeti veldu               5." << endl;
+        cout << "Til thess ad baeta vid pizzu veldu              6." << endl;
+        cout << "Til thess ad velja afhendingarstad veldur       7." << endl;
+        cout << "Til thess ad klara pöntun veldu                 8." << endl;
+        cout << "Til thess ad haetta vid pontun veldu            9." << endl;
+        //cout << "Til thess ad fa pizzuna senda heim veldu        6." << endl;
+        //cout << "Til thess ad saekja pizzuna veldu               7." << endl;
+        //cout << "Til thess ad breyta pontun veldu                8." << endl;
 
         cin >> input;
         system("CLS");
