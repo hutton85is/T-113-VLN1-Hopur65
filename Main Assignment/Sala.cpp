@@ -129,7 +129,6 @@ bool Sala::enterLocation(unsigned int input)
 
 void Sala::newPizza()
 {
-<<<<<<< HEAD
     /* ONLY USE THIS IF WE WANT TO BE ABLE TO CHANGE AN ORDER
     // if the count of orders is equal to the current pizza being edited, increase both
     if (newCustomer.orderCounter == newCustomer.currentPizza)
@@ -170,12 +169,6 @@ void Sala::newPizza()
 client Sala::getCustomerOrdersVector()
 {
     return newCustomer;
-=======
-    readWriteClass rw;
-    // Load customer into variable newCustomer and his order into variable order,
-    // fname contains the path and filename for his order
-    rw.loadCustomer(order, newCustomer, fname);
->>>>>>> 762a064b6398121e3e4b1ec1094165df32ed4269
 }
 
 bool Sala::createOrder(string name, string address, int number)
@@ -240,13 +233,5 @@ bool Sala::createOrder(string name, string address, int number)
 ostream& operator <<(ostream& outs, Sala& s)
 {
 
-    return outs;
-}
-
-ostream& operator <<(ostream& outs, Sala& s)
-{
-    outs << s.newCustomer.name << cout;
-    outs << s.newCustomer.address << " " << s.newCustomer.addressNumber << endl;
-    outs << "----ORDER----" << endl;
     return outs;
 }
