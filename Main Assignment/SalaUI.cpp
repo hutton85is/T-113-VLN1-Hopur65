@@ -68,8 +68,11 @@ void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 void SalaUI::mainOrder()
 {
     Sala s;
+<<<<<<< HEAD
     // Initiate variables
     s.newPizza();
+=======
+>>>>>>> 762a064b6398121e3e4b1ec1094165df32ed4269
 
     while(true)
     {
