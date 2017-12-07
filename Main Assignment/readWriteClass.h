@@ -3,6 +3,9 @@
 
 #include "Pizza.h"
 #include "client.h"
+#include "Sala.h"
+#include "PizzaHelper.h"
+#include <string.h>
 
 /*
 *
@@ -25,7 +28,7 @@ class readWriteClass
         void loadAllVectors(Pizza& p);
 
         // load Pizza order with a specific customer
-        bool loadCustomer(Pizza& order, client& customer, const char* fname);
+        bool loadCustomer(client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname);
 
     private:
         /*

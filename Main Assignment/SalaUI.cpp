@@ -10,18 +10,46 @@ SalaUI::~SalaUI()
     //dtor
 }
 
-bool SalaUI::yorn(char answer){
-
-    return answer == 'y';
-}
-
 void SalaUI::displayFullOrder(Sala s)
 {
-    displayVector(s.getOrderpsize(), false);
-    displayVector(s.getOrderpcrust(), false);
-    displayVector(s.getOrderpMenu(), false);
-    displayVector(s.getOrderptoppings(), false);
-    displayVector(s.getOrderplocations(), false);
+
+    client customer = s.getCustomerOrdersVector();
+
+    if(customer.name[0] != '\0')
+    {
+        cout << customer << endl;
+    }
+
+    for(unsigned int i = 0; i < s.order.size(); i++)
+    {
+        cout << "Pizza order " << i+1 << endl;
+
+        if(s.pHelper[i].sizeCounter)
+        {
+            displayVector(s.order[i].psize, false);
+        }
+        if(s.pHelper[i].crustCounter)
+        {
+            displayVector(s.order[i].pcrust, false);
+        }
+        if(s.pHelper[i].menuCounter)
+        {
+            displayVector(s.order[i].pmenu, false);
+        }
+        if(s.pHelper[i].toppingsCounter)
+        {
+            displayVector(s.order[i].ptoppings, false);
+        }
+        if(s.pHelper[i].extrasCounter)
+        {
+            displayVector(s.order[i].pextras, false);
+        }
+        if(s.pHelper[i].locationCounter)
+        {
+            displayVector(s.order[i].plocations, false);
+        }
+    }
+    cout << "************" << endl;
 }
 
 template<typename Pizzaclass>
@@ -40,23 +68,24 @@ void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 void SalaUI::mainOrder()
 {
     Sala s;
+    // Initiate variables
+    s.newPizza();
 
     while(true)
     {
         unsigned int input;
 
-        cout << "Your current order" << endl;
         displayFullOrder(s);
-        cout << "*************************" << endl;
 
         cout << "Press 1 to choose your pizza size" << endl;
         cout << "Press 2 to choose your crust" << endl;
         cout << "Press 3 to choose toppings" << endl;
         cout << "Press 4 to choose a pizza from the menu" << endl;
         cout << "Press 5 to choose extras" << endl;
-        cout << "Press 6 to choose location" << endl;
-        cout << "Press 7 to finish an order" << endl;
-        cout << "Press 8 to cancel the order" << endl;
+        cout << "Press 6 to add another pizza" << endl;
+        cout << "Press 7 to choose location" << endl;
+        cout << "Press 8 to finish an order" << endl;
+        cout << "Press 9 to cancel the order" << endl;
 
         cin >> input;
         system("CLS");
@@ -112,6 +141,11 @@ void SalaUI::mainOrder()
         }
         else if(input == 6)
         {
+            //here I add everything to pizzavector and ask for another pizza
+            s.newPizza();
+        }
+        else if(input == 7)
+        {
             displayVector(s.getLagerplocations(), true);
             cout << endl;
 
@@ -120,7 +154,7 @@ void SalaUI::mainOrder()
 
             s.enterLocation(input);
         }
-        else if(input == 7)
+        else if(input == 8)
         {
             string name;
             cout << "Enter name for order: ";
@@ -149,7 +183,7 @@ void SalaUI::mainOrder()
             system("pause");
             break;
         }
-        else if (input == 8)
+        else if (input == 9)
         {
             break;
         }

@@ -3,6 +3,7 @@
 
 #include "UmsjonUI.h"
 #include "SalaUI.h"
+#include "BakerUI.h"
 #include <stdlib.h>
 
 using namespace std;
@@ -13,7 +14,7 @@ int mainMenu()
     int val;
     cout << "1 : Umsjon" << endl;
     cout << "2 : Sala" << endl;
-    cout << "3 : Virkar pantanir" << endl;
+    cout << "3 : Bakari" << endl;
     cout << "4 : Exit" << endl;
     cin >> val;
     system("CLS");
@@ -39,7 +40,8 @@ int main()
         }
         else if (val == 3)
         {
-
+            BakerUI b;
+            b.main();
         }
         else if (val == 4)
         {

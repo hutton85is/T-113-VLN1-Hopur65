@@ -15,10 +15,6 @@ class PizzaSize
 
         int price;
         char p_size[32];
-
-    protected:
-
-    private:
 };
 
 #endif // PIZZASIZE_H

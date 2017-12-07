@@ -28,9 +28,6 @@ class Pizza
         vector <PizzaExtras> pextras;
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
-
-    private:
-
 };
 
 #endif // PIZZA_H

@@ -33,9 +33,14 @@ class Sala
         bool enterMenu(unsigned int input);
         bool enterExtras(unsigned int input);
         bool enterLocation(unsigned int input);
-        bool createOrder(string name, string address, int number);
 
-        void getCustomer(const char* fname);
+        // Initiate a new pizza
+        void newPizza();
+
+        // Return a copy of client class
+        client getCustomerOrdersVector();
+
+        bool createOrder(string name, string address, int number);
 
         /*
         * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI
@@ -47,17 +52,15 @@ class Sala
         vector<PizzaSize> getLagerpsize();
         vector<PizzaToppings> getLagerptoppings();
 
-        vector<PizzaCrust> getOrderpcrust();
-        vector<PizzaExtras> getOrderpextras();
-        vector<PizzaLocations> getOrderplocations();
-        vector<PizzaMenu> getOrderpMenu();
-        vector<PizzaSize> getOrderpsize();
-        vector<PizzaToppings> getOrderptoppings();
+        //Pizza order;
+        vector<Pizza> order;
+        // A vector containing classes to store how many items are on an order
+        vector<PizzaHelper> pHelper;
 
     private:
         // variable lager contains all items available to sell
         // variable order contains all items a customer has ordered
-        Pizza lager, order;
+        Pizza lager;
 
         client newCustomer;
 };

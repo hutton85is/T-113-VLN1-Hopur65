@@ -7,12 +7,7 @@ client::client()
     addressNumber =  0;
 
     orderCounter = 0;
-    toppingsCounter = 0;
-    extrasCounter = 0;
-    menuCounter = 0;
-    locationCounter = 0;
-    sizeCounter = 0;
-    crustCounter = 0;
+    currentPizza = 0;
 }
 
 client::~client()
@@ -20,9 +15,9 @@ client::~client()
     //dtor
 }
 
-ostream& operator <<(ostream& outs, client& addressInfo)
+ostream& operator <<(ostream& outs, client& customer)
 {
-    outs << addressInfo.name << endl;
-    outs << addressInfo.address << " " << addressInfo.addressNumber;
+    outs << customer.name << endl;
+    outs << customer.address << " " << customer.addressNumber;
     return outs;
 }
