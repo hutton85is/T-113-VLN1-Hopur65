@@ -26,14 +26,17 @@ void mainMenu()
     cin >> innskraning ;
 
     if ( innskraning == '1') {
+        system("CLS");
         UmsjonUI u;
         u.main();
     }
     else if ( innskraning == '2') {
+        system("CLS");
         BakerUI b;
         b.main();
     }
     else if ( innskraning == '3') {
+        system("CLS");
         SalaUI s;
         s.mainOrder();
     }

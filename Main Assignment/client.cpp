@@ -8,6 +8,11 @@ client::client()
 
     orderCounter = 0;
     currentPizza = 0;
+
+    inProgress = false;
+    finished = false;
+    orderDelivered = false;
+    orderPaid = false;
 }
 
 client::~client()

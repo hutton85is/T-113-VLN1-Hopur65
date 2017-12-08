@@ -10,47 +10,62 @@ BakerUI::~BakerUI()
     //dtor
 }
 
+void BakerUI::displayClientList()
+{
+    vector<client> customersVec = baker.getCustomerVec();
+    displayVector(customersVec, true);
+}
+
+void BakerUI::pickLocation()
+{
+    char input;
+    vector<PizzaLocations> availLocations = baker.getPizzaLocations();
+    displayVector(availLocations, true);
+
+    cout << "Veldu thina stadsetningu ur listanum" << endl;
+    cin >> input;
+
+    baker.setBakerLocation(availLocations[input - 48].place);
+}
+
 void BakerUI::main()
 {
+    char input;
+
+    pickLocation();
+
+
     while(true)
     {
         system("CLS");
         cout << "Til thess ad velja pontun ad skoda veldu                  1. "  << endl;
-        cout << "Til thess ad velja pontun til ad afgreida veldur          2. "  << endl;
-        cout << "Tile thess ad haetta veldu                                3. "  << endl;
+        cout << "Til thess ad velja pontun til ad afgreida veldu           2. "  << endl;
+        cout << "Til thess ad haetta veldu                                 3. "  << endl;
         cout << endl;
 
-        char input;
         cin >> input;
 
         if(input == '1')
         {
             system("CLS");
-            readWriteClass rw;
-            vector<client> customersVec;
-            client customers;
-            rw.loadSpecificVector(customersVec, "order/customerlist.dat", customers);
-            for(unsigned int i = 0; i < customersVec.size(); i++)
-            {
-                cout << customersVec[i] << endl;
-            }
+            displayClientList();
             system("pause");
         }
         else if(input == '2')
         {
-
+            system("CLS");
+            displayClientList();
+            system("pause");
         }
         else if(input == '3')
         {
             break;
         }
-
-        //displayClient();
     }
 }
 
 void BakerUI::displayClient()
-{
+{/*
     string name;
     cout << "Enter name on order: ";
     cin >> ws;
@@ -58,7 +73,7 @@ void BakerUI::displayClient()
     name = "order/" + name + ".dat";
     const char* fname = name.c_str();
 
-    Baker b(fname);
+    Baker b();
     vector<client> customerVec = b.getCustomerVec();
     vector<Pizza> orderVec = b.getOrderVec();
     vector<PizzaHelper> pHelperVec = b.getpHelperVec();
@@ -91,7 +106,7 @@ void BakerUI::displayClient()
             displayVector(orderVec[i].plocations, false);
         }
     }
-    cout << "************" << endl;
+    cout << "************" << endl;*/
 }
 
 template<typename Pizzaclass>

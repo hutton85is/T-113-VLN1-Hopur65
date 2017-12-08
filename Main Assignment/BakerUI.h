@@ -14,9 +14,15 @@ class BakerUI
 
         void displayClient();
 
+        void displayClientList();
+
+        void pickLocation();
+
     private:
         template<typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool choice);
+
+        Baker baker;
 };
 
 #endif // BAKERUI_H

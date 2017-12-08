@@ -6,17 +6,21 @@
 class Baker
 {
     public:
-        Baker(const char* fname);
+        Baker();
         virtual ~Baker();
+
+        void setBakerLocation(char currentLocation[32]);
 
         vector<client> getCustomerVec();
         vector<Pizza> getOrderVec();
         vector<PizzaHelper> getpHelperVec();
+        vector<PizzaLocations> getPizzaLocations();
 
     private:
         vector<client> customersVec;
         vector<Pizza> order;
         vector<PizzaHelper> pHelper;
+        char bakerLocation[32];
 };
 
 #endif // BAKER_H

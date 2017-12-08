@@ -1,11 +1,7 @@
 #include "Baker.h"
 
-Baker::Baker(const char* fname)
+Baker::Baker()
 {
-    readWriteClass rw;
-    client newCustomer;
-    rw.loadCustomer(newCustomer, order, pHelper, fname);
-    customersVec.push_back(newCustomer);
 }
 
 Baker::~Baker()
@@ -13,8 +9,23 @@ Baker::~Baker()
     //dtor
 }
 
+void Baker::setBakerLocation(char currentLocation[32])
+{
+    strcpy(bakerLocation, currentLocation);
+}
+
+vector<PizzaLocations> Baker::getPizzaLocations()
+{
+    readWriteClass rw;
+    PizzaLocations newPizzaLocation;
+    vector<PizzaLocations> locationsVec;
+    rw.loadSpecificVector(locationsVec, "data/locations.dat", newPizzaLocation);
+    return locationsVec;
+}
+
 vector<client> Baker::getCustomerVec()
 {
+
     return customersVec;
 }
 
