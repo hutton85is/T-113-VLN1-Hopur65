@@ -30,7 +30,6 @@ class readWriteClass
         // load Pizza order with a specific customer
         bool loadCustomer(client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname);
 
-    private:
         /*
         * boolean function that loads a vector from a specific file storing a template class
         * loadvector is the template vector to be loaded from file
@@ -39,6 +38,8 @@ class readWriteClass
         */
         template <class pizzaClass>
         bool loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass);
+
+    private:
 
         // This is a dummy loader that if I dont include I cant use writeClassToFile function
         void dummyLoader();

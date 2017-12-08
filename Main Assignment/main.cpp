@@ -22,6 +22,7 @@ void mainMenu()
     cout << "                                                         " << endl;
 
     char innskraning;
+    cout << "Veldu her: ";
     cin >> innskraning ;
 
     if ( innskraning == '1') {

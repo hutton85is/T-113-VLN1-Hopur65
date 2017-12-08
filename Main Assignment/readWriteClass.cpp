@@ -175,6 +175,8 @@ void readWriteClass::dummyLoader()
     writeClassToFile<PizzaLocations>(newLocations, fname);
     writeClassToFile<PizzaExtras>(newExtras, fname);
     writeClassToFile<client>(newClient, fname);
+    vector<client> loadVector;
+    loadSpecificVector<client>(loadVector, fname, newClient);
     writeClassToFile<PizzaHelper>(newPizzaHelper, fname);
 }
 

@@ -183,6 +183,8 @@ bool Sala::createOrder(string name, string address, int number)
     const char* fname = tempname.c_str();
 
     readWriteClass rw;
+    // Add customer to order directory, containing all open orders
+    rw.writeClassToFile(newCustomer, "order/customerlist.dat");
     // Write client class to file and path 'fname'
     rw.writeClassToFile(newCustomer, fname);
 

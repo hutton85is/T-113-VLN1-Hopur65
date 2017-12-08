@@ -12,12 +12,41 @@ BakerUI::~BakerUI()
 
 void BakerUI::main()
 {
-    cout << "Til thess ad velja pontun ad skoda veldu                  1. "  << endl;
-    cout << "Til thess ad velja pontun til ad afgreida veldur          2. "  << endl;
-    cout << endl;
+    while(true)
+    {
+        system("CLS");
+        cout << "Til thess ad velja pontun ad skoda veldu                  1. "  << endl;
+        cout << "Til thess ad velja pontun til ad afgreida veldur          2. "  << endl;
+        cout << "Tile thess ad haetta veldu                                3. "  << endl;
+        cout << endl;
 
-    //displayClient();
-    system("pause");
+        char input;
+        cin >> input;
+
+        if(input == '1')
+        {
+            system("CLS");
+            readWriteClass rw;
+            vector<client> customersVec;
+            client customers;
+            rw.loadSpecificVector(customersVec, "order/customerlist.dat", customers);
+            for(unsigned int i = 0; i < customersVec.size(); i++)
+            {
+                cout << customersVec[i] << endl;
+            }
+            system("pause");
+        }
+        else if(input == '2')
+        {
+
+        }
+        else if(input == '3')
+        {
+            break;
+        }
+
+        //displayClient();
+    }
 }
 
 void BakerUI::displayClient()
