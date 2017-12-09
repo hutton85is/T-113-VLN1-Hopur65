@@ -209,6 +209,7 @@ client Sala::getCustomerOrdersVector()
 
 void Sala::createOrder(string name, string address, int number)
 {
+    // It should not be possible to continue to create order if location has not been set
     try
     {
         if(order[0].plocations.empty())

@@ -12,11 +12,19 @@ class BakerUI
 
         void main();
 
-        void displayClientList();
+        void displayAllOrders();
 
-        void displayClientOrder();
+        void displayCustomerList();
 
-        void pickLocation();
+        void displayCustomerOrder(unsigned int customerNumber);
+
+        /*
+        * Choose location of baker and retrieve all pending customers.
+        * return false if there are no pending customers, else true
+        */
+        bool pickLocation();
+
+        char pickCustomer();
 
     private:
         template<typename Pizzaclass>

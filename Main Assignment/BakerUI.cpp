@@ -10,20 +10,29 @@ BakerUI::~BakerUI()
     //dtor
 }
 
-void BakerUI::displayClientOrder()
+void BakerUI::displayCustomerOrder(unsigned int customerNumber)
 {
-    vector<Pizza> order;
-    vector<client> customersVec = baker.getCustomerVec();
-
+    vector<client> customer = baker.getCustomerVec();
+    vector<Pizza> order = baker.getOrderVec(customerNumber);
+    cout << customer[customerNumber] << endl;
+    displayVector(order, false);
 }
 
-void BakerUI::displayClientList()
+void BakerUI::displayCustomerList()
 {
     vector<client> customersVec = baker.getCustomerVec();
     displayVector(customersVec, true);
 }
 
-void BakerUI::pickLocation()
+char BakerUI::pickCustomer()
+{
+    char input;
+    cout << "Veldu pontun til ad skoda nanar" << endl;
+    cin >> input;
+    return input;
+}
+
+bool BakerUI::pickLocation()
 {
     char input;
     vector<PizzaLocations> availLocations = baker.getPizzaLocations();
@@ -33,41 +42,65 @@ void BakerUI::pickLocation()
     cin >> input;
 
     baker.setBakerLocation(availLocations[input - 48].place);
+    if(baker.getCustomerVec().empty())
+    {
+        return false;
+    }
+    return true;
+}
+
+void BakerUI::displayAllOrders()
+{
+    for(unsigned int i = 0; i < baker.getCustomerVec().size(); i++)
+    {
+        displayCustomerOrder(i);
+        cout << "------------" << endl;
+    }
 }
 
 void BakerUI::main()
 {
     char input;
 
-    pickLocation();
+    // Only continue if there are some pending customers
+    if (pickLocation())
+    {
+        while(true)
+        {
+            system("CLS");
+            cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
+            cout << "Til thess ad velja pontun til ad afgreida veldu           2. "  << endl;
+            cout << "Til thess ad haetta veldu                                 3. "  << endl;
+            cout << endl;
 
+            cin >> input;
 
-    while(true)
+            if(input == '1')
+            {
+                system("CLS");
+                displayAllOrders();
+                system("pause");
+            }
+            else if(input == '2')
+            {
+                system("CLS");
+                displayCustomerList();
+                char customerNumber = pickCustomer();
+                system("CLS");
+                displayCustomerOrder(customerNumber - 48);
+                system("pause");
+            }
+            else if(input == '3')
+            {
+                break;
+            }
+        }
+    }
+    else
     {
         system("CLS");
-        cout << "Til thess ad velja pontun ad skoda veldu                  1. "  << endl;
-        cout << "Til thess ad velja pontun til ad afgreida veldu           2. "  << endl;
-        cout << "Til thess ad haetta veldu                                 3. "  << endl;
-        cout << endl;
-
-        cin >> input;
-
-        if(input == '1')
-        {
-            system("CLS");
-            displayClientList();
-            system("pause");
-        }
-        else if(input == '2')
-        {
-            system("CLS");
-            displayClientOrder();
-            system("pause");
-        }
-        else if(input == '3')
-        {
-            break;
-        }
+        cout << "There are no pending customers for " << baker.getBakerLocation() << endl;
+        system("pause");
     }
 }
 
@@ -81,5 +114,6 @@ void BakerUI::displayVector(vector<Pizzaclass> vec, bool choice)
             cout << i << ". ";
         }
         cout << vec[i] << endl;
+        cout << endl;
     }
 }

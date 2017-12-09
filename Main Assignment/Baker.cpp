@@ -12,10 +12,29 @@ Baker::~Baker()
     //dtor
 }
 
+string Baker::getBakerLocation()
+{
+    return bakerLocation;
+}
+
+vector<Pizza> Baker::getOrderVec(unsigned int customersVecNumber)
+{
+    readWriteClass rw;
+    client newClient;
+    vector<Pizza> customerOrder;
+    vector<PizzaHelper> pHelper;
+    string fname = "order/";
+    fname.append(customersVec[customersVecNumber].name);
+    fname.append(".dat");
+    const char* pathfile = fname.c_str();
+    rw.loadCustomer(newClient, customerOrder, pHelper, pathfile);
+    return customerOrder;
+}
+
 void Baker::setBakerLocation(char currentLocation[32])
 {
     strcpy(bakerLocation, currentLocation);
-    // Bæta við hérna að breyta customersvec miðað við bakerlocation
+
     readWriteClass rw;
     vector<client> newCustomersVec;
     /*
@@ -33,6 +52,10 @@ void Baker::setBakerLocation(char currentLocation[32])
         const char* pathfile = fname.c_str();
         rw.loadCustomer(newClient, newOrder, newpHelper, pathfile);
 
+        /*
+        * Compare baker location with customer location and push them onto
+        * customersVec if they have the same location
+        */
         bool same = false;
         for (unsigned int k = 0; k < 32; k++)
         {

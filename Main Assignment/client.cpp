@@ -22,7 +22,6 @@ client::~client()
 
 ostream& operator <<(ostream& outs, client& customer)
 {
-    outs << customer.name << endl;
-    outs << customer.address << " " << customer.addressNumber;
+    outs << customer.name << ", " << customer.address << " " << customer.addressNumber;
     return outs;
 }
