@@ -12,9 +12,9 @@ class BakerUI
 
         void main();
 
-        void displayClient();
-
         void displayClientList();
+
+        void displayClientOrder();
 
         void pickLocation();
 

@@ -45,8 +45,6 @@ bool Sala::enterPizzaSize(unsigned int input)
 {
     if (input < sizeof(lager.psize) && 0 <= input)
     {
-        cout << "customer size " << order.size() << endl;
-        cout << "current pizza" << newCustomer.currentPizza << endl;
         order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
 
         pHelper[newCustomer.currentPizza-1].sizeCounter++;

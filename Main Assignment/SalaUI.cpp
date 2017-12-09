@@ -24,30 +24,9 @@ void SalaUI::displayFullOrder(Sala s)
     {
         cout << "Pizza order " << i+1 << endl;
 
-        if(s.pHelper[i].sizeCounter)
-        {
-            displayVector(s.order[i].psize, false);
-        }
-        if(s.pHelper[i].crustCounter)
-        {
-            displayVector(s.order[i].pcrust, false);
-        }
-        if(s.pHelper[i].menuCounter)
-        {
-            displayVector(s.order[i].pmenu, false);
-        }
-        if(s.pHelper[i].toppingsCounter)
-        {
-            displayVector(s.order[i].ptoppings, false);
-        }
-        if(s.pHelper[i].extrasCounter)
-        {
-            displayVector(s.order[i].pextras, false);
-        }
-        if(s.pHelper[i].locationCounter)
-        {
-            displayVector(s.order[i].plocations, false);
-        }
+        cout << s.order[i] << endl;
+
+        cout << endl;
     }
     cout << "************" << endl;
 }

@@ -10,6 +10,13 @@ BakerUI::~BakerUI()
     //dtor
 }
 
+void BakerUI::displayClientOrder()
+{
+    vector<Pizza> order;
+    vector<client> customersVec = baker.getCustomerVec();
+
+}
+
 void BakerUI::displayClientList()
 {
     vector<client> customersVec = baker.getCustomerVec();
@@ -54,7 +61,7 @@ void BakerUI::main()
         else if(input == '2')
         {
             system("CLS");
-            displayClientList();
+            displayClientOrder();
             system("pause");
         }
         else if(input == '3')
@@ -62,51 +69,6 @@ void BakerUI::main()
             break;
         }
     }
-}
-
-void BakerUI::displayClient()
-{/*
-    string name;
-    cout << "Enter name on order: ";
-    cin >> ws;
-    getline(cin, name);
-    name = "order/" + name + ".dat";
-    const char* fname = name.c_str();
-
-    Baker b();
-    vector<client> customerVec = b.getCustomerVec();
-    vector<Pizza> orderVec = b.getOrderVec();
-    vector<PizzaHelper> pHelperVec = b.getpHelperVec();
-
-    for(unsigned int i = 0; i < orderVec.size(); i++)
-    {
-        cout << "Pizza order " << i+1 << endl;
-        if(pHelperVec[i].sizeCounter)
-        {
-            displayVector(orderVec[i].psize, false);
-        }
-        if(pHelperVec[i].crustCounter)
-        {
-            displayVector(orderVec[i].pcrust, false);
-        }
-        if(pHelperVec[i].menuCounter)
-        {
-            displayVector(orderVec[i].pmenu, false);
-        }
-        if(pHelperVec[i].toppingsCounter)
-        {
-            displayVector(orderVec[i].ptoppings, false);
-        }
-        if(pHelperVec[i].extrasCounter)
-        {
-            displayVector(orderVec[i].pextras, false);
-        }
-        if(pHelperVec[i].locationCounter)
-        {
-            displayVector(orderVec[i].plocations, false);
-        }
-    }
-    cout << "************" << endl;*/
 }
 
 template<typename Pizzaclass>

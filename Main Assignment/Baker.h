@@ -2,6 +2,8 @@
 #define BAKER_H
 
 #include "readWriteClass.h"
+#include <iostream>
+#include <string>
 
 class Baker
 {

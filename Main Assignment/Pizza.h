@@ -28,6 +28,8 @@ class Pizza
         vector <PizzaExtras> pextras;
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
+
+        friend ostream& operator <<(ostream& out, Pizza& p);
 };
 
 #endif // PIZZA_H
