@@ -11,6 +11,11 @@ Sala::~Sala()
     //dtor
 }
 
+vector<Pizza> Sala::getOrder()
+{
+    return order;
+}
+
 vector<PizzaCrust> Sala::getLagerpcrust()
 {
     return lager.pcrust;
@@ -202,65 +207,76 @@ client Sala::getCustomerOrdersVector()
     return newCustomer;
 }
 
-bool Sala::createOrder(string name, string address, int number)
+void Sala::createOrder(string name, string address, int number)
 {
-    //Assign name, address and addressnumber for newCustomer
-    strncpy(newCustomer.name, name.c_str(), sizeof(newCustomer.name) - 1);
-    strncpy(newCustomer.address, address.c_str(), sizeof(newCustomer.address) - 1);
-    newCustomer.addressNumber = number;
-
-    // create a path with file name in variable tempname and enter it to variable fname
-    string tempname = "order/" + name + ".dat";
-    const char* fname = tempname.c_str();
-
-    readWriteClass rw;
-    // Add customer to order directory, containing all open orders
-    rw.writeClassToFile(newCustomer, "order/customerlist.dat");
-    // Write client class to file and path 'fname'
-    rw.writeClassToFile(newCustomer, fname);
-
-    for (unsigned int j = 0; j < newCustomer.orderCounter; j++)
+    try
     {
-        // Write helper class for storing how many items are in the order
-        rw.writeClassToFile(pHelper[j], fname);
-
-        // Write pizzatoppings class to file and path 'fname'
-        for (unsigned int i = 0; i < pHelper[j].toppingsCounter; i++)
+        if(order[0].plocations.empty())
         {
-            rw.writeClassToFile(order[j].ptoppings[i], fname);
+            throw MissingLocationException("Error, could not complete order. Please try again and enter location");
         }
+        //Assign name, address and addressnumber for newCustomer
+        strncpy(newCustomer.name, name.c_str(), sizeof(newCustomer.name) - 1);
+        strncpy(newCustomer.address, address.c_str(), sizeof(newCustomer.address) - 1);
+        newCustomer.addressNumber = number;
 
-        // Write pizzasize class to file and path 'fname'
-        for (unsigned int i = 0; i < pHelper[j].sizeCounter; i++)
-        {
-            rw.writeClassToFile(order[j].psize[i], fname);
-        }
+        // create a path with file name in variable tempname and enter it to variable fname
+        string tempname = "order/" + name + ".dat";
+        const char* fname = tempname.c_str();
 
-        // Write pizzacrust class to file and path 'fname'
-        for (unsigned int i = 0; i < pHelper[j].crustCounter; i++)
-        {
-            rw.writeClassToFile(order[j].pcrust[i], fname);
-        }
+        readWriteClass rw;
+        // Add customer to order directory, containing all open orders
+        rw.writeClassToFile(newCustomer, "order/customerlist.dat");
+        // Write client class to file and path 'fname'
+        rw.writeClassToFile(newCustomer, fname);
 
-        // Write pizzaextras class to file and path 'fname'
-        for (unsigned int i = 0; i < pHelper[j].extrasCounter; i++)
+        for (unsigned int j = 0; j < newCustomer.orderCounter; j++)
         {
-            rw.writeClassToFile(order[j].pextras[i], fname);
-        }
+            // Write helper class for storing how many items are in the order
+            rw.writeClassToFile(pHelper[j], fname);
 
-        // Write pizzamenu class to file and path 'fname'
-        for (unsigned int i = 0; i < pHelper[j].menuCounter; i++)
-        {
-            rw.writeClassToFile(order[j].pmenu[i], fname);
-        }
+            // Write pizzatoppings class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].toppingsCounter; i++)
+            {
+                rw.writeClassToFile(order[j].ptoppings[i], fname);
+            }
 
-        // Write pizzalocations class to file and path 'fname'
-        for (unsigned int i = 0; i < pHelper[j].locationCounter; i++)
-        {
-            rw.writeClassToFile(order[j].plocations[i], fname);
+            // Write pizzasize class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].sizeCounter; i++)
+            {
+                rw.writeClassToFile(order[j].psize[i], fname);
+            }
+
+            // Write pizzacrust class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].crustCounter; i++)
+            {
+                rw.writeClassToFile(order[j].pcrust[i], fname);
+            }
+
+            // Write pizzaextras class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].extrasCounter; i++)
+            {
+                rw.writeClassToFile(order[j].pextras[i], fname);
+            }
+
+            // Write pizzamenu class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].menuCounter; i++)
+            {
+                rw.writeClassToFile(order[j].pmenu[i], fname);
+            }
+
+            // Write pizzalocations class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].locationCounter; i++)
+            {
+                rw.writeClassToFile(order[j].plocations[i], fname);
+            }
         }
     }
-    return true;
+    catch(MissingLocationException e)
+    {
+        cout << e.getMessage() << endl;
+        system("pause");
+    }
 }
 
 ostream& operator <<(ostream& outs, Sala& s)

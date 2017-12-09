@@ -12,6 +12,7 @@
 #include "client.h"
 #include <cstring>
 #include <stdlib.h>
+#include "MissingLocationException.h"
 
 class Sala
 {
@@ -40,7 +41,7 @@ class Sala
         // Return a copy of client class
         client getCustomerOrdersVector();
 
-        bool createOrder(string name, string address, int number);
+        void createOrder(string name, string address, int number);
 
         /*
         * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI
@@ -51,11 +52,7 @@ class Sala
         vector<PizzaMenu> getLagerpMenu();
         vector<PizzaSize> getLagerpsize();
         vector<PizzaToppings> getLagerptoppings();
-
-        //Pizza order;
-        vector<Pizza> order;
-        // A vector containing classes to store how many items are on an order
-        vector<PizzaHelper> pHelper;
+        vector<Pizza> getOrder();
 
     private:
         // variable lager contains all items available to sell
@@ -63,6 +60,12 @@ class Sala
         Pizza lager;
 
         client newCustomer;
+
+        //Pizza order;
+        vector<Pizza> order;
+
+        // A vector containing classes to store how many items are on an order
+        vector<PizzaHelper> pHelper;
 };
 
 #endif // SALA_H

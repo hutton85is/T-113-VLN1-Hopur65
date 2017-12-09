@@ -11,6 +11,11 @@ Pizza::~Pizza()
 
 ostream& operator <<(ostream& out, Pizza& p)
 {
+    for(unsigned int i = 0; i < p.plocations.size(); i++)
+    {
+        out << p.plocations[i] << endl;
+    }
+
     for(unsigned int i = 0; i < p.psize.size(); i++)
     {
         out << p.psize[i] << " kr." << endl;
@@ -34,11 +39,6 @@ ostream& operator <<(ostream& out, Pizza& p)
     for(unsigned int i = 0; i < p.pextras.size(); i++)
     {
         out << p.pextras[i] << " kr." << endl;
-    }
-
-    for(unsigned int i = 0; i < p.plocations.size(); i++)
-    {
-        out << p.plocations[i] << endl;
     }
 
     return out;

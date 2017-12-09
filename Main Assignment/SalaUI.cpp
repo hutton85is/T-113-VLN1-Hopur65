@@ -20,15 +20,20 @@ void SalaUI::displayFullOrder(Sala s)
         cout << customer << endl;
     }
 
-    for(unsigned int i = 0; i < s.order.size(); i++)
+    for(unsigned int i = 0; i < s.getOrder().size(); i++)
     {
         cout << "Pizza order " << i+1 << endl;
 
-        cout << s.order[i] << endl;
+        cout << s.getOrder()[i] << endl;
 
         cout << endl;
     }
     cout << "************" << endl;
+}
+
+void SalachooseLocation()
+{
+
 }
 
 template<typename Pizzaclass>
