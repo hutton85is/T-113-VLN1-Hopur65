@@ -17,7 +17,6 @@ class SalaUI
 
         Sala s;
 
-        void chooseLocation();
         /*
         * Display all contents of a template vector
         * vector<Pizzaclass> vec: A template vector storing all classes to display

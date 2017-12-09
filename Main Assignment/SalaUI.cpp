@@ -31,11 +31,6 @@ void SalaUI::displayFullOrder(Sala s)
     cout << "************" << endl;
 }
 
-void SalachooseLocation()
-{
-
-}
-
 template<typename Pizzaclass>
 void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 {
@@ -51,13 +46,23 @@ void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 
 void SalaUI::mainOrder()
 {
-    Sala s;
+    unsigned int input;
+
     // Initiate variables
     s.newPizza();
 
+    // Set location at the very beginning of SalaUI
+    displayVector(s.getLagerplocations(), true);
+    cout << endl;
+
+    cout << "Enter what location you want to order from: ";
+    cin >> input;
+
+    s.enterLocation(input);
+
     while(true)
     {
-        unsigned int input;
+        system("CLS");
 
         displayFullOrder(s);
 
