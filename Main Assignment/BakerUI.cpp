@@ -15,13 +15,19 @@ void BakerUI::displayCustomerOrder(unsigned int customerNumber)
     vector<client> customer = baker.getCustomerVec();
     vector<Pizza> order = baker.getOrderVec(customerNumber);
     cout << customerNumber << ". " << customer[customerNumber] << endl;
-    displayVector(order, true);
+    for(unsigned int i = 0; i < order.size(); i++)
+    {
+        cout << "Pizza " << i+1 << ". " << order[i] << endl;
+    }
 }
 
 void BakerUI::displayCustomerList()
 {
     vector<client> customersVec = baker.getCustomerVec();
-    displayVector(customersVec, true);
+    for(unsigned int i = 0; i < customersVec.size(); i++)
+    {
+        cout << i << ". " << customersVec[i] << endl;
+    }
 }
 
 char BakerUI::pickCustomer()
@@ -36,7 +42,11 @@ bool BakerUI::pickLocation()
 {
     char input;
     vector<PizzaLocations> availLocations = baker.getPizzaLocations();
-    displayVector(availLocations, true);
+    for(unsigned int i = 0; i < availLocations.size(); i++)
+    {
+        cout << i << ". " << availLocations[i] << endl;
+    }
+    cout << endl;
 
     cout << "Veldu thina stadsetningu ur listanum" << endl;
     cin >> input;
@@ -107,19 +117,5 @@ void BakerUI::main()
         system("CLS");
         cout << "There are no pending customers for " << baker.getBakerLocation() << endl;
         system("pause");
-    }
-}
-
-template<typename Pizzaclass>
-void BakerUI::displayVector(vector<Pizzaclass> vec, bool choice)
-{
-    for (unsigned int i = 0; i < vec.size(); i++)
-    {
-        if (choice)
-        {
-            cout << "Pizza " << i << ". ";
-        }
-        cout << vec[i] << endl;
-        cout << endl;
     }
 }

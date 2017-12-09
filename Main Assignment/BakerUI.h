@@ -27,8 +27,6 @@ class BakerUI
         char pickCustomer();
 
     private:
-        template<typename Pizzaclass>
-        void displayVector(vector<Pizzaclass> vec, bool choice);
 
         Baker baker;
 };
