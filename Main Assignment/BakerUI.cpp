@@ -14,8 +14,8 @@ void BakerUI::displayCustomerOrder(unsigned int customerNumber)
 {
     vector<client> customer = baker.getCustomerVec();
     vector<Pizza> order = baker.getOrderVec(customerNumber);
-    cout << customer[customerNumber] << endl;
-    displayVector(order, false);
+    cout << customerNumber << ". " << customer[customerNumber] << endl;
+    displayVector(order, true);
 }
 
 void BakerUI::displayCustomerList()
@@ -70,7 +70,8 @@ void BakerUI::main()
             system("CLS");
             cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
             cout << "Til thess ad velja pontun til ad afgreida veldu           2. "  << endl;
-            cout << "Til thess ad haetta veldu                                 3. "  << endl;
+            cout << "Tile thess ad velja pontun sem tilbuna veldu              3. "  << endl;
+            cout << "Til thess ad haetta veldu                                 4. "  << endl;
             cout << endl;
 
             cin >> input;
@@ -88,9 +89,14 @@ void BakerUI::main()
                 char customerNumber = pickCustomer();
                 system("CLS");
                 displayCustomerOrder(customerNumber - 48);
+
                 system("pause");
             }
             else if(input == '3')
+            {
+
+            }
+            else if(input == '4')
             {
                 break;
             }
@@ -111,7 +117,7 @@ void BakerUI::displayVector(vector<Pizzaclass> vec, bool choice)
     {
         if (choice)
         {
-            cout << i << ". ";
+            cout << "Pizza " << i << ". ";
         }
         cout << vec[i] << endl;
         cout << endl;

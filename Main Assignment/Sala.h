@@ -33,7 +33,7 @@ class Sala
         bool enterToppings(unsigned int input);
         bool enterMenu(unsigned int input);
         bool enterExtras(unsigned int input);
-        bool enterLocation(unsigned int input);
+        bool enterLocation(unsigned int input, char yn);
 
         // Initiate a new pizza
         void newPizza();
@@ -41,7 +41,7 @@ class Sala
         // Return a copy of client class
         client getCustomerOrdersVector();
 
-        void createOrder(string name, string address, int number);
+        void createOrder(string name, string address, int number, bool paid);
 
         /*
         * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI

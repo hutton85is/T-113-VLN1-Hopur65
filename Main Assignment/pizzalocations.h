@@ -15,8 +15,6 @@ class PizzaLocations
 
         char place[32];
         bool pick_up;
-
-    private:
 };
 
 #endif // PIZZALOCATIONS_H
