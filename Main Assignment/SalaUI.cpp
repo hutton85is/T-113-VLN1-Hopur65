@@ -63,11 +63,9 @@ void SalaUI::mainOrder()
         cout << "Til thess ad velja pizzu af matsedli veldu      4." << endl;
         cout << "Til thess ad panta medlaeti veldu               5." << endl;
         cout << "Til thess ad baeta vid pizzu veldu              6." << endl;
-        cout << "Til thess ad velja afhendingarstad veldur       7." << endl;
+        cout << "Til thess ad breyta afhendingarstad veldu       7." << endl;
         cout << "Til thess ad klara pöntun veldu                 8." << endl;
         cout << "Til thess ad haetta vid pontun veldu            9." << endl;
-        //cout << "Til thess ad fa pizzuna senda heim veldu        6." << endl;
-        //cout << "Til thess ad saekja pizzuna veldu               7." << endl;
         //cout << "Til thess ad breyta pontun veldu                8." << endl;
 
         cin >> input;

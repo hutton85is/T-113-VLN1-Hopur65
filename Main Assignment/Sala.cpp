@@ -45,9 +45,18 @@ bool Sala::enterPizzaSize(unsigned int input)
 {
     if (input < sizeof(lager.psize) && 0 <= input)
     {
-        order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
+        // Only allow a single choice of pizzasize with each order
+        // if vector is empty push item on the vector else change first item
+        if (order[newCustomer.currentPizza-1].psize.empty())
+        {
+            order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
+        }
+        else
+        {
+            order[newCustomer.currentPizza-1].psize[0] = lager.psize[input];
+        }
 
-        pHelper[newCustomer.currentPizza-1].sizeCounter++;
+        pHelper[newCustomer.currentPizza-1].sizeCounter = 1;
 
         return true;
     }
@@ -59,9 +68,18 @@ bool Sala::enterCrust(unsigned int input)
 {
     if (input < sizeof(lager.pcrust) && 0 <= input)
     {
-        order[newCustomer.currentPizza-1].pcrust.push_back(lager.pcrust[input]);
+        // Only allow a single choice of pizza crust with each order
+        // if vector is empty push item on the vector else change first item
+        if(order[newCustomer.currentPizza-1].pcrust.empty())
+        {
+            order[newCustomer.currentPizza-1].pcrust.push_back(lager.pcrust[input]);
+        }
+        else
+        {
+            order[newCustomer.currentPizza-1].pcrust[0] = lager.pcrust[input];
+        }
 
-        pHelper[newCustomer.currentPizza-1].crustCounter++;
+        pHelper[newCustomer.currentPizza-1].crustCounter = 1;
 
         return true;
     }
@@ -87,9 +105,18 @@ bool Sala::enterMenu(unsigned int input)
 {
     if (input < sizeof(lager.pmenu) && 0 <= input)
     {
-        order[newCustomer.currentPizza-1].pmenu.push_back(lager.pmenu[input]);
+        // Only allow a single choice of pizza from menu with each order
+        // if vector is empty push item on the vector else change first item
+        if(order[newCustomer.currentPizza-1].pmenu.empty())
+        {
+            order[newCustomer.currentPizza-1].pmenu.push_back(lager.pmenu[input]);
+        }
+        else
+        {
+            order[newCustomer.currentPizza-1].pmenu[0] = lager.pmenu[input];
+        }
 
-        pHelper[newCustomer.currentPizza-1].menuCounter++;
+        pHelper[newCustomer.currentPizza-1].menuCounter = 1;
 
         return true;
     }
@@ -115,9 +142,15 @@ bool Sala::enterLocation(unsigned int input)
 {
     if (input < sizeof(lager.plocations) && 0 <= input)
     {
-        order[newCustomer.currentPizza-1].plocations.push_back(lager.plocations[input]);
+        // Only allow a single choice of location and always enter it on order 1
+        // if vector is empty push item on the vector else change first item
+        if(order[0].plocations.empty())
+        {
+            order[0].plocations.push_back(lager.plocations[input]);
+        }
+        order[0].plocations[0] = lager.plocations[input];
 
-        pHelper[newCustomer.currentPizza-1].locationCounter++;
+        pHelper[0].locationCounter = 1;
 
         return true;
     }
