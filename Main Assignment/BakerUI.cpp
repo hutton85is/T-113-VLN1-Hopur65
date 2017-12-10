@@ -30,14 +30,6 @@ void BakerUI::displayCustomerList()
     }
 }
 
-char BakerUI::pickCustomer()
-{
-    char input;
-    cout << "Veldu pontun til ad skoda nanar" << endl;
-    cin >> input;
-    return input;
-}
-
 bool BakerUI::pickLocation()
 {
     char input;
@@ -79,8 +71,8 @@ void BakerUI::main()
         {
             system("CLS");
             cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
-            cout << "Til thess ad velja pontun til ad afgreida veldu           2. "  << endl;
-            cout << "Tile thess ad velja pontun sem tilbuna veldu              3. "  << endl;
+            cout << "Til thess ad velja pontun til ad vinna i veldu            2. "  << endl;
+            cout << "Til thess ad velja pontun sem tilbuna veldu               3. "  << endl;
             cout << "Til thess ad haetta veldu                                 4. "  << endl;
             cout << endl;
 
@@ -96,15 +88,35 @@ void BakerUI::main()
             {
                 system("CLS");
                 displayCustomerList();
-                char customerNumber = pickCustomer();
+
+                unsigned int customerID;
+                cout << "Veldu pontun til ad skoda nanar" << endl;
+                cin >> customerID;
                 system("CLS");
-                displayCustomerOrder(customerNumber - 48);
+
+                displayCustomerOrder(customerID);
+
+                //bæta við hérna þannig hægt sé að breyta status á client.inProgress
+                char choice;
+                cout << "Velja pontun til ad vinna i? j/n: ";
+                cin >> choice;
+
+                // Á EFTIR AÐ VISTA Í SKRÁ LÍKA
+                // if choice is 'y', yes change order status to in progress
+                if (choice == 'j')
+                {
+                    baker.workOnOrder(customerID);
+                }
 
                 system("pause");
             }
             else if(input == '3')
             {
-
+                for (unsigned int i = 0; i < baker.getCustomersVecInProgress().size(); i++)
+                {
+                    cout << baker.getCustomersVecInProgress()[i] << endl;
+                }
+                system("pause");
             }
             else if(input == '4')
             {

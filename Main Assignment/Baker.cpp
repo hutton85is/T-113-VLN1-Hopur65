@@ -12,6 +12,12 @@ Baker::~Baker()
     //dtor
 }
 
+void Baker::workOnOrder(unsigned int customersVecNumber)
+{
+    customersVec[customersVecNumber].inProgress = true;
+    // HÉR ÞARF AÐ BÆTA VIÐ AÐ SKRIFA Í SKRÁ CUSTOMER MEÐ NÝJU GILDI Á WOKING ON ORDER
+}
+
 string Baker::getBakerLocation()
 {
     return bakerLocation;
@@ -38,7 +44,7 @@ void Baker::setBakerLocation(char currentLocation[32])
     readWriteClass rw;
     vector<client> newCustomersVec;
     /*
-    run through all orders to find which ones are the same as
+    run through all orders to find which orders have same location as baker
     */
     for (unsigned int i = 0; i < customersVec.size(); i++)
     {
@@ -73,27 +79,15 @@ void Baker::setBakerLocation(char currentLocation[32])
         if (same)
         {
             newCustomersVec.push_back(newClient);
+            if(newClient.inProgress)
+            {
+                customersVecInProgress.push_back(newClient);
+            }
         }
     }
     customersVec = newCustomersVec;
 }
-/*
-void Baker::getCustomerOrder(unsigned int customerNumber)
-{
-    readWriteClass rw;
 
-    unsigned int vecSize = customersVec.size();
-    for(unsigned int i = 0; i < vecSize; i++)
-    {
-        client vecClient;
-        string fname = "order/";
-        fname.append(customersVec[i].name);
-        fname.append(".dat");
-        const char* pathfile = fname.c_str();
-        rw.loadCustomer(vecClient, order, pHelper, pathfile);
-    }
-}
-*/
 vector<PizzaLocations> Baker::getPizzaLocations()
 {
     readWriteClass rw;
@@ -106,4 +100,9 @@ vector<PizzaLocations> Baker::getPizzaLocations()
 vector<client> Baker::getCustomerVec()
 {
     return customersVec;
+}
+
+vector<client> Baker::getCustomersVecInProgress()
+{
+    return customersVecInProgress;
 }

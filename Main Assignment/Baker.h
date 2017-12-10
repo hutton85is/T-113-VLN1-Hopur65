@@ -13,8 +13,11 @@ class Baker
 
         void setBakerLocation(char currentLocation[32]);
 
-        // Return customer vector with same location as baker
+        // Return customer vector 'customersVec'
         vector<client> getCustomerVec();
+
+        // Return customer vector 'customersVecInProgress'
+        vector<client> getCustomersVecInProgress();
 
         // Return pizza order of a chosen customer
         vector<Pizza> getOrderVec(unsigned int customersVecNumber);
@@ -27,9 +30,14 @@ class Baker
         // Return baker location
         string getBakerLocation();
 
+        void workOnOrder(unsigned int customersVecNumber);
+
     private:
-        // A vector of customers ordering from same location as location of baker
+        // A vector of all customers ordering from same location as baker
         vector<client> customersVec;
+
+        // A vector of customer orders being worked on from same location as baker
+        vector<client> customersVecInProgress;
         //vector<Pizza> order;
         //vector<PizzaHelper> pHelper;
         char bakerLocation[32];

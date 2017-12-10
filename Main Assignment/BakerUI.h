@@ -24,8 +24,6 @@ class BakerUI
         */
         bool pickLocation();
 
-        char pickCustomer();
-
     private:
 
         Baker baker;
