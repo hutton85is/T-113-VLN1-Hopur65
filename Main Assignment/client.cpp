@@ -9,10 +9,11 @@ client::client()
     orderCounter = 0;
     currentPizza = 0;
 
+    orderPaid = false;
     inProgress = false;
     finished = false;
     orderDelivered = false;
-    orderPaid = false;
+    deliverOrder = false;
 }
 
 client::~client()
@@ -45,6 +46,16 @@ ostream& operator <<(ostream& outs, client& customer)
     outs << endl;
     outs << "buid ad baka pizzu: ";
     if (customer.finished)
+    {
+        outs << "ja";
+    }
+    else
+    {
+        outs << "nei";
+    }
+    outs << endl;
+    outs << "heimsending: ";
+    if(customer.deliverOrder)
     {
         outs << "ja";
     }

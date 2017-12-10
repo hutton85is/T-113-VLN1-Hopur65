@@ -58,11 +58,7 @@ void SalaUI::mainOrder()
     cout << "Enter what location you want to order from: ";
     cin >> input;
 
-    char yn;
-    cout << "Viltu fa heimsendingu? j/n" << endl;
-    cin >> yn;
-
-    s.enterLocation(input, yn);
+    s.enterLocation(input);
 
     while(true)
     {
@@ -147,11 +143,7 @@ void SalaUI::mainOrder()
             cout << "Enter what location you want to order from: ";
             cin >> input;
 
-            char yn;
-            cout << "Viltu fa heimsendingu? j/n" << endl;
-            cin >> yn;
-
-            s.enterLocation(input, yn);
+            s.enterLocation(input);
         }
         else if(input == 8)
         {
@@ -169,10 +161,14 @@ void SalaUI::mainOrder()
             cin >> number;
 
             char paid;
-            cout << "A ad borga pontunina strax y/n: ";
+            cout << "A ad borga pontunina strax j/n: ";
             cin >> paid;
 
-            s.createOrder(name, address, number, paid == 'y');
+            char delivery;
+            cout << "Viltu fa heimsendingu? j/n" << endl;
+            cin >> delivery;
+
+            s.createOrder(name, address, number, paid == 'j', delivery == 'j');
 
             system("CLS");
             cout << "HERE IS YOUR ORDER" << endl;

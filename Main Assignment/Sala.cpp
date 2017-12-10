@@ -143,9 +143,9 @@ bool Sala::enterExtras(unsigned int input)
     return false;
 }
 
-bool Sala::enterLocation(unsigned int input, char yn)
+bool Sala::enterLocation(unsigned int input)
 {
-    if (input < sizeof(lager.plocations) && 0 <= input && (yn == 'j' || yn == 'n'))
+    if (input < sizeof(lager.plocations) && 0 <= input)
     {
         // Only allow a single choice of location and always enter it on order 1
         // if vector is empty push item on the vector else change first item
@@ -158,12 +158,7 @@ bool Sala::enterLocation(unsigned int input, char yn)
             order[0].plocations[0] = lager.plocations[input];
         }
 
-        order[0].plocations[0].pick_up = ('j' == yn);
-
         pHelper[0].locationCounter = 1;
-
-        cout << order[0].plocations[0].pick_up << endl;
-        system("pause");
 
         return true;
     }
@@ -215,7 +210,7 @@ client Sala::getCustomerOrdersVector()
     return newCustomer;
 }
 
-void Sala::createOrder(string name, string address, int number, bool paid)
+void Sala::createOrder(string name, string address, int number, bool paid, bool delivery)
 {
     // It should not be possible to continue to create order if location has not been set
     try
@@ -229,6 +224,7 @@ void Sala::createOrder(string name, string address, int number, bool paid)
         strncpy(newCustomer.address, address.c_str(), sizeof(newCustomer.address) - 1);
         newCustomer.addressNumber = number;
         newCustomer.orderPaid = paid;
+        newCustomer.deliverOrder = delivery;
 
         // create a path with file name in variable tempname and enter it to variable fname
         string tempname = "order/" + name + ".dat";

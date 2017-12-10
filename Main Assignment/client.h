@@ -22,6 +22,8 @@ class client
         bool orderPaid;
         // status for Afhending class, tells if order has been delivered
         bool orderDelivered;
+        // status for Afhending class, tells if order has to be delivered or will be picked up
+        bool deliverOrder;
 
         // A counter to know which pizza is currently being edited
         unsigned int currentPizza;
