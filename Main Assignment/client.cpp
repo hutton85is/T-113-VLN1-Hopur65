@@ -22,6 +22,45 @@ client::~client()
 
 ostream& operator <<(ostream& outs, client& customer)
 {
-    outs << customer.name << ", " << customer.address << " " << customer.addressNumber;
+    outs << customer.name << ", " << customer.address << " " << customer.addressNumber << endl;
+    outs << "Buid ad borga: ";
+    if (customer.orderPaid)
+    {
+        outs << "ja";
+    }
+    else
+    {
+        outs << "nei";
+    }
+    outs << endl;
+    outs << "verid ad baka pizzu: ";
+    if (customer.inProgress)
+    {
+        outs << "ja";
+    }
+    else
+    {
+        outs << "nei";
+    }
+    outs << endl;
+    outs << "buid ad baka pizzu: ";
+    if (customer.finished)
+    {
+        outs << "ja";
+    }
+    else
+    {
+        outs << "nei";
+    }
+    outs << endl;
+    outs << "buid ad afhenda pizzu: ";
+    if (customer.orderDelivered)
+    {
+        outs << "ja";
+    }
+    else
+    {
+        outs << "nei";
+    }
     return outs;
 }
