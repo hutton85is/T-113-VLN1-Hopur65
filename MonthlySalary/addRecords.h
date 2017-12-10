@@ -17,7 +17,6 @@ class addRecords
 
         void addRecordBySSN(const char* name, char ssn[10], int year, int month, int salary);
         void addRecordBySSN(char ssn[10], int year, int month, int salary);
-        void getSsnRecords(char ssn[10]);
         pair < employee, vector < salaryRecord > > getPairBySSN(char SSN[10]);
         pair < employee, vector < salaryRecord > > getPairBySSNAndYear(char SSN[10], int year);
         employee highestTotalSalaryOfYear(int year);
@@ -25,7 +24,6 @@ class addRecords
     private:
         vector < pair < employee, vector < salaryRecord > > > collection;
         void loadDataBase();
-        void searchSsn(unsigned int &i, bool &found, char ssn[10]);
 };
 
 #endif // ADDRECORDS_H

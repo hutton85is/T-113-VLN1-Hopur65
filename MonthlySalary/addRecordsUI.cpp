@@ -17,20 +17,20 @@ addRecordsUI::~addRecordsUI()
 void addRecordsUI::addNewRecordBySSN(){
 
     string name;
-    char ssn[10];
+    char ssn[11];
     int year;
     int month;
     int salary;
-    cout << "Enter ssn " << endl;
+    cout << "Enter ssn: ";
     cin >> ssn;
-    cout << "Enter name " << endl;
+    cout << "Enter name: ";
     cin >> ws;
     getline(cin, name);
-    cout << "Enter year " << endl;
+    cout << "Enter year: ";
     cin >> year;
-    cout << "Enter month " << endl;
+    cout << "Enter month: ";
     cin >> month;
-    cout << "Enter salary " << endl;
+    cout << "Enter salary: ";
     cin >> salary;
     addRecords add;
     const char* fname = name.c_str();

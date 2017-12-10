@@ -36,43 +36,6 @@ void addRecords::addRecordBySSN(const char* name, char ssn[10], int year, int mo
     rw.writeEmployeeRecord(newEmployee, newSalaryRecord);
 }
 
-void addRecords::getSsnRecords(char ssn[10]){
-
-    loadDataBase();
-    unsigned int i = 0;
-    bool found = false;
-
-    searchSsn(i, found, ssn);
-
-    if(found){
-        cout << collection[i].first << endl;
-
-        for(unsigned int k = 0; k < collection[i].second.size(); k++){
-            cout << collection[i].second[k] << endl;
-        }
-    }
-}
-
-void addRecords::searchSsn(unsigned int &i, bool &found, char ssn[10]){
-
-        for (; i < collection.size(); i++){
-
-            int counter = 0;
-
-            for (int k = 0; k < 10; k++){
-
-                if(collection[i].first.ssn[k] == ssn[k]){
-                    counter ++;
-                }
-            }
-
-            if(counter == 10){
-                found = true;
-                break;
-            }
-        }
-}
-
 void addRecords::loadDataBase()
 {
     readWrite rw;

@@ -24,7 +24,6 @@ class readWrite
         void readList(vector <employee> &listOfNames);
         // Read salary records for a given SSN
         void readSalaryRecords(char ssn[10], vector<salaryRecord> &salaryRecordsVec);
-        void highestSalary(int year);
 
     private:
         void addToList(employee newEmployee);

@@ -100,30 +100,3 @@ void readWrite::readSalaryRecords(char ssn[10], vector<salaryRecord> &salaryReco
         file.close();
     }
 }
-
-void readWrite::highestSalary(int year){
-    ifstream fin;
-    int temp1 = 0;
-    string temp;
-    fin.open("", ios::binary);
-    if(fin.is_open()){
-        fin.seekg(0, fin.end);
-        int Counter = fin.tellg() / sizeof(salaryRecord);
-        fin.seekg(0, fin.beg);
-        for(int i = 0; i < Counter; i++){
-            salaryRecord s;
-            fin.read((char*)(&s), sizeof(salaryRecord));
-            if(s.year == year) {
-                if(s.salary >= temp1){
-                    temp1 = s.salary;
-                }
-
-            }
-        }
-
-        fin.close();
-    }
-    else{
-            cout << "No information" << endl;
-    }
-}
