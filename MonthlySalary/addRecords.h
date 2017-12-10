@@ -20,6 +20,7 @@ class addRecords
         void getSsnRecords(char ssn[10]);
         pair < employee, vector < salaryRecord > > getPairBySSN(char SSN[10]);
         pair < employee, vector < salaryRecord > > getPairBySSNAndYear(char SSN[10], int year);
+        employee highestTotalSalaryOfYear(int year);
 
     private:
         vector < pair < employee, vector < salaryRecord > > > collection;

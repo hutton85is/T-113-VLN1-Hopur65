@@ -132,3 +132,26 @@ pair < employee, vector < salaryRecord > > addRecords::getPairBySSNAndYear(char 
     SSNPair.second = newSalaryRecord;
     return SSNPair;
 }
+
+employee addRecords::highestTotalSalaryOfYear(int year)
+{
+    employee highestPaidEmployee;
+    int highestSalary = 0;
+    // run through all employees and find their total salary for a year. Update highestSalary and highestPaidEmployee when highest paid employee is found
+    for(unsigned int i = 0; i < collection.size(); i++)
+    {
+        int totalSalary = 0;
+        // a template pair containing an employee and his salary record for a given year
+        pair < employee, vector < salaryRecord > > salaryYear = getPairBySSNAndYear(collection[i].first.ssn, year);
+        // Sum all payments that year
+        for(unsigned int k = 0; k < salaryYear.second.size(); k++)
+        {
+            totalSalary = totalSalary + salaryYear.second[k].salary;
+        }
+        if(highestSalary < totalSalary)
+        {
+            highestPaidEmployee = salaryYear.first;
+        }
+    }
+    return highestPaidEmployee;
+}

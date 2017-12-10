@@ -24,6 +24,7 @@ class addRecordsUI
         bool validateSalary(int salary);
         void displayRecordsBySsn();
         void displayRecordsBySSNAndYear();
+        void displayHighestSalaryForYear();
 };
 
 #endif // ADDRECORDSUI_H

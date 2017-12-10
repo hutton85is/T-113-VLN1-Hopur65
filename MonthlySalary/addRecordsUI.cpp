@@ -92,11 +92,22 @@ void addRecordsUI::displayRecordsBySSNAndYear()
     }
 }
 
+void addRecordsUI::displayHighestSalaryForYear()
+{
+    addRecords add;
+    int year;
+    cout << "Enter year to find highest paid employee: " << endl;
+    cin >> year;
+    employee highestPaidEmployee = add.highestTotalSalaryOfYear(year);
+    cout << highestPaidEmployee << endl;
+}
+
 void addRecordsUI::addEmployee(){
 
     char input;
 
     while(true){
+        system("CLS");
 
         cout << "Press 1 to add an employee with record" << endl;
         cout << "Press 2 to add a salary record for a given employee SSN" << endl;
@@ -107,21 +118,29 @@ void addRecordsUI::addEmployee(){
         cin >> input;
 
         if(input == '1'){
-
+            system("CLS");
             addNewRecordBySSN();
         }
 
         else if(input == '2'){
-
+            system("CLS");
             addRecord();
         }
 
         else if(input == '3'){
-
+            system("CLS");
             displayRecordsBySsn();
+            system("pause");
         }
         else if(input == '4'){
+            system("CLS");
             displayRecordsBySSNAndYear();
+            system("pause");
+        }
+        else if(input == '5'){
+            system("CLS");
+            displayHighestSalaryForYear();
+            system("pause");
         }
     }
 
