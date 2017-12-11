@@ -31,6 +31,15 @@ void BakerUI::displayCustomerDueProgress()
     }
 }
 
+void BakerUI::displayCustomerInProgress()
+{
+    vector<client> customersVec = baker.getCustomersVecInProgress();
+    for(unsigned int i = 0; i < customersVec.size(); i++)
+    {
+        cout << i << ". " << customersVec[i] << endl;
+    }
+}
+
 bool BakerUI::pickLocation()
 {
     char input;
@@ -52,11 +61,34 @@ bool BakerUI::pickLocation()
     return true;
 }
 
+void BakerUI::displayCustomerDueProgressOrder(unsigned int customerNumber)
+{
+    vector<client> customer = baker.getCustomersVecDueProgress();
+    vector<Pizza> order = baker.getCustomersOrderDueProgress(customerNumber);
+    cout << customerNumber << ". " << customer[customerNumber] << endl;
+    for(unsigned int i = 0; i < order.size(); i++)
+    {
+        cout << "Pizza " << i+1 << ". " << order[i] << endl;
+    }
+}
+
+void BakerUI::displayCustomerInProgressOrder(unsigned int customerNumber)
+{
+    vector<client> customer = baker.getCustomersVecInProgress();
+    vector<Pizza> order = baker.getCustomersOrderInProgress(customerNumber);
+    cout << customerNumber << ". " << customer[customerNumber] << endl;
+    for(unsigned int i = 0; i < order.size(); i++)
+    {
+        cout << "Pizza " << i+1 << ". " << order[i] << endl;
+    }
+}
+
 void BakerUI::displayAllOrders()
 {
+    vector<client> customerVec = baker.getCustomerVec();
     for(unsigned int i = 0; i < baker.getCustomerVec().size(); i++)
     {
-        displayCustomerOrder(i);
+        cout << customerVec[i] << endl;
         cout << "------------" << endl;
     }
 }
@@ -87,34 +119,61 @@ void BakerUI::main()
             }
             else if(input == '2')
             {
-                system("CLS");
-                displayCustomerDueProgress();
-
-                unsigned int customerID;
-                cout << "Veldu pontun til ad skoda nanar" << endl;
-                cin >> customerID;
-                system("CLS");
-
-                displayCustomerOrder(customerID);
-
-                //bæta við hérna þannig hægt sé að breyta status á client.inProgress
-                char choice;
-                cout << "Velja pontun til ad vinna i? j/n: ";
-                cin >> choice;
-
-                // if choice is 'y', yes change order status to in progress
-                if (choice == 'j')
+                if (baker.getCustomersVecDueProgress().size())
                 {
-                    baker.workOnOrder(customerID);
-                }
+                    system("CLS");
+                    displayCustomerDueProgress();
 
+                    unsigned int customerID;
+                    cout << "Veldu pontun til ad skoda nanar" << endl;
+                    cin >> customerID;
+                    system("CLS");
+
+                    displayCustomerDueProgressOrder(customerID);
+
+                    char choice;
+                    cout << "Velja pontun til ad vinna i? j/n: ";
+                    cin >> choice;
+
+                    // if choice is 'y', yes change order status to in progress
+                    if (choice == 'j')
+                    {
+                        baker.workOnOrder(customerID);
+                    }
+                }
+                else
+                {
+                    cout << "Engin pöntun sem bidur afgreidslu" << endl;
+                }
                 system("pause");
             }
             else if(input == '3')
             {
-                for (unsigned int i = 0; i < baker.getCustomersVecInProgress().size(); i++)
+                if (baker.getCustomersVecInProgress().size())
                 {
-                    cout << i << ". " << baker.getCustomersVecInProgress()[i] << endl;
+                    system("CLS");
+                    displayCustomerInProgress();
+
+                    unsigned int customerID;
+                    cout << "Veldu pontun til ad skoda nanar" << endl;
+                    cin >> customerID;
+                    system("CLS");
+
+                    displayCustomerInProgressOrder(customerID);
+
+                    char choice;
+                    cout << "Velja pontun til ad klara? j/n: ";
+                    cin >> choice;
+
+                    // if choice is 'y', yes change order status to in progress
+                    if (choice == 'j')
+                    {
+                        baker.finishOrder(customerID);
+                    }
+                }
+                else
+                {
+                    cout << "Engin pöntun sem bidur afgreidslu" << endl;
                 }
                 system("pause");
             }

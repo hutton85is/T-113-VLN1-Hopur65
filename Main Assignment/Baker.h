@@ -25,7 +25,11 @@ class Baker
         // Return pizza order of a chosen customer
         vector<Pizza> getOrderVec(unsigned int customersVecNumber);
 
-        vector<PizzaHelper> getpHelperVec();
+        // Return Pizza order of a chosen customer that is due progress
+        vector<Pizza> getCustomersOrderDueProgress(unsigned int customerNumber);
+
+        // Return Pizza order of a chosen customer that is in progress
+        vector<Pizza> getCustomersOrderInProgress(unsigned int customerNumber);
 
         // Return all available pizza place locations
         vector<PizzaLocations> getPizzaLocations();
@@ -33,7 +37,11 @@ class Baker
         // Return baker location
         string getBakerLocation();
 
+        // Set status of customer as in progress
         void workOnOrder(unsigned int customersVecNumber);
+
+        // Set status of customer as finished
+        void finishOrder(unsigned int customerID);
 
     private:
         // A vector of all customers ordering from same location as baker
