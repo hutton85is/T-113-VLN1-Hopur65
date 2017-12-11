@@ -19,4 +19,5 @@ void ErrorUI::displayErrorCount(){
 void ErrorUI::mainUI(){
 
     displayErrorCount();
+    system("pause");
 }

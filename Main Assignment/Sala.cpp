@@ -48,26 +48,38 @@ vector<PizzaToppings> Sala::getLagerptoppings()
 
 bool Sala::enterPizzaSize(unsigned int input)
 {
-    if (input < sizeof(lager.psize) && 0 <= input)
-    {
-        // Only allow a single choice of pizzasize with each order
-        // if vector is empty push item on the vector else change first item
-        if (order[newCustomer.currentPizza-1].psize.empty())
-        {
-            order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
-        }
-        else
-        {
-            order[newCustomer.currentPizza-1].psize[0] = lager.psize[input];
-        }
+    cout << "dasgas" << input << endl;
 
-        pHelper[newCustomer.currentPizza-1].sizeCounter = 1;
+    try{
+        if (!(input < lager.psize.size() && 0 <= input)){
+                cout << "fdjf " << endl;
+            throw InputErrorException("Invalid pizzasize");
+        }
+        cout << "fdjfjkl " << endl;
+        system("pause");
+            // Only allow a single choice of pizzasize with each order
+            // if vector is empty push item on the vector else change first item
+            if (order[newCustomer.currentPizza-1].psize.empty())
+            {
+                order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
+            }
+            else
+            {
+                order[newCustomer.currentPizza-1].psize[0] = lager.psize[input];
+            }
 
-        return true;
+            pHelper[newCustomer.currentPizza-1].sizeCounter = 1;
+
+            return true;
     }
+    catch(InputErrorException e){
+        readWriteClass rw;
+        rw.writeClassToFile(e,"Exceptions/InputErrorException.dat");
 
+    }
     return false;
 }
+
 
 bool Sala::enterCrust(unsigned int input)
 {

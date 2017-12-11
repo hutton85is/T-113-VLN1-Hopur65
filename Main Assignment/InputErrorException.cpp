@@ -4,9 +4,6 @@ InputErrorException::InputErrorException()
 {
     now = time(0);
 
-    InputErrorException er;
-    readWriteClass rw;
-    rw.writeClassToFile(er,"Exceptions/InputErrorException.dat");
 }
 
 InputErrorException::~InputErrorException()

@@ -23,7 +23,6 @@ ostream& operator << (ostream& outs, Error& er){
     outs << "Invalid error exception is " <<  er.getInputErrorExceptionVec().size() << endl;
 
     return outs;
-
 }
 
 
