@@ -12,6 +12,7 @@ BakerUI::~BakerUI()
 
 void BakerUI::displayCustomerOrder(unsigned int customerNumber)
 {
+    // DISPLAYS ALWAYS ALL ORDERS PENDING
     vector<client> customer = baker.getCustomerVec();
     vector<Pizza> order = baker.getOrderVec(customerNumber);
     cout << customerNumber << ". " << customer[customerNumber] << endl;
@@ -21,9 +22,9 @@ void BakerUI::displayCustomerOrder(unsigned int customerNumber)
     }
 }
 
-void BakerUI::displayCustomerList()
+void BakerUI::displayCustomerDueProgress()
 {
-    vector<client> customersVec = baker.getCustomerVec();
+    vector<client> customersVec = baker.getCustomersVecDueProgress();
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
         cout << i << ". " << customersVec[i] << endl;
@@ -87,7 +88,7 @@ void BakerUI::main()
             else if(input == '2')
             {
                 system("CLS");
-                displayCustomerList();
+                displayCustomerDueProgress();
 
                 unsigned int customerID;
                 cout << "Veldu pontun til ad skoda nanar" << endl;

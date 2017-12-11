@@ -18,6 +18,7 @@ void mainMenu()
     cout << " 1. Fyrir umsjon                                         " << endl;
     cout << " 2. Fyrir bakara                                         " << endl;
     cout << " 3. Fyrir pontun                                         " << endl;
+    // BÆTA VIĞ AĞ ŞAĞ SÉ HÆGT AĞ VELJA PÖNTUN TIL AĞ EYĞA
     cout << " 4. Til ad haetta                                        " << endl;
     cout << "                                                         " << endl;
 

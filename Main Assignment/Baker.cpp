@@ -15,6 +15,8 @@ Baker::~Baker()
 void Baker::workOnOrder(unsigned int customersVecNumber)
 {
     customersVec[customersVecNumber].inProgress = true;
+    // Move customer on to vector in progress
+    customersVecInProgress.push_back(customersVec[customersVecNumber]);
     // HÉR ÞARF AÐ BÆTA VIÐ AÐ SKRIFA Í SKRÁ CUSTOMER MEÐ NÝJU GILDI Á WOKING ON ORDER
     // Load customer from file to rewrite him changing status on working on pizza order
     readWriteClass rw;
@@ -142,6 +144,10 @@ void Baker::setBakerLocation(char currentLocation[32])
             {
                 customersVecInProgress.push_back(newClient);
             }
+            else
+            {
+                customersVecDueProgress.push_back(newClient);
+            }
         }
     }
     customersVec = newCustomersVec;
@@ -164,4 +170,9 @@ vector<client> Baker::getCustomerVec()
 vector<client> Baker::getCustomersVecInProgress()
 {
     return customersVecInProgress;
+}
+
+vector<client> Baker::getCustomersVecDueProgress()
+{
+    return customersVecDueProgress;
 }

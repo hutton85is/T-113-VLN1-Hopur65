@@ -19,6 +19,9 @@ class Baker
         // Return customer vector 'customersVecInProgress'
         vector<client> getCustomersVecInProgress();
 
+        // Return customer vector 'customersVecDueProgress'
+        vector<client> getCustomersVecDueProgress();
+
         // Return pizza order of a chosen customer
         vector<Pizza> getOrderVec(unsigned int customersVecNumber);
 
@@ -36,10 +39,12 @@ class Baker
         // A vector of all customers ordering from same location as baker
         vector<client> customersVec;
 
-        // A vector of customer orders being worked on from same location as baker
+        // A vector of customers whose orders are being worked on from same location as baker
         vector<client> customersVecInProgress;
-        //vector<Pizza> order;
-        //vector<PizzaHelper> pHelper;
+
+        // A vector of customer orders whose orders are currently waiting to be worked on
+        vector<client> customersVecDueProgress;
+
         char bakerLocation[32];
 };
 
