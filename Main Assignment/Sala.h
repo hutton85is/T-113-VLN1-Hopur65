@@ -12,7 +12,6 @@
 #include "client.h"
 #include <cstring>
 #include <stdlib.h>
-#include "MissingLocationException.h"
 
 class Sala
 {

@@ -16,6 +16,65 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
 {
     customersVec[customersVecNumber].inProgress = true;
     // HÉR ÞARF AÐ BÆTA VIÐ AÐ SKRIFA Í SKRÁ CUSTOMER MEÐ NÝJU GILDI Á WOKING ON ORDER
+    // Load customer from file to rewrite him changing status on working on pizza order
+    readWriteClass rw;
+    client newClient;
+    vector<Pizza> customerOrder;
+    vector<PizzaHelper> pHelper;
+    string fname = "order/";
+    fname.append(customersVec[customersVecNumber].name);
+    fname.append(".dat");
+    const char* pathfile = fname.c_str();
+    rw.loadCustomer(newClient, customerOrder, pHelper, pathfile);
+
+    //Delete exisisting file with order to rewrite an updated status of order
+    rw.removeAllContentsOfFile(pathfile);
+
+    // Rewrite customer to file
+    // Write client class to file and path 'fname'
+    rw.writeClassToFile(customersVec[customersVecNumber], pathfile);
+
+    for (unsigned int j = 0; j < customersVec[customersVecNumber].orderCounter; j++)
+    {
+        // Write helper class for storing how many items are in the order
+        rw.writeClassToFile(pHelper[j], pathfile);
+
+        // Write pizzatoppings class to file and path 'fname'
+        for (unsigned int i = 0; i < pHelper[j].toppingsCounter; i++)
+        {
+            rw.writeClassToFile(customerOrder[j].ptoppings[i], pathfile);
+        }
+
+        // Write pizzasize class to file and path 'fname'
+        for (unsigned int i = 0; i < pHelper[j].sizeCounter; i++)
+        {
+            rw.writeClassToFile(customerOrder[j].psize[i], pathfile);
+        }
+
+        // Write pizzacrust class to file and path 'fname'
+        for (unsigned int i = 0; i < pHelper[j].crustCounter; i++)
+        {
+            rw.writeClassToFile(customerOrder[j].pcrust[i], pathfile);
+        }
+
+        // Write pizzaextras class to file and path 'fname'
+        for (unsigned int i = 0; i < pHelper[j].extrasCounter; i++)
+        {
+            rw.writeClassToFile(customerOrder[j].pextras[i], pathfile);
+        }
+
+        // Write pizzamenu class to file and path 'fname'
+        for (unsigned int i = 0; i < pHelper[j].menuCounter; i++)
+        {
+            rw.writeClassToFile(customerOrder[j].pmenu[i], pathfile);
+        }
+
+        // Write pizzalocations class to file and path 'fname'
+        for (unsigned int i = 0; i < pHelper[j].locationCounter; i++)
+        {
+            rw.writeClassToFile(customerOrder[j].plocations[i], pathfile);
+        }
+    }
 }
 
 string Baker::getBakerLocation()

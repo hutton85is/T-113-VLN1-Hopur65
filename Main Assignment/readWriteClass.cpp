@@ -133,6 +133,13 @@ bool readWriteClass::loadCustomer(client& customer, vector<Pizza>& order, vector
     return false;
 }
 
+void readWriteClass::removeAllContentsOfFile(const char* fname)
+{
+    ofstream file;
+    file.open(fname);
+    file.close();
+}
+
 template <class pizzaClass>
 bool readWriteClass::loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass)
 {
