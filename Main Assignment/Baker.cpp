@@ -238,6 +238,7 @@ void Baker::setBakerLocation(char currentLocation[32])
         fname.append(customersVec[i].name);
         fname.append(".dat");
         const char* pathfile = fname.c_str();
+        cout << i << " i " << endl;
         rw.loadCustomer(newClient, newOrder, newpHelper, pathfile);
 
         /*

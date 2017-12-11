@@ -86,7 +86,7 @@ void BakerUI::displayCustomerInProgressOrder(unsigned int customerNumber)
 void BakerUI::displayAllOrders()
 {
     vector<client> customerVec = baker.getCustomerVec();
-    for(unsigned int i = 0; i < baker.getCustomerVec().size(); i++)
+    for(unsigned int i = 0; i < customerVec.size(); i++)
     {
         cout << customerVec[i] << endl;
         cout << "------------" << endl;
