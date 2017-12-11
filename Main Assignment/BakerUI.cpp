@@ -70,10 +70,14 @@ void BakerUI::main()
         while(true)
         {
             system("CLS");
-            cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
-            cout << "Til thess ad velja pontun til ad vinna i veldu            2. "  << endl;
-            cout << "Til thess ad velja pontun sem tilbuna veldu               3. "  << endl;
-            cout << "Til thess ad haetta veldu                                 4. "  << endl;
+
+            cout << "--------------------------------------------------------------" << endl;
+            cout << "                       Pizzastadurinn!                        " << endl;
+            cout << "--------------------------------------------------------------" << endl;
+            cout << "Til thess ad sja allar pantanir veldu                      1. "  << endl;
+            cout << "Til thess ad velja pontun til ad vinna i veldu             2. "  << endl;
+            cout << "Til thess ad velja pontun sem tilbuna veldu                3. "  << endl;
+            cout << "Til thess ad haetta veldu                                  4. "  << endl;
             cout << endl;
 
             cin >> input;
@@ -90,7 +94,7 @@ void BakerUI::main()
                 displayCustomerList();
 
                 unsigned int customerID;
-                cout << "Veldu pontun til ad skoda nanar" << endl;
+                cout << "Veldu pontun til ad skoda nanar :" << endl;
                 cin >> customerID;
                 system("CLS");
 
@@ -126,7 +130,7 @@ void BakerUI::main()
     else
     {
         system("CLS");
-        cout << "There are no pending customers for " << baker.getBakerLocation() << endl;
+        cout << "Thad eru engar pantanir a bid fyrir " << baker.getBakerLocation() << endl;
         system("pause");
     }
 }

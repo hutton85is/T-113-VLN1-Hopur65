@@ -22,7 +22,7 @@ void SalaUI::displayFullOrder(Sala s)
 
     for(unsigned int i = 0; i < s.getOrder().size(); i++)
     {
-        cout << "Pizza order " << i+1 << endl;
+        cout << "Pizza pontun : " << i+1 << endl;
 
         cout << s.getOrder()[i] << endl;
 
@@ -55,7 +55,7 @@ void SalaUI::mainOrder()
     displayVector(s.getLagerplocations(), true);
     cout << endl;
 
-    cout << "Enter what location you want to order from: ";
+    cout << "Veldu stad til thess ad panta fra : ";
     cin >> input;
 
     s.enterLocation(input);
@@ -66,6 +66,9 @@ void SalaUI::mainOrder()
 
         displayFullOrder(s);
 
+        cout << "--------------------------------------------------" << endl;
+        cout << "                  Pizzastadurinn!                 " << endl;
+        cout << "--------------------------------------------------" << endl;
         cout << "Skradu thina pontun : " << endl;
         cout << "Til thess ad velja pizza staerd veldu           1." << endl;
         cout << "Til thess ad velja pizza crust veldu            2." << endl;
@@ -85,7 +88,7 @@ void SalaUI::mainOrder()
         {
             displayVector(s.getLagerpsize(), true);
 
-            cout << "Enter what size pizza you would like: ";
+            cout << "Hvada staerd af pizzu ma bjoda ther : ";
             cin >> input;
 
             s.enterPizzaSize(input);
@@ -95,7 +98,7 @@ void SalaUI::mainOrder()
             displayVector(s.getLagerpcrust(), true);
             cout << endl;
 
-            cout << "Enter what type of crust you would like: ";
+            cout << "Hvernig crust ma bjoda ther : ";
             cin >> input;
 
             s.enterCrust(input);
@@ -105,7 +108,7 @@ void SalaUI::mainOrder()
             displayVector(s.getLagerptoppings(), true);
             cout << endl;
 
-            cout << "What toppings would you like on your pizza: ";
+            cout << "Hvada alegg ma bjoda ther a pizzuna :  ";
             cin >> input;
 
             s.enterToppings(input);
@@ -115,7 +118,7 @@ void SalaUI::mainOrder()
             displayVector(s.getLagerpMenu(), true);
             cout << endl;
 
-            cout << "Enter what pizza you would like from the menu: ";
+            cout << "Hvada pizzu af matsedli ma bjoda ther : ";
             cin >> input;
 
             s.enterMenu(input);
@@ -125,7 +128,7 @@ void SalaUI::mainOrder()
             displayVector(s.getLagerpextras(), true);
             cout << endl;
 
-            cout << "Enter what extras you would like: ";
+            cout << "Hvada medlaeti ma bjoda ther : ";
             cin >> input;
 
             s.enterExtras(input);
@@ -140,7 +143,7 @@ void SalaUI::mainOrder()
             displayVector(s.getLagerplocations(), true);
             cout << endl;
 
-            cout << "Enter what location you want to order from: ";
+            cout << "Hvada stadsetningu ma bjoda ther ad fa pizzuna fra : ";
             cin >> input;
 
             s.enterLocation(input);
@@ -171,10 +174,12 @@ void SalaUI::mainOrder()
             s.createOrder(name, address, number, paid == 'j', delivery == 'j');
 
             system("CLS");
-            cout << "HERE IS YOUR ORDER" << endl;
-            cout << "----------------------------" << endl;
+            cout << "--------------------------------------------------" << endl;
+            cout << "               HERNA ER PONTUNIN THIN             " << endl;
+            cout << "--------------------------------------------------" << endl;
+            cout << endl;
             displayFullOrder(s);
-            cout << "----------------------------" << endl;
+            cout << "--------------------------------------------------" << endl;
             cout << endl;
             cout << endl;
             cout << endl;

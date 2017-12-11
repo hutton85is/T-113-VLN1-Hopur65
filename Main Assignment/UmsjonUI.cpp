@@ -33,6 +33,9 @@ void UmsjonUI::main(){
 
         int input;
 
+        cout << "--------------------------------------------------" << endl;
+        cout << "                  Pizzastadurinn!                 " << endl;
+        cout << "--------------------------------------------------" << endl;
         cout << "Til thess ad skra nyja pizza staerd veldu       1." << endl;
         cout << "Til thess ad skra nyja pizza crust veldu        2." << endl;
         cout << "Til thess ad skra nytt alegg veldu              3." << endl;
