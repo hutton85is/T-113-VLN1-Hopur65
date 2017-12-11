@@ -9,7 +9,10 @@
 #include "pizzalocations.h"
 #include "pizzamenu.h"
 #include "readWriteClass.h"
-
+#include "client.h"
+#include <cstring>
+#include <stdlib.h>
+#include "MissingLocationException.h"
 
 class Sala
 {
@@ -32,6 +35,14 @@ class Sala
         bool enterExtras(unsigned int input);
         bool enterLocation(unsigned int input);
 
+        // Initiate a new pizza
+        void newPizza();
+
+        // Return a copy of client class
+        client getCustomerOrdersVector();
+
+        void createOrder(string name, string address, int number, bool paid, bool delivery);
+
         /*
         * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI
         */
@@ -41,20 +52,20 @@ class Sala
         vector<PizzaMenu> getLagerpMenu();
         vector<PizzaSize> getLagerpsize();
         vector<PizzaToppings> getLagerptoppings();
-
-
-        vector<PizzaCrust> getOrderpcrust();
-        vector<PizzaExtras> getOrderpextras();
-        vector<PizzaLocations> getOrderplocations();
-        vector<PizzaMenu> getOrderpMenu();
-        vector<PizzaSize> getOrderpsize();
-        vector<PizzaToppings> getOrderptoppings();
+        vector<Pizza> getOrder();
 
     private:
         // variable lager contains all items available to sell
         // variable order contains all items a customer has ordered
-        Pizza lager, order;
+        Pizza lager;
 
+        client newCustomer;
+
+        //Pizza order;
+        vector<Pizza> order;
+
+        // A vector containing classes to store how many items are on an order
+        vector<PizzaHelper> pHelper;
 };
 
 #endif // SALA_H

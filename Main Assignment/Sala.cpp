@@ -11,6 +11,11 @@ Sala::~Sala()
     //dtor
 }
 
+vector<Pizza> Sala::getOrder()
+{
+    return order;
+}
+
 vector<PizzaCrust> Sala::getLagerpcrust()
 {
     return lager.pcrust;
@@ -41,41 +46,23 @@ vector<PizzaToppings> Sala::getLagerptoppings()
     return lager.ptoppings;
 }
 
-vector<PizzaCrust> Sala::getOrderpcrust()
-{
-    return order.pcrust;
-}
-
-vector<PizzaExtras> Sala::getOrderpextras()
-{
-    return order.pextras;
-}
-
-vector<PizzaLocations> Sala::getOrderplocations()
-{
-    return order.plocations;
-}
-
-vector<PizzaMenu> Sala::getOrderpMenu()
-{
-    return order.pmenu;
-}
-
-vector<PizzaSize> Sala::getOrderpsize()
-{
-    return order.psize;
-}
-
-vector<PizzaToppings> Sala::getOrderptoppings()
-{
-    return order.ptoppings;
-}
-
 bool Sala::enterPizzaSize(unsigned int input)
 {
     if (input < sizeof(lager.psize) && 0 <= input)
     {
-        order.psize.push_back(lager.psize[input]);
+        // Only allow a single choice of pizzasize with each order
+        // if vector is empty push item on the vector else change first item
+        if (order[newCustomer.currentPizza-1].psize.empty())
+        {
+            order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
+        }
+        else
+        {
+            order[newCustomer.currentPizza-1].psize[0] = lager.psize[input];
+        }
+
+        pHelper[newCustomer.currentPizza-1].sizeCounter = 1;
+
         return true;
     }
 
@@ -86,7 +73,19 @@ bool Sala::enterCrust(unsigned int input)
 {
     if (input < sizeof(lager.pcrust) && 0 <= input)
     {
-        order.pcrust.push_back(lager.pcrust[input]);
+        // Only allow a single choice of pizza crust with each order
+        // if vector is empty push item on the vector else change first item
+        if(order[newCustomer.currentPizza-1].pcrust.empty())
+        {
+            order[newCustomer.currentPizza-1].pcrust.push_back(lager.pcrust[input]);
+        }
+        else
+        {
+            order[newCustomer.currentPizza-1].pcrust[0] = lager.pcrust[input];
+        }
+
+        pHelper[newCustomer.currentPizza-1].crustCounter = 1;
+
         return true;
     }
 
@@ -97,7 +96,10 @@ bool Sala::enterToppings(unsigned int input)
 {
     if (input < sizeof(lager.ptoppings) && 0 <= input)
     {
-        order.ptoppings.push_back(lager.ptoppings[input]);
+        order[newCustomer.currentPizza-1].ptoppings.push_back(lager.ptoppings[input]);
+
+        pHelper[newCustomer.currentPizza-1].toppingsCounter++;
+
         return true;
     }
 
@@ -108,7 +110,19 @@ bool Sala::enterMenu(unsigned int input)
 {
     if (input < sizeof(lager.pmenu) && 0 <= input)
     {
-        order.pmenu.push_back(lager.pmenu[input]);
+        // Only allow a single choice of pizza from menu with each order
+        // if vector is empty push item on the vector else change first item
+        if(order[newCustomer.currentPizza-1].pmenu.empty())
+        {
+            order[newCustomer.currentPizza-1].pmenu.push_back(lager.pmenu[input]);
+        }
+        else
+        {
+            order[newCustomer.currentPizza-1].pmenu[0] = lager.pmenu[input];
+        }
+
+        pHelper[newCustomer.currentPizza-1].menuCounter = 1;
+
         return true;
     }
 
@@ -119,7 +133,10 @@ bool Sala::enterExtras(unsigned int input)
 {
     if (input < sizeof(lager.pextras) && 0 <= input)
     {
-        order.pextras.push_back(lager.pextras[input]);
+        order[newCustomer.currentPizza-1].pextras.push_back(lager.pextras[input]);
+
+        pHelper[newCustomer.currentPizza-1].extrasCounter++;
+
         return true;
     }
 
@@ -130,9 +147,146 @@ bool Sala::enterLocation(unsigned int input)
 {
     if (input < sizeof(lager.plocations) && 0 <= input)
     {
-        order.plocations.push_back(lager.plocations[input]);
+        // Only allow a single choice of location and always enter it on order 1
+        // if vector is empty push item on the vector else change first item
+        if(order[0].plocations.empty())
+        {
+            order[0].plocations.push_back(lager.plocations[input]);
+        }
+        else
+        {
+            order[0].plocations[0] = lager.plocations[input];
+        }
+
+        pHelper[0].locationCounter = 1;
+
         return true;
     }
 
     return false;
+}
+
+void Sala::newPizza()
+{
+    /* ONLY USE THIS IF WE WANT TO BE ABLE TO CHANGE AN ORDER
+    // if the count of orders is equal to the current pizza being edited, increase both
+    if (newCustomer.orderCounter == newCustomer.currentPizza)
+    {
+        newCustomer.currentPizza++;
+        newCustomer.orderCounter++;
+
+        // Insert a new pizza class onto client vector<Pizza>
+        Pizza newPizzaOrder;
+        newCustomer.order.push_back(newPizzaOrder);
+
+        // Insert a new Pizza helper class
+        PizzaHelper newPizzaHelper;
+        newCustomer.pHelper.push_back(newPizzaHelper);
+    }
+    // if the count of orders is greater then count of current pizza, a pizza is being edited and do not increase order counter
+    else if(newCustomer.currentPizza < newCustomer.orderCounter)
+    {
+        newCustomer.currentPizza++;
+    }
+    // This should never be, if it does set equal to each other
+    else
+    {
+        newCustomer.currentPizza = newCustomer.orderCounter;
+    }*/
+    newCustomer.currentPizza++;
+    newCustomer.orderCounter++;
+
+    // Insert a new pizza class onto client vector<Pizza>
+    Pizza newPizzaOrder;
+    order.push_back(newPizzaOrder);
+
+    // Insert a new Pizza helper class
+    PizzaHelper newPizzaHelper;
+    pHelper.push_back(newPizzaHelper);
+}
+
+client Sala::getCustomerOrdersVector()
+{
+    return newCustomer;
+}
+
+void Sala::createOrder(string name, string address, int number, bool paid, bool delivery)
+{
+    // It should not be possible to continue to create order if location has not been set
+    try
+    {
+        if(order[0].plocations.empty())
+        {
+            throw MissingLocationException("Error, could not complete order. Please try again and enter location");
+        }
+        //Assign name, address and addressnumber for newCustomer
+        strncpy(newCustomer.name, name.c_str(), sizeof(newCustomer.name) - 1);
+        strncpy(newCustomer.address, address.c_str(), sizeof(newCustomer.address) - 1);
+        newCustomer.addressNumber = number;
+        newCustomer.orderPaid = paid;
+        newCustomer.deliverOrder = delivery;
+
+        // create a path with file name in variable tempname and enter it to variable fname
+        string tempname = "order/" + name + ".dat";
+        const char* fname = tempname.c_str();
+
+        readWriteClass rw;
+        // Add customer to order directory, containing all open orders
+        rw.writeClassToFile(newCustomer, "order/customerlist.dat");
+        // Write client class to file and path 'fname'
+        rw.writeClassToFile(newCustomer, fname);
+
+        for (unsigned int j = 0; j < newCustomer.orderCounter; j++)
+        {
+            // Write helper class for storing how many items are in the order
+            rw.writeClassToFile(pHelper[j], fname);
+
+            // Write pizzatoppings class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].toppingsCounter; i++)
+            {
+                rw.writeClassToFile(order[j].ptoppings[i], fname);
+            }
+
+            // Write pizzasize class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].sizeCounter; i++)
+            {
+                rw.writeClassToFile(order[j].psize[i], fname);
+            }
+
+            // Write pizzacrust class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].crustCounter; i++)
+            {
+                rw.writeClassToFile(order[j].pcrust[i], fname);
+            }
+
+            // Write pizzaextras class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].extrasCounter; i++)
+            {
+                rw.writeClassToFile(order[j].pextras[i], fname);
+            }
+
+            // Write pizzamenu class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].menuCounter; i++)
+            {
+                rw.writeClassToFile(order[j].pmenu[i], fname);
+            }
+
+            // Write pizzalocations class to file and path 'fname'
+            for (unsigned int i = 0; i < pHelper[j].locationCounter; i++)
+            {
+                rw.writeClassToFile(order[j].plocations[i], fname);
+            }
+        }
+    }
+    catch(MissingLocationException e)
+    {
+        cout << e.getMessage() << endl;
+        system("pause");
+    }
+}
+
+ostream& operator <<(ostream& outs, Sala& s)
+{
+
+    return outs;
 }

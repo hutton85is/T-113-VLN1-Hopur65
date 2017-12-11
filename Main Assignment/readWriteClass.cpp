@@ -14,7 +14,7 @@ void readWriteClass::loadAllVectors(Pizza& p)
 {
     const char* fname = "data/crust.dat";
     PizzaCrust cr;
-    loadSpecificVector<PizzaCrust>(p.pcrust, fname, cr);
+    loadSpecificVector(p.pcrust, fname, cr);
 
     fname = "data/extra.dat";
     PizzaExtras ex;
@@ -37,7 +37,103 @@ void readWriteClass::loadAllVectors(Pizza& p)
     loadSpecificVector<PizzaMenu>(p.pmenu, fname, menu);
 }
 
-template <typename pizzaClass>
+bool readWriteClass::loadCustomer(client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname)
+{
+    ifstream file;
+    file.open(fname, ios_base::binary|ios_base::app);
+
+    if(file.is_open())
+    {
+        // load customer from file
+        file.read((char*)(&customer), sizeof(client));
+
+        for(unsigned int j = 0; j < customer.orderCounter; j++)
+        {
+            // Load helper class for storing how many items are in the order
+            PizzaHelper newPizzaHelper;
+            file.read((char*)(&newPizzaHelper), sizeof(PizzaHelper));
+            pHelper.push_back(newPizzaHelper);
+
+            //Add empty pizza order to fill in
+            Pizza newPizza;
+            order.push_back(newPizza);
+
+            // load all toppings if there are any
+            if (pHelper[j].toppingsCounter)
+            {
+                for(unsigned int i = 0; i < pHelper[j].toppingsCounter; i++)
+                {
+                    PizzaToppings newtoppings;
+                    file.read((char*)(&newtoppings), sizeof(PizzaToppings));
+
+                    order[j].ptoppings.push_back(newtoppings);
+                }
+            }
+
+            // load pizzasize class if there is one
+            if(pHelper[j].sizeCounter)
+            {
+                for(unsigned int i = 0; i < pHelper[j].sizeCounter; i++)
+                {
+                    PizzaSize newPizzaSize;
+                    file.read((char*)(&newPizzaSize), sizeof(PizzaSize));
+
+                    order[j].psize.push_back(newPizzaSize);
+                }
+            }
+
+            // load PizzaCrust class if there is one
+            if(pHelper[j].crustCounter)
+            {
+                for(unsigned int i = 0; i < pHelper[j].crustCounter; i++)
+                {
+                    PizzaCrust newPizzaCrust;
+                    file.read((char*)(&newPizzaCrust), sizeof(PizzaCrust));
+                    order[j].pcrust.push_back(newPizzaCrust);
+                }
+            }
+
+            // load all extras if there are some
+            if(pHelper[j].extrasCounter)
+            {
+                for(unsigned int i = 0; i < pHelper[j].extrasCounter; i++)
+                {
+                    PizzaExtras newExtras;
+                    file.read((char*)(&newExtras), sizeof(PizzaExtras));
+                    order[j].pextras.push_back(newExtras);
+                }
+            }
+
+
+            // load all menu pizzas if there are some
+            if(pHelper[j].menuCounter)
+            {
+                for(unsigned int i = 0; i < pHelper[j].menuCounter; i++)
+                {
+                    PizzaMenu newMenu;
+                    file.read((char*)(&newMenu), sizeof(PizzaMenu));
+                    order[j].pmenu.push_back(newMenu);
+                }
+            }
+
+            // load PizzaLocations class if there is one
+            if(pHelper[j].locationCounter)
+            {
+                for(unsigned int i = 0; i < pHelper[j].locationCounter; i++)
+                {
+                    PizzaLocations newLocations;
+                    file.read((char*)(&newLocations), sizeof(PizzaLocations));
+                    order[j].plocations.push_back(newLocations);
+                }
+            }
+        }
+        file.close();
+        return true;
+    }
+    return false;
+}
+
+template <class pizzaClass>
 bool readWriteClass::loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass)
 {
     ifstream file;
@@ -68,6 +164,9 @@ void readWriteClass::dummyLoader()
     PizzaExtras newExtras;
     PizzaLocations newLocations;
     PizzaSize newSize;
+    client newClient;
+    PizzaHelper newPizzaHelper;
+    InputErrorException newInputErrorException;
 
     const char* fname = "s";
     writeClassToFile<PizzaCrust>(newCrust, fname);
@@ -76,9 +175,16 @@ void readWriteClass::dummyLoader()
     writeClassToFile<PizzaMenu>(newMenu, fname);
     writeClassToFile<PizzaLocations>(newLocations, fname);
     writeClassToFile<PizzaExtras>(newExtras, fname);
+    writeClassToFile<client>(newClient, fname);
+    writeClassToFile<InputErrorException>(newInputErrorException, fname);
+    vector<client> loadVector;
+    loadSpecificVector<client>(loadVector, fname, newClient);
+    writeClassToFile<PizzaHelper>(newPizzaHelper, fname);
+    vector<InputErrorException> newInputErrorExceptionVec;
+    loadSpecificVector<InputErrorException>(newInputErrorExceptionVec, fname, newInputErrorException);
 }
 
-template <typename pizzaClass>
+template <class pizzaClass>
 void readWriteClass::writeClassToFile(pizzaClass& classToWrite, const char* fname)
 {
     ofstream file;

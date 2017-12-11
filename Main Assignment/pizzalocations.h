@@ -14,9 +14,7 @@ class PizzaLocations
         friend ostream& operator <<(ostream& outs, PizzaLocations& p_locations);
 
         char place[32];
-        bool pick_up;
-
-    private:
+        //bool pick_up;
 };
 
 #endif // PIZZALOCATIONS_H

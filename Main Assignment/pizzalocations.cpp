@@ -3,7 +3,7 @@
 PizzaLocations::PizzaLocations()
 {
           place[0] = '\0';
-          pick_up = 0;
+          //pick_up = 0;
     //ctor
 }
 

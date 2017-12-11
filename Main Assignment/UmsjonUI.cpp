@@ -33,24 +33,26 @@ void UmsjonUI::main(){
 
         int input;
 
-        cout << "Press 1 to add a new pizza size " << endl;
-        cout << "Press 2 to add a new crust " << endl;
-        cout << "Press 3 to add a new topping " << endl;
-        cout << "Press 4 to add a new pizza to the menu " << endl;
-        cout << "Press 5 to add a new extra " << endl;
-        cout << "Press 6 to add a new location " << endl;
+        cout << "Til thess ad skra nyja pizza staerd veldu       1." << endl;
+        cout << "Til thess ad skra nyja pizza crust veldu        2." << endl;
+        cout << "Til thess ad skra nytt alegg veldu              3." << endl;
+        cout << "Til thess ad skra nyja pizzu a matsedil veldu   4." << endl;
+        cout << "Til thess ad skra nytt medlaeti veldu           5." << endl;
+        cout << "Til thess ad skra nyjan afhendingarstad veldu   6." << endl;
 
         cin >> input;
+
+        system("CLS");
 
         Umsjon u;
 
         if(input == 1)
         {
             displayVector(u.getpsize());
-            cout << "Enter new pizza size: ";
+            cout << "Sladu inn nyja staerd af pizzu: ";
             char p_size[32];
             cin >> p_size;
-            cout << "Enter price of " << p_size << " size: ";
+            cout << "sladu inn verd a " << p_size << ": ";
             int price;
             cin >> price;
             u.createPizzaSize(p_size, price);
@@ -59,10 +61,10 @@ void UmsjonUI::main(){
         else if(input == 2)
         {
             displayVector(u.getpcrust());
-            cout << "Enter new type of pizza crust: ";
+            cout << "Sladu inn nyja typu af crust: ";
             char crust_type[32];
             cin >> crust_type;
-            cout << "Enter price of " << crust_type << " crust: ";
+            cout << "Sladu inn verd a " << crust_type << ": ";
             int price;
             cin >> price;
             u.createCrust(crust_type, price);
@@ -83,10 +85,10 @@ void UmsjonUI::main(){
         else if(input == 4)
         {
             displayVector(u.getpMenu());
-            cout << "Enter new pizza to the menu: ";
+            cout << "Sladu inn nyja pizzu a matsedil: ";
             char choose_pizza[32];
             cin >> choose_pizza;
-            cout << "Enter price of " << choose_pizza << " pizza: ";
+            cout << "Sladu inn verd a " << choose_pizza << ": ";
             int price;
             cin >> price;
             u.createMenu(choose_pizza, price);
@@ -95,10 +97,10 @@ void UmsjonUI::main(){
         else if(input == 5){
             displayVector(u.getpextras());
 
-            cout << "Enter new type of extras: ";
+            cout << "Sladu inn nytt medlaeti: ";
             char extras_type[32];
             cin >> extras_type;
-            cout << "Enter price of " << extras_type << ": ";
+            cout << "Sladu inn verd a " << extras_type << ": ";
             int price;
             cin >> price;
             u.createExtras(extras_type, price);
@@ -108,7 +110,7 @@ void UmsjonUI::main(){
         {
             displayVector(u.getplocations());
 
-            cout << "Enter new location: ";
+            cout << "Sladu inn nyja stadsetningu pizza stadar: ";
             char place[32];
             cin >> place;
             u.createLocation(place);
