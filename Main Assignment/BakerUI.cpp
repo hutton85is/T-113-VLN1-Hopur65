@@ -101,7 +101,6 @@ void BakerUI::main()
                 cout << "Velja pontun til ad vinna i? j/n: ";
                 cin >> choice;
 
-                // Á EFTIR AÐ VISTA Í SKRÁ LÍKA
                 // if choice is 'y', yes change order status to in progress
                 if (choice == 'j')
                 {
@@ -114,7 +113,7 @@ void BakerUI::main()
             {
                 for (unsigned int i = 0; i < baker.getCustomersVecInProgress().size(); i++)
                 {
-                    cout << baker.getCustomersVecInProgress()[i] << endl;
+                    cout << i << ". " << baker.getCustomersVecInProgress()[i] << endl;
                 }
                 system("pause");
             }

@@ -27,7 +27,7 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
     const char* pathfile = fname.c_str();
     rw.loadCustomer(newClient, customerOrder, pHelper, pathfile);
 
-    //Delete exisisting file with order to rewrite an updated status of order
+    // Remove all contents of exisisting file, for update
     rw.removeAllContentsOfFile(pathfile);
 
     // Rewrite customer to file
