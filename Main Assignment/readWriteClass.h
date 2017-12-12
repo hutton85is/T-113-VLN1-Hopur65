@@ -28,6 +28,9 @@ class readWriteClass
         // Function that loads all vectors from database containing all items available for sale and stores them in Pizza class 'p'
         void loadAllVectors(Pizza& p);
 
+        // Function that removes all contents of a file
+        void removeAllContentsOfFile(const char* fname);
+
         // load Pizza order with a specific customer
         bool loadCustomer(client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname);
 

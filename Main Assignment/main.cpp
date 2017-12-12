@@ -22,7 +22,8 @@ void mainMenu()
     cout << " 3. Fyrir pontun                                         " << endl;
     cout << " 4. Til ad skoda villumeldingar                          " << endl;
     cout << " 5. Til ad haetta                                        " << endl;
-    cout << "                                                         " << endl;
+
+    // BÆTA VIĞ AĞ ŞAĞ SÉ HÆGT AĞ VELJA PÖNTUN TIL AĞ EYĞA
 
     char innskraning;
     cout << "Veldu her: ";
