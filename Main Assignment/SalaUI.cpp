@@ -83,67 +83,121 @@ void SalaUI::mainOrder()
 
         if(input == 1)
         {
-            displayVector(s.getLagerpsize(), true);
+            vector<PizzaSize> PizzaSizeVec = s.getLagerpsize();
+            if(PizzaSizeVec.size())
+            {
+                displayVector(PizzaSizeVec, true);
 
-            cout << "Enter what size pizza you would like: ";
-            cin >> input;
+                cout << "Enter what size pizza you would like: ";
+                cin >> input;
 
-            s.enterPizzaSize(input);
+                s.enterPizzaSize(input);
+            }
+            else
+            {
+                cout << "Thad er engin Pizza staerd i bodi enntha" << endl;
+                system("pause");
+            }
         }
         else if(input == 2)
         {
-            displayVector(s.getLagerpcrust(), true);
-            cout << endl;
+            vector<PizzaCrust> PizzaCrustVec = s.getLagerpcrust();
+            if(PizzaCrustVec.size())
+            {
+                displayVector(PizzaCrustVec, true);
 
-            cout << "Enter what type of crust you would like: ";
-            cin >> input;
+                cout << "Sladu inn hvernig pizza botn thu vilt: ";
+                cin >> input;
 
-            s.enterCrust(input);
+                s.enterCrust(input);
+            }
+            else
+            {
+                cout << "Thad er engin Pizza crust i bodi enntha" << endl;
+                system("pause");
+            }
         }
         else if(input == 3)
         {
-            displayVector(s.getLagerptoppings(), true);
-            cout << endl;
+            vector<PizzaToppings> PizzaToppingsVec = s.getLagerptoppings();
+            if(PizzaToppingsVec.size())
+            {
+                displayVector(s.getLagerptoppings(), true);
+                cout << endl;
 
-            cout << "What toppings would you like on your pizza: ";
-            cin >> input;
+                cout << "Hvernig alegg ma bjoda ther a pizzuna: ";
+                cin >> input;
 
-            s.enterToppings(input);
+                s.enterToppings(input);
+            }
+            else
+            {
+                cout << "Thad eru engin alegg i bodi enntha" << endl;
+                system("pause");
+            }
         }
         else if(input == 4)
         {
-            displayVector(s.getLagerpMenu(), true);
-            cout << endl;
+            vector<PizzaMenu> PizzaMenuVec = s.getLagerpMenu();
+            if(PizzaMenuVec.size())
+            {
+                displayVector(s.getLagerpMenu(), true);
+                cout << endl;
 
-            cout << "Enter what pizza you would like from the menu: ";
-            cin >> input;
+                cout << "Hvernig pizzu viltu af matsedli: ";
+                cin >> input;
 
-            s.enterMenu(input);
+                s.enterMenu(input);
+            }
+            else
+            {
+                cout << "Thad er engin pizza a matsedli i bodi enntha" << endl;
+                system("pause");
+            }
         }
         else if(input == 5)
         {
-            displayVector(s.getLagerpextras(), true);
-            cout << endl;
+            vector<PizzaExtras> PizzaExtrasVec = s.getLagerpextras();
+            if(PizzaExtrasVec.size())
+            {
+                displayVector(s.getLagerpextras(), true);
+                cout << endl;
 
-            cout << "Enter what extras you would like: ";
-            cin >> input;
+                cout << "Enter what extras you would like: ";
+                cin >> input;
 
-            s.enterExtras(input);
+                s.enterExtras(input);
+
+            }
+            else
+            {
+                cout << "Thad er ekkert medlaeti i bodi enntha" << endl;
+                system("pause");
+            }
         }
         else if(input == 6)
         {
-            //here I add everything to pizzavector and ask for another pizza
+            //here I add everything to pizzavector and ask for another pizza, if any orders have been made
             s.newPizza();
         }
         else if(input == 7)
         {
-            displayVector(s.getLagerplocations(), true);
-            cout << endl;
+            vector<PizzaLocations> PizzaLocationsVec = s.getLagerplocations();
+            if(PizzaLocationsVec.size())
+            {
+                displayVector(s.getLagerplocations(), true);
+                cout << endl;
 
-            cout << "Enter what location you want to order from: ";
-            cin >> input;
+                cout << "Sladu inn stadsetningu sem thu vilt panta fra: ";
+                cin >> input;
 
-            s.enterLocation(input);
+                s.enterLocation(input);
+            }
+            else
+            {
+                cout << "That er enginn stadur opnadur enntha" << endl;
+                system("pause");
+            }
         }
         else if(input == 8)
         {

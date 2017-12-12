@@ -9,6 +9,8 @@ client::client()
     orderCounter = 0;
     currentPizza = 0;
 
+    sumOfOrder = 0;
+
     orderPaid = false;
     inProgress = false;
     finished = false;
@@ -73,5 +75,7 @@ ostream& operator <<(ostream& outs, client& customer)
     {
         outs << "nei";
     }
+    cout << endl;
+    outs << "Heildarverd: " << customer.sumOfOrder << " kr.";
     return outs;
 }

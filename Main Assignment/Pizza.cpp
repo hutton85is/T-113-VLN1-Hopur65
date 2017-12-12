@@ -9,6 +9,39 @@ Pizza::~Pizza()
     //dtor
 }
 
+
+int Pizza::calculateSumOfOrder()
+{
+    int returnSum = 0;
+
+    if(psize.size())
+    {
+        returnSum += psize[0].price;
+    }
+
+    if(pmenu.size())
+    {
+        returnSum += pmenu[0].price;
+    }
+
+    if(pcrust.size())
+    {
+        returnSum += pcrust[0].price;
+    }
+
+    for(unsigned int i = 0; i < ptoppings.size(); i++)
+    {
+        returnSum += ptoppings[i].price;
+    }
+
+    for(unsigned int i = 0; i < pextras.size(); i++)
+    {
+        returnSum += pextras[i].price;
+    }
+
+    return returnSum;
+}
+
 ostream& operator <<(ostream& out, Pizza& p)
 {
     for(unsigned int i = 0; i < p.plocations.size(); i++)

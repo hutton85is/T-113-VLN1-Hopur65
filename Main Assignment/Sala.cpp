@@ -219,6 +219,8 @@ void Sala::createOrder(string name, string address, int number, bool paid, bool 
     newCustomer.orderPaid = paid;
     newCustomer.deliverOrder = delivery;
 
+    calculateSumOfOrder();
+
     // create a path with file name in variable tempname and enter it to variable fname
     string tempname = "order/" + name + ".dat";
     const char* fname = tempname.c_str();
@@ -272,8 +274,18 @@ void Sala::createOrder(string name, string address, int number, bool paid, bool 
     }
 }
 
+void Sala::calculateSumOfOrder()
+{
+    int sum = 0;
+
+    for(unsigned int i = 0; i < order.size(); i++)
+    {
+        sum += order[i].calculateSumOfOrder();
+    }
+    newCustomer.sumOfOrder = sum;
+}
+
 ostream& operator <<(ostream& outs, Sala& s)
 {
-
     return outs;
 }

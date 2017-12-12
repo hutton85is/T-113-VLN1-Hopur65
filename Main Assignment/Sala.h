@@ -40,6 +40,9 @@ class Sala
         // Return a copy of client class
         client getCustomerOrdersVector();
 
+        // Function to calculate total sum of order/s for customer
+        void calculateSumOfOrder();
+
         void createOrder(string name, string address, int number, bool paid, bool delivery);
 
         /*
@@ -58,6 +61,7 @@ class Sala
         // variable order contains all items a customer has ordered
         Pizza lager;
 
+        // Customer creating an order
         client newCustomer;
 
         //Pizza order;

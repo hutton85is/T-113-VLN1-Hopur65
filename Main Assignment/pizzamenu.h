@@ -15,8 +15,7 @@ class PizzaMenu
 
         int price;
         char choose_pizza[32];
-
-    private:
+        char toppings[128];
 };
 
 #endif // PIZZAMENU_H
