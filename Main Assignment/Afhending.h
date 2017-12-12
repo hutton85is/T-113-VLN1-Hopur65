@@ -26,6 +26,10 @@ class Afhending
         // Set status of customer as in progress
         void deliverOrder(unsigned int customersVecNumber);
 
+        // Return baker location
+        string getAfhendingLocation();
+
+
     private:
         // Location of pizza place
         char afhendingLocation[32];

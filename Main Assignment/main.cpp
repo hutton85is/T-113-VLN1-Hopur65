@@ -11,9 +11,6 @@ using namespace std;
 
 void mainMenu()
 {
-    cout << "---------------------------------------------------------" << endl;
-    cout << "               Velkomin/nn a Pizzastadinn!               " << endl;
-    cout << "---------------------------------------------------------" << endl;
     cout << "    Til thess ad skra thig inn veldu :                   " << endl;
     cout << "                                                         " << endl;
     cout << " 1. Fyrir umsjon                                         " << endl;
@@ -58,9 +55,11 @@ void mainMenu()
 
 int main()
 {
+    UIHelper helperUI;
 
     while(true)
     {
+        helperUI.displayHeader();
         mainMenu();
     }
 

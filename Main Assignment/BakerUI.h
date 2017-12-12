@@ -1,6 +1,7 @@
 #ifndef BAKERUI_H
 #define BAKERUI_H
 
+#include "UIHelper.h"
 #include "Baker.h"
 #include <cstdlib>
 
@@ -33,6 +34,8 @@ class BakerUI
     private:
 
         Baker baker;
+
+        UIHelper helperUI;
 };
 
 #endif // BAKERUI_H

@@ -37,6 +37,7 @@ void UmsjonUI::main(){
 
         int input;
 
+        helperUI.displayHeader();
         cout << "Til thess ad skra nyja pizza staerd veldu       1." << endl;
         cout << "Til thess ad skra nyja pizza crust veldu        2." << endl;
         cout << "Til thess ad skra nytt alegg veldu              3." << endl;
@@ -55,6 +56,7 @@ void UmsjonUI::main(){
 
         if(input == 1)
         {
+            helperUI.displayHeader();
             displayVector(u.getpsize(), false);
             cout << "Sladu inn nyja staerd af pizzu: ";
             char p_size[32];
@@ -67,6 +69,7 @@ void UmsjonUI::main(){
         }
         else if(input == 2)
         {
+            helperUI.displayHeader();
             displayVector(u.getpcrust(), false);
             cout << "Sladu inn nyja typu af crust: ";
             char crust_type[32];
@@ -79,6 +82,7 @@ void UmsjonUI::main(){
         }
         else if(input == 3)
         {
+            helperUI.displayHeader();
             if(u.getptoppings().size())
             {
                 displayVector(u.getptoppings(), false);
@@ -94,12 +98,14 @@ void UmsjonUI::main(){
         }
         else if(input == 4)
         {
+            helperUI.displayHeader();
             displayVector(u.getpMenu(), false);
             cout << "Sladu inn nyja pizzu a matsedil: ";
             char choose_pizza[32];
             cin >> choose_pizza;
             system("CLS");
 
+            helperUI.displayHeader();
             bool moreToppings = true;
             string toppings = "";
             vector<PizzaToppings> AllPizzaToppingsVec = u.getptoppings();
@@ -131,6 +137,8 @@ void UmsjonUI::main(){
                 system("CLS");
             }
 
+            helperUI.displayHeader();
+
             cout << "Sladu inn verd a " << choose_pizza << " sem hlutfall af grunn Pizzu: ";
             double price;
             cin >> price;
@@ -143,6 +151,7 @@ void UmsjonUI::main(){
             system("CLS");
         }
         else if(input == 5){
+            helperUI.displayHeader();
             displayVector(u.getpextras(), false);
 
             cout << "Sladu inn nytt medlaeti: ";
@@ -156,6 +165,7 @@ void UmsjonUI::main(){
         }
         else if(input == 6)
         {
+            helperUI.displayHeader();
             displayVector(u.getplocations(), false);
 
             cout << "Sladu inn nyja stadsetningu pizza stadar: ";

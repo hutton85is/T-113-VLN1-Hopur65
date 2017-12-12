@@ -4,6 +4,8 @@
 #include "Umsjon.h"
 #include <stdlib.h>
 
+#include "UIHelper.h"
+
 
 class UmsjonUI
 {
@@ -16,6 +18,8 @@ class UmsjonUI
     private:
         template <typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool show);
+
+        UIHelper helperUI;
 };
 
 #endif // UMSJONUI_H

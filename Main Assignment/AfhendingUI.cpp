@@ -12,6 +12,7 @@ AfhendingUI::~AfhendingUI()
 
 bool AfhendingUI::pickLocation()
 {
+    helperUI.displayHeader();
     char input;
     vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
     for(unsigned int i = 0; i < availLocations.size(); i++)
@@ -20,8 +21,9 @@ bool AfhendingUI::pickLocation()
     }
     cout << endl;
 
-    cout << "Veldu thina stadsetningu ur listanum" << endl;
+    cout << "Veldu thina stadsetningu ur listanum: ";
     cin >> input;
+    system("CLS");
 
     afhending.setAfhendingLocation(availLocations[input - 48].place);
     return !(afhending.getCustomerVec().empty());
@@ -59,32 +61,39 @@ void AfhendingUI::main()
     // Only continue if there are some pending customers
     if (pickLocation())
     {
-        while(true)
+        while(true && afhending.getCustomerVec().size())
         {
             system("CLS");
+            helperUI.displayHeader();
             cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
             cout << "Til thess ad velja pontun til ad afhenda veldu            2. "  << endl;
             cout << "Til thess ad haetta veldu                                 3. "  << endl;
             cout << endl;
+            cout << "Veldur her: ";
 
             cin >> input;
 
+            system("CLS");
+
             if(input == '1')
             {
-                system("CLS");
+                helperUI.displayHeader();
                 displayAllCustomers(false);
+                cout << endl;
                 system("pause");
             }
             else if(input == '2')
             {
-                system("CLS");
+                helperUI.displayHeader();
                 displayAllCustomers(true);
 
                 unsigned int customerID;
-                cout << "Veldu pontun til ad skoda nanar" << endl;
+                cout << endl;
+                cout << "Veldu pontun til ad skoda nanar: ";
                 cin >> customerID;
                 system("CLS");
 
+                helperUI.displayHeader();
                 displayCustomerOrder(customerID);
 
                 char choice;
@@ -96,13 +105,18 @@ void AfhendingUI::main()
                 {
                     afhending.deliverOrder(customerID);
                 }
-                system("pause");
             }
             else if(input == '3')
             {
-                system("CLS");
                 break;
             }
         }
+    }
+    else
+    {
+        helperUI.displayHeader();
+        cout << "Thad eru engar pantanir i bid: " << afhending.getAfhendingLocation() << endl;
+        cout << endl;
+        system("pause");
     }
 }

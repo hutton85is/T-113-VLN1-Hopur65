@@ -26,6 +26,11 @@ vector<PizzaLocations> Afhending::getPizzaLocations()
     return locationsVec;
 }
 
+string Afhending::getAfhendingLocation()
+{
+    return afhendingLocation;
+}
+
 void Afhending::setAfhendingLocation(char currentLocation[32])
 {
     strcpy(afhendingLocation, currentLocation);

@@ -2,6 +2,7 @@
 #define AFHENDINGUI_H
 
 #include "Afhending.h"
+#include "UIHelper.h"
 
 class AfhendingUI
 {
@@ -24,6 +25,8 @@ class AfhendingUI
 
     private:
         Afhending afhending;
+
+        UIHelper helperUI;
 };
 
 #endif // AFHENDINGUI_H
