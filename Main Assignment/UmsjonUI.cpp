@@ -11,10 +11,14 @@ UmsjonUI::~UmsjonUI()
 }
 
 template<typename Pizzaclass>
-void UmsjonUI::displayVector(vector<Pizzaclass> vec)
+void UmsjonUI::displayVector(vector<Pizzaclass> vec, bool show)
 {
     for (unsigned int i = 0; i < vec.size(); i++)
     {
+        if(show)
+        {
+            cout << i << ". ";
+        }
         cout << vec[i] << endl;
     }
     cout << endl;
@@ -48,7 +52,7 @@ void UmsjonUI::main(){
 
         if(input == 1)
         {
-            displayVector(u.getpsize());
+            displayVector(u.getpsize(), false);
             cout << "Sladu inn nyja staerd af pizzu: ";
             char p_size[32];
             cin >> p_size;
@@ -60,7 +64,7 @@ void UmsjonUI::main(){
         }
         else if(input == 2)
         {
-            displayVector(u.getpcrust());
+            displayVector(u.getpcrust(), false);
             cout << "Sladu inn nyja typu af crust: ";
             char crust_type[32];
             cin >> crust_type;
@@ -72,7 +76,10 @@ void UmsjonUI::main(){
         }
         else if(input == 3)
         {
-            displayVector(u.getptoppings());
+            if(u.getptoppings().size())
+            {
+                displayVector(u.getptoppings(), false);
+            }
             cout << "Enter new type of topping: ";
             char toppings[32];
             cin >> toppings;
@@ -84,18 +91,56 @@ void UmsjonUI::main(){
         }
         else if(input == 4)
         {
-            displayVector(u.getpMenu());
+            displayVector(u.getpMenu(), false);
             cout << "Sladu inn nyja pizzu a matsedil: ";
             char choose_pizza[32];
             cin >> choose_pizza;
+            system("CLS");
+
+            bool moreToppings = true;
+            string toppings = "";
+            vector<PizzaToppings> AllPizzaToppingsVec = u.getptoppings();
+            while(moreToppings)
+            {
+                int newToppingID;
+                displayVector(u.getptoppings(), true);
+                cout << "Sladu inn alegg til ad hafa a " << choose_pizza << ": ";
+                cin >> newToppingID;
+
+                string tempString(AllPizzaToppingsVec[newToppingID].toppings);
+
+                if(toppings == "")
+                {
+                    toppings = tempString;
+                }
+                else
+                {
+                    toppings = toppings + ", " + tempString;
+                }
+
+                cout << "Viltu velja fleiri alegg? j/n: ";
+                char yn;
+                cin >> yn;
+                if (yn == 'n')
+                {
+                    moreToppings = false;
+                }
+                system("CLS");
+            }
+
             cout << "Sladu inn verd a " << choose_pizza << ": ";
             int price;
             cin >> price;
-            u.createMenu(choose_pizza, price);
+
+            char *newToppings = new char[128];
+            strcpy(newToppings, toppings.c_str());
+
+            u.createMenu(choose_pizza, price, newToppings);
+            delete [] newToppings;
             system("CLS");
         }
         else if(input == 5){
-            displayVector(u.getpextras());
+            displayVector(u.getpextras(), false);
 
             cout << "Sladu inn nytt medlaeti: ";
             char extras_type[32];
@@ -108,7 +153,7 @@ void UmsjonUI::main(){
         }
         else if(input == 6)
         {
-            displayVector(u.getplocations());
+            displayVector(u.getplocations(), false);
 
             cout << "Sladu inn nyja stadsetningu pizza stadar: ";
             char place[32];

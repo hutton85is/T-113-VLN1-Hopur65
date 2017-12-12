@@ -15,7 +15,7 @@ class UmsjonUI
 
     private:
         template <typename Pizzaclass>
-        void displayVector(vector<Pizzaclass> vec);
+        void displayVector(vector<Pizzaclass> vec, bool show);
 };
 
 #endif // UMSJONUI_H

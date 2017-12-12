@@ -29,7 +29,7 @@ class Pizza
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
 
-        // Total sum of order
+        /** Calculate sum of current order*/
         int calculateSumOfOrder();
 
         friend ostream& operator <<(ostream& out, Pizza& p);
