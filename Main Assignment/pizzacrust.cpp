@@ -4,12 +4,6 @@ PizzaCrust::PizzaCrust()
 {
         price = 0;
         crust_type[0] = '\0';
-    //ctor
-}
-
-PizzaCrust::~PizzaCrust()
-{
-    //dtor
 }
 
 ostream& operator <<(ostream& outs, PizzaCrust& p_crust)

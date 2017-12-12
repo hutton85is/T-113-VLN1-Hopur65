@@ -1,3 +1,7 @@
+/**
+*    @file The main class for pizza software
+*/
+
 #include <iostream>
 #include <stdlib.h>
 

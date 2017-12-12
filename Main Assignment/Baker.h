@@ -11,46 +11,61 @@ class Baker
         Baker();
         virtual ~Baker();
 
+        /**
+        * Function that set's baker location and sort's orders
+        * into vector's depending on order status 'in progress'
+        * or 'due progress'
+        *
+        * @param currentLocation is baker's location
+        */
         void setBakerLocation(char currentLocation[32]);
 
-        // Return customer vector 'customersVec'
         vector<client> getCustomerVec();
 
-        // Return customer vector 'customersVecInProgress'
         vector<client> getCustomersVecInProgress();
 
-        // Return customer vector 'customersVecDueProgress'
         vector<client> getCustomersVecDueProgress();
 
-        // Return pizza order of a chosen customer
+        /**
+        * @return a vector of all customer orders due progress and in progress
+        */
         vector<Pizza> getOrderVec(unsigned int customersVecNumber);
 
-        // Return Pizza order of a chosen customer that is due progress
+        /**
+        * @return a vector only with customer orders due progress
+        */
         vector<Pizza> getCustomersOrderDueProgress(unsigned int customerNumber);
 
-        // Return Pizza order of a chosen customer that is in progress
+        /**
+        * @return a vector only with customer orders in progress
+        */
         vector<Pizza> getCustomersOrderInProgress(unsigned int customerNumber);
 
-        // Return all available pizza place locations
         vector<PizzaLocations> getPizzaLocations();
 
-        // Return baker location
         string getBakerLocation();
 
-        // Set status of customer as in progress
+        /**
+        * Move customer from customersVecDueProgress to customersVecInProgress
+        * and rewrite file containing customer order with updated client class
+        *
+        * @param customersVecNumber is the position of customer to update in vector
+        */
         void workOnOrder(unsigned int customersVecNumber);
 
-        // Set status of customer as finished
+        /**
+        * Move customer from customersVecInProgress and rewrite file containing
+        * customer order with updated client class
+        *
+        * @param customerID
+        */
         void finishOrder(unsigned int customerID);
 
     private:
-        // A vector of all customers ordering from same location as baker
         vector<client> customersVec;
 
-        // A vector of customers whose orders are being worked on from same location as baker
         vector<client> customersVecInProgress;
 
-        // A vector of customer orders whose orders are currently waiting to be worked on
         vector<client> customersVecDueProgress;
 
         char bakerLocation[32];

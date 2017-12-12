@@ -6,11 +6,6 @@ Sala::Sala()
     rw.loadAllVectors(lager);
 }
 
-Sala::~Sala()
-{
-    //dtor
-}
-
 vector<Pizza> Sala::getOrder()
 {
     return order;
@@ -46,7 +41,12 @@ vector<PizzaToppings> Sala::getLagerptoppings()
     return lager.ptoppings;
 }
 
-bool Sala::enterPizzaSize(unsigned int input)
+client Sala::getClient()
+{
+    return newCustomer;
+}
+
+void Sala::enterPizzaSize(unsigned int input)
 {
     if (input < sizeof(lager.psize) && 0 <= input)
     {
@@ -69,14 +69,10 @@ bool Sala::enterPizzaSize(unsigned int input)
         }
 
         pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
-
-        return true;
     }
-
-    return false;
 }
 
-bool Sala::enterCrust(unsigned int input)
+void Sala::enterCrust(unsigned int input)
 {
     if (input < sizeof(lager.pcrust) && 0 <= input)
     {
@@ -92,28 +88,20 @@ bool Sala::enterCrust(unsigned int input)
         }
 
         pHelper[newCustomer.orderCounter-1].crustCounter = 1;
-
-        return true;
     }
-
-    return false;
 }
 
-bool Sala::enterToppings(unsigned int input)
+void Sala::enterToppings(unsigned int input)
 {
     if (input < sizeof(lager.ptoppings) && 0 <= input)
     {
         order[newCustomer.orderCounter-1].ptoppings.push_back(lager.ptoppings[input]);
 
         pHelper[newCustomer.orderCounter-1].toppingsCounter++;
-
-        return true;
     }
-
-    return false;
 }
 
-bool Sala::enterMenu(unsigned int input)
+void Sala::enterMenu(unsigned int input)
 {
     if (input < sizeof(lager.pmenu) && 0 <= input)
     {
@@ -136,28 +124,20 @@ bool Sala::enterMenu(unsigned int input)
         }
 
         pHelper[newCustomer.orderCounter-1].menuCounter = 1;
-
-        return true;
     }
-
-    return false;
 }
 
-bool Sala::enterExtras(unsigned int input)
+void Sala::enterExtras(unsigned int input)
 {
     if (input < sizeof(lager.pextras) && 0 <= input)
     {
         order[newCustomer.orderCounter-1].pextras.push_back(lager.pextras[input]);
 
         pHelper[newCustomer.orderCounter-1].extrasCounter++;
-
-        return true;
     }
-
-    return false;
 }
 
-bool Sala::enterLocation(unsigned int input)
+void Sala::enterLocation(unsigned int input)
 {
     if (input < sizeof(lager.plocations) && 0 <= input)
     {
@@ -173,22 +153,16 @@ bool Sala::enterLocation(unsigned int input)
         }
 
         pHelper[0].locationCounter = 1;
-
-        return true;
     }
-
-    return false;
 }
 
 void Sala::newPizza()
 {
     newCustomer.orderCounter++;
 
-    // Insert a new pizza class onto client vector<Pizza>
     Pizza newPizzaOrder;
     order.push_back(newPizzaOrder);
 
-    // Insert a new Pizza helper class
     PizzaHelper newPizzaHelper;
     pHelper.push_back(newPizzaHelper);
 }
@@ -200,7 +174,6 @@ client Sala::getCustomerOrdersVector()
 
 void Sala::createOrder(string name, string address, int number, bool paid, bool delivery)
 {
-    // Assign name, address and addressnumber for newCustomer
     strncpy(newCustomer.name, name.c_str(), sizeof(newCustomer.name) - 1);
     strncpy(newCustomer.address, address.c_str(), sizeof(newCustomer.address) - 1);
     newCustomer.addressNumber = number;
@@ -209,7 +182,6 @@ void Sala::createOrder(string name, string address, int number, bool paid, bool 
 
     calculateSumOfOrder();
 
-    // create a path with file name in variable tempname and enter it to variable fname
     string tempname = "order/" + name + ".dat";
     const char* fname = tempname.c_str();
 
@@ -219,6 +191,7 @@ void Sala::createOrder(string name, string address, int number, bool paid, bool 
     // Write client class to file and path 'fname'
     rw.writeClassToFile(newCustomer, fname);
 
+    // Add all classes on order to file 'fname' according to counter variables stored in pHelper
     for (unsigned int j = 0; j < newCustomer.orderCounter; j++)
     {
         // Write helper class for storing how many items are in the order
@@ -275,5 +248,14 @@ void Sala::calculateSumOfOrder()
 
 ostream& operator <<(ostream& outs, Sala& s)
 {
+    client newClient = s.getClient();
+    vector<Pizza> order = s.getOrder();
+
+    outs << newClient << endl;
+
+    for(unsigned int i = 0; i < order.size(); i++)
+    {
+        outs << order[i] << endl;
+    }
     return outs;
 }

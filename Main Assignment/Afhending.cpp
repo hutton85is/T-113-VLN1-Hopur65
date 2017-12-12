@@ -7,11 +7,6 @@ Afhending::Afhending()
     rw.loadSpecificVector(customersVec, "order/customerlist.dat", loadClient);
 }
 
-Afhending::~Afhending()
-{
-    //dtor
-}
-
 vector<client> Afhending::getCustomerVec()
 {
     return customersVec;
@@ -37,9 +32,8 @@ void Afhending::setAfhendingLocation(char currentLocation[32])
 
     readWriteClass rw;
     vector<client> newCustomersVec;
-    /*
-    * run through all orders to find which orders have same location as baker
-    */
+
+    // run through all orders to find which orders have same location as baker
     for (unsigned int i = 0; i < customersVec.size(); i++)
     {
         // change to compare an array of char
@@ -52,10 +46,8 @@ void Afhending::setAfhendingLocation(char currentLocation[32])
         const char* pathfile = fname.c_str();
         rw.loadCustomer(newClient, newOrder, newpHelper, pathfile);
 
-        /*
-        * Compare baker location with customer location, and check if the orders are not finished,
-        * and push them onto customersVec if they have the same location
-        */
+        // Compare baker location with customer location, and check if the orders are not finished,
+        // and push them onto customersVec if they have the same location
         bool same = false;
         for (unsigned int k = 0; k < 32; k++)
         {
@@ -98,6 +90,7 @@ void Afhending::deliverOrder(unsigned int customersVecNumber)
     customersVec[customersVecNumber].orderPaid = true;
     customersVec[customersVecNumber].orderDelivered = true;
 
+    // HELD ÞETTA EIGI EKKI AÐ VERA
     readWriteClass rw;
     string fname = "order/";
     fname.append(customersVec[customersVecNumber].name);

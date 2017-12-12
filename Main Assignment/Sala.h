@@ -1,3 +1,7 @@
+/**
+* Sala handles functionality for SalaUI.
+*/
+
 #ifndef SALA_H
 #define SALA_H
 
@@ -16,38 +20,46 @@
 class Sala
 {
     public:
-        /*
-        * Make the constructor load variable lager with all available items for sale
+        /**
+        * Constructor initiates vector variable lager, with everything available for ordering on a pizza
         */
         Sala();
-        virtual ~Sala();
 
-        /*
-        * Receive input choice from user, of different order choices and push it to on the corresponding vector
-        * Return true if input is a valid integer.
-        * Return false if input is an invalid integer.
+        /**
+         * All enter functions push items selected by customer to order vector
+         *
+         * @param input: is the location of item in order vector for a specific item ordered
+         */
+        void enterCrust(unsigned int input);
+        void enterExtras(unsigned int input);
+        void enterLocation(unsigned int input);
+        void enterMenu(unsigned int input);
+        void enterToppings(unsigned int input);
+        void enterPizzaSize(unsigned int input);
+
+
+
+        /**
+        * Initiate a new Pizza order and push back former order to vector order
         */
-        bool enterPizzaSize(unsigned int input);
-        bool enterCrust(unsigned int input);
-        bool enterToppings(unsigned int input);
-        bool enterMenu(unsigned int input);
-        bool enterExtras(unsigned int input);
-        bool enterLocation(unsigned int input);
-
         // Initiate a new pizza
         void newPizza();
 
-        // Return a copy of client class
-        client getCustomerOrdersVector();
-
-        // Function to calculate total sum of order/s for customer
         void calculateSumOfOrder();
 
+        /**
+        * Write client and pizza order to file and client to a directory containing a list of customers
+        *
+        * @param name is customers name
+        * @param address is customers address
+        * @param number is customers address number
+        * @param paid is true if order is paid, else false
+        * @param delivery is true if customer wants a delivery, else false
+        */
         void createOrder(string name, string address, int number, bool paid, bool delivery);
 
-        /*
-        * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI
-        */
+        client getCustomerOrdersVector();
+
         vector<PizzaCrust> getLagerpcrust();
         vector<PizzaExtras> getLagerpextras();
         vector<PizzaLocations> getLagerplocations();
@@ -55,19 +67,24 @@ class Sala
         vector<PizzaSize> getLagerpsize();
         vector<PizzaToppings> getLagerptoppings();
         vector<Pizza> getOrder();
+        client getClient();
+
+        friend ostream& operator <<(ostream& outs, Sala& s);
 
     private:
-        // variable lager contains all items available to sell
-        // variable order contains all items a customer has ordered
         Pizza lager;
 
-        // Customer creating an order
         client newCustomer;
 
-        //Pizza order;
+        /**
+        * @param order Customer orders are stored on this vector. When customer options for a another pizza
+        * the former order is pushed back on this vector
+        */
         vector<Pizza> order;
 
-        // A vector containing classes to store how many items are on an order
+        /**
+        * @param pHelper A helper vector storing quantity of all items on a single order
+        */
         vector<PizzaHelper> pHelper;
 };
 

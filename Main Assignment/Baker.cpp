@@ -14,20 +14,17 @@ Baker::~Baker()
 
 void Baker::workOnOrder(unsigned int customersVecNumber)
 {
-    // Update customersVec to in progress
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
         if(strcmp(customersVec[i].name, customersVecDueProgress[customersVecNumber].name) == 0)
         {
-            // customer found set inprogress status
             customersVec[i].inProgress = true;
             break;
         }
     }
 
-    // Set status as inProgress of customer
     customersVecDueProgress[customersVecNumber].inProgress = true;
-    // Move customer on to vector in progress
+
     customersVecInProgress.push_back(customersVecDueProgress[customersVecNumber]);
 
     // Load customer from file to rewrite him changing status on working on pizza order
@@ -44,7 +41,6 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
     // Remove all contents of exisisting file, for update
     rw.removeAllContentsOfFile(pathfile);
 
-    // Rewrite customer to file
     // Write client class to file and path 'fname'
     rw.writeClassToFile(customersVecDueProgress[customersVecNumber], pathfile);
 
@@ -89,7 +85,7 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
             rw.writeClassToFile(customerOrder[j].plocations[i], pathfile);
         }
     }
-    // Erase the element after pushing it on another vector and writing it to file with in progress status
+
     customersVecDueProgress.erase(customersVecDueProgress.begin() + customersVecNumber);
 }
 
@@ -123,7 +119,6 @@ void Baker::finishOrder(unsigned int customersVecNumber)
     // Remove all contents of existing file, for update
     rw.removeAllContentsOfFile(pathfile);
 
-    // Rewrite customer to file
     // Write client class to file and path 'fname'
     rw.writeClassToFile(customersVecInProgress[customersVecNumber], pathfile);
 
@@ -225,12 +220,10 @@ void Baker::setBakerLocation(char currentLocation[32])
 
     readWriteClass rw;
     vector<client> newCustomersVec;
-    /*
-    * run through all orders to find which orders have same location as baker
-    */
+
+    // Search for locations same as currentLocation
     for (unsigned int i = 0; i < customersVec.size(); i++)
     {
-        // change to compare an array of char
         vector<Pizza> newOrder;
         vector<PizzaHelper> newpHelper;
         client newClient;
@@ -238,13 +231,9 @@ void Baker::setBakerLocation(char currentLocation[32])
         fname.append(customersVec[i].name);
         fname.append(".dat");
         const char* pathfile = fname.c_str();
-        cout << i << " i " << endl;
+
         rw.loadCustomer(newClient, newOrder, newpHelper, pathfile);
 
-        /*
-        * Compare baker location with customer location, and check if the orders are not finished,
-        * and push them onto customersVec if they have the same location
-        */
         bool same = false;
         for (unsigned int k = 0; k < 32; k++)
         {

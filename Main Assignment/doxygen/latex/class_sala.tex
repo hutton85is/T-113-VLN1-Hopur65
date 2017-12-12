@@ -1,0 +1,278 @@
+\hypertarget{class_sala}{
+\section{Sala Class Reference}
+\label{class_sala}\index{Sala@{Sala}}
+}
+{\tt \#include $<$Sala.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_sala_da283dd136f3f0c2703d0356f49c1e6e}{Sala} ()
+\item 
+void \hyperlink{class_sala_ae3b8375ca0ab5b62e84f86582b8cec3}{enter\-Crust} (unsigned int input)
+\item 
+void \hyperlink{class_sala_f4637151f3f934bdf727685020e956e2}{enter\-Extras} (unsigned int input)
+\item 
+void \hyperlink{class_sala_d5b546b927926e2eed280fcdc087135e}{enter\-Location} (unsigned int input)
+\item 
+void \hyperlink{class_sala_1015bfdd699f9dc90a677a87def0b37b}{enter\-Menu} (unsigned int input)
+\item 
+void \hyperlink{class_sala_34479ade70e563ba9c7eb9b66df2270e}{enter\-Toppings} (unsigned int input)
+\item 
+void \hyperlink{class_sala_caeeb8aada209ebb8bde4749b2ececdc}{enter\-Pizza\-Size} (unsigned int input)
+\item 
+void \hyperlink{class_sala_eadce54d849ca6634b7fdd389bd8f192}{new\-Pizza} ()
+\item 
+void \hyperlink{class_sala_24b9bb5302a251b41fed3df1fb7ce8ad}{calculate\-Sum\-Of\-Order} ()
+\item 
+void \hyperlink{class_sala_9f3c48158017cdc015a985e9712f0179}{create\-Order} (string name, string address, int number, bool paid, bool delivery)
+\item 
+\hyperlink{classclient}{client} \hyperlink{class_sala_3a31e5a83058a950f863932d3ecaef2e}{get\-Customer\-Orders\-Vector} ()
+\item 
+vector$<$ \hyperlink{class_pizza_crust}{Pizza\-Crust} $>$ \hyperlink{class_sala_85a631cad1f4009e87de7da3bc52174c}{get\-Lagerpcrust} ()
+\item 
+vector$<$ \hyperlink{class_pizza_extras}{Pizza\-Extras} $>$ \hyperlink{class_sala_49f231948b80188691882a8624a4612d}{get\-Lagerpextras} ()
+\item 
+vector$<$ \hyperlink{class_pizza_locations}{Pizza\-Locations} $>$ \hyperlink{class_sala_1e720a42845186f5057b36ab8b69711a}{get\-Lagerplocations} ()
+\item 
+vector$<$ \hyperlink{class_pizza_menu}{Pizza\-Menu} $>$ \hyperlink{class_sala_89b38b3e2a9835524c9fd21628f485cc}{get\-Lagerp\-Menu} ()
+\item 
+vector$<$ \hyperlink{class_pizza_size}{Pizza\-Size} $>$ \hyperlink{class_sala_3b0fc00a14ac87f5c78a4ec2f508d67b}{get\-Lagerpsize} ()
+\item 
+vector$<$ \hyperlink{class_pizza_toppings}{Pizza\-Toppings} $>$ \hyperlink{class_sala_aeb754b87d63d395a61539294cbdf064}{get\-Lagerptoppings} ()
+\item 
+vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_sala_71e41a58a2a9c2d1927676693909a42c}{get\-Order} ()
+\item 
+\hyperlink{classclient}{client} \hyperlink{class_sala_a1300ce1d3137fc3bd1b2938612faa1b}{get\-Client} ()
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_pizza}{Pizza} \hyperlink{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}{lager}
+\item 
+\hyperlink{classclient}{client} \hyperlink{class_sala_d6980eaf5555befe23d2271575d6d9cb}{new\-Customer}
+\item 
+vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_sala_70a17ffa722a3985b86d30b034ad06d7}{order}
+\item 
+vector$<$ \hyperlink{class_pizza_helper}{Pizza\-Helper} $>$ \hyperlink{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{p\-Helper}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& \hyperlink{class_sala_b32b27b19243c1cf7bcfffe604ea1736}{operator$<$$<$} (ostream \&outs, \hyperlink{class_sala}{Sala} \&s)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Sala handles functionality for \hyperlink{class_sala_u_i}{Sala\-UI}. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sala_da283dd136f3f0c2703d0356f49c1e6e}{
+\index{Sala@{Sala}!Sala@{Sala}}
+\index{Sala@{Sala}!Sala@{Sala}}
+\subsubsection[Sala]{\setlength{\rightskip}{0pt plus 5cm}Sala::Sala ()}}
+\label{class_sala_da283dd136f3f0c2703d0356f49c1e6e}
+
+
+Constructor initiates vector variable lager, with everything available for ordering on a pizza 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sala_24b9bb5302a251b41fed3df1fb7ce8ad}{
+\index{Sala@{Sala}!calculateSumOfOrder@{calculateSumOfOrder}}
+\index{calculateSumOfOrder@{calculateSumOfOrder}!Sala@{Sala}}
+\subsubsection[calculateSumOfOrder]{\setlength{\rightskip}{0pt plus 5cm}void Sala::calculate\-Sum\-Of\-Order ()}}
+\label{class_sala_24b9bb5302a251b41fed3df1fb7ce8ad}
+
+
+\hypertarget{class_sala_9f3c48158017cdc015a985e9712f0179}{
+\index{Sala@{Sala}!createOrder@{createOrder}}
+\index{createOrder@{createOrder}!Sala@{Sala}}
+\subsubsection[createOrder]{\setlength{\rightskip}{0pt plus 5cm}void Sala::create\-Order (string {\em name}, string {\em address}, int {\em number}, bool {\em paid}, bool {\em delivery})}}
+\label{class_sala_9f3c48158017cdc015a985e9712f0179}
+
+
+Write client and pizza order to file and client to a directory containing a list of customers
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]is customers name \item[{\em address}]is customers address \item[{\em number}]is customers address number \item[{\em paid}]is true if order is paid, else false \item[{\em delivery}]is true if customer wants a delivery, else false \end{description}
+\end{Desc}
+\hypertarget{class_sala_ae3b8375ca0ab5b62e84f86582b8cec3}{
+\index{Sala@{Sala}!enterCrust@{enterCrust}}
+\index{enterCrust@{enterCrust}!Sala@{Sala}}
+\subsubsection[enterCrust]{\setlength{\rightskip}{0pt plus 5cm}void Sala::enter\-Crust (unsigned int {\em input})}}
+\label{class_sala_ae3b8375ca0ab5b62e84f86582b8cec3}
+
+
+All enter functions push items selected by customer to order vector
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em input,:}]is the location of item in order vector for a specific item ordered \end{description}
+\end{Desc}
+\hypertarget{class_sala_f4637151f3f934bdf727685020e956e2}{
+\index{Sala@{Sala}!enterExtras@{enterExtras}}
+\index{enterExtras@{enterExtras}!Sala@{Sala}}
+\subsubsection[enterExtras]{\setlength{\rightskip}{0pt plus 5cm}void Sala::enter\-Extras (unsigned int {\em input})}}
+\label{class_sala_f4637151f3f934bdf727685020e956e2}
+
+
+\hypertarget{class_sala_d5b546b927926e2eed280fcdc087135e}{
+\index{Sala@{Sala}!enterLocation@{enterLocation}}
+\index{enterLocation@{enterLocation}!Sala@{Sala}}
+\subsubsection[enterLocation]{\setlength{\rightskip}{0pt plus 5cm}void Sala::enter\-Location (unsigned int {\em input})}}
+\label{class_sala_d5b546b927926e2eed280fcdc087135e}
+
+
+\hypertarget{class_sala_1015bfdd699f9dc90a677a87def0b37b}{
+\index{Sala@{Sala}!enterMenu@{enterMenu}}
+\index{enterMenu@{enterMenu}!Sala@{Sala}}
+\subsubsection[enterMenu]{\setlength{\rightskip}{0pt plus 5cm}void Sala::enter\-Menu (unsigned int {\em input})}}
+\label{class_sala_1015bfdd699f9dc90a677a87def0b37b}
+
+
+\hypertarget{class_sala_caeeb8aada209ebb8bde4749b2ececdc}{
+\index{Sala@{Sala}!enterPizzaSize@{enterPizzaSize}}
+\index{enterPizzaSize@{enterPizzaSize}!Sala@{Sala}}
+\subsubsection[enterPizzaSize]{\setlength{\rightskip}{0pt plus 5cm}void Sala::enter\-Pizza\-Size (unsigned int {\em input})}}
+\label{class_sala_caeeb8aada209ebb8bde4749b2ececdc}
+
+
+\hypertarget{class_sala_34479ade70e563ba9c7eb9b66df2270e}{
+\index{Sala@{Sala}!enterToppings@{enterToppings}}
+\index{enterToppings@{enterToppings}!Sala@{Sala}}
+\subsubsection[enterToppings]{\setlength{\rightskip}{0pt plus 5cm}void Sala::enter\-Toppings (unsigned int {\em input})}}
+\label{class_sala_34479ade70e563ba9c7eb9b66df2270e}
+
+
+\hypertarget{class_sala_a1300ce1d3137fc3bd1b2938612faa1b}{
+\index{Sala@{Sala}!getClient@{getClient}}
+\index{getClient@{getClient}!Sala@{Sala}}
+\subsubsection[getClient]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{classclient}{client} Sala::get\-Client ()}}
+\label{class_sala_a1300ce1d3137fc3bd1b2938612faa1b}
+
+
+\hypertarget{class_sala_3a31e5a83058a950f863932d3ecaef2e}{
+\index{Sala@{Sala}!getCustomerOrdersVector@{getCustomerOrdersVector}}
+\index{getCustomerOrdersVector@{getCustomerOrdersVector}!Sala@{Sala}}
+\subsubsection[getCustomerOrdersVector]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{classclient}{client} Sala::get\-Customer\-Orders\-Vector ()}}
+\label{class_sala_3a31e5a83058a950f863932d3ecaef2e}
+
+
+\hypertarget{class_sala_85a631cad1f4009e87de7da3bc52174c}{
+\index{Sala@{Sala}!getLagerpcrust@{getLagerpcrust}}
+\index{getLagerpcrust@{getLagerpcrust}!Sala@{Sala}}
+\subsubsection[getLagerpcrust]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_crust}{Pizza\-Crust} $>$ Sala::get\-Lagerpcrust ()}}
+\label{class_sala_85a631cad1f4009e87de7da3bc52174c}
+
+
+\hypertarget{class_sala_49f231948b80188691882a8624a4612d}{
+\index{Sala@{Sala}!getLagerpextras@{getLagerpextras}}
+\index{getLagerpextras@{getLagerpextras}!Sala@{Sala}}
+\subsubsection[getLagerpextras]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_extras}{Pizza\-Extras} $>$ Sala::get\-Lagerpextras ()}}
+\label{class_sala_49f231948b80188691882a8624a4612d}
+
+
+\hypertarget{class_sala_1e720a42845186f5057b36ab8b69711a}{
+\index{Sala@{Sala}!getLagerplocations@{getLagerplocations}}
+\index{getLagerplocations@{getLagerplocations}!Sala@{Sala}}
+\subsubsection[getLagerplocations]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_locations}{Pizza\-Locations} $>$ Sala::get\-Lagerplocations ()}}
+\label{class_sala_1e720a42845186f5057b36ab8b69711a}
+
+
+\hypertarget{class_sala_89b38b3e2a9835524c9fd21628f485cc}{
+\index{Sala@{Sala}!getLagerpMenu@{getLagerpMenu}}
+\index{getLagerpMenu@{getLagerpMenu}!Sala@{Sala}}
+\subsubsection[getLagerpMenu]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_menu}{Pizza\-Menu} $>$ Sala::get\-Lagerp\-Menu ()}}
+\label{class_sala_89b38b3e2a9835524c9fd21628f485cc}
+
+
+\hypertarget{class_sala_3b0fc00a14ac87f5c78a4ec2f508d67b}{
+\index{Sala@{Sala}!getLagerpsize@{getLagerpsize}}
+\index{getLagerpsize@{getLagerpsize}!Sala@{Sala}}
+\subsubsection[getLagerpsize]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_size}{Pizza\-Size} $>$ Sala::get\-Lagerpsize ()}}
+\label{class_sala_3b0fc00a14ac87f5c78a4ec2f508d67b}
+
+
+\hypertarget{class_sala_aeb754b87d63d395a61539294cbdf064}{
+\index{Sala@{Sala}!getLagerptoppings@{getLagerptoppings}}
+\index{getLagerptoppings@{getLagerptoppings}!Sala@{Sala}}
+\subsubsection[getLagerptoppings]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_toppings}{Pizza\-Toppings} $>$ Sala::get\-Lagerptoppings ()}}
+\label{class_sala_aeb754b87d63d395a61539294cbdf064}
+
+
+\hypertarget{class_sala_71e41a58a2a9c2d1927676693909a42c}{
+\index{Sala@{Sala}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!Sala@{Sala}}
+\subsubsection[getOrder]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza}{Pizza} $>$ Sala::get\-Order ()}}
+\label{class_sala_71e41a58a2a9c2d1927676693909a42c}
+
+
+\hypertarget{class_sala_eadce54d849ca6634b7fdd389bd8f192}{
+\index{Sala@{Sala}!newPizza@{newPizza}}
+\index{newPizza@{newPizza}!Sala@{Sala}}
+\subsubsection[newPizza]{\setlength{\rightskip}{0pt plus 5cm}void Sala::new\-Pizza ()}}
+\label{class_sala_eadce54d849ca6634b7fdd389bd8f192}
+
+
+Initiate a new \hyperlink{class_pizza}{Pizza} order and push back former order to vector order 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_sala_b32b27b19243c1cf7bcfffe604ea1736}{
+\index{Sala@{Sala}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!Sala@{Sala}}
+\subsubsection[operator$<$$<$]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em outs}, \hyperlink{class_sala}{Sala} \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{class_sala_b32b27b19243c1cf7bcfffe604ea1736}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}{
+\index{Sala@{Sala}!lager@{lager}}
+\index{lager@{lager}!Sala@{Sala}}
+\subsubsection[lager]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{class_pizza}{Pizza} \hyperlink{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}{Sala::lager}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}
+
+
+\hypertarget{class_sala_d6980eaf5555befe23d2271575d6d9cb}{
+\index{Sala@{Sala}!newCustomer@{newCustomer}}
+\index{newCustomer@{newCustomer}!Sala@{Sala}}
+\subsubsection[newCustomer]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{classclient}{client} \hyperlink{class_sala_d6980eaf5555befe23d2271575d6d9cb}{Sala::new\-Customer}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_sala_d6980eaf5555befe23d2271575d6d9cb}
+
+
+\hypertarget{class_sala_70a17ffa722a3985b86d30b034ad06d7}{
+\index{Sala@{Sala}!order@{order}}
+\index{order@{order}!Sala@{Sala}}
+\subsubsection[order]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{class_pizza}{Pizza}$>$ \hyperlink{class_sala_70a17ffa722a3985b86d30b034ad06d7}{Sala::order}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_sala_70a17ffa722a3985b86d30b034ad06d7}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em order}]Customer orders are stored on this vector. When customer options for a another pizza the former order is pushed back on this vector \end{description}
+\end{Desc}
+\hypertarget{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{
+\index{Sala@{Sala}!pHelper@{pHelper}}
+\index{pHelper@{pHelper}!Sala@{Sala}}
+\subsubsection[pHelper]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{class_pizza_helper}{Pizza\-Helper}$>$ \hyperlink{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{Sala::p\-Helper}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_sala_4b1abb1f80ebc80a2334733ae62acde2}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em p\-Helper}]A helper vector storing quantity of all items on a single order \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{_sala_8h}{Sala.h}\item 
+\hyperlink{_sala_8cpp}{Sala.cpp}\end{CompactItemize}
