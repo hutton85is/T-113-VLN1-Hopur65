@@ -14,14 +14,14 @@ int Pizza::calculateSumOfOrder()
 {
     int returnSum = 0;
 
-    if(psize.size())
+    if(psize.size() && !pmenu.size())
     {
         returnSum += psize[0].price;
     }
 
     if(pmenu.size())
     {
-        returnSum += pmenu[0].price;
+        returnSum += pmenu[0].price * psize[0].price;
     }
 
     if(pcrust.size())

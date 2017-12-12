@@ -13,7 +13,7 @@ class PizzaMenu
 
         friend ostream& operator <<(ostream& outs, PizzaMenu& p_menu);
 
-        int price;
+        double price;
         char choose_pizza[32];
         char toppings[128];
 };

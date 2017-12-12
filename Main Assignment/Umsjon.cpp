@@ -83,7 +83,7 @@ void Umsjon::createToppings(char toppings[32], int price)
     rw.writeClassToFile<PizzaToppings>(newToppings, fname);
 }
 
-void Umsjon::createMenu(char choose_pizza[32], int price, char toppings[128])
+void Umsjon::createMenu(char choose_pizza[32], double price, char toppings[128])
 {
     PizzaMenu newMenu;
 

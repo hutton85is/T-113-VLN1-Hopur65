@@ -43,6 +43,9 @@ void UmsjonUI::main(){
         cout << "Til thess ad skra nyja pizzu a matsedil veldu   4." << endl;
         cout << "Til thess ad skra nytt medlaeti veldu           5." << endl;
         cout << "Til thess ad skra nyjan afhendingarstad veldu   6." << endl;
+        cout << "Til thess ad haetta veldu                       7." << endl;
+        cout << endl;
+        cout << "Veldur her: ";
 
         cin >> input;
 
@@ -80,10 +83,10 @@ void UmsjonUI::main(){
             {
                 displayVector(u.getptoppings(), false);
             }
-            cout << "Enter new type of topping: ";
+            cout << "Sladu inn nyja tegund af aleggi: ";
             char toppings[32];
             cin >> toppings;
-            cout << "Enter price of " << toppings << ": ";
+            cout << "Sladu inn verd a " << toppings << ": ";
             int price;
             cin >> price;
             u.createToppings(toppings, price);
@@ -128,8 +131,8 @@ void UmsjonUI::main(){
                 system("CLS");
             }
 
-            cout << "Sladu inn verd a " << choose_pizza << ": ";
-            int price;
+            cout << "Sladu inn verd a " << choose_pizza << " sem hlutfall af grunn Pizzu: ";
+            double price;
             cin >> price;
 
             char *newToppings = new char[128];
@@ -160,6 +163,11 @@ void UmsjonUI::main(){
             cin >> place;
             u.createLocation(place);
             system("CLS");
+        }
+        else if(input == 7)
+        {
+            system("CLS");
+            break;
         }
         break;
     }
