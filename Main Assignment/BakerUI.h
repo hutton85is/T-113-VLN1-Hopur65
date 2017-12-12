@@ -19,8 +19,6 @@ class BakerUI
 
         void displayCustomerInProgress();
 
-        void displayCustomerOrder(unsigned int customerNumber);
-
         void displayCustomerDueProgressOrder(unsigned int customerNumber);
 
         void displayCustomerInProgressOrder(unsigned int customerNumber);

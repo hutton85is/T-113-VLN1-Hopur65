@@ -7,7 +7,6 @@ client::client()
     addressNumber =  0;
 
     orderCounter = 0;
-    currentPizza = 0;
 
     sumOfOrder = 0;
 

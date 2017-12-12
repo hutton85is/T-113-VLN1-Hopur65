@@ -10,18 +10,6 @@ BakerUI::~BakerUI()
     //dtor
 }
 
-void BakerUI::displayCustomerOrder(unsigned int customerNumber)
-{
-    // DISPLAYS ALWAYS ALL ORDERS PENDING
-    vector<client> customer = baker.getCustomerVec();
-    vector<Pizza> order = baker.getOrderVec(customerNumber);
-    cout << customerNumber << ". " << customer[customerNumber] << endl;
-    for(unsigned int i = 0; i < order.size(); i++)
-    {
-        cout << "Pizza " << i+1 << ". " << order[i] << endl;
-    }
-}
-
 void BakerUI::displayCustomerDueProgress()
 {
     vector<client> customersVec = baker.getCustomersVecDueProgress();
@@ -98,11 +86,10 @@ void BakerUI::displayAllOrders()
 void BakerUI::main()
 {
     char input;
-
     // Only continue if there are some pending customers
     if (pickLocation())
     {
-        while(true)
+        while(true && baker.getCustomerVec().size())
         {
             system("CLS");
             helperUI.displayHeader();

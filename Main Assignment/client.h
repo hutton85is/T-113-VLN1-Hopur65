@@ -28,9 +28,6 @@ class client
         // Total sum of order
         int sumOfOrder;
 
-        // A counter to know which pizza is currently being edited
-        unsigned int currentPizza;
-
         // store how many pizzas there are on an order
         unsigned int orderCounter;
 

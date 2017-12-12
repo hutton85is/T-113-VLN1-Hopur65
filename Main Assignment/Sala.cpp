@@ -52,16 +52,23 @@ bool Sala::enterPizzaSize(unsigned int input)
     {
         // Only allow a single choice of pizzasize with each order
         // if vector is empty push item on the vector else change first item
-        if (order[newCustomer.currentPizza-1].psize.empty())
+        if (order[newCustomer.orderCounter-1].psize.empty())
         {
-            order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
+            order[newCustomer.orderCounter-1].psize.push_back(lager.psize[input]);
         }
         else
         {
-            order[newCustomer.currentPizza-1].psize[0] = lager.psize[input];
+            order[newCustomer.orderCounter-1].psize[0] = lager.psize[input];
         }
 
-        pHelper[newCustomer.currentPizza-1].sizeCounter = 1;
+        // If there is a pizza from the menu, change the price of pizza size
+        if(!order[newCustomer.orderCounter-1].pmenu.empty())
+        {
+            order[newCustomer.orderCounter-1].psize[0].price =
+            order[newCustomer.orderCounter-1].psize[0].price * order[newCustomer.orderCounter-1].pmenu[0].price;
+        }
+
+        pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
 
         return true;
     }
@@ -75,16 +82,16 @@ bool Sala::enterCrust(unsigned int input)
     {
         // Only allow a single choice of pizza crust with each order
         // if vector is empty push item on the vector else change first item
-        if(order[newCustomer.currentPizza-1].pcrust.empty())
+        if(order[newCustomer.orderCounter-1].pcrust.empty())
         {
-            order[newCustomer.currentPizza-1].pcrust.push_back(lager.pcrust[input]);
+            order[newCustomer.orderCounter-1].pcrust.push_back(lager.pcrust[input]);
         }
         else
         {
-            order[newCustomer.currentPizza-1].pcrust[0] = lager.pcrust[input];
+            order[newCustomer.orderCounter-1].pcrust[0] = lager.pcrust[input];
         }
 
-        pHelper[newCustomer.currentPizza-1].crustCounter = 1;
+        pHelper[newCustomer.orderCounter-1].crustCounter = 1;
 
         return true;
     }
@@ -96,9 +103,9 @@ bool Sala::enterToppings(unsigned int input)
 {
     if (input < sizeof(lager.ptoppings) && 0 <= input)
     {
-        order[newCustomer.currentPizza-1].ptoppings.push_back(lager.ptoppings[input]);
+        order[newCustomer.orderCounter-1].ptoppings.push_back(lager.ptoppings[input]);
 
-        pHelper[newCustomer.currentPizza-1].toppingsCounter++;
+        pHelper[newCustomer.orderCounter-1].toppingsCounter++;
 
         return true;
     }
@@ -112,16 +119,23 @@ bool Sala::enterMenu(unsigned int input)
     {
         // Only allow a single choice of pizza from menu with each order
         // if vector is empty push item on the vector else change first item
-        if(order[newCustomer.currentPizza-1].pmenu.empty())
+        if(order[newCustomer.orderCounter-1].pmenu.empty())
         {
-            order[newCustomer.currentPizza-1].pmenu.push_back(lager.pmenu[input]);
+            order[newCustomer.orderCounter-1].pmenu.push_back(lager.pmenu[input]);
         }
         else
         {
-            order[newCustomer.currentPizza-1].pmenu[0] = lager.pmenu[input];
+            order[newCustomer.orderCounter-1].pmenu[0] = lager.pmenu[input];
         }
 
-        pHelper[newCustomer.currentPizza-1].menuCounter = 1;
+        // if pizza size has been chosen change its pizza price
+        if(!order[newCustomer.orderCounter-1].psize.empty())
+        {
+            order[newCustomer.orderCounter-1].psize[0].price =
+            order[newCustomer.orderCounter-1].psize[0].price * order[newCustomer.orderCounter-1].pmenu[0].price;
+        }
+
+        pHelper[newCustomer.orderCounter-1].menuCounter = 1;
 
         return true;
     }
@@ -133,9 +147,9 @@ bool Sala::enterExtras(unsigned int input)
 {
     if (input < sizeof(lager.pextras) && 0 <= input)
     {
-        order[newCustomer.currentPizza-1].pextras.push_back(lager.pextras[input]);
+        order[newCustomer.orderCounter-1].pextras.push_back(lager.pextras[input]);
 
-        pHelper[newCustomer.currentPizza-1].extrasCounter++;
+        pHelper[newCustomer.orderCounter-1].extrasCounter++;
 
         return true;
     }
@@ -168,32 +182,6 @@ bool Sala::enterLocation(unsigned int input)
 
 void Sala::newPizza()
 {
-    /* ONLY USE THIS IF WE WANT TO BE ABLE TO CHANGE AN ORDER
-    // if the count of orders is equal to the current pizza being edited, increase both
-    if (newCustomer.orderCounter == newCustomer.currentPizza)
-    {
-        newCustomer.currentPizza++;
-        newCustomer.orderCounter++;
-
-        // Insert a new pizza class onto client vector<Pizza>
-        Pizza newPizzaOrder;
-        newCustomer.order.push_back(newPizzaOrder);
-
-        // Insert a new Pizza helper class
-        PizzaHelper newPizzaHelper;
-        newCustomer.pHelper.push_back(newPizzaHelper);
-    }
-    // if the count of orders is greater then count of current pizza, a pizza is being edited and do not increase order counter
-    else if(newCustomer.currentPizza < newCustomer.orderCounter)
-    {
-        newCustomer.currentPizza++;
-    }
-    // This should never be, if it does set equal to each other
-    else
-    {
-        newCustomer.currentPizza = newCustomer.orderCounter;
-    }*/
-    newCustomer.currentPizza++;
     newCustomer.orderCounter++;
 
     // Insert a new pizza class onto client vector<Pizza>

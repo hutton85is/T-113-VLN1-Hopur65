@@ -70,7 +70,7 @@ void SalaUI::mainOrder()
 
         cout << "Skradu thina pontun : " << endl;
         cout << "Til thess ad velja pizza staerd veldu           1." << endl;
-        cout << "Til thess ad velja pizza crust veldu            2." << endl;
+        cout << "Til thess ad velja pizza botn veldu             2." << endl;
         cout << "Til thess ad velja alegg a pizzuna veldu        3." << endl;
         cout << "Til thess ad velja pizzu af matsedli veldu      4." << endl;
         cout << "Til thess ad panta medlaeti veldu               5." << endl;

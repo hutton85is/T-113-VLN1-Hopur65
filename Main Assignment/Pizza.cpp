@@ -13,16 +13,20 @@ Pizza::~Pizza()
 int Pizza::calculateSumOfOrder()
 {
     int returnSum = 0;
-
+    if(psize.size())
+    {
+        returnSum += psize[0].price;
+    }
+    /*
     if(psize.size() && !pmenu.size())
     {
         returnSum += psize[0].price;
     }
 
-    if(pmenu.size())
+    if(psize.size() && pmenu.size())
     {
-        returnSum += pmenu[0].price * psize[0].price;
-    }
+        returnSum += psize[0].price * pmenu[0].price;
+    }*/
 
     if(pcrust.size())
     {
