@@ -15,9 +15,7 @@ PizzaMenu::~PizzaMenu()
 }
 ostream& operator <<(ostream& outs, PizzaMenu& p_menu)
 {
-    outs << p_menu.choose_pizza << " : " << p_menu.price;
-    outs << endl;
-    outs << p_menu.toppings;
+    outs << p_menu.choose_pizza << " : " << p_menu.toppings;
     return outs;
 }
 
