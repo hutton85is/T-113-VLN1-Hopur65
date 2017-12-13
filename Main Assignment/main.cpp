@@ -27,7 +27,7 @@ void mainMenu()
     cout << " 5. Til ad haetta                                        " << endl;
     cout << "                                                         " << endl;
 
-    int innskraning;
+    unsigned int innskraning;
     cout << "Veldu her: ";
     cin >> innskraning ;
 
@@ -38,30 +38,30 @@ void mainMenu()
             cin.ignore(INT_MAX,'\n');
             throw InputErrorException("Invalid input in main: ");
         }
-    if ( innskraning == 1){
-        system("CLS");
-        UmsjonUI u;
-        u.main();
-    }
-    else if ( innskraning == 2) {
-        system("CLS");
-        BakerUI b;
-        b.main();
-    }
-    else if ( innskraning == 3) {
-        system("CLS");
-        AfhendingUI a;
-        a.main();
-    }
-    else if ( innskraning == 4) {
-        system("CLS");
-        SalaUI s;
-        s.mainOrder();
-    }
-    else if (innskraning == 5)
-    {
-        exit(0);
-    }
+        if ( innskraning == 1){
+            system("CLS");
+            UmsjonUI u;
+            u.main();
+        }
+        else if ( innskraning == 2) {
+            system("CLS");
+            BakerUI b;
+            b.main();
+        }
+        else if ( innskraning == 3) {
+            system("CLS");
+            AfhendingUI a;
+            a.main();
+        }
+        else if ( innskraning == 4) {
+            system("CLS");
+            SalaUI s;
+            s.mainOrder();
+        }
+        else if (innskraning == 5)
+        {
+            exit(0);
+        }
     }
     catch(InputErrorException e)
         {
