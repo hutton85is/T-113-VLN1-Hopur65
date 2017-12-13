@@ -48,44 +48,36 @@ vector<PizzaToppings> Sala::getLagerptoppings()
 
 bool Sala::enterPizzaSize(unsigned int input)
 {
-    try{
-        if (!(input < lager.psize.size() && 0 <= input)){
-
-            throw InputErrorException("Invalid pizzasize");
+    if (input < lager.psize.size() && 0 <= input)
+    {
+        // Only allow a single choice of pizzasize with each order
+        // if vector is empty push item on the vector else change first item
+        if (order[newCustomer.currentPizza-1].psize.empty())
+        {
+            order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
         }
-        cout << "fdjfjkl " << endl;
-        system("pause");
-            // Only allow a single choice of pizzasize with each order
-            // if vector is empty push item on the vector else change first item
-            if (order[newCustomer.currentPizza-1].psize.empty())
-            {
-                order[newCustomer.currentPizza-1].psize.push_back(lager.psize[input]);
-            }
-            else
-            {
-                order[newCustomer.currentPizza-1].psize[0] = lager.psize[input];
-            }
+        else
+        {
+            order[newCustomer.currentPizza-1].psize[0] = lager.psize[input];
+        }
 
-            pHelper[newCustomer.currentPizza-1].sizeCounter = 1;
+        pHelper[newCustomer.currentPizza-1].sizeCounter = 1;
 
-            return true;
-    }
-    catch(InputErrorException e){
-        readWriteClass rw;
-        rw.writeClassToFile(e,"Exceptions/InputErrorException.dat");
+        return true;
 
     }
+    else
+    {
+        throw InputErrorException("Invalid input on pizzasize");
+    }
+
     return false;
 }
 
-
 bool Sala::enterCrust(unsigned int input)
 {
-    try{
-        if (!(input < sizeof(lager.pcrust) && 0 <= input))
-        {
-            throw InputErrorException("Invalid pizza crust");
-        }
+    if (input < lager.pcrust.size() && 0 <= input)
+    {
         // Only allow a single choice of pizza crust with each order
         // if vector is empty push item on the vector else change first item
         if(order[newCustomer.currentPizza-1].pcrust.empty())
@@ -100,33 +92,28 @@ bool Sala::enterCrust(unsigned int input)
         pHelper[newCustomer.currentPizza-1].crustCounter = 1;
 
         return true;
-        }
+    }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
+    }
 
-    catch(InputErrorException e){
-        readWriteClass rw;
-        rw.writeClassToFile(e,"Exceptions/InputErrorException.dat");
-        }
     return false;
 }
 
 bool Sala::enterToppings(unsigned int input)
 {
-    try{
-        if (!(input < sizeof(lager.ptoppings) && 0 <= input))
-        {
-            throw InputErrorException("Invalid pizzasize");
-        }
-
+    if (input < lager.ptoppings.size() && 0 <= input)
+    {
         order[newCustomer.currentPizza-1].ptoppings.push_back(lager.ptoppings[input]);
 
         pHelper[newCustomer.currentPizza-1].toppingsCounter++;
 
         return true;
     }
-
-    catch(InputErrorException e){
-        readWriteClass rw;
-        rw.writeClassToFile(e,"Exceptions/InputErrorException.dat");
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
     }
 
     return false;
@@ -134,11 +121,8 @@ bool Sala::enterToppings(unsigned int input)
 
 bool Sala::enterMenu(unsigned int input)
 {
-    try{
-        if (!(input < sizeof(lager.pmenu) && 0 <= input))
-        {
-            throw InputErrorException("Invalid choice on menu");
-        }
+    if (input < lager.pmenu.size() && 0 <= input)
+    {
         // Only allow a single choice of pizza from menu with each order
         // if vector is empty push item on the vector else change first item
         if(order[newCustomer.currentPizza-1].pmenu.empty())
@@ -153,31 +137,28 @@ bool Sala::enterMenu(unsigned int input)
         pHelper[newCustomer.currentPizza-1].menuCounter = 1;
 
         return true;
-        }
+    }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
+    }
 
-    catch(InputErrorException e){
-        readWriteClass rw;
-        rw.writeClassToFile(e,"Exceptions/InputErrorException.dat");
-        }
     return false;
 }
 
 bool Sala::enterExtras(unsigned int input)
 {
-    try{
-        if (!(input < sizeof(lager.pextras) && 0 <= input))
-        {
-            throw InputErrorException("Invalid extra");
-        }
+    if (input < lager.pextras.size() && 0 <= input)
+    {
         order[newCustomer.currentPizza-1].pextras.push_back(lager.pextras[input]);
 
         pHelper[newCustomer.currentPizza-1].extrasCounter++;
 
         return true;
-        }
-    catch(InputErrorException e){
-        readWriteClass rw;
-        rw.writeClassToFile(e,"Exceptions/InputErrorException.dat");
+    }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
     }
 
     return false;
@@ -185,11 +166,8 @@ bool Sala::enterExtras(unsigned int input)
 
 bool Sala::enterLocation(unsigned int input)
 {
-    try{
-        if (input < sizeof(lager.plocations) && 0 <= input)
-        {
-            throw InputErrorException("Invalid location");
-        }
+    if (input < lager.plocations.size() && 0 <= input)
+    {
         // Only allow a single choice of location and always enter it on order 1
         // if vector is empty push item on the vector else change first item
         if(order[0].plocations.empty())
@@ -204,11 +182,11 @@ bool Sala::enterLocation(unsigned int input)
         pHelper[0].locationCounter = 1;
 
         return true;
-        }
-    catch(InputErrorException e){
-        readWriteClass rw;
-        rw.writeClassToFile(e,"Exceptions/InputErrorException.dat");
-        }
+    }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
+    }
 
     return false;
 }
@@ -221,11 +199,9 @@ void Sala::newPizza()
     {
         newCustomer.currentPizza++;
         newCustomer.orderCounter++;
-
         // Insert a new pizza class onto client vector<Pizza>
         Pizza newPizzaOrder;
         newCustomer.order.push_back(newPizzaOrder);
-
         // Insert a new Pizza helper class
         PizzaHelper newPizzaHelper;
         newCustomer.pHelper.push_back(newPizzaHelper);
@@ -257,7 +233,7 @@ client Sala::getCustomerOrdersVector()
     return newCustomer;
 }
 
-void Sala::createOrder(string name, string address, int number, bool paid, bool delivery)
+void Sala::createOrder(string name, string address, int number, bool paid, bool delivery, string comment)
 {
     // Assign name, address and addressnumber for newCustomer
     strncpy(newCustomer.name, name.c_str(), sizeof(newCustomer.name) - 1);
@@ -265,6 +241,7 @@ void Sala::createOrder(string name, string address, int number, bool paid, bool 
     newCustomer.addressNumber = number;
     newCustomer.orderPaid = paid;
     newCustomer.deliverOrder = delivery;
+    strncpy(newCustomer.comment, comment.c_str(), sizeof(newCustomer.comment) -1);
 
     // create a path with file name in variable tempname and enter it to variable fname
     string tempname = "order/" + name + ".dat";

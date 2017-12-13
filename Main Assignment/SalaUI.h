@@ -4,6 +4,7 @@
 #include "Sala.h"
 #include <stdlib.h>
 #include <windows.h>
+#include "Error.h"
 
 class SalaUI
 {

@@ -15,6 +15,7 @@ class Error
         virtual ~Error();
         void displayError();
         vector <InputErrorException> getInputErrorExceptionVec();
+        void logInputErrorException(InputErrorException newException, const char* fname);
 
         friend ostream& operator << (ostream& outs, Error& er);
 

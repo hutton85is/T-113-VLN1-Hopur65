@@ -12,14 +12,20 @@ Error::~Error()
     //dtor
 }
 
-vector <InputErrorException> Error::getInputErrorExceptionVec(){
-
+vector <InputErrorException> Error::getInputErrorExceptionVec()
+{
     return inputErrorExceptionVec;
-
 }
 
-ostream& operator << (ostream& outs, Error& er){
 
+void Error::logInputErrorException(InputErrorException newException, const char* fname)
+{
+    readWriteClass rw;
+    rw.writeClassToFile(newException, fname);
+}
+
+ostream& operator << (ostream& outs, Error& er)
+{
     outs << "Invalid error exception is " <<  er.getInputErrorExceptionVec().size() << endl;
 
     return outs;

@@ -40,7 +40,7 @@ class Sala
         // Return a copy of client class
         client getCustomerOrdersVector();
 
-        void createOrder(string name, string address, int number, bool paid, bool delivery);
+        void createOrder(string name, string address, int number, bool paid, bool delivery, string comment);
 
         /*
         * Get functions used to retrieve from Pizza class a copy of corresponding vector, and return it to the UI

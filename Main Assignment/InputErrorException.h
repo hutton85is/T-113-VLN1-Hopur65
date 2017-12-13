@@ -24,9 +24,6 @@ class InputErrorException
     private:
         char message[64];
         time_t now;
-
-
-
 };
 
 #endif // INPUTERROREXCEPTION_H

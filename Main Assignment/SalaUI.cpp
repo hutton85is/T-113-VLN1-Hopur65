@@ -1,5 +1,6 @@
 #include "SalaUI.h"
 
+
 SalaUI::SalaUI()
 {
 
@@ -81,54 +82,132 @@ void SalaUI::mainOrder()
         cin >> input;
         system("CLS");
 
-        if(input == 1)
+    if(input == 1)
+    {
+        try
         {
             displayVector(s.getLagerpsize(), true);
 
             cout << "Enter what size pizza you would like: ";
             cin >> input;
+            system("pause");
 
+            if(!cin)
+            {//athuga hvort input se int
+                throw InputErrorException("Invalid input, on entering pizzasize");
+            }
             s.enterPizzaSize(input);
         }
+
+        catch(InputErrorException e)
+        {
+            Error er;
+            er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+            e.getMessage();
+            system("pause");
+        }
+    }
+
         else if(input == 2)
         {
-            displayVector(s.getLagerpcrust(), true);
-            cout << endl;
+            try
+            {
+                displayVector(s.getLagerpcrust(), true);
+                cout << endl;
 
-            cout << "Enter what type of crust you would like: ";
-            cin >> input;
+                cout << "Enter what type of crust you would like: ";
+                cin >> input;
+                system("pause");
 
-            s.enterCrust(input);
+                if(!cin)
+                {
+                    throw InputErrorException("Invalid input, on entering pizzacrust");
+                }
+                s.enterCrust(input);
+            }
+            catch(InputErrorException e)
+            {
+                Error er;
+                er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+                e.getMessage();
+                system("pause");
+            }
         }
         else if(input == 3)
         {
-            displayVector(s.getLagerptoppings(), true);
-            cout << endl;
+            try
+            {
+                displayVector(s.getLagerptoppings(), true);
+                cout << endl;
 
-            cout << "What toppings would you like on your pizza: ";
-            cin >> input;
+                cout << "What toppings would you like on your pizza: ";
+                cin >> input;
+                system("pause");
 
-            s.enterToppings(input);
+                if(!cin)
+                {
+                    throw InputErrorException("Invalid input, on entering toppings");
+                }
+
+                s.enterToppings(input);
+            }
+            catch(InputErrorException e)
+            {
+                Error er;
+                er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+                e.getMessage();
+                system("pause");
+            }
         }
         else if(input == 4)
         {
-            displayVector(s.getLagerpMenu(), true);
-            cout << endl;
+            try
+            {
+                displayVector(s.getLagerpMenu(), true);
+                cout << endl;
 
-            cout << "Enter what pizza you would like from the menu: ";
-            cin >> input;
+                cout << "Enter what pizza you would like from the menu: ";
+                cin >> input;
+                system("pause");
 
-            s.enterMenu(input);
+                if(!cin)
+                {
+                    throw InputErrorException("Invalid choice on menu");
+                }
+                s.enterMenu(input);
+            }
+            catch(InputErrorException e)
+            {
+                Error er;
+                er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+                e.getMessage();
+                system("pause");
+            }
         }
         else if(input == 5)
         {
+            try
+            {
             displayVector(s.getLagerpextras(), true);
             cout << endl;
 
             cout << "Enter what extras you would like: ";
             cin >> input;
+            system("pause");
 
+            if(!cin)
+            {
+                throw InputErrorException("Invalid input on extras");
+            }
             s.enterExtras(input);
+            }
+            catch(InputErrorException e)
+            {
+                Error er;
+                er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+                e.getMessage();
+                system("pause");
+            }
         }
         else if(input == 6)
         {
@@ -137,13 +216,28 @@ void SalaUI::mainOrder()
         }
         else if(input == 7)
         {
+            try
+            {
             displayVector(s.getLagerplocations(), true);
             cout << endl;
 
             cout << "Enter what location you want to order from: ";
             cin >> input;
+            system("Pause");
 
+            if(!cin)
+            {
+                throw InputErrorException("Invalid input on location");
+            }
             s.enterLocation(input);
+            }
+            catch(InputErrorException e)
+            {
+                Error er;
+                er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+                e.getMessage();
+                system("pause");
+            }
         }
         else if(input == 8)
         {
@@ -168,7 +262,18 @@ void SalaUI::mainOrder()
             cout << "Viltu fa heimsendingu? j/n" << endl;
             cin >> delivery;
 
-            s.createOrder(name, address, number, paid == 'j', delivery == 'j');
+            char ans;
+            string comment = "";
+            cout << "Viltu skra athugasemd med pontun? j/n" << endl;
+            cin >> ans;
+            if(ans == 'j'){
+
+                cout << "Skradu inn athugasemd: ";
+                cin >> ws;
+                getline(cin, comment);
+            }
+
+            s.createOrder(name, address, number, paid == 'j', delivery == 'j', comment);
 
             system("CLS");
             cout << "HERE IS YOUR ORDER" << endl;
