@@ -67,12 +67,12 @@ void Sala::enterPizzaSize(unsigned int input)
             order[newCustomer.orderCounter-1].psize[0].price =
             order[newCustomer.orderCounter-1].psize[0].price * order[newCustomer.orderCounter-1].pmenu[0].price;
         }
+
+        pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
     }
     else
     {
         throw InputErrorException("Innslattarvilla a pizzustaerd");
-
-        pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
     }
 }
 

@@ -1,3 +1,8 @@
+/**
+* @brief An exception class for wrong input insert
+*
+*/
+
 #ifndef INPUTERROREXCEPTION_H
 #define INPUTERROREXCEPTION_H
 
@@ -17,7 +22,6 @@ class InputErrorException
         InputErrorException();
         InputErrorException(string message);
         string getMessage();
-        virtual ~InputErrorException();
         friend ostream& operator << (ostream& outs, InputErrorException& i);
         time_t getTime();
 

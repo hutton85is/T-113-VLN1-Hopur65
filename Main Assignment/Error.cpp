@@ -21,7 +21,7 @@ void Error::logInputErrorException(InputErrorException newException, const char*
 
 ostream& operator << (ostream& outs, Error& er)
 {
-    outs << "Invalid error exception is " <<  er.getInputErrorExceptionVec().size() << endl;
+    outs << "Invalid input error exception count is: " <<  er.getInputErrorExceptionVec().size() << endl;
 
     return outs;
 }
