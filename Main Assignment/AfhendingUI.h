@@ -16,13 +16,10 @@ class AfhendingUI
     public:
         AfhendingUI();
 
-        /**
-        * @brief Menu with available options
-        */
         void main();
 
         /**
-        * @brief choose location of baker and retrieve all customers with finished orders
+        * @brief choose location of baker
         *
         * @return true if there are customers available, else false
         */

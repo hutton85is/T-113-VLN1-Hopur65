@@ -22,69 +22,66 @@
     </li>
   </ul></div>
 <h1>Sala.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00005"></a>00005 <span class="preprocessor">#ifndef SALA_H</span>
-<a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#define SALA_H</span>
-<a name="l00007"></a>00007 <span class="preprocessor"></span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include "Pizza.h"</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include "PizzaSize.h"</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include "pizzatoppings.h"</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include "pizzacrust.h"</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include "pizzaextras.h"</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include "pizzalocations.h"</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include "pizzamenu.h"</span>
-<a name="l00015"></a>00015 <span class="preprocessor">#include "readWriteClass.h"</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include "client.h"</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;cstring&gt;</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
-<a name="l00019"></a>00019 
-<a name="l00020"></a><a class="code" href="class_sala.html">00020</a> <span class="keyword">class </span><a class="code" href="class_sala.html">Sala</a>
-<a name="l00021"></a>00021 {
-<a name="l00022"></a>00022     <span class="keyword">public</span>:
-<a name="l00026"></a>00026         <a class="code" href="class_sala.html#da283dd136f3f0c2703d0356f49c1e6e">Sala</a>();
-<a name="l00027"></a>00027 
-<a name="l00033"></a>00033         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#ae3b8375ca0ab5b62e84f86582b8cec3">enterCrust</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
-<a name="l00034"></a>00034         <span class="keywordtype">void</span> enterExtras(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
-<a name="l00035"></a>00035         <span class="keywordtype">void</span> enterLocation(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
-<a name="l00036"></a>00036         <span class="keywordtype">void</span> enterMenu(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
-<a name="l00037"></a>00037         <span class="keywordtype">void</span> enterToppings(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
-<a name="l00038"></a>00038         <span class="keywordtype">void</span> enterPizzaSize(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 
+<a name="l00006"></a>00006 <span class="preprocessor">#ifndef SALA_H</span>
+<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define SALA_H</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include "Pizza.h"</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include "PizzaSize.h"</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include "pizzatoppings.h"</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include "pizzacrust.h"</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include "pizzaextras.h"</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include "pizzalocations.h"</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include "pizzamenu.h"</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include "readWriteClass.h"</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include "client.h"</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;cstring&gt;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a><a class="code" href="class_sala.html">00021</a> <span class="keyword">class </span><a class="code" href="class_sala.html">Sala</a>
+<a name="l00022"></a>00022 {
+<a name="l00023"></a>00023     <span class="keyword">public</span>:
+<a name="l00028"></a>00028         <a class="code" href="class_sala.html#da283dd136f3f0c2703d0356f49c1e6e">Sala</a>();
+<a name="l00029"></a>00029 
+<a name="l00035"></a>00035         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#ae3b8375ca0ab5b62e84f86582b8cec3">enterCrust</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
+<a name="l00036"></a>00036         <span class="keywordtype">void</span> enterExtras(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
+<a name="l00037"></a>00037         <span class="keywordtype">void</span> enterLocation(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
+<a name="l00038"></a>00038         <span class="keywordtype">void</span> enterMenu(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
+<a name="l00039"></a>00039         <span class="keywordtype">void</span> enterToppings(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
+<a name="l00040"></a>00040         <span class="keywordtype">void</span> enterPizzaSize(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> input);
 <a name="l00041"></a>00041 
-<a name="l00045"></a>00045         <span class="comment">// Initiate a new pizza</span>
-<a name="l00046"></a>00046         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#eadce54d849ca6634b7fdd389bd8f192">newPizza</a>();
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048         <span class="keywordtype">void</span> calculateSumOfOrder();
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 
+<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#eadce54d849ca6634b7fdd389bd8f192">newPizza</a>();
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="keywordtype">void</span> createOrder(string name, string address, <span class="keywordtype">int</span> number, <span class="keywordtype">bool</span> paid, <span class="keywordtype">bool</span> delivery, string comment);
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> calculateSumOfOrder();
 <a name="l00051"></a>00051 
-<a name="l00061"></a>00061         <span class="keywordtype">void</span> createOrder(string name, string address, <span class="keywordtype">int</span> number, <span class="keywordtype">bool</span> paid, <span class="keywordtype">bool</span> delivery);
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063         client getCustomerOrdersVector();
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065         vector&lt;PizzaCrust&gt; getLagerpcrust();
-<a name="l00066"></a>00066         vector&lt;PizzaExtras&gt; getLagerpextras();
-<a name="l00067"></a>00067         vector&lt;PizzaLocations&gt; getLagerplocations();
-<a name="l00068"></a>00068         vector&lt;PizzaMenu&gt; getLagerpMenu();
-<a name="l00069"></a>00069         vector&lt;PizzaSize&gt; getLagerpsize();
-<a name="l00070"></a>00070         vector&lt;PizzaToppings&gt; getLagerptoppings();
-<a name="l00071"></a>00071         vector&lt;Pizza&gt; getOrder();
-<a name="l00072"></a>00072         client getClient();
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074         <span class="keyword">friend</span> ostream&amp; operator &lt;&lt;(ostream&amp; outs, <a class="code" href="class_sala.html">Sala</a>&amp; s);
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076     <span class="keyword">private</span>:
-<a name="l00077"></a>00077         Pizza lager;
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079         client newCustomer;
-<a name="l00080"></a>00080 
-<a name="l00085"></a><a class="code" href="class_sala.html#70a17ffa722a3985b86d30b034ad06d7">00085</a>         vector&lt;Pizza&gt; <a class="code" href="class_sala.html#70a17ffa722a3985b86d30b034ad06d7">order</a>;
+<a name="l00062"></a>00062         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#554463c0b82fb266c21e23e040bf1ac0">createOrder</a>(string name, string address, <span class="keywordtype">int</span> number, <span class="keywordtype">bool</span> paid, <span class="keywordtype">bool</span> delivery, string comment);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         client getCustomerOrdersVector();
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         vector&lt;PizzaCrust&gt; getLagerpcrust();
+<a name="l00067"></a>00067         vector&lt;PizzaExtras&gt; getLagerpextras();
+<a name="l00068"></a>00068         vector&lt;PizzaLocations&gt; getLagerplocations();
+<a name="l00069"></a>00069         vector&lt;PizzaMenu&gt; getLagerpMenu();
+<a name="l00070"></a>00070         vector&lt;PizzaSize&gt; getLagerpsize();
+<a name="l00071"></a>00071         vector&lt;PizzaToppings&gt; getLagerptoppings();
+<a name="l00072"></a>00072         vector&lt;Pizza&gt; getOrder();
+<a name="l00073"></a>00073         client getClient();
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075         <span class="keyword">friend</span> ostream&amp; operator &lt;&lt;(ostream&amp; outs, <a class="code" href="class_sala.html">Sala</a>&amp; s);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     <span class="keyword">private</span>:
+<a name="l00078"></a>00078         Pizza lager;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         client newCustomer;
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082         vector&lt;Pizza&gt; order;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084         vector&lt;PizzaHelper&gt; pHelper;
+<a name="l00085"></a>00085 };
 <a name="l00086"></a>00086 
-<a name="l00090"></a><a class="code" href="class_sala.html#4b1abb1f80ebc80a2334733ae62acde2">00090</a>         vector&lt;PizzaHelper&gt; <a class="code" href="class_sala.html#4b1abb1f80ebc80a2334733ae62acde2">pHelper</a>;
-<a name="l00091"></a>00091 };
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="preprocessor">#endif // SALA_H</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 13:49:57 2017 for MainAssignment by&nbsp;
+<a name="l00087"></a>00087 <span class="preprocessor">#endif // SALA_H</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 21:31:29 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

@@ -29,12 +29,12 @@
 <a name="l00010"></a>00010 <span class="preprocessor">#include "Baker.h"</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &lt;cstdlib&gt;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include "Error.h"</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="class_baker_u_i.html">00014</a> <span class="keyword">class </span><a class="code" href="class_baker_u_i.html">BakerUI</a>
-<a name="l00015"></a>00015 {
-<a name="l00016"></a>00016     <span class="keyword">public</span>:
-<a name="l00017"></a>00017         <a class="code" href="class_baker_u_i.html">BakerUI</a>();
-<a name="l00018"></a>00018         <span class="keyword">virtual</span> ~<a class="code" href="class_baker_u_i.html">BakerUI</a>();
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;climits&gt;</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="class_baker_u_i.html">00015</a> <span class="keyword">class </span><a class="code" href="class_baker_u_i.html">BakerUI</a>
+<a name="l00016"></a>00016 {
+<a name="l00017"></a>00017     <span class="keyword">public</span>:
+<a name="l00018"></a>00018         <a class="code" href="class_baker_u_i.html">BakerUI</a>();
 <a name="l00019"></a>00019 
 <a name="l00020"></a>00020         <span class="keywordtype">void</span> main();
 <a name="l00021"></a>00021 
@@ -48,21 +48,23 @@
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030         <span class="keywordtype">void</span> displayCustomerInProgressOrder(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> customerNumber);
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032         <span class="comment">/*</span>
-<a name="l00033"></a>00033 <span class="comment">        * Choose location of baker and retrieve all pending customers.</span>
-<a name="l00034"></a>00034 <span class="comment">        * return false if there are no pending customers, else true</span>
-<a name="l00035"></a>00035 <span class="comment">        */</span>
-<a name="l00036"></a>00036         <span class="keywordtype">bool</span> pickLocation();
+<a name="l00032"></a>00032         <span class="keywordtype">void</span> chooseSeeAllOrders();
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="keywordtype">void</span> chooseSeeDueOrders();
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036         <span class="keywordtype">void</span> chooseSeeInProgressOrders();
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038     <span class="keyword">private</span>:
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040         <a class="code" href="class_baker.html">Baker</a> baker;
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042         UIHelper helperUI;
-<a name="l00043"></a>00043 };
+<a name="l00043"></a>00043         <span class="keywordtype">bool</span> <a class="code" href="class_baker_u_i.html#74d0d6b7d7493e8a9703bc8fbeb79f2e">pickLocation</a>();
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="preprocessor">#endif // BAKERUI_H</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 13:49:57 2017 for MainAssignment by&nbsp;
+<a name="l00045"></a>00045     <span class="keyword">private</span>:
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         <a class="code" href="class_baker.html">Baker</a> baker;
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         UIHelper helperUI;
+<a name="l00050"></a>00050 };
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="preprocessor">#endif // BAKERUI_H</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 21:31:28 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

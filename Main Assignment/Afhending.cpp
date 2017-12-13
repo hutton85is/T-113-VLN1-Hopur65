@@ -87,6 +87,7 @@ vector<Pizza> Afhending::getOrderVec(unsigned int customersVecNumber)
 void Afhending::deliverOrder(int customersVecNumber)
 {
     int customersVecSize = customersVec.size();
+
     if(customersVecNumber < 0 || customersVecSize - 1 < customersVecNumber)
     {
         throw InputErrorException("Engin tilbuin pontun med thessu numeri");
@@ -110,13 +111,12 @@ void Afhending::deliverOrder(int customersVecNumber)
     // Update newClient received from file
     newClient = customersVec[customersVecNumber];
 
-    // Remove all contents of existing file in order-folder for moving to folder delivered
+    // Remove all contents of file containing customer order
     rw.removeAllContentsOfFile(oldpathfile);
 
-    // Erase customer from customersVec
     customersVec.erase(customersVec.begin() + customersVecNumber);
 
-    // Load all contents of order/customerlist.dat to be updated
+    // Load all customers pending service for updating
     client loadClient;
     vector<client> tempVec;
     rw.loadSpecificVector(tempVec, "order/customerlist.dat", loadClient);
@@ -124,12 +124,11 @@ void Afhending::deliverOrder(int customersVecNumber)
     // Remove all contents of directory in order folder for update
     rw.removeAllContentsOfFile("order/customerlist.dat");
 
-    // Remove customer who got delivered from tempVec
+    // Remove customer to be moved to delivered folder
     for(unsigned int i = 0; i < tempVec.size(); i++)
     {
         if(strcmp(tempVec[i].name, newClient.name) == 0)
         {
-            // customer found remove him
             tempVec.erase(tempVec.begin() + customersVecNumber);
             break;
         }
@@ -149,9 +148,11 @@ void Afhending::deliverOrder(int customersVecNumber)
 
     // Write customer to file directory in delivered folder
     rw.writeClassToFile(newClient, "delivered/customerlist.dat");
-    // Write client class to file and path 'fname'
+
+    // Write client class to file in delivered folder
     rw.writeClassToFile(newClient, pathfile);
 
+    // write pizza orders for customer to new file in delivered folder
     for (unsigned int j = 0; j < newClient.orderCounter; j++)
     {
         // Write helper class for storing how many items are in the order

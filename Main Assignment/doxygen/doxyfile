@@ -96,53 +96,55 @@ WARN_LOGFILE            = "C:\Users\JohnRussellHutton\Documents\GitHub\T-113-VLN
 # configuration options related to the input files
 #---------------------------------------------------------------------------
 INPUT                  = \
-	"..\Afhending.cpp" \
-	"..\InputErrorException.h" \
-	"..\readWriteClass.h" \
-	"..\pizzamenu.cpp" \
-	"..\pizzatoppings.cpp" \
-	"..\main.cpp" \
-	"..\readWriteClass.cpp" \
-	"..\pizzaextras.h" \
-	"..\pizzacrust.cpp" \
-	"..\PizzaSize.h" \
-	"..\client.cpp" \
-	"..\OpenOrders.h" \
-	"..\pizzalocations.cpp" \
-	"..\Sala.cpp" \
-	"..\client.h" \
-	"..\BakerUI.h" \
-	"..\InputErrorException.cpp" \
-	"..\Error.cpp" \
-	"..\UIHelper.h" \
-	"..\Afhending.h" \
-	"..\Error.h" \
-	"..\pizzalocations.h" \
 	"..\Umsjon.cpp" \
-	"..\AfhendingUI.cpp" \
-	"..\pizzacrust.h" \
-	"..\Sala.h" \
-	"..\UmsjonUI.cpp" \
-	"..\MissingLocationException.h" \
-	"..\UIHelper.cpp" \
-	"..\OpenOrders.cpp" \
-	"..\SalaUI.cpp" \
-	"..\Umsjon.h" \
-	"..\Baker.cpp" \
-	"..\SalaUI.h" \
-	"..\UmsjonUI.h" \
 	"..\Pizza.cpp" \
-	"..\pizzaextras.cpp" \
-	"..\PizzaHelper.h" \
+	"..\MissingLocationException.cpp" \
+	"..\SalaUI.h" \
+	"..\pizzalocations.cpp" \
+	"..\Baker.cpp" \
 	"..\pizzamenu.h" \
 	"..\BakerUI.cpp" \
-	"..\AfhendingUI.h" \
-	"..\MissingLocationException.cpp" \
+	"..\pizzalocations.h" \
+	"..\BakerUI.h" \
+	"..\pizzatoppings.cpp" \
+	"..\AfhendingUI.cpp" \
+	"..\main.cpp" \
+	"..\ErrorUI.h" \
+	"..\pizzacrust.cpp" \
+	"..\MissingLocationException.h" \
+	"..\pizzaextras.cpp" \
+	"..\OpenOrders.h" \
+	"..\pizzamenu.cpp" \
+	"..\Error.h" \
+	"..\pizzaextras.h" \
 	"..\Pizza.h" \
-	"..\PizzaSize.cpp" \
 	"..\pizzatoppings.h" \
+	"..\Error.cpp" \
+	"..\readWriteClass.h" \
+	"..\InputErrorException.cpp" \
+	"..\readWriteClass.cpp" \
+	"..\OpenOrders.cpp" \
+	"..\client.h" \
+	"..\Afhending.h" \
+	"..\pizzacrust.h" \
 	"..\Baker.h" \
-	"..\PizzaHelper.cpp" 
+	"..\UmsjonUI.cpp" \
+	"..\Afhending.cpp" \
+	"..\UmsjonUI.h" \
+	"..\PizzaSize.cpp" \
+	"..\client.cpp" \
+	"..\AfhendingUI.h" \
+	"..\PizzaHelper.h" \
+	"..\Sala.h" \
+	"..\UIHelper.cpp" \
+	"..\UIHelper.h" \
+	"..\Sala.cpp" \
+	"..\Umsjon.h" \
+	"..\InputErrorException.h" \
+	"..\PizzaHelper.cpp" \
+	"..\ErrorUI.cpp" \
+	"..\PizzaSize.h" \
+	"..\SalaUI.cpp" 
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          =
 RECURSIVE              = NO
