@@ -5,6 +5,7 @@ client::client()
     name[0] = '\0';
     address[0] = '\0';
     addressNumber =  0;
+    comment[0] = '\0';
 
     orderCounter = 0;
 
@@ -74,7 +75,20 @@ ostream& operator <<(ostream& outs, client& customer)
     {
         outs << "nei";
     }
+    if(customer.comment)
+    {
+        outs << "ja";
+    }
+    else
+    {
+        outs << "nei";
+    }
+    outs << endl;
+    outs << "Athugasemd: ";
+    outs << customer.comment;
+
     cout << endl;
     outs << "Heildarverd: " << customer.sumOfOrder << " kr.";
+
     return outs;
 }

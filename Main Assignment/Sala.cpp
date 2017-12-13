@@ -48,7 +48,7 @@ client Sala::getClient()
 
 void Sala::enterPizzaSize(unsigned int input)
 {
-    if (input < sizeof(lager.psize) && 0 <= input)
+    if (input < lager.psize.size() && 0 <= input)
     {
         // Only allow a single choice of pizzasize with each order
         // if vector is empty push item on the vector else change first item
@@ -67,6 +67,10 @@ void Sala::enterPizzaSize(unsigned int input)
             order[newCustomer.orderCounter-1].psize[0].price =
             order[newCustomer.orderCounter-1].psize[0].price * order[newCustomer.orderCounter-1].pmenu[0].price;
         }
+    }
+    else
+    {
+        throw InputErrorException("Invalid input on pizzasize");
 
         pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
     }
@@ -74,7 +78,7 @@ void Sala::enterPizzaSize(unsigned int input)
 
 void Sala::enterCrust(unsigned int input)
 {
-    if (input < sizeof(lager.pcrust) && 0 <= input)
+    if (input < lager.pcrust.size() && 0 <= input)
     {
         // Only allow a single choice of pizza crust with each order
         // if vector is empty push item on the vector else change first item
@@ -89,21 +93,29 @@ void Sala::enterCrust(unsigned int input)
 
         pHelper[newCustomer.orderCounter-1].crustCounter = 1;
     }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
+    }
 }
 
 void Sala::enterToppings(unsigned int input)
 {
-    if (input < sizeof(lager.ptoppings) && 0 <= input)
+    if (input < lager.ptoppings.size() && 0 <= input)
     {
         order[newCustomer.orderCounter-1].ptoppings.push_back(lager.ptoppings[input]);
 
         pHelper[newCustomer.orderCounter-1].toppingsCounter++;
     }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
+    }
 }
 
 void Sala::enterMenu(unsigned int input)
 {
-    if (input < sizeof(lager.pmenu) && 0 <= input)
+    if (input < lager.pmenu.size() && 0 <= input)
     {
         // Only allow a single choice of pizza from menu with each order
         // if vector is empty push item on the vector else change first item
@@ -125,21 +137,29 @@ void Sala::enterMenu(unsigned int input)
 
         pHelper[newCustomer.orderCounter-1].menuCounter = 1;
     }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
+    }
 }
 
 void Sala::enterExtras(unsigned int input)
 {
-    if (input < sizeof(lager.pextras) && 0 <= input)
+    if (input < lager.pextras.size() && 0 <= input)
     {
         order[newCustomer.orderCounter-1].pextras.push_back(lager.pextras[input]);
 
         pHelper[newCustomer.orderCounter-1].extrasCounter++;
     }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
+    }
 }
 
 void Sala::enterLocation(unsigned int input)
 {
-    if (input < sizeof(lager.plocations) && 0 <= input)
+    if (input < lager.plocations.size() && 0 <= input)
     {
         // Only allow a single choice of location and always enter it on order 1
         // if vector is empty push item on the vector else change first item
@@ -153,6 +173,10 @@ void Sala::enterLocation(unsigned int input)
         }
 
         pHelper[0].locationCounter = 1;
+    }
+    else
+    {
+        throw InputErrorException("Invalid input, out of range");
     }
 }
 
@@ -172,13 +196,14 @@ client Sala::getCustomerOrdersVector()
     return newCustomer;
 }
 
-void Sala::createOrder(string name, string address, int number, bool paid, bool delivery)
+void Sala::createOrder(string name, string address, int number, bool paid, bool delivery, string comment)
 {
     strncpy(newCustomer.name, name.c_str(), sizeof(newCustomer.name) - 1);
     strncpy(newCustomer.address, address.c_str(), sizeof(newCustomer.address) - 1);
     newCustomer.addressNumber = number;
     newCustomer.orderPaid = paid;
     newCustomer.deliverOrder = delivery;
+    strncpy(newCustomer.comment, comment.c_str(), sizeof(newCustomer.comment) -1);
 
     calculateSumOfOrder();
 

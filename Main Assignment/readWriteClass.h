@@ -6,6 +6,7 @@
 #include "Sala.h"
 #include "PizzaHelper.h"
 #include <string.h>
+#include "InputErrorException.h"
 
 /*
 *

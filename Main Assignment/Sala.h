@@ -47,6 +47,8 @@ class Sala
 
         void calculateSumOfOrder();
 
+        void createOrder(string name, string address, int number, bool paid, bool delivery, string comment);
+
         /**
         * Write client and pizza order to file and client to a directory containing a list of customers
         *

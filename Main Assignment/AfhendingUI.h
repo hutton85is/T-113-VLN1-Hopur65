@@ -8,7 +8,6 @@ class AfhendingUI
 {
     public:
         AfhendingUI();
-        virtual ~AfhendingUI();
 
         void main();
         /*

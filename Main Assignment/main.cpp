@@ -5,11 +5,13 @@
 #include <iostream>
 #include <stdlib.h>
 
+
 #include "UmsjonUI.h"
 #include "SalaUI.h"
 #include "BakerUI.h"
 #include <stdlib.h>
 #include "AfhendingUI.h"
+#include "Error.h"
 
 using namespace std;
 
@@ -25,35 +27,49 @@ void mainMenu()
     cout << " 5. Til ad haetta                                        " << endl;
     cout << "                                                         " << endl;
 
-    char innskraning;
+    int innskraning;
     cout << "Veldu her: ";
     cin >> innskraning ;
 
-    if ( innskraning == '1') {
+    try{
+        if(!cin || innskraning > 5)
+        {
+            cin.clear();
+            cin.ignore(INT_MAX,'\n');
+            throw InputErrorException("Invalid input in main: ");
+        }
+    if ( innskraning == 1){
         system("CLS");
         UmsjonUI u;
         u.main();
     }
-    else if ( innskraning == '2') {
+    else if ( innskraning == 2) {
         system("CLS");
         BakerUI b;
         b.main();
     }
-    else if ( innskraning == '3') {
+    else if ( innskraning == 3) {
         system("CLS");
         AfhendingUI a;
         a.main();
     }
-    else if ( innskraning == '4') {
+    else if ( innskraning == 4) {
         system("CLS");
         SalaUI s;
         s.mainOrder();
     }
-    else if (innskraning == '5')
+    else if (innskraning == 5)
     {
         exit(0);
     }
-
+    }
+    catch(InputErrorException e)
+        {
+            Error er;
+            er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+            e.getMessage();
+            system("pause");
+        }
     system("CLS");
 }
 

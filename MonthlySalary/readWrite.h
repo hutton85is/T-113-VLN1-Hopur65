@@ -16,6 +16,15 @@ class readWrite
     public:
         readWrite();
         virtual ~readWrite();
+<<<<<<< HEAD
+        void writeEmployee(employee newEmployee);
+        void readEmployee(const char* name, employee &newEmployee, vector <salaryRecord> srvec);
+        void readList(vector <employee> &listOfNames);
+        void highestSalary(int year);
+        void writeSsnRecord(salaryRecord newSalary, char name[40]);
+
+    private:
+=======
         // create new employee with salary record
         void writeEmployeeRecord(employee newEmployee, salaryRecord newSalary);
         // add salary record to existing employee
@@ -27,6 +36,7 @@ class readWrite
 
     private:
         void addToList(employee newEmployee);
+>>>>>>> 5d1a0e5657ae6b82c2003fb3df292bc43d751c3d
 };
 
 #endif // READWRITE_H

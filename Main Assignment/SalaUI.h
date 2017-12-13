@@ -4,7 +4,10 @@
 #include "Sala.h"
 #include <stdlib.h>
 #include <windows.h>
+
+#include "Error.h"
 #include "UIHelper.h"
+
 
 class SalaUI
 {

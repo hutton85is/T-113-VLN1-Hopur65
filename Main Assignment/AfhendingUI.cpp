@@ -5,11 +5,6 @@ AfhendingUI::AfhendingUI()
     //ctor
 }
 
-AfhendingUI::~AfhendingUI()
-{
-    //dtor
-}
-
 bool AfhendingUI::pickLocation()
 {
     helperUI.displayHeader();
