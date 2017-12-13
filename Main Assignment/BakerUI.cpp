@@ -85,108 +85,123 @@ void BakerUI::displayAllOrders()
 
 void BakerUI::main()
 {
-    char input;
-    // Only continue if there are some pending customers
-    if (pickLocation())
+    try
     {
-        while(true && baker.getCustomerVec().size())
+        unsigned int input;
+        // Only continue if there are some pending customers
+        if (pickLocation())
         {
-            system("CLS");
-            helperUI.displayHeader();
-            cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
-            cout << "Til thess ad velja pontun til ad vinna i veldu            2. "  << endl;
-            cout << "Til thess ad velja pontun sem tilbuna veldu               3. "  << endl;
-            cout << "Til thess ad haetta veldu                                 4. "  << endl;
-            cout << endl;
-            cout << "Veldu her: ";
-
-            cin >> input;
-            system("CLS");
-
-            if(input == '1')
+            while(true && baker.getCustomerVec().size())
             {
+                system("CLS");
                 helperUI.displayHeader();
-                displayAllOrders();
+                cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
+                cout << "Til thess ad velja pontun til ad vinna i veldu            2. "  << endl;
+                cout << "Til thess ad velja pontun sem tilbuna veldu               3. "  << endl;
+                cout << "Til thess ad haetta veldu                                 4. "  << endl;
                 cout << endl;
-                system("pause");
-            }
-            else if(input == '2')
-            {
-                helperUI.displayHeader();
-                if (baker.getCustomersVecDueProgress().size())
+                cout << "Veldu her: ";
+
+                cin >> input;
+                system("CLS");
+
+                if(!cin)
                 {
-                    displayCustomerDueProgress();
-
-                    unsigned int customerID;
-                    cout << endl;
-                    cout << "Veldu pontun til ad skoda nanar: ";
-                    cin >> customerID;
-                    system("CLS");
-                    helperUI.displayHeader();
-                    displayCustomerDueProgressOrder(customerID);
-
-                    char choice;
-                    cout << "Velja pontun til ad vinna i? j/n: ";
-                    cin >> choice;
-
-                    // if choice is 'y', yes change order status to in progress
-                    if (choice == 'j')
-                    {
-                        baker.workOnOrder(customerID);
-                    }
+                    throw InputErrorException("Inslattarvilla i vallista bakeryUI");
                 }
-                else
+
+                if(input == 1)
                 {
-                    cout << "Engin pontun sem bidur afgreidslu: " << endl;
+                    helperUI.displayHeader();
+                    displayAllOrders();
                     cout << endl;
                     system("pause");
                 }
-            }
-            else if(input == '3')
-            {
-                helperUI.displayHeader();
-
-                if (baker.getCustomersVecInProgress().size())
+                else if(input == 2)
                 {
-                    displayCustomerInProgress();
-
-                    unsigned int customerID;
-                    cout << endl;
-                    cout << "Veldu pontun til ad skoda nanar: ";
-                    cin >> customerID;
-                    system("CLS");
-
                     helperUI.displayHeader();
-                    displayCustomerInProgressOrder(customerID);
-
-                    char choice;
-                    cout << "Velja pontun til ad klara? j/n: ";
-                    cin >> choice;
-
-                    // if choice is 'y', yes change order status to in progress
-                    if (choice == 'j')
+                    if (baker.getCustomersVecDueProgress().size())
                     {
-                        baker.finishOrder(customerID);
+                        displayCustomerDueProgress();
+
+                        unsigned int customerID;
+                        cout << endl;
+                        cout << "Veldu pontun til ad skoda nanar: ";
+                        cin >> customerID;
+                        system("CLS");
+                        helperUI.displayHeader();
+                        displayCustomerDueProgressOrder(customerID);
+
+                        char choice;
+                        cout << "Velja pontun til ad vinna i? j/n: ";
+                        cin >> choice;
+
+                        // if choice is 'y', yes change order status to in progress
+                        if (choice == 'j')
+                        {
+                            baker.workOnOrder(customerID);
+                        }
+                    }
+                    else
+                    {
+                        cout << "Engin pontun sem bidur afgreidslu: " << endl;
+                        cout << endl;
+                        system("pause");
                     }
                 }
-                else
+                else if(input == 3)
                 {
-                    cout << "Engin pontun sem bidur afgreidslu: " << endl;
-                    cout << endl;
-                    system("pause");
+                    helperUI.displayHeader();
+
+                    if (baker.getCustomersVecInProgress().size())
+                    {
+                        displayCustomerInProgress();
+
+                        unsigned int customerID;
+                        cout << endl;
+                        cout << "Veldu pontun til ad skoda nanar: ";
+                        cin >> customerID;
+                        system("CLS");
+
+                        helperUI.displayHeader();
+                        displayCustomerInProgressOrder(customerID);
+
+                        char choice;
+                        cout << "Velja pontun til ad klara? j/n: ";
+                        cin >> choice;
+
+                        // if choice is 'y', yes change order status to in progress
+                        if (choice == 'j')
+                        {
+                            baker.finishOrder(customerID);
+                        }
+                    }
+                    else
+                    {
+                        cout << "Engin pontun sem bidur afgreidslu: " << endl;
+                        cout << endl;
+                        system("pause");
+                    }
                 }
-            }
-            else if(input == '4')
-            {
-                break;
+                else if(input == 4)
+                {
+                    break;
+                }
             }
         }
+        else
+        {
+            helperUI.displayHeader();
+            cout << "Thad eru engar pantanir i bid: " << baker.getBakerLocation() << endl;
+            cout << endl;
+            system("pause");
+        }
     }
-    else
+    catch(InputErrorException e)
     {
-        helperUI.displayHeader();
-        cout << "Thad eru engar pantanir i bid: " << baker.getBakerLocation() << endl;
-        cout << endl;
+        Error er;
+        er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+        e.getMessage();
         system("pause");
     }
 }
