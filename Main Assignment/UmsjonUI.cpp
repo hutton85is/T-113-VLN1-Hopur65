@@ -178,13 +178,15 @@ void UmsjonUI::main()
                 vector<PizzaToppings> AllPizzaToppingsVec = u.getptoppings();
                 while(moreToppings)
                 {
-                    displayVector(u.getptoppings(), true);
+                    vector<PizzaToppings> pToppingsVec = u.getptoppings();
+                    int pToppingsVecSize = pToppingsVec.size();
+                    displayVector(pToppingsVec, true);
 
                     int newToppingID;
                     cout << "Sladu inn alegg til ad hafa a " << choose_pizza << ": ";
                     cin >> newToppingID;
 
-                    if(!cin)
+                    if(!cin || newToppingID < 0 || pToppingsVecSize <= newToppingID)
                     {
                         throw InputErrorException("Innslattarvilla a aleggi a pizzu");
                     }
