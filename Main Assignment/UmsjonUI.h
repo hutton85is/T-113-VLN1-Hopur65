@@ -14,14 +14,30 @@ class UmsjonUI
     public:
         UmsjonUI();
         virtual ~UmsjonUI();
-        bool yorn(char answer);
         void main();
 
     private:
         template <typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool show);
 
+        void createNewPizzaSize();
+
+        void createNewPizzaCrust();
+
+        void createNewPizzaTopping();
+
+        void createNewPizzaMenu();
+
+        void createNewPizzaExtras();
+
+        void createNewPizzaLocation();
+
+        bool yorn(char answer);
+
+
         UIHelper helperUI;
+
+        Umsjon u;
 };
 
 #endif // UMSJONUI_H

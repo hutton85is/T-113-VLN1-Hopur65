@@ -8,8 +8,6 @@ class OpenOrders
         OpenOrders();
         virtual ~OpenOrders();
 
-    protected:
-
     private:
 };
 

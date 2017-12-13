@@ -19,7 +19,7 @@ class Error
         Error();
         void displayError();
         vector <InputErrorException> getInputErrorExceptionVec();
-        void logInputErrorException(InputErrorException newException, const char* fname);
+        void logInputErrorException(InputErrorException newException);
 
         friend ostream& operator << (ostream& outs, Error& er);
 

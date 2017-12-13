@@ -3,7 +3,7 @@
 Error::Error()
 {
     InputErrorException newInputErrorException;
-    readWriteClass rw;
+    ReadWriteClass rw;
     rw.loadSpecificVector(inputErrorExceptionVec, "Exceptions/InputErrorException.dat", newInputErrorException);
 }
 
@@ -13,15 +13,16 @@ vector <InputErrorException> Error::getInputErrorExceptionVec()
 }
 
 
-void Error::logInputErrorException(InputErrorException newException, const char* fname)
+void Error::logInputErrorException(InputErrorException newException)
 {
-    readWriteClass rw;
+    const char* fname = "Exceptions/InputErrorException.dat";
+    ReadWriteClass rw;
     rw.writeClassToFile(newException, fname);
 }
 
 ostream& operator << (ostream& outs, Error& er)
 {
-    outs << "Invalid error exception is " <<  er.getInputErrorExceptionVec().size() << endl;
+    outs << "1. Innslattarvilla, error exception er: " <<  er.getInputErrorExceptionVec().size() << endl;
 
     return outs;
 }

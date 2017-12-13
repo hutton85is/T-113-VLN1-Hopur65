@@ -8,7 +8,6 @@ class ErrorUI
 {
     public:
         ErrorUI();
-        virtual ~ErrorUI();
         void displayErrorCount();
         void mainUI();
 

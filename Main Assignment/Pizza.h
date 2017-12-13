@@ -1,5 +1,6 @@
 /**
 * @brief Pizza keeps record of pizza orders made by customers and all available items to order
+*
 */
 
 
@@ -12,11 +13,12 @@
 #include <fstream>
 
 #include "PizzaSize.h"
-#include "pizzatoppings.h"
-#include "pizzacrust.h"
-#include "pizzaextras.h"
-#include "pizzalocations.h"
-#include "pizzamenu.h"
+#include "PizzaToppings.h"
+#include "PizzaCrust.h"
+#include "PizzaCrust.h"
+#include "PizzaLocations.h"
+#include "PizzaMenu.h"
+#include "PizzaExtras.h"
 
 using namespace std;
 
@@ -26,7 +28,6 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
-        //Vectors containing classes of available items for sale
         vector <PizzaToppings> ptoppings;
         vector <PizzaSize> psize;
         vector <PizzaCrust> pcrust;
@@ -34,7 +35,6 @@ class Pizza
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
 
-        /** Calculate sum of current order*/
         int calculateSumOfOrder();
 
         friend ostream& operator <<(ostream& out, Pizza& p);

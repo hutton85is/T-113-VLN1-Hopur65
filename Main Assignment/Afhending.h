@@ -31,7 +31,7 @@ class Afhending
         void setAfhendingLocation(char currentLocation[32]);
 
         vector<PizzaLocations> getPizzaLocations();
-        vector<client> getCustomerVec();
+        vector<Client> getCustomerVec();
         string getAfhendingLocation();
 
 
@@ -47,13 +47,13 @@ class Afhending
         *
         * @param customersVecNumber is the position of customer in customersVec
         */
-        void deliverOrder(unsigned int customersVecNumber);
+        void deliverOrder(int customersVecNumber);
 
     private:
 
         char afhendingLocation[32];
 
-        vector<client> customersVec;
+        vector<Client> customersVec;
 };
 
 #endif // AFHENDING_H

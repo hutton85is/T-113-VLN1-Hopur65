@@ -37,6 +37,10 @@ class AfhendingUI
         Afhending afhending;
 
         UIHelper helperUI;
+
+        void chooseSeeAllOrders();
+
+        void chooseSeeFinishedOrders();
 };
 
 #endif // AFHENDINGUI_H

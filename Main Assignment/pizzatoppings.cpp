@@ -1,15 +1,14 @@
-#include "pizzatoppings.h"
+#include "PizzaToppings.h"
 
 PizzaToppings::PizzaToppings()
 {
         price = 0;
         toppings[0] = '\0';
-    //ctor
 }
 
 PizzaToppings::~PizzaToppings()
 {
-    //dtor
+
 }
 ostream& operator <<(ostream& outs, PizzaToppings& p_toppings)
 {

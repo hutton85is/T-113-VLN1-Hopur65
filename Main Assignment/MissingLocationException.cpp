@@ -7,7 +7,7 @@ MissingLocationException::MissingLocationException(string message)
 
 MissingLocationException::~MissingLocationException()
 {
-    //dtor
+
 }
 
 string MissingLocationException::getMessage()

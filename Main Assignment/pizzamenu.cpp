@@ -1,17 +1,15 @@
-#include "pizzamenu.h"
+#include "PizzaMenu.h"
 
 PizzaMenu::PizzaMenu()
 {
          price = 0;
          choose_pizza[0] = '\0';
          toppings[0] = '\0';
-
-    //ctor
 }
 
 PizzaMenu::~PizzaMenu()
 {
-    //dtor
+
 }
 ostream& operator <<(ostream& outs, PizzaMenu& p_menu)
 {

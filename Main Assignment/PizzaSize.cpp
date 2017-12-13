@@ -4,12 +4,11 @@ PizzaSize::PizzaSize()
 {
         price = 0;
         p_size[0] = '\0';
-    //ctor
 }
 
 PizzaSize::~PizzaSize()
 {
-    //dtor
+
 }
 
 ostream& operator <<(ostream& outs, PizzaSize& p_size)

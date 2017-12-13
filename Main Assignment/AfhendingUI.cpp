@@ -2,7 +2,7 @@
 
 AfhendingUI::AfhendingUI()
 {
-    //ctor
+
 }
 
 bool AfhendingUI::pickLocation()
@@ -24,15 +24,15 @@ bool AfhendingUI::pickLocation()
 
         if(!cin)
         {
-            throw InputErrorException("Inslattarvilla a vali a stadsetningu");
+            throw InputErrorException("Inslattarvilla a vali a stadsetningu i AfhendingUI");
         }
 
-        afhending.setAfhendingLocation(availLocations[input - 48].place);
+        afhending.setAfhendingLocation(availLocations[input].place);
     }
     catch(InputErrorException e)
     {
         Error er;
-        er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+        er.logInputErrorException(e);
         cout << e.getMessage() << endl;
         system("pause");
         cin.clear();
@@ -43,7 +43,7 @@ bool AfhendingUI::pickLocation()
 
 void AfhendingUI::displayAllCustomers(bool show)
 {
-    vector<client> customerVec = afhending.getCustomerVec();
+    vector<Client> customerVec = afhending.getCustomerVec();
     for(unsigned int i = 0; i < customerVec.size(); i++)
     {
         if(show)
@@ -57,12 +57,55 @@ void AfhendingUI::displayAllCustomers(bool show)
 
 void AfhendingUI::displayCustomerOrder(unsigned int customerNumber)
 {
-    vector<client> customer = afhending.getCustomerVec();
+    vector<Client> customer = afhending.getCustomerVec();
     vector<Pizza> order = afhending.getOrderVec(customerNumber);
     cout << customerNumber << ". " << customer[customerNumber] << endl;
     for(unsigned int i = 0; i < order.size(); i++)
     {
         cout << "Pizza " << i+1 << ". " << order[i] << endl;
+    }
+}
+
+void AfhendingUI::chooseSeeAllOrders()
+{
+    helperUI.displayHeader();
+    displayAllCustomers(false);
+}
+
+void AfhendingUI::chooseSeeFinishedOrders()
+{
+    helperUI.displayHeader();
+    displayAllCustomers(true);
+
+    int customerID;
+    cout << endl;
+    cout << "Veldu pontun til ad skoda nanar: ";
+    cin >> customerID;
+    system("CLS");
+
+    int CustomerVecSize = afhending.getCustomerVec().size();
+
+    if(!cin || customerID < 0 || CustomerVecSize - 1 < customerID)
+    {
+        throw InputErrorException("Innslattarvilla a vali um pontun til ad skoda nanar");
+    }
+
+    helperUI.displayHeader();
+    displayCustomerOrder(customerID);
+
+    string choice;
+    cout << "Velja pontun til ad vinna i? j/n: ";
+    cin >> ws;
+    getline(cin, choice);
+    if(!cin)
+    {
+        throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
+    }
+
+    // if choice is 'y', yes change order status to in progress
+    if (choice[0] == 'j')
+    {
+        afhending.deliverOrder(customerID);
     }
 }
 
@@ -92,47 +135,17 @@ void AfhendingUI::main()
                     throw InputErrorException("Inslattarvilla i vallista AfhendingUI");
                 }
 
-                if(input == '1')
+                if(input == 1)
                 {
-                    helperUI.displayHeader();
-                    displayAllCustomers(false);
+                    chooseSeeAllOrders();
                     cout << endl;
                     system("pause");
                 }
-                else if(input == '2')
+                else if(input == 2)
                 {
-                    helperUI.displayHeader();
-                    displayAllCustomers(true);
-
-                    int customerID;
-                    cout << endl;
-                    cout << "Veldu pontun til ad skoda nanar: ";
-                    cin >> customerID;
-                    system("CLS");
-                    if(!cin)
-                    {
-                        throw InputErrorException("Innslattarvilla a vali um pontun til ad skoda nanar");
-                    }
-
-                    helperUI.displayHeader();
-                    displayCustomerOrder(customerID);
-
-                    string choice;
-                    cout << "Velja pontun til ad vinna i? j/n: ";
-                    cin >> ws;
-                    getline(cin, choice);
-                    if(!cin)
-                    {
-                        throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
-                    }
-
-                    // if choice is 'y', yes change order status to in progress
-                    if (choice[0] == 'j')
-                    {
-                        afhending.deliverOrder(customerID);
-                    }
+                    chooseSeeFinishedOrders();
                 }
-                else if(input == '3')
+                else if(input == 3)
                 {
                     break;
                 }
@@ -149,7 +162,7 @@ void AfhendingUI::main()
     catch(InputErrorException e)
     {
         Error er;
-        er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+        er.logInputErrorException(e);
         cout << e.getMessage() << endl;
         system("pause");
         cin.clear();

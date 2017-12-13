@@ -2,7 +2,7 @@
 #define READWRITECLASS_H
 
 #include "Pizza.h"
-#include "client.h"
+#include "Client.h"
 #include "Sala.h"
 #include "PizzaHelper.h"
 #include <string.h>
@@ -12,11 +12,11 @@
 *
 */
 
-class readWriteClass
+class ReadWriteClass
 {
     public:
-        readWriteClass();
-        virtual ~readWriteClass();
+        ReadWriteClass();
+        virtual ~ReadWriteClass();
 
         /*
         * Function that writes a template class to binary file under filename
@@ -32,7 +32,7 @@ class readWriteClass
         void removeAllContentsOfFile(const char* fname);
 
         // load Pizza order with a specific customer
-        bool loadCustomer(client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname);
+        bool loadCustomer(Client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname);
 
         /*
         * boolean function that loads a vector from a specific file storing a template class

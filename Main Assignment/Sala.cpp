@@ -2,7 +2,7 @@
 
 Sala::Sala()
 {
-    readWriteClass rw;
+    ReadWriteClass rw;
     rw.loadAllVectors(lager);
 }
 
@@ -41,7 +41,7 @@ vector<PizzaToppings> Sala::getLagerptoppings()
     return lager.ptoppings;
 }
 
-client Sala::getClient()
+Client Sala::getClient()
 {
     return newCustomer;
 }
@@ -67,12 +67,12 @@ void Sala::enterPizzaSize(unsigned int input)
             order[newCustomer.orderCounter-1].psize[0].price =
             order[newCustomer.orderCounter-1].psize[0].price * order[newCustomer.orderCounter-1].pmenu[0].price;
         }
+
+        pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
     }
     else
     {
         throw InputErrorException("Innslattarvilla a pizzustaerd");
-
-        pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
     }
 }
 
@@ -191,7 +191,7 @@ void Sala::newPizza()
     pHelper.push_back(newPizzaHelper);
 }
 
-client Sala::getCustomerOrdersVector()
+Client Sala::getCustomerOrdersVector()
 {
     return newCustomer;
 }
@@ -210,7 +210,7 @@ void Sala::createOrder(string name, string address, int number, bool paid, bool 
     string tempname = "order/" + name + ".dat";
     const char* fname = tempname.c_str();
 
-    readWriteClass rw;
+    ReadWriteClass rw;
     // Add customer to order directory, containing all open orders
     rw.writeClassToFile(newCustomer, "order/customerlist.dat");
     // Write client class to file and path 'fname'
@@ -273,7 +273,7 @@ void Sala::calculateSumOfOrder()
 
 ostream& operator <<(ostream& outs, Sala& s)
 {
-    client newClient = s.getClient();
+    Client newClient = s.getClient();
     vector<Pizza> order = s.getOrder();
 
     outs << newClient << endl;

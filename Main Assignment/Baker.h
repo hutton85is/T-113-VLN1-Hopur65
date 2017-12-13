@@ -26,11 +26,11 @@ class Baker
         */
         void setBakerLocation(char currentLocation[32]);
 
-        vector<client> getCustomerVec();
+        vector<Client> getCustomerVec();
 
-        vector<client> getCustomersVecInProgress();
+        vector<Client> getCustomersVecInProgress();
 
-        vector<client> getCustomersVecDueProgress();
+        vector<Client> getCustomersVecDueProgress();
 
         /**
         * @return a vector of all customer orders due progress and in progress
@@ -68,11 +68,11 @@ class Baker
         void finishOrder(unsigned int customerID);
 
     private:
-        vector<client> customersVec;
+        vector<Client> customersVec;
 
-        vector<client> customersVecInProgress;
+        vector<Client> customersVecInProgress;
 
-        vector<client> customersVecDueProgress;
+        vector<Client> customersVecDueProgress;
 
         char bakerLocation[32];
 };

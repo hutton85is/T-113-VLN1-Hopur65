@@ -16,8 +16,6 @@ class PizzaExtras
         int price;
         char extras_type[32];
 
-    protected:
-
     private:
 };
 

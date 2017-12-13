@@ -1,6 +1,6 @@
-#include "client.h"
+#include "Client.h"
 
-client::client()
+Client::Client()
 {
     name[0] = '\0';
     address[0] = '\0';
@@ -18,12 +18,12 @@ client::client()
     deliverOrder = false;
 }
 
-client::~client()
+Client::~Client()
 {
     //dtor
 }
 
-ostream& operator <<(ostream& outs, client& customer)
+ostream& operator <<(ostream& outs, Client& customer)
 {
     if(customer.name[0] != '\0')
     {
@@ -82,7 +82,6 @@ ostream& operator <<(ostream& outs, client& customer)
 
     outs << "Athugasemd: " << customer.comment << endl;
 
-    cout << endl;
     outs << "Heildarverd: " << customer.sumOfOrder << " kr.";
 
     return outs;

@@ -2,14 +2,14 @@
 
 Baker::Baker()
 {
-    readWriteClass rw;
-    client loadClient;
+    ReadWriteClass rw;
+    Client loadClient;
     rw.loadSpecificVector(customersVec, "order/customerlist.dat", loadClient);
 }
 
 Baker::~Baker()
 {
-    //dtor
+
 }
 
 void Baker::workOnOrder(unsigned int customersVecNumber)
@@ -28,8 +28,8 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
     customersVecInProgress.push_back(customersVecDueProgress[customersVecNumber]);
 
     // Load customer from file to rewrite him changing status on working on pizza order
-    readWriteClass rw;
-    client newClient;
+    ReadWriteClass rw;
+    Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     string fname = "order/";
@@ -106,8 +106,8 @@ void Baker::finishOrder(unsigned int customersVecNumber)
     customersVecInProgress[customersVecNumber].finished = true;
 
     // Load customer from file to rewrite him changing status to finished on order
-    readWriteClass rw;
-    client newClient;
+    ReadWriteClass rw;
+    Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     string fname = "order/";
@@ -174,8 +174,8 @@ string Baker::getBakerLocation()
 
 vector<Pizza> Baker::getCustomersOrderDueProgress(unsigned int customerNumber)
 {
-    readWriteClass rw;
-    client newClient;
+    ReadWriteClass rw;
+    Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     string fname = "order/";
@@ -188,8 +188,8 @@ vector<Pizza> Baker::getCustomersOrderDueProgress(unsigned int customerNumber)
 
 vector<Pizza> Baker::getCustomersOrderInProgress(unsigned int customerNumber)
 {
-    readWriteClass rw;
-    client newClient;
+    ReadWriteClass rw;
+    Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     string fname = "order/";
@@ -202,8 +202,8 @@ vector<Pizza> Baker::getCustomersOrderInProgress(unsigned int customerNumber)
 
 vector<Pizza> Baker::getOrderVec(unsigned int customersVecNumber)
 {
-    readWriteClass rw;
-    client newClient;
+    ReadWriteClass rw;
+    Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     string fname = "order/";
@@ -218,15 +218,15 @@ void Baker::setBakerLocation(char currentLocation[32])
 {
     strcpy(bakerLocation, currentLocation);
 
-    readWriteClass rw;
-    vector<client> newCustomersVec;
+    ReadWriteClass rw;
+    vector<Client> newCustomersVec;
 
     // Search for locations same as currentLocation
     for (unsigned int i = 0; i < customersVec.size(); i++)
     {
         vector<Pizza> newOrder;
         vector<PizzaHelper> newpHelper;
-        client newClient;
+        Client newClient;
         string fname = "order/";
         fname.append(customersVec[i].name);
         fname.append(".dat");
@@ -266,24 +266,24 @@ void Baker::setBakerLocation(char currentLocation[32])
 
 vector<PizzaLocations> Baker::getPizzaLocations()
 {
-    readWriteClass rw;
+    ReadWriteClass rw;
     PizzaLocations newPizzaLocation;
     vector<PizzaLocations> locationsVec;
     rw.loadSpecificVector(locationsVec, "data/locations.dat", newPizzaLocation);
     return locationsVec;
 }
 
-vector<client> Baker::getCustomerVec()
+vector<Client> Baker::getCustomerVec()
 {
     return customersVec;
 }
 
-vector<client> Baker::getCustomersVecInProgress()
+vector<Client> Baker::getCustomersVecInProgress()
 {
     return customersVecInProgress;
 }
 
-vector<client> Baker::getCustomersVecDueProgress()
+vector<Client> Baker::getCustomersVecDueProgress()
 {
     return customersVecDueProgress;
 }
