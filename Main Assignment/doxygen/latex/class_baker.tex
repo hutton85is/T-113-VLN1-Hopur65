@@ -11,27 +11,36 @@ Functional class for \hyperlink{class_baker_u_i}{Baker\-UI}.
 \begin{CompactItemize}
 \item 
 void \hyperlink{class_baker_b85151ecb20282d81b4dab489fea7dd8}{set\-Baker\-Location} (char current\-Location\mbox{[}32\mbox{]})
-\item 
+\begin{CompactList}\small\item\em Set baker location and customize vectors. \item\end{CompactList}\item 
 \hypertarget{class_baker_3970b0afe27b514282442b11592e1602}{
-vector$<$ client $>$ {\bf get\-Customer\-Vec} ()}
+vector$<$ \hyperlink{classclient}{client} $>$ {\bf get\-Customer\-Vec} ()}
 \label{class_baker_3970b0afe27b514282442b11592e1602}
 
 \item 
 \hypertarget{class_baker_8b798f098bfd9a23b11fa1d63d089609}{
-vector$<$ client $>$ {\bf get\-Customers\-Vec\-In\-Progress} ()}
+vector$<$ \hyperlink{classclient}{client} $>$ {\bf get\-Customers\-Vec\-In\-Progress} ()}
 \label{class_baker_8b798f098bfd9a23b11fa1d63d089609}
 
 \item 
 \hypertarget{class_baker_4c05936fa38e14b768511921a3288c57}{
-vector$<$ client $>$ {\bf get\-Customers\-Vec\-Due\-Progress} ()}
+vector$<$ \hyperlink{classclient}{client} $>$ {\bf get\-Customers\-Vec\-Due\-Progress} ()}
 \label{class_baker_4c05936fa38e14b768511921a3288c57}
 
 \item 
-vector$<$ Pizza $>$ \hyperlink{class_baker_ad0cbeddec394b25c5eade57247f4110}{get\-Order\-Vec} (unsigned int customers\-Vec\-Number)
+\hypertarget{class_baker_ad0cbeddec394b25c5eade57247f4110}{
+vector$<$ Pizza $>$ {\bf get\-Order\-Vec} (unsigned int customers\-Vec\-Number)}
+\label{class_baker_ad0cbeddec394b25c5eade57247f4110}
+
 \item 
-vector$<$ Pizza $>$ \hyperlink{class_baker_7c9256e53372bd3a698e40cf64003c50}{get\-Customers\-Order\-Due\-Progress} (unsigned int customer\-Number)
+\hypertarget{class_baker_7c9256e53372bd3a698e40cf64003c50}{
+vector$<$ Pizza $>$ {\bf get\-Customers\-Order\-Due\-Progress} (unsigned int customer\-Number)}
+\label{class_baker_7c9256e53372bd3a698e40cf64003c50}
+
 \item 
-vector$<$ Pizza $>$ \hyperlink{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}{get\-Customers\-Order\-In\-Progress} (unsigned int customer\-Number)
+\hypertarget{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}{
+vector$<$ Pizza $>$ {\bf get\-Customers\-Order\-In\-Progress} (unsigned int customer\-Number)}
+\label{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}
+
 \item 
 \hypertarget{class_baker_3d38e7498fba59674c7d3838bf4c1824}{
 vector$<$ Pizza\-Locations $>$ {\bf get\-Pizza\-Locations} ()}
@@ -44,24 +53,24 @@ string {\bf get\-Baker\-Location} ()}
 
 \item 
 void \hyperlink{class_baker_9616413c80f3814907a9c2399ac50438}{work\-On\-Order} (unsigned int customers\-Vec\-Number)
-\item 
+\begin{CompactList}\small\item\em Set customer order as in progress. \item\end{CompactList}\item 
 void \hyperlink{class_baker_222a16bf113b70cbe0388a7291978a57}{finish\-Order} (unsigned int customer\-ID)
-\end{CompactItemize}
+\begin{CompactList}\small\item\em Set customer order as. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Private Attributes}
 \begin{CompactItemize}
 \item 
 \hypertarget{class_baker_52cc86469dd41b9be5b7186d6bd00589}{
-vector$<$ client $>$ {\bf customers\-Vec}}
+vector$<$ \hyperlink{classclient}{client} $>$ {\bf customers\-Vec}}
 \label{class_baker_52cc86469dd41b9be5b7186d6bd00589}
 
 \item 
 \hypertarget{class_baker_0b7dacb9817ff529ee046a5c369051fa}{
-vector$<$ client $>$ {\bf customers\-Vec\-In\-Progress}}
+vector$<$ \hyperlink{classclient}{client} $>$ {\bf customers\-Vec\-In\-Progress}}
 \label{class_baker_0b7dacb9817ff529ee046a5c369051fa}
 
 \item 
 \hypertarget{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{
-vector$<$ client $>$ {\bf customers\-Vec\-Due\-Progress}}
+vector$<$ \hyperlink{classclient}{client} $>$ {\bf customers\-Vec\-Due\-Progress}}
 \label{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}
 
 \item 
@@ -87,46 +96,23 @@ Class can set customer order as being worked on and finished working on.
 \label{class_baker_222a16bf113b70cbe0388a7291978a57}
 
 
-Move customer from customers\-Vec\-In\-Progress and rewrite file containing customer order with updated client class
+Set customer order as. 
+
+Move customer from customers\-Vec\-In\-Progress and set status as finished. Rewrite file containing customer order with updated client class
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em customer\-ID}]\end{description}
+\item[{\em customer\-ID}]is the position of customer to update in vector \end{description}
 \end{Desc}
-\hypertarget{class_baker_7c9256e53372bd3a698e40cf64003c50}{
-\index{Baker@{Baker}!getCustomersOrderDueProgress@{getCustomersOrderDueProgress}}
-\index{getCustomersOrderDueProgress@{getCustomersOrderDueProgress}!Baker@{Baker}}
-\subsubsection[getCustomersOrderDueProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Pizza $>$ Baker::get\-Customers\-Order\-Due\-Progress (unsigned int {\em customer\-Number})}}
-\label{class_baker_7c9256e53372bd3a698e40cf64003c50}
-
-
-\begin{Desc}
-\item[Returns:]a vector only with customer orders due progress \end{Desc}
-\hypertarget{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}{
-\index{Baker@{Baker}!getCustomersOrderInProgress@{getCustomersOrderInProgress}}
-\index{getCustomersOrderInProgress@{getCustomersOrderInProgress}!Baker@{Baker}}
-\subsubsection[getCustomersOrderInProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Pizza $>$ Baker::get\-Customers\-Order\-In\-Progress (unsigned int {\em customer\-Number})}}
-\label{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}
-
-
-\begin{Desc}
-\item[Returns:]a vector only with customer orders in progress \end{Desc}
-\hypertarget{class_baker_ad0cbeddec394b25c5eade57247f4110}{
-\index{Baker@{Baker}!getOrderVec@{getOrderVec}}
-\index{getOrderVec@{getOrderVec}!Baker@{Baker}}
-\subsubsection[getOrderVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Pizza $>$ Baker::get\-Order\-Vec (unsigned int {\em customers\-Vec\-Number})}}
-\label{class_baker_ad0cbeddec394b25c5eade57247f4110}
-
-
-\begin{Desc}
-\item[Returns:]a vector of all customer orders due progress and in progress \end{Desc}
 \hypertarget{class_baker_b85151ecb20282d81b4dab489fea7dd8}{
 \index{Baker@{Baker}!setBakerLocation@{setBakerLocation}}
 \index{setBakerLocation@{setBakerLocation}!Baker@{Baker}}
 \subsubsection[setBakerLocation]{\setlength{\rightskip}{0pt plus 5cm}void Baker::set\-Baker\-Location (char {\em current\-Location}\mbox{[}32\mbox{]})}}
 \label{class_baker_b85151ecb20282d81b4dab489fea7dd8}
 
+
+Set baker location and customize vectors. 
 
 Function that set's baker location and sort's orders into vector's depending on order status 'in progress' or 'due progress'
 
@@ -141,6 +127,8 @@ Function that set's baker location and sort's orders into vector's depending on 
 \subsubsection[workOnOrder]{\setlength{\rightskip}{0pt plus 5cm}void Baker::work\-On\-Order (unsigned int {\em customers\-Vec\-Number})}}
 \label{class_baker_9616413c80f3814907a9c2399ac50438}
 
+
+Set customer order as in progress. 
 
 Move customer from customers\-Vec\-Due\-Progress to customers\-Vec\-In\-Progress and rewrite file containing customer order with updated client class
 

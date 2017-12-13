@@ -19,14 +19,21 @@ using namespace std;
 class InputErrorException
 {
     public:
+
         InputErrorException();
+
         InputErrorException(string message);
+
         string getMessage();
+
         friend ostream& operator << (ostream& outs, InputErrorException& i);
+
         time_t getTime();
 
     private:
+
         char message[64];
+
         time_t now;
 };
 

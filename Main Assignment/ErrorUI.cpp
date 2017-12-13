@@ -8,6 +8,7 @@ ErrorUI::ErrorUI()
 void ErrorUI::displayErrorCount()
 {
     int input;
+
     Error er;
 
     cout << er << endl;

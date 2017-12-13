@@ -1,3 +1,9 @@
+/**
+ * @brief Description and price of Pizza sizes available
+ *
+ */
+
+
 #ifndef PIZZASIZE_H
 #define PIZZASIZE_H
 
@@ -8,12 +14,13 @@ using namespace std;
 class PizzaSize
 {
     public:
+
         PizzaSize();
-        virtual ~PizzaSize();
 
         friend ostream& operator <<(ostream& outs, PizzaSize& p_size);
 
         int price;
+
         char p_size[32];
 };
 

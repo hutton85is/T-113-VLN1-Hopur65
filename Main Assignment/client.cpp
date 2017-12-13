@@ -20,10 +20,11 @@ Client::Client()
 
 Client::~Client()
 {
-    //dtor
+
 }
 
 ostream& operator <<(ostream& outs, Client& customer)
+
 {
     if(customer.name[0] != '\0')
     {

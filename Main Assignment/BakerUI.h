@@ -1,5 +1,5 @@
 /**
-* @brief User interface for setting customers order as in progress and finished
+* @brief User interface for setting customers order as in progress and/or finished
 *
 */
 
@@ -36,7 +36,7 @@ class BakerUI
         void chooseSeeInProgressOrders();
 
         /**
-        * @brief Choose location of baker and retrieve all pending customers.
+        * @brief Choose location of baker
         *
         * @return false if there are no pending customers, else true
         */

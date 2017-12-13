@@ -10,10 +10,13 @@ Sala handles functionality for \hyperlink{class_sala_u_i}{Sala\-UI}.
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{class_sala_da283dd136f3f0c2703d0356f49c1e6e}{Sala} ()
-\item 
+\hypertarget{class_sala_da283dd136f3f0c2703d0356f49c1e6e}{
+\hyperlink{class_sala_da283dd136f3f0c2703d0356f49c1e6e}{Sala} ()}
+\label{class_sala_da283dd136f3f0c2703d0356f49c1e6e}
+
+\begin{CompactList}\small\item\em Constructor initiates vector variable lager with everything available for ordering on a pizza. \item\end{CompactList}\item 
 void \hyperlink{class_sala_ae3b8375ca0ab5b62e84f86582b8cec3}{enter\-Crust} (unsigned int input)
-\item 
+\begin{CompactList}\small\item\em All enter functions push items selected by customer to order vector. \item\end{CompactList}\item 
 \hypertarget{class_sala_f4637151f3f934bdf727685020e956e2}{
 void {\bf enter\-Extras} (unsigned int input)}
 \label{class_sala_f4637151f3f934bdf727685020e956e2}
@@ -39,22 +42,20 @@ void {\bf enter\-Pizza\-Size} (unsigned int input)}
 \label{class_sala_caeeb8aada209ebb8bde4749b2ececdc}
 
 \item 
-void \hyperlink{class_sala_eadce54d849ca6634b7fdd389bd8f192}{new\-Pizza} ()
-\item 
+\hypertarget{class_sala_eadce54d849ca6634b7fdd389bd8f192}{
+void \hyperlink{class_sala_eadce54d849ca6634b7fdd389bd8f192}{new\-Pizza} ()}
+\label{class_sala_eadce54d849ca6634b7fdd389bd8f192}
+
+\begin{CompactList}\small\item\em Initiate a new Pizza order and push back former order to vector order. \item\end{CompactList}\item 
 \hypertarget{class_sala_24b9bb5302a251b41fed3df1fb7ce8ad}{
 void {\bf calculate\-Sum\-Of\-Order} ()}
 \label{class_sala_24b9bb5302a251b41fed3df1fb7ce8ad}
 
 \item 
-\hypertarget{class_sala_554463c0b82fb266c21e23e040bf1ac0}{
-void {\bf create\-Order} (string name, string address, int number, bool paid, bool delivery, string comment)}
-\label{class_sala_554463c0b82fb266c21e23e040bf1ac0}
-
-\item 
-void \hyperlink{class_sala_9f3c48158017cdc015a985e9712f0179}{create\-Order} (string name, string address, int number, bool paid, bool delivery)
-\item 
+void \hyperlink{class_sala_554463c0b82fb266c21e23e040bf1ac0}{create\-Order} (string name, string address, int number, bool paid, bool delivery, string comment)
+\begin{CompactList}\small\item\em Write client and pizza order to file, and client to a directory containing a list of customers. \item\end{CompactList}\item 
 \hypertarget{class_sala_3a31e5a83058a950f863932d3ecaef2e}{
-client {\bf get\-Customer\-Orders\-Vector} ()}
+\hyperlink{classclient}{client} {\bf get\-Customer\-Orders\-Vector} ()}
 \label{class_sala_3a31e5a83058a950f863932d3ecaef2e}
 
 \item 
@@ -94,7 +95,7 @@ vector$<$ Pizza $>$ {\bf get\-Order} ()}
 
 \item 
 \hypertarget{class_sala_a1300ce1d3137fc3bd1b2938612faa1b}{
-client {\bf get\-Client} ()}
+\hyperlink{classclient}{client} {\bf get\-Client} ()}
 \label{class_sala_a1300ce1d3137fc3bd1b2938612faa1b}
 
 \end{CompactItemize}
@@ -107,13 +108,19 @@ Pizza {\bf lager}}
 
 \item 
 \hypertarget{class_sala_d6980eaf5555befe23d2271575d6d9cb}{
-client {\bf new\-Customer}}
+\hyperlink{classclient}{client} {\bf new\-Customer}}
 \label{class_sala_d6980eaf5555befe23d2271575d6d9cb}
 
 \item 
-vector$<$ Pizza $>$ \hyperlink{class_sala_70a17ffa722a3985b86d30b034ad06d7}{order}
+\hypertarget{class_sala_70a17ffa722a3985b86d30b034ad06d7}{
+vector$<$ Pizza $>$ {\bf order}}
+\label{class_sala_70a17ffa722a3985b86d30b034ad06d7}
+
 \item 
-vector$<$ Pizza\-Helper $>$ \hyperlink{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{p\-Helper}
+\hypertarget{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{
+vector$<$ \hyperlink{class_pizza_helper}{Pizza\-Helper} $>$ {\bf p\-Helper}}
+\label{class_sala_4b1abb1f80ebc80a2334733ae62acde2}
+
 \end{CompactItemize}
 \subsection*{Friends}
 \begin{CompactItemize}
@@ -130,30 +137,20 @@ Sala handles functionality for \hyperlink{class_sala_u_i}{Sala\-UI}.
 
 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_sala_da283dd136f3f0c2703d0356f49c1e6e}{
-\index{Sala@{Sala}!Sala@{Sala}}
-\index{Sala@{Sala}!Sala@{Sala}}
-\subsubsection[Sala]{\setlength{\rightskip}{0pt plus 5cm}Sala::Sala ()}}
-\label{class_sala_da283dd136f3f0c2703d0356f49c1e6e}
-
-
-Constructor initiates vector variable lager, with everything available for ordering on a pizza 
-
 \subsection{Member Function Documentation}
-\hypertarget{class_sala_9f3c48158017cdc015a985e9712f0179}{
+\hypertarget{class_sala_554463c0b82fb266c21e23e040bf1ac0}{
 \index{Sala@{Sala}!createOrder@{createOrder}}
 \index{createOrder@{createOrder}!Sala@{Sala}}
-\subsubsection[createOrder]{\setlength{\rightskip}{0pt plus 5cm}void Sala::create\-Order (string {\em name}, string {\em address}, int {\em number}, bool {\em paid}, bool {\em delivery})}}
-\label{class_sala_9f3c48158017cdc015a985e9712f0179}
+\subsubsection[createOrder]{\setlength{\rightskip}{0pt plus 5cm}void Sala::create\-Order (string {\em name}, string {\em address}, int {\em number}, bool {\em paid}, bool {\em delivery}, string {\em comment})}}
+\label{class_sala_554463c0b82fb266c21e23e040bf1ac0}
 
 
-Write client and pizza order to file and client to a directory containing a list of customers
+Write client and pizza order to file, and client to a directory containing a list of customers. 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em name}]is customers name \item[{\em address}]is customers address \item[{\em number}]is customers address number \item[{\em paid}]is true if order is paid, else false \item[{\em delivery}]is true if customer wants a delivery, else false \end{description}
+\item[{\em name}]is customers name \item[{\em address}]is customers address \item[{\em number}]is customers address number \item[{\em paid}]is true if order is paid, else false \item[{\em delivery}]is true if customer wants a delivery, else false \item[{\em comment}]is customer comment to follow with the order \end{description}
 \end{Desc}
 \hypertarget{class_sala_ae3b8375ca0ab5b62e84f86582b8cec3}{
 \index{Sala@{Sala}!enterCrust@{enterCrust}}
@@ -162,46 +159,12 @@ Write client and pizza order to file and client to a directory containing a list
 \label{class_sala_ae3b8375ca0ab5b62e84f86582b8cec3}
 
 
-All enter functions push items selected by customer to order vector
+All enter functions push items selected by customer to order vector. 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
 \item[{\em input,:}]is the location of item in order vector for a specific item ordered \end{description}
-\end{Desc}
-\hypertarget{class_sala_eadce54d849ca6634b7fdd389bd8f192}{
-\index{Sala@{Sala}!newPizza@{newPizza}}
-\index{newPizza@{newPizza}!Sala@{Sala}}
-\subsubsection[newPizza]{\setlength{\rightskip}{0pt plus 5cm}void Sala::new\-Pizza ()}}
-\label{class_sala_eadce54d849ca6634b7fdd389bd8f192}
-
-
-Initiate a new Pizza order and push back former order to vector order 
-
-\subsection{Member Data Documentation}
-\hypertarget{class_sala_70a17ffa722a3985b86d30b034ad06d7}{
-\index{Sala@{Sala}!order@{order}}
-\index{order@{order}!Sala@{Sala}}
-\subsubsection[order]{\setlength{\rightskip}{0pt plus 5cm}vector$<$Pizza$>$ \hyperlink{class_sala_70a17ffa722a3985b86d30b034ad06d7}{Sala::order}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_sala_70a17ffa722a3985b86d30b034ad06d7}
-
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em order}]Customer orders are stored on this vector. When customer options for a another pizza the former order is pushed back on this vector \end{description}
-\end{Desc}
-\hypertarget{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{
-\index{Sala@{Sala}!pHelper@{pHelper}}
-\index{pHelper@{pHelper}!Sala@{Sala}}
-\subsubsection[pHelper]{\setlength{\rightskip}{0pt plus 5cm}vector$<$Pizza\-Helper$>$ \hyperlink{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{Sala::p\-Helper}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_sala_4b1abb1f80ebc80a2334733ae62acde2}
-
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em p\-Helper}]A helper vector storing quantity of all items on a single order \end{description}
 \end{Desc}
 
 

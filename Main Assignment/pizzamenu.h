@@ -1,3 +1,8 @@
+/**
+ * @brief Information on Pizzas on the menu
+ *
+ */
+
 #ifndef PIZZAMENU_H
 #define PIZZAMENU_H
 
@@ -8,13 +13,15 @@ using namespace std;
 class PizzaMenu
 {
     public:
+
         PizzaMenu();
-        virtual ~PizzaMenu();
 
         friend ostream& operator <<(ostream& outs, PizzaMenu& p_menu);
 
         double price;
+
         char choose_pizza[32];
+
         char toppings[128];
 };
 

@@ -2,7 +2,7 @@
 \section{Baker\-UI Class Reference}
 \label{class_baker_u_i}\index{BakerUI@{BakerUI}}
 }
-User interface for setting customers order as in progress and finished.  
+User interface for setting customers order as in progress and/or finished.  
 
 
 {\tt \#include $<$Baker\-UI.h$>$}
@@ -40,11 +40,23 @@ void {\bf display\-Customer\-In\-Progress\-Order} (unsigned int customer\-Number
 \label{class_baker_u_i_12edcb5c93a8a60d06b8c9de906c4be0}
 
 \item 
-\hypertarget{class_baker_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}{
-bool {\bf pick\-Location} ()}
-\label{class_baker_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}
+\hypertarget{class_baker_u_i_d7bd9a6e8c49c52704a9ab4e7c5a1a4c}{
+void {\bf choose\-See\-All\-Orders} ()}
+\label{class_baker_u_i_d7bd9a6e8c49c52704a9ab4e7c5a1a4c}
 
-\end{CompactItemize}
+\item 
+\hypertarget{class_baker_u_i_eaed66fd617380be4adf093146dba169}{
+void {\bf choose\-See\-Due\-Orders} ()}
+\label{class_baker_u_i_eaed66fd617380be4adf093146dba169}
+
+\item 
+\hypertarget{class_baker_u_i_8a3e4f702e7acee5575bbbc949c7fa6d}{
+void {\bf choose\-See\-In\-Progress\-Orders} ()}
+\label{class_baker_u_i_8a3e4f702e7acee5575bbbc949c7fa6d}
+
+\item 
+bool \hyperlink{class_baker_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}{pick\-Location} ()
+\begin{CompactList}\small\item\em Choose location of baker. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Private Attributes}
 \begin{CompactItemize}
 \item 
@@ -61,8 +73,22 @@ UIHelper {\bf helper\-UI}}
 
 
 \subsection{Detailed Description}
-User interface for setting customers order as in progress and finished. 
+User interface for setting customers order as in progress and/or finished. 
 
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_baker_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}{
+\index{BakerUI@{Baker\-UI}!pickLocation@{pickLocation}}
+\index{pickLocation@{pickLocation}!BakerUI@{Baker\-UI}}
+\subsubsection[pickLocation]{\setlength{\rightskip}{0pt plus 5cm}bool Baker\-UI::pick\-Location ()}}
+\label{class_baker_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}
+
+
+Choose location of baker. 
+
+\begin{Desc}
+\item[Returns:]false if there are no pending customers, else true \end{Desc}
 
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}

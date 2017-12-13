@@ -18,6 +18,8 @@ class Baker
         virtual ~Baker();
 
         /**
+        * @brief Set baker location and customize vectors
+        *
         * Function that set's baker location and sort's orders
         * into vector's depending on order status 'in progress'
         * or 'due progress'
@@ -32,19 +34,10 @@ class Baker
 
         vector<Client> getCustomersVecDueProgress();
 
-        /**
-        * @return a vector of all customer orders due progress and in progress
-        */
         vector<Pizza> getOrderVec(unsigned int customersVecNumber);
 
-        /**
-        * @return a vector only with customer orders due progress
-        */
         vector<Pizza> getCustomersOrderDueProgress(unsigned int customerNumber);
 
-        /**
-        * @return a vector only with customer orders in progress
-        */
         vector<Pizza> getCustomersOrderInProgress(unsigned int customerNumber);
 
         vector<PizzaLocations> getPizzaLocations();
@@ -52,6 +45,8 @@ class Baker
         string getBakerLocation();
 
         /**
+        * @brief Set customer order as in progress
+        *
         * Move customer from customersVecDueProgress to customersVecInProgress
         * and rewrite file containing customer order with updated client class
         *
@@ -60,10 +55,12 @@ class Baker
         void workOnOrder(unsigned int customersVecNumber);
 
         /**
-        * Move customer from customersVecInProgress and rewrite file containing
-        * customer order with updated client class
+        * @brief Set customer order as
         *
-        * @param customerID
+        * Move customer from customersVecInProgress and set status as finished.
+        * Rewrite file containing customer order with updated client class
+        *
+        * @param customerID is the position of customer to update in vector
         */
         void finishOrder(unsigned int customerID);
 

@@ -31,7 +31,9 @@ class Afhending
         void setAfhendingLocation(char currentLocation[32]);
 
         vector<PizzaLocations> getPizzaLocations();
+
         vector<Client> getCustomerVec();
+
         string getAfhendingLocation();
 
 
