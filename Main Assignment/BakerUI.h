@@ -10,6 +10,7 @@
 #include "Baker.h"
 #include <cstdlib>
 #include "Error.h"
+#include <climits>
 
 class BakerUI
 {

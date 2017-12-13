@@ -11,6 +11,7 @@
 
 #include "Error.h"
 #include "UIHelper.h"
+#include <climits>
 
 
 class SalaUI

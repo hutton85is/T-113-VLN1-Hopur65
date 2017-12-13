@@ -9,6 +9,7 @@
 #include "Afhending.h"
 #include "UIHelper.h"
 #include "Error.h"
+#include <climits>
 
 class AfhendingUI
 {

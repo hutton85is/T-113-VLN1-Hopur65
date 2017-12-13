@@ -70,7 +70,7 @@ void Sala::enterPizzaSize(unsigned int input)
     }
     else
     {
-        throw InputErrorException("Invalid input on pizzasize");
+        throw InputErrorException("Innslattarvilla a pizzustaerd");
 
         pHelper[newCustomer.orderCounter-1].sizeCounter = 1;
     }
@@ -95,7 +95,7 @@ void Sala::enterCrust(unsigned int input)
     }
     else
     {
-        throw InputErrorException("Invalid input, out of range");
+        throw InputErrorException("Innslattarvilla a pizzubotni");
     }
 }
 
@@ -109,7 +109,7 @@ void Sala::enterToppings(unsigned int input)
     }
     else
     {
-        throw InputErrorException("Invalid input, out of range");
+        throw InputErrorException("Innslattarvilla a aleggi");
     }
 }
 
@@ -139,7 +139,7 @@ void Sala::enterMenu(unsigned int input)
     }
     else
     {
-        throw InputErrorException("Invalid input, out of range");
+        throw InputErrorException("Innslattarvilla a matsedli");
     }
 }
 
@@ -153,7 +153,7 @@ void Sala::enterExtras(unsigned int input)
     }
     else
     {
-        throw InputErrorException("Invalid input, out of range");
+        throw InputErrorException("Innslattarvilla a medlaeti");
     }
 }
 
@@ -176,7 +176,7 @@ void Sala::enterLocation(unsigned int input)
     }
     else
     {
-        throw InputErrorException("Invalid input, out of range");
+        throw InputErrorException("Innslattarvilla a stadsetningu");
     }
 }
 
