@@ -10,7 +10,7 @@ bool AfhendingUI::pickLocation()
     try
     {
         helperUI.displayHeader();
-        char input;
+        int input;
         vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
         for(unsigned int i = 0; i < availLocations.size(); i++)
         {
@@ -70,7 +70,7 @@ void AfhendingUI::main()
 {
     try
     {
-        unsigned int input;
+        int input;
 
         if (pickLocation())
         {
@@ -104,7 +104,7 @@ void AfhendingUI::main()
                     helperUI.displayHeader();
                     displayAllCustomers(true);
 
-                    unsigned int customerID;
+                    int customerID;
                     cout << endl;
                     cout << "Veldu pontun til ad skoda nanar: ";
                     cin >> customerID;
@@ -117,16 +117,17 @@ void AfhendingUI::main()
                     helperUI.displayHeader();
                     displayCustomerOrder(customerID);
 
-                    char choice;
+                    string choice;
                     cout << "Velja pontun til ad vinna i? j/n: ";
-                    cin >> choice;
+                    cin >> ws;
+                    getline(cin, choice);
                     if(!cin)
                     {
                         throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
                     }
 
                     // if choice is 'y', yes change order status to in progress
-                    if (choice == 'j')
+                    if (choice[0] == 'j')
                     {
                         afhending.deliverOrder(customerID);
                     }
