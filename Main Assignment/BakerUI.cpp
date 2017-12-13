@@ -152,16 +152,17 @@ void BakerUI::main()
                         helperUI.displayHeader();
                         displayCustomerDueProgressOrder(customerID);
 
-                        char choice;
+                        string choice;
                         cout << "Velja pontun til ad vinna i? j/n: ";
-                        cin >> choice;
+                        cin >> ws;
+                        getline(cin, choice);
                         if(!cin)
                         {
                             throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
                         }
 
                         // if choice is 'y', yes change order status to in progress
-                        if (choice == 'j')
+                        if (choice[0] == 'j')
                         {
                             baker.workOnOrder(customerID);
                         }
@@ -194,16 +195,17 @@ void BakerUI::main()
                         helperUI.displayHeader();
                         displayCustomerInProgressOrder(customerID);
 
-                        char choice;
+                        string choice;
                         cout << "Velja pontun til ad klara? j/n: ";
-                        cin >> choice;
+                        cin >> ws;
+                        getline(cin, choice);
                         if(!cin)
                         {
                             throw InputErrorException("Innslattarvilla a vali um pontun til ad klara");
                         }
 
                         // if choice is 'y', yes change order status to in progress
-                        if (choice == 'j')
+                        if (choice[0] == 'j')
                         {
                             baker.finishOrder(customerID);
                         }
