@@ -33,17 +33,6 @@ void \hyperlink{class_baker_9616413c80f3814907a9c2399ac50438}{work\-On\-Order} (
 \item 
 void \hyperlink{class_baker_222a16bf113b70cbe0388a7291978a57}{finish\-Order} (unsigned int customer\-ID)
 \end{CompactItemize}
-\subsection*{Private Attributes}
-\begin{CompactItemize}
-\item 
-vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_52cc86469dd41b9be5b7186d6bd00589}{customers\-Vec}
-\item 
-vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_0b7dacb9817ff529ee046a5c369051fa}{customers\-Vec\-In\-Progress}
-\item 
-vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{customers\-Vec\-Due\-Progress}
-\item 
-char \hyperlink{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}{baker\-Location} \mbox{[}32\mbox{]}
-\end{CompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -168,37 +157,6 @@ Move customer from customers\-Vec\-Due\-Progress to customers\-Vec\-In\-Progress
 \begin{description}
 \item[{\em customers\-Vec\-Number}]is the position of customer to update in vector \end{description}
 \end{Desc}
-
-
-\subsection{Member Data Documentation}
-\hypertarget{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}{
-\index{Baker@{Baker}!bakerLocation@{bakerLocation}}
-\index{bakerLocation@{bakerLocation}!Baker@{Baker}}
-\subsubsection[bakerLocation]{\setlength{\rightskip}{0pt plus 5cm}char \hyperlink{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}{Baker::baker\-Location}\mbox{[}32\mbox{]}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}
-
-
-\hypertarget{class_baker_52cc86469dd41b9be5b7186d6bd00589}{
-\index{Baker@{Baker}!customersVec@{customersVec}}
-\index{customersVec@{customersVec}!Baker@{Baker}}
-\subsubsection[customersVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{classclient}{client}$>$ \hyperlink{class_baker_52cc86469dd41b9be5b7186d6bd00589}{Baker::customers\-Vec}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_baker_52cc86469dd41b9be5b7186d6bd00589}
-
-
-\hypertarget{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{
-\index{Baker@{Baker}!customersVecDueProgress@{customersVecDueProgress}}
-\index{customersVecDueProgress@{customersVecDueProgress}!Baker@{Baker}}
-\subsubsection[customersVecDueProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{classclient}{client}$>$ \hyperlink{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{Baker::customers\-Vec\-Due\-Progress}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}
-
-
-\hypertarget{class_baker_0b7dacb9817ff529ee046a5c369051fa}{
-\index{Baker@{Baker}!customersVecInProgress@{customersVecInProgress}}
-\index{customersVecInProgress@{customersVecInProgress}!Baker@{Baker}}
-\subsubsection[customersVecInProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{classclient}{client}$>$ \hyperlink{class_baker_0b7dacb9817ff529ee046a5c369051fa}{Baker::customers\-Vec\-In\-Progress}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_baker_0b7dacb9817ff529ee046a5c369051fa}
-
-
 
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}

@@ -25,6 +25,8 @@ void \hyperlink{class_sala_eadce54d849ca6634b7fdd389bd8f192}{new\-Pizza} ()
 \item 
 void \hyperlink{class_sala_24b9bb5302a251b41fed3df1fb7ce8ad}{calculate\-Sum\-Of\-Order} ()
 \item 
+void \hyperlink{class_sala_554463c0b82fb266c21e23e040bf1ac0}{create\-Order} (string name, string address, int number, bool paid, bool delivery, string comment)
+\item 
 void \hyperlink{class_sala_9f3c48158017cdc015a985e9712f0179}{create\-Order} (string name, string address, int number, bool paid, bool delivery)
 \item 
 \hyperlink{classclient}{client} \hyperlink{class_sala_3a31e5a83058a950f863932d3ecaef2e}{get\-Customer\-Orders\-Vector} ()
@@ -44,17 +46,6 @@ vector$<$ \hyperlink{class_pizza_toppings}{Pizza\-Toppings} $>$ \hyperlink{class
 vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_sala_71e41a58a2a9c2d1927676693909a42c}{get\-Order} ()
 \item 
 \hyperlink{classclient}{client} \hyperlink{class_sala_a1300ce1d3137fc3bd1b2938612faa1b}{get\-Client} ()
-\end{CompactItemize}
-\subsection*{Private Attributes}
-\begin{CompactItemize}
-\item 
-\hyperlink{class_pizza}{Pizza} \hyperlink{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}{lager}
-\item 
-\hyperlink{classclient}{client} \hyperlink{class_sala_d6980eaf5555befe23d2271575d6d9cb}{new\-Customer}
-\item 
-vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_sala_70a17ffa722a3985b86d30b034ad06d7}{order}
-\item 
-vector$<$ \hyperlink{class_pizza_helper}{Pizza\-Helper} $>$ \hyperlink{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{p\-Helper}
 \end{CompactItemize}
 \subsection*{Friends}
 \begin{CompactItemize}
@@ -100,6 +91,13 @@ Write client and pizza order to file and client to a directory containing a list
 \begin{description}
 \item[{\em name}]is customers name \item[{\em address}]is customers address \item[{\em number}]is customers address number \item[{\em paid}]is true if order is paid, else false \item[{\em delivery}]is true if customer wants a delivery, else false \end{description}
 \end{Desc}
+\hypertarget{class_sala_554463c0b82fb266c21e23e040bf1ac0}{
+\index{Sala@{Sala}!createOrder@{createOrder}}
+\index{createOrder@{createOrder}!Sala@{Sala}}
+\subsubsection[createOrder]{\setlength{\rightskip}{0pt plus 5cm}void Sala::create\-Order (string {\em name}, string {\em address}, int {\em number}, bool {\em paid}, bool {\em delivery}, string {\em comment})}}
+\label{class_sala_554463c0b82fb266c21e23e040bf1ac0}
+
+
 \hypertarget{class_sala_ae3b8375ca0ab5b62e84f86582b8cec3}{
 \index{Sala@{Sala}!enterCrust@{enterCrust}}
 \index{enterCrust@{enterCrust}!Sala@{Sala}}
@@ -229,47 +227,6 @@ Initiate a new \hyperlink{class_pizza}{Pizza} order and push back former order t
 \label{class_sala_b32b27b19243c1cf7bcfffe604ea1736}
 
 
-
-
-\subsection{Member Data Documentation}
-\hypertarget{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}{
-\index{Sala@{Sala}!lager@{lager}}
-\index{lager@{lager}!Sala@{Sala}}
-\subsubsection[lager]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{class_pizza}{Pizza} \hyperlink{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}{Sala::lager}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_sala_0f90fe5c344e62852b747ecbdc5b5d90}
-
-
-\hypertarget{class_sala_d6980eaf5555befe23d2271575d6d9cb}{
-\index{Sala@{Sala}!newCustomer@{newCustomer}}
-\index{newCustomer@{newCustomer}!Sala@{Sala}}
-\subsubsection[newCustomer]{\setlength{\rightskip}{0pt plus 5cm}\hyperlink{classclient}{client} \hyperlink{class_sala_d6980eaf5555befe23d2271575d6d9cb}{Sala::new\-Customer}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_sala_d6980eaf5555befe23d2271575d6d9cb}
-
-
-\hypertarget{class_sala_70a17ffa722a3985b86d30b034ad06d7}{
-\index{Sala@{Sala}!order@{order}}
-\index{order@{order}!Sala@{Sala}}
-\subsubsection[order]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{class_pizza}{Pizza}$>$ \hyperlink{class_sala_70a17ffa722a3985b86d30b034ad06d7}{Sala::order}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_sala_70a17ffa722a3985b86d30b034ad06d7}
-
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em order}]Customer orders are stored on this vector. When customer options for a another pizza the former order is pushed back on this vector \end{description}
-\end{Desc}
-\hypertarget{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{
-\index{Sala@{Sala}!pHelper@{pHelper}}
-\index{pHelper@{pHelper}!Sala@{Sala}}
-\subsubsection[pHelper]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{class_pizza_helper}{Pizza\-Helper}$>$ \hyperlink{class_sala_4b1abb1f80ebc80a2334733ae62acde2}{Sala::p\-Helper}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{class_sala_4b1abb1f80ebc80a2334733ae62acde2}
-
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em p\-Helper}]A helper vector storing quantity of all items on a single order \end{description}
-\end{Desc}
 
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}

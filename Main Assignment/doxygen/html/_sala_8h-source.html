@@ -62,33 +62,35 @@
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#24b9bb5302a251b41fed3df1fb7ce8ad">calculateSumOfOrder</a>();
 <a name="l00049"></a>00049 
-<a name="l00059"></a>00059         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#9f3c48158017cdc015a985e9712f0179">createOrder</a>(string name, string address, <span class="keywordtype">int</span> number, <span class="keywordtype">bool</span> paid, <span class="keywordtype">bool</span> delivery);
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <a class="code" href="classclient.html">client</a> <a class="code" href="class_sala.html#3a31e5a83058a950f863932d3ecaef2e">getCustomerOrdersVector</a>();
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#554463c0b82fb266c21e23e040bf1ac0">createOrder</a>(string name, string address, <span class="keywordtype">int</span> number, <span class="keywordtype">bool</span> paid, <span class="keywordtype">bool</span> delivery, string comment);
+<a name="l00051"></a>00051 
+<a name="l00061"></a>00061         <span class="keywordtype">void</span> <a class="code" href="class_sala.html#554463c0b82fb266c21e23e040bf1ac0">createOrder</a>(string name, string address, <span class="keywordtype">int</span> number, <span class="keywordtype">bool</span> paid, <span class="keywordtype">bool</span> delivery);
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063         vector&lt;PizzaCrust&gt; <a class="code" href="class_sala.html#85a631cad1f4009e87de7da3bc52174c">getLagerpcrust</a>();
-<a name="l00064"></a>00064         vector&lt;PizzaExtras&gt; <a class="code" href="class_sala.html#49f231948b80188691882a8624a4612d">getLagerpextras</a>();
-<a name="l00065"></a>00065         vector&lt;PizzaLocations&gt; <a class="code" href="class_sala.html#1e720a42845186f5057b36ab8b69711a">getLagerplocations</a>();
-<a name="l00066"></a>00066         vector&lt;PizzaMenu&gt; <a class="code" href="class_sala.html#89b38b3e2a9835524c9fd21628f485cc">getLagerpMenu</a>();
-<a name="l00067"></a>00067         vector&lt;PizzaSize&gt; <a class="code" href="class_sala.html#3b0fc00a14ac87f5c78a4ec2f508d67b">getLagerpsize</a>();
-<a name="l00068"></a>00068         vector&lt;PizzaToppings&gt; <a class="code" href="class_sala.html#aeb754b87d63d395a61539294cbdf064">getLagerptoppings</a>();
-<a name="l00069"></a>00069         vector&lt;Pizza&gt; <a class="code" href="class_sala.html#71e41a58a2a9c2d1927676693909a42c">getOrder</a>();
-<a name="l00070"></a>00070         <a class="code" href="classclient.html">client</a> <a class="code" href="class_sala.html#a1300ce1d3137fc3bd1b2938612faa1b">getClient</a>();
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="keyword">friend</span> ostream&amp; <a class="code" href="class_sala.html#b32b27b19243c1cf7bcfffe604ea1736">operator &lt;&lt;</a>(ostream&amp; outs, <a class="code" href="class_sala.html">Sala</a>&amp; s);
+<a name="l00063"></a>00063         <a class="code" href="classclient.html">client</a> <a class="code" href="class_sala.html#3a31e5a83058a950f863932d3ecaef2e">getCustomerOrdersVector</a>();
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         vector&lt;PizzaCrust&gt; <a class="code" href="class_sala.html#85a631cad1f4009e87de7da3bc52174c">getLagerpcrust</a>();
+<a name="l00066"></a>00066         vector&lt;PizzaExtras&gt; <a class="code" href="class_sala.html#49f231948b80188691882a8624a4612d">getLagerpextras</a>();
+<a name="l00067"></a>00067         vector&lt;PizzaLocations&gt; <a class="code" href="class_sala.html#1e720a42845186f5057b36ab8b69711a">getLagerplocations</a>();
+<a name="l00068"></a>00068         vector&lt;PizzaMenu&gt; <a class="code" href="class_sala.html#89b38b3e2a9835524c9fd21628f485cc">getLagerpMenu</a>();
+<a name="l00069"></a>00069         vector&lt;PizzaSize&gt; <a class="code" href="class_sala.html#3b0fc00a14ac87f5c78a4ec2f508d67b">getLagerpsize</a>();
+<a name="l00070"></a>00070         vector&lt;PizzaToppings&gt; <a class="code" href="class_sala.html#aeb754b87d63d395a61539294cbdf064">getLagerptoppings</a>();
+<a name="l00071"></a>00071         vector&lt;Pizza&gt; <a class="code" href="class_sala.html#71e41a58a2a9c2d1927676693909a42c">getOrder</a>();
+<a name="l00072"></a>00072         <a class="code" href="classclient.html">client</a> <a class="code" href="class_sala.html#a1300ce1d3137fc3bd1b2938612faa1b">getClient</a>();
 <a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="keyword">private</span>:
-<a name="l00075"></a><a class="code" href="class_sala.html#0f90fe5c344e62852b747ecbdc5b5d90">00075</a>         <a class="code" href="class_pizza.html">Pizza</a> <a class="code" href="class_sala.html#0f90fe5c344e62852b747ecbdc5b5d90">lager</a>;
-<a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="class_sala.html#d6980eaf5555befe23d2271575d6d9cb">00077</a>         <a class="code" href="classclient.html">client</a> <a class="code" href="class_sala.html#d6980eaf5555befe23d2271575d6d9cb">newCustomer</a>;
+<a name="l00074"></a>00074         <span class="keyword">friend</span> ostream&amp; <a class="code" href="class_sala.html#b32b27b19243c1cf7bcfffe604ea1736">operator &lt;&lt;</a>(ostream&amp; outs, <a class="code" href="class_sala.html">Sala</a>&amp; s);
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076     <span class="keyword">private</span>:
+<a name="l00077"></a>00077         <a class="code" href="class_pizza.html">Pizza</a> lager;
 <a name="l00078"></a>00078 
-<a name="l00083"></a><a class="code" href="class_sala.html#70a17ffa722a3985b86d30b034ad06d7">00083</a>         vector&lt;Pizza&gt; <a class="code" href="class_sala.html#70a17ffa722a3985b86d30b034ad06d7">order</a>;
-<a name="l00084"></a>00084 
-<a name="l00088"></a><a class="code" href="class_sala.html#4b1abb1f80ebc80a2334733ae62acde2">00088</a>         vector&lt;PizzaHelper&gt; <a class="code" href="class_sala.html#4b1abb1f80ebc80a2334733ae62acde2">pHelper</a>;
-<a name="l00089"></a>00089 };
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091 <span class="preprocessor">#endif // SALA_H</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Tue Dec 12 23:55:59 2017 for MainAssignment by&nbsp;
+<a name="l00079"></a>00079         <a class="code" href="classclient.html">client</a> newCustomer;
+<a name="l00080"></a>00080 
+<a name="l00085"></a>00085         vector&lt;Pizza&gt; order;
+<a name="l00086"></a>00086 
+<a name="l00090"></a>00090         vector&lt;PizzaHelper&gt; pHelper;
+<a name="l00091"></a>00091 };
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 <span class="preprocessor">#endif // SALA_H</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 11:54:29 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

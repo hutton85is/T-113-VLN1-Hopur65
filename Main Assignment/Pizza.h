@@ -1,3 +1,8 @@
+/**
+* Pizza keeps record of pizza orders made by customers and all available items to order
+*/
+
+
 #ifndef PIZZA_H
 #define PIZZA_H
 

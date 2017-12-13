@@ -34,25 +34,27 @@
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
 <a name="l00006"></a>00006 
 <a name="l00007"></a>00007 <span class="preprocessor">#include "<a class="code" href="_u_i_helper_8h.html">UIHelper.h</a>"</span>
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 
-<a name="l00010"></a><a class="code" href="class_umsjon_u_i.html">00010</a> <span class="keyword">class </span><a class="code" href="class_umsjon_u_i.html">UmsjonUI</a>
-<a name="l00011"></a>00011 {
-<a name="l00012"></a>00012     <span class="keyword">public</span>:
-<a name="l00013"></a>00013         <a class="code" href="class_umsjon_u_i.html#f327260d03ec6a1022392d59d31b1afb">UmsjonUI</a>();
-<a name="l00014"></a>00014         <span class="keyword">virtual</span> <a class="code" href="class_umsjon_u_i.html#afbb13b128eef1970fc6e090ff07635e">~UmsjonUI</a>();
-<a name="l00015"></a>00015         <span class="keywordtype">bool</span> <a class="code" href="class_umsjon_u_i.html#e1489f835e125c37fb30e595797d971d">yorn</a>(<span class="keywordtype">char</span> answer);
-<a name="l00016"></a>00016         <span class="keywordtype">void</span> <a class="code" href="class_umsjon_u_i.html#ea83b916b3f52eec32ae6d54d59b4453">main</a>();
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018     <span class="keyword">private</span>:
-<a name="l00019"></a>00019         <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Pizza<span class="keyword">class</span>&gt;
-<a name="l00020"></a>00020         <span class="keywordtype">void</span> <a class="code" href="class_umsjon_u_i.html#f5fa5a8e9efaecd233787825f22c4e76">displayVector</a>(vector&lt;Pizzaclass&gt; vec, <span class="keywordtype">bool</span> show);
-<a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="class_umsjon_u_i.html#165ca02db075e280199e0970e3465900">00022</a>         <a class="code" href="class_u_i_helper.html">UIHelper</a> <a class="code" href="class_umsjon_u_i.html#165ca02db075e280199e0970e3465900">helperUI</a>;
-<a name="l00023"></a>00023 };
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#endif // UMSJONUI_H</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Tue Dec 12 23:55:59 2017 for MainAssignment by&nbsp;
+<a name="l00008"></a>00008 <span class="preprocessor">#include "Error.h"</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;climits&gt;</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 
+<a name="l00012"></a><a class="code" href="class_umsjon_u_i.html">00012</a> <span class="keyword">class </span><a class="code" href="class_umsjon_u_i.html">UmsjonUI</a>
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014     <span class="keyword">public</span>:
+<a name="l00015"></a>00015         <a class="code" href="class_umsjon_u_i.html#f327260d03ec6a1022392d59d31b1afb">UmsjonUI</a>();
+<a name="l00016"></a>00016         <span class="keyword">virtual</span> <a class="code" href="class_umsjon_u_i.html#afbb13b128eef1970fc6e090ff07635e">~UmsjonUI</a>();
+<a name="l00017"></a>00017         <span class="keywordtype">bool</span> <a class="code" href="class_umsjon_u_i.html#e1489f835e125c37fb30e595797d971d">yorn</a>(<span class="keywordtype">char</span> answer);
+<a name="l00018"></a>00018         <span class="keywordtype">void</span> <a class="code" href="class_umsjon_u_i.html#ea83b916b3f52eec32ae6d54d59b4453">main</a>();
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020     <span class="keyword">private</span>:
+<a name="l00021"></a>00021         <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Pizza<span class="keyword">class</span>&gt;
+<a name="l00022"></a>00022         <span class="keywordtype">void</span> displayVector(vector&lt;Pizzaclass&gt; vec, <span class="keywordtype">bool</span> show);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024         <a class="code" href="class_u_i_helper.html">UIHelper</a> helperUI;
+<a name="l00025"></a>00025 };
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#endif // UMSJONUI_H</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 11:54:29 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

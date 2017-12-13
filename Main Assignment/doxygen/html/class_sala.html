@@ -51,6 +51,8 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#24b9bb5302a251b41fed3df1fb7ce8ad">calculateSumOfOrder</a> ()</td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#554463c0b82fb266c21e23e040bf1ac0">createOrder</a> (string name, string address, int number, bool paid, bool delivery, string comment)</td></tr>
+
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#9f3c48158017cdc015a985e9712f0179">createOrder</a> (string name, string address, int number, bool paid, bool delivery)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classclient.html">client</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#3a31e5a83058a950f863932d3ecaef2e">getCustomerOrdersVector</a> ()</td></tr>
@@ -70,15 +72,6 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; <a class="el" href="class_pizza.html">Pizza</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#71e41a58a2a9c2d1927676693909a42c">getOrder</a> ()</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classclient.html">client</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#a1300ce1d3137fc3bd1b2938612faa1b">getClient</a> ()</td></tr>
-
-<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_pizza.html">Pizza</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#0f90fe5c344e62852b747ecbdc5b5d90">lager</a></td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classclient.html">client</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#d6980eaf5555befe23d2271575d6d9cb">newCustomer</a></td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; <a class="el" href="class_pizza.html">Pizza</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#70a17ffa722a3985b86d30b034ad06d7">order</a></td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; <a class="el" href="class_pizza_helper.html">PizzaHelper</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#4b1abb1f80ebc80a2334733ae62acde2">pHelper</a></td></tr>
 
 <tr><td colspan="2"><br><h2>Friends</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#b32b27b19243c1cf7bcfffe604ea1736">operator&lt;&lt;</a> (ostream &amp;outs, <a class="el" href="class_sala.html">Sala</a> &amp;s)</td></tr>
@@ -205,6 +198,67 @@ Write client and pizza order to file and client to a directory containing a list
     <tr><td valign="top"></td><td valign="top"><em>delivery</em>&nbsp;</td><td>is true if customer wants a delivery, else false </td></tr>
   </table>
 </dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="554463c0b82fb266c21e23e040bf1ac0"></a><!-- doxytag: member="Sala::createOrder" ref="554463c0b82fb266c21e23e040bf1ac0" args="(string name, string address, int number, bool paid, bool delivery, string comment)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void Sala::createOrder           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">string&nbsp;</td>
+          <td class="mdname" nowrap> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>string&nbsp;</td>
+          <td class="mdname" nowrap> <em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>paid</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>delivery</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>string&nbsp;</td>
+          <td class="mdname" nowrap> <em>comment</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
     </td>
   </tr>
 </table>
@@ -690,112 +744,9 @@ Initiate a new <a class="el" href="class_pizza.html">Pizza</a> order and push ba
     </td>
   </tr>
 </table>
-<hr><h2>Member Data Documentation</h2>
-<a class="anchor" name="0f90fe5c344e62852b747ecbdc5b5d90"></a><!-- doxytag: member="Sala::lager" ref="0f90fe5c344e62852b747ecbdc5b5d90" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top"><a class="el" href="class_pizza.html">Pizza</a> <a class="el" href="class_sala.html#0f90fe5c344e62852b747ecbdc5b5d90">Sala::lager</a><code> [private]</code>          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="d6980eaf5555befe23d2271575d6d9cb"></a><!-- doxytag: member="Sala::newCustomer" ref="d6980eaf5555befe23d2271575d6d9cb" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top"><a class="el" href="classclient.html">client</a> <a class="el" href="class_sala.html#d6980eaf5555befe23d2271575d6d9cb">Sala::newCustomer</a><code> [private]</code>          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="70a17ffa722a3985b86d30b034ad06d7"></a><!-- doxytag: member="Sala::order" ref="70a17ffa722a3985b86d30b034ad06d7" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">vector&lt;<a class="el" href="class_pizza.html">Pizza</a>&gt; <a class="el" href="class_sala.html#70a17ffa722a3985b86d30b034ad06d7">Sala::order</a><code> [private]</code>          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-<dl compact><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>order</em>&nbsp;</td><td>Customer orders are stored on this vector. When customer options for a another pizza the former order is pushed back on this vector </td></tr>
-  </table>
-</dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="4b1abb1f80ebc80a2334733ae62acde2"></a><!-- doxytag: member="Sala::pHelper" ref="4b1abb1f80ebc80a2334733ae62acde2" args="" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">vector&lt;<a class="el" href="class_pizza_helper.html">PizzaHelper</a>&gt; <a class="el" href="class_sala.html#4b1abb1f80ebc80a2334733ae62acde2">Sala::pHelper</a><code> [private]</code>          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-<dl compact><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>pHelper</em>&nbsp;</td><td>A helper vector storing quantity of all items on a single order </td></tr>
-  </table>
-</dl>
-    </td>
-  </tr>
-</table>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_sala_8h-source.html">Sala.h</a><li><a class="el" href="_sala_8cpp.html">Sala.cpp</a></ul>
-<hr size="1"><address style="align: right;"><small>Generated on Tue Dec 12 23:56:00 2017 for MainAssignment by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 11:54:30 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>
