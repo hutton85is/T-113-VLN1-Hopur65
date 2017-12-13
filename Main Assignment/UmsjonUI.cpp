@@ -31,13 +31,13 @@ bool UmsjonUI::yorn(char answer)
 
 void UmsjonUI::main()
 {
-    try
+    while(true)
     {
-        while(true){
-
+        try
+        {
             system("CLS");
 
-            int input;
+            unsigned int input;
 
             helperUI.displayHeader();
             cout << "Til thess ad skra nyja pizza staerd veldu       1." << endl;
@@ -185,16 +185,17 @@ void UmsjonUI::main()
                 system("CLS");
                 break;
             }
-            break;
         }
-    }
-    catch(InputErrorException e)
+        catch(InputErrorException e)
         {
             Error er;
             er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
             e.getMessage();
             system("pause");
+            cin.clear();
+            cin.ignore(INT_MAX,'\n');
         }
+    }
 }
 
 

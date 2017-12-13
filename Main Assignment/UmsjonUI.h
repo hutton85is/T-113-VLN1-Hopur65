@@ -6,6 +6,7 @@
 
 #include "UIHelper.h"
 #include "Error.h"
+#include <climits>
 
 
 class UmsjonUI
