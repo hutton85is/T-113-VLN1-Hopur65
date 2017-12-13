@@ -16,7 +16,6 @@ class BakerUI
 {
     public:
         BakerUI();
-        virtual ~BakerUI();
 
         void main();
 
@@ -30,9 +29,16 @@ class BakerUI
 
         void displayCustomerInProgressOrder(unsigned int customerNumber);
 
-        /*
-        * Choose location of baker and retrieve all pending customers.
-        * return false if there are no pending customers, else true
+        void chooseSeeAllOrders();
+
+        void chooseSeeDueOrders();
+
+        void chooseSeeInProgressOrders();
+
+        /**
+        * @brief Choose location of baker and retrieve all pending customers.
+        *
+        * @return false if there are no pending customers, else true
         */
         bool pickLocation();
 

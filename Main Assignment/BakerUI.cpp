@@ -5,11 +5,6 @@ BakerUI::BakerUI()
     //ctor
 }
 
-BakerUI::~BakerUI()
-{
-    //dtor
-}
-
 void BakerUI::displayCustomerDueProgress()
 {
     vector<client> customersVec = baker.getCustomersVecDueProgress();
@@ -50,7 +45,8 @@ bool BakerUI::pickLocation()
             throw InputErrorException("Inslattarvilla i vallista UmsjonUI");
         }
 
-        baker.setBakerLocation(availLocations[input - 48].place);
+        baker.setBakerLocation(availLocations[input].place);
+
         if(baker.getCustomerVec().empty())
         {
             return false;
@@ -100,6 +96,98 @@ void BakerUI::displayAllOrders()
     }
 }
 
+void BakerUI::chooseSeeAllOrders()
+{
+    helperUI.displayHeader();
+    displayAllOrders();
+}
+
+void BakerUI::chooseSeeDueOrders()
+{
+    helperUI.displayHeader();
+    if (baker.getCustomersVecDueProgress().size())
+    {
+        displayCustomerDueProgress();
+
+        int customerID;
+        cout << endl;
+        cout << "Veldu pontun til ad skoda nanar: ";
+        cin >> customerID;
+        system("CLS");
+        if(!cin)
+        {
+            throw InputErrorException("Innslattarvilla a pontun til ad skoda nanar");
+        }
+        helperUI.displayHeader();
+        displayCustomerDueProgressOrder(customerID);
+
+        string choice;
+        cout << "Velja pontun til ad vinna i? j/n: ";
+        cin >> ws;
+        getline(cin, choice);
+        if(!cin)
+        {
+            throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
+        }
+
+        // if choice is 'y', yes change order status to in progress
+        if (choice[0] == 'j')
+        {
+            baker.workOnOrder(customerID);
+        }
+    }
+    else
+    {
+        cout << "Engin pontun sem bidur afgreidslu: " << endl;
+        cout << endl;
+        system("pause");
+    }
+}
+
+void BakerUI::chooseSeeInProgressOrders()
+{
+    helperUI.displayHeader();
+
+    if (baker.getCustomersVecInProgress().size())
+    {
+        displayCustomerInProgress();
+
+        int customerID;
+        cout << endl;
+        cout << "Veldu pontun til ad skoda nanar: ";
+        cin >> customerID;
+        system("CLS");
+        if(!cin)
+        {
+            throw InputErrorException("Innslattarvilla a pontun til ad skoda nanar");
+        }
+
+        helperUI.displayHeader();
+        displayCustomerInProgressOrder(customerID);
+
+        string choice;
+        cout << "Velja pontun til ad klara? j/n: ";
+        cin >> ws;
+        getline(cin, choice);
+        if(!cin)
+        {
+            throw InputErrorException("Innslattarvilla a vali um pontun til ad klara");
+        }
+
+        // if choice is 'y', yes change order status to in progress
+        if (choice[0] == 'j')
+        {
+            baker.finishOrder(customerID);
+        }
+    }
+    else
+    {
+        cout << "Engin pontun sem bidur afgreidslu: " << endl;
+        cout << endl;
+        system("pause");
+    }
+}
+
 void BakerUI::main()
 {
     int input;
@@ -129,94 +217,17 @@ void BakerUI::main()
 
                 if(input == 1)
                 {
-                    helperUI.displayHeader();
-                    displayAllOrders();
+                    chooseSeeAllOrders();
                     cout << endl;
                     system("pause");
                 }
                 else if(input == 2)
                 {
-                    helperUI.displayHeader();
-                    if (baker.getCustomersVecDueProgress().size())
-                    {
-                        displayCustomerDueProgress();
-
-                        int customerID;
-                        cout << endl;
-                        cout << "Veldu pontun til ad skoda nanar: ";
-                        cin >> customerID;
-                        system("CLS");
-                        if(!cin)
-                        {
-                            throw InputErrorException("Innslattarvilla a pontun til ad skoda nanar");
-                        }
-                        helperUI.displayHeader();
-                        displayCustomerDueProgressOrder(customerID);
-
-                        string choice;
-                        cout << "Velja pontun til ad vinna i? j/n: ";
-                        cin >> ws;
-                        getline(cin, choice);
-                        if(!cin)
-                        {
-                            throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
-                        }
-
-                        // if choice is 'y', yes change order status to in progress
-                        if (choice[0] == 'j')
-                        {
-                            baker.workOnOrder(customerID);
-                        }
-                    }
-                    else
-                    {
-                        cout << "Engin pontun sem bidur afgreidslu: " << endl;
-                        cout << endl;
-                        system("pause");
-                    }
+                    chooseSeeDueOrders();
                 }
                 else if(input == 3)
                 {
-                    helperUI.displayHeader();
-
-                    if (baker.getCustomersVecInProgress().size())
-                    {
-                        displayCustomerInProgress();
-
-                        int customerID;
-                        cout << endl;
-                        cout << "Veldu pontun til ad skoda nanar: ";
-                        cin >> customerID;
-                        system("CLS");
-                        if(!cin)
-                        {
-                            throw InputErrorException("Innslattarvilla a pontun til ad skoda nanar");
-                        }
-
-                        helperUI.displayHeader();
-                        displayCustomerInProgressOrder(customerID);
-
-                        string choice;
-                        cout << "Velja pontun til ad klara? j/n: ";
-                        cin >> ws;
-                        getline(cin, choice);
-                        if(!cin)
-                        {
-                            throw InputErrorException("Innslattarvilla a vali um pontun til ad klara");
-                        }
-
-                        // if choice is 'y', yes change order status to in progress
-                        if (choice[0] == 'j')
-                        {
-                            baker.finishOrder(customerID);
-                        }
-                    }
-                    else
-                    {
-                        cout << "Engin pontun sem bidur afgreidslu: " << endl;
-                        cout << endl;
-                        system("pause");
-                    }
+                    chooseSeeInProgressOrders();
                 }
                 else if(input == 4)
                 {
