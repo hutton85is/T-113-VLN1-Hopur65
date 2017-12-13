@@ -35,3 +35,5 @@
 *.exe
 *.out
 *.app
+Main Assignment/BakerUI.cpp
+Main Assignment/order/customerlist.dat

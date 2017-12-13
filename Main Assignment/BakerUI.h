@@ -14,9 +14,15 @@ class BakerUI
 
         void displayAllOrders();
 
-        void displayCustomerList();
+        void displayCustomerDueProgress();
+
+        void displayCustomerInProgress();
 
         void displayCustomerOrder(unsigned int customerNumber);
+
+        void displayCustomerDueProgressOrder(unsigned int customerNumber);
+
+        void displayCustomerInProgressOrder(unsigned int customerNumber);
 
         /*
         * Choose location of baker and retrieve all pending customers.
