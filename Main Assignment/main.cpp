@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include "AfhendingUI.h"
 #include "Error.h"
+#include <climits>
 
 using namespace std;
 
