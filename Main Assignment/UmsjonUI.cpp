@@ -82,13 +82,8 @@ void UmsjonUI::main()
                 cout << "sladu inn verd a " << p_size << ": ";
                 cin >> price;
 
-                cout << "price is " << price << endl;
-                system("pause");
-
                 if(!cin || price < 0)
                 {
-                    cout << "fer her " << endl;
-                    system("pause");
                     throw InputErrorException("Innslattarvilla a verdi a pizzustaerd");
                 }
 
