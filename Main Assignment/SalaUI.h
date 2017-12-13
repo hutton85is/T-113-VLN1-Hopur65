@@ -30,12 +30,6 @@ class SalaUI
         */
         template <typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool choice);
-
-        /*
-        * Display all items contained in an order
-        * s: contains a copy of Sala used to store the order and customer information
-        */
-        void displayFullOrder(Sala s);
 };
 
 #endif // SALAUI_H

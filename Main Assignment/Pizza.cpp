@@ -17,16 +17,6 @@ int Pizza::calculateSumOfOrder()
     {
         returnSum += psize[0].price;
     }
-    /*
-    if(psize.size() && !pmenu.size())
-    {
-        returnSum += psize[0].price;
-    }
-
-    if(psize.size() && pmenu.size())
-    {
-        returnSum += psize[0].price * pmenu[0].price;
-    }*/
 
     if(pcrust.size())
     {

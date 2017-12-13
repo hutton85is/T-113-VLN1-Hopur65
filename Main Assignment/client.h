@@ -13,7 +13,7 @@ class client
         char name[64];
         char address[32];
         int addressNumber;
-        char comment[64];
+        char comment[128];
 
         // status for Baker class, tells if pizza is being baked
         bool inProgress;

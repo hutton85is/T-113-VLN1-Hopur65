@@ -11,25 +11,6 @@ SalaUI::~SalaUI()
     //dtor
 }
 
-void SalaUI::displayFullOrder(Sala s)
-{
-
-    client customer = s.getCustomerOrdersVector();
-
-    if(customer.name[0] != '\0')
-    {
-        cout << customer << endl;
-    }
-
-    for(unsigned int i = 0; i < s.getOrder().size(); i++)
-    {
-        cout << "Pizza nr. " << i+1 << endl;
-
-        cout << s.getOrder()[i] << endl;
-    }
-    cout << "************" << endl;
-}
-
 template<typename Pizzaclass>
 void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 {
@@ -67,8 +48,6 @@ void SalaUI::mainOrder()
 
         helperUI.displayHeader();
 
-        displayFullOrder(s);
-
         cout << "Skradu thina pontun : " << endl;
         cout << "Til thess ad velja pizza staerd veldu           1." << endl;
         cout << "Til thess ad velja pizza botn veldu             2." << endl;
@@ -95,7 +74,6 @@ void SalaUI::mainOrder()
 
                 cout << "Enter what size pizza you would like: ";
                 cin >> input;
-                system("pause");
 
                 if(!cin)
                 {//athuga hvort input se int
@@ -136,7 +114,7 @@ void SalaUI::mainOrder()
                 else
                 {
                     helperUI.displayHeader();
-                    cout << "Thad er engin Pizza crust i bodi enntha" << endl;
+                    cout << "Thad er engin Pizza botn i bodi enntha" << endl;
                     cout << endl;
                     system("pause");
                 }
@@ -243,8 +221,6 @@ void SalaUI::mainOrder()
                     cout << "Thad er ekkert medlaeti i bodi enntha" << endl;
                     cout << endl;
                 }
-
-                s.enterExtras(input);
             }
             catch(InputErrorException e)
             {
@@ -322,7 +298,7 @@ void SalaUI::mainOrder()
 
             char ans;
             string comment = "";
-            cout << "Viltu skra athugasemd med pontun? j/n" << endl;
+            cout << "Viltu skra athugasemd med pontun? j/n   : " ;
             cin >> ans;
             if(ans == 'j'){
 
@@ -336,9 +312,8 @@ void SalaUI::mainOrder()
             system("CLS");
             cout << "HERE IS YOUR ORDER" << endl;
             cout << "----------------------------" << endl;
-            displayFullOrder(s);
+            cout << s << endl;
             cout << "----------------------------" << endl;
-            cout << endl;
             cout << endl;
             cout << endl;
 

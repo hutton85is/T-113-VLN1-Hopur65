@@ -25,7 +25,10 @@ client::~client()
 
 ostream& operator <<(ostream& outs, client& customer)
 {
-    outs << customer.name << ", " << customer.address << " " << customer.addressNumber << endl;
+    if(customer.name[0] != '\0')
+    {
+        outs << customer.name << ", " << customer.address << " " << customer.addressNumber << endl;
+    }
     outs << "Buid ad borga: ";
     if (customer.orderPaid)
     {
@@ -75,17 +78,9 @@ ostream& operator <<(ostream& outs, client& customer)
     {
         outs << "nei";
     }
-    if(customer.comment)
-    {
-        outs << "ja";
-    }
-    else
-    {
-        outs << "nei";
-    }
     outs << endl;
-    outs << "Athugasemd: ";
-    outs << customer.comment;
+
+    outs << "Athugasemd: " << customer.comment << endl;
 
     cout << endl;
     outs << "Heildarverd: " << customer.sumOfOrder << " kr.";
