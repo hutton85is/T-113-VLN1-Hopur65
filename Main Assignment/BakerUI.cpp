@@ -33,9 +33,10 @@ bool BakerUI::pickLocation()
     try
     {
         helperUI.displayHeader();
-        char input;
+        int input;
         vector<PizzaLocations> availLocations = baker.getPizzaLocations();
-        for(unsigned int i = 0; i < availLocations.size(); i++)
+        int availLocationsSize = availLocations.size();
+        for(int i = 0; i < availLocationsSize; i++)
         {
             cout << i << ". " << availLocations[i] << endl;
         }
@@ -44,7 +45,7 @@ bool BakerUI::pickLocation()
         cout << "Veldu thina stadsetningu ur listanum: ";
         cin >> input;
         system("CLS");
-        if(!cin)
+        if(!cin || availLocationsSize <= input || input < 0)
         {
             throw InputErrorException("Inslattarvilla i vallista UmsjonUI");
         }
@@ -101,7 +102,7 @@ void BakerUI::displayAllOrders()
 
 void BakerUI::main()
 {
-    unsigned int input;
+    int input;
     // Only continue if there are some pending customers
     if (pickLocation())
     {
@@ -140,7 +141,7 @@ void BakerUI::main()
                     {
                         displayCustomerDueProgress();
 
-                        unsigned int customerID;
+                        int customerID;
                         cout << endl;
                         cout << "Veldu pontun til ad skoda nanar: ";
                         cin >> customerID;
@@ -182,7 +183,7 @@ void BakerUI::main()
                     {
                         displayCustomerInProgress();
 
-                        unsigned int customerID;
+                        int customerID;
                         cout << endl;
                         cout << "Veldu pontun til ad skoda nanar: ";
                         cin >> customerID;

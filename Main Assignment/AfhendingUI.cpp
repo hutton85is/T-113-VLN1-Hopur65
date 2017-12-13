@@ -10,7 +10,7 @@ bool AfhendingUI::pickLocation()
     try
     {
         helperUI.displayHeader();
-        unsigned int input;
+        int input;
         vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
         for(unsigned int i = 0; i < availLocations.size(); i++)
         {
@@ -70,7 +70,7 @@ void AfhendingUI::main()
 {
     try
     {
-        unsigned int input;
+        int input;
 
         // Only continue if there are some pending customers
         if (pickLocation())
@@ -105,7 +105,7 @@ void AfhendingUI::main()
                     helperUI.displayHeader();
                     displayAllCustomers(true);
 
-                    unsigned int customerID;
+                    int customerID;
                     cout << endl;
                     cout << "Veldu pontun til ad skoda nanar: ";
                     cin >> customerID;

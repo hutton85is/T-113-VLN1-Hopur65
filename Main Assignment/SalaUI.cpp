@@ -58,7 +58,7 @@ void SalaUI::mainOrder()
     }
     while(true)
     {
-        unsigned int input;
+        int input;
         try
         {
             system("CLS");
@@ -253,7 +253,7 @@ void SalaUI::mainOrder()
                     throw InputErrorException("Innslattarvilla a heimilisfangi");
                 }
 
-                unsigned int number;
+                int number;
                 cout << "Hvert er husnumerid: ";
                 cin >> number;
                 if(!cin)
