@@ -90,7 +90,6 @@ void Afhending::deliverOrder(unsigned int customersVecNumber)
     customersVec[customersVecNumber].orderPaid = true;
     customersVec[customersVecNumber].orderDelivered = true;
 
-    // HELD ÞETTA EIGI EKKI AÐ VERA
     readWriteClass rw;
     string fname = "order/";
     fname.append(customersVec[customersVecNumber].name);
