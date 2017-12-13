@@ -53,7 +53,7 @@ void UmsjonUI::main()
             cin >> input;
             system("CLS");
 
-            if(!cin)
+            if(!cin || input < 1 || 7 < input)
             {
                 throw InputErrorException("Inslattarvilla i vallista UmsjonUI");
             }
@@ -243,7 +243,7 @@ void UmsjonUI::main()
         {
             Error er;
             er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
-            e.getMessage();
+            cout << e.getMessage() << endl;
             system("pause");
             cin.clear();
             cin.ignore(INT_MAX,'\n');

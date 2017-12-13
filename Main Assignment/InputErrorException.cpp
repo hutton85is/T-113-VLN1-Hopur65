@@ -20,7 +20,7 @@ InputErrorException::InputErrorException(string message)
     now = time(0);
 
     strcpy(this->message, message.c_str());
-    this->message[message.length()];
+    this->message[message.length()] = '\0';
 
     InputErrorException er;
     readWriteClass rw;
