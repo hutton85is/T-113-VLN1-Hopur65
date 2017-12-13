@@ -32,7 +32,8 @@ void mainMenu()
     cout << "Veldu her: ";
     cin >> innskraning ;
 
-    try{
+    try
+    {
         if(!cin || innskraning > 5)
         {
             cin.clear();
@@ -65,12 +66,12 @@ void mainMenu()
         }
     }
     catch(InputErrorException e)
-        {
-            Error er;
-            er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
-            cout << e.getMessage() << endl;
-            system("pause");
-        }
+    {
+        Error er;
+        er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+        cout << e.getMessage() << endl;
+        system("pause");
+    }
     system("CLS");
 }
 
