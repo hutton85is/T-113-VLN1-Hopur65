@@ -1,3 +1,9 @@
+/**
+ * @brief User interface for creating new Pizza items for sale and new Pizza locations
+ *
+ */
+
+
 #ifndef UMSJONUI_H
 #define UMSJONUI_H
 
@@ -12,11 +18,13 @@
 class UmsjonUI
 {
     public:
+
         UmsjonUI();
-        virtual ~UmsjonUI();
+
         void main();
 
     private:
+
         template <typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool show);
 

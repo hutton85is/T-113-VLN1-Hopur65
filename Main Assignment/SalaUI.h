@@ -1,5 +1,5 @@
 /**
-* @brief SalaUI handles all user interface interactions due to selling a pizza
+* @brief Class that handles all user interface interactions due to selling a pizza
 *
 */
 
@@ -18,6 +18,7 @@
 class SalaUI
 {
     public:
+
         SalaUI();
 
         void mainOrder();
@@ -46,11 +47,6 @@ class SalaUI
 
         Sala s;
 
-        /*
-        * Display all contents of a template vector
-        * vector<Pizzaclass> vec: A template vector storing all classes to display
-        * bool choice: if 'choice' is true vector position is also displayed, else not
-        */
         template <typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool choice);
 };

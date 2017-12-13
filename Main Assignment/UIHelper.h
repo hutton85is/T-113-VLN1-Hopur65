@@ -14,7 +14,9 @@ using namespace std;
 class UIHelper
 {
     public:
+
         UIHelper();
+
         void displayHeader();
 };
 
