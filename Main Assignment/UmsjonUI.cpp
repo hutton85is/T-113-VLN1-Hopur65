@@ -143,7 +143,8 @@ void UmsjonUI::main()
                     throw InputErrorException("Innslattarvilla a aleggi");
                 }
                 cout << "Sladu inn verd a " << toppings << ": ";
-                int price;
+                int price;
+
                 cin >> price;
                 if(!cin || price < 0)
                 {
