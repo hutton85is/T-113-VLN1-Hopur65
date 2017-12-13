@@ -2,12 +2,7 @@
 
 readWriteClass::readWriteClass()
 {
-    //ctor
-}
 
-readWriteClass::~readWriteClass()
-{
-    //dtor
 }
 
 void readWriteClass::loadAllVectors(Pizza& p)

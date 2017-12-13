@@ -33,10 +33,15 @@ class Sala
          * @param input: is the location of item in order vector for a specific item ordered
          */
         void enterCrust(unsigned int input);
+
         void enterExtras(unsigned int input);
+
         void enterLocation(unsigned int input);
+
         void enterMenu(unsigned int input);
+
         void enterToppings(unsigned int input);
+
         void enterPizzaSize(unsigned int input);
 
 
@@ -64,17 +69,25 @@ class Sala
         client getCustomerOrdersVector();
 
         vector<PizzaCrust> getLagerpcrust();
+
         vector<PizzaExtras> getLagerpextras();
+
         vector<PizzaLocations> getLagerplocations();
+
         vector<PizzaMenu> getLagerpMenu();
+
         vector<PizzaSize> getLagerpsize();
+
         vector<PizzaToppings> getLagerptoppings();
+
         vector<Pizza> getOrder();
+
         client getClient();
 
         friend ostream& operator <<(ostream& outs, Sala& s);
 
     private:
+
         Pizza lager;
 
         client newCustomer;
