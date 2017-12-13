@@ -53,7 +53,7 @@ void UmsjonUI::main()
             cin >> input;
             system("CLS");
 
-            if(!cin)
+            if(!cin || input < 1 || input > 7)
             {
                 throw InputErrorException("Inslattarvilla i vallista UmsjonUI");
             }
@@ -69,14 +69,14 @@ void UmsjonUI::main()
                 cin >> p_size;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a pizzustaerd");
                 }
                 cout << "sladu inn verd a " << p_size << ": ";
                 unsigned int price;
                 cin >> price;
                 if(!cin && price > 0)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a verdi a pizzustaerd");
                 }
                 u.createPizzaSize(p_size, price);
                 system("CLS");
@@ -85,19 +85,19 @@ void UmsjonUI::main()
             {
                 helperUI.displayHeader();
                 displayVector(u.getpcrust(), false);
-                cout << "Sladu inn nyja typu af crust: ";
+                cout << "Sladu inn nyja typu af botni: ";
                 char crust_type[32];
                 cin >> crust_type;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a botni");
                 }
                 cout << "Sladu inn verd a " << crust_type << ": ";
                 unsigned int price;
                 cin >> price;
                 if(!cin && price > 0)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a verdi a pizzabotni");
                 }
                 u.createCrust(crust_type, price);
                 system("CLS");
@@ -114,14 +114,14 @@ void UmsjonUI::main()
                 cin >> toppings;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a aleggi");
                 }
                 cout << "Sladu inn verd a " << toppings << ": ";
                 unsigned int price;
                 cin >> price;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a verdi a aleggi");
                 }
                 u.createToppings(toppings, price);
                 system("CLS");
@@ -136,7 +136,7 @@ void UmsjonUI::main()
                 system("CLS");
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a pizzu a matsedli");
                 }
 
                 helperUI.displayHeader();
@@ -151,7 +151,7 @@ void UmsjonUI::main()
                     cin >> newToppingID;
                     if(!cin)
                     {
-                        throw InputErrorException("Invalid input on location");
+                        throw InputErrorException("Innslattarvilla a aleggi a pizzu");
                     }
 
                     string tempString(AllPizzaToppingsVec[newToppingID].toppings);
@@ -175,7 +175,7 @@ void UmsjonUI::main()
                     system("CLS");
                     if(!cin)
                     {
-                        throw InputErrorException("Invalid input on location");
+                        throw InputErrorException("Innslattarvilla a vali um fleiri alegg");
                     }
                 }
 
@@ -186,7 +186,7 @@ void UmsjonUI::main()
                 cin >> price;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a verdi a grunn pizzu");
                 }
 
                 char *newToppings = new char[128];
@@ -205,14 +205,14 @@ void UmsjonUI::main()
                 cin >> extras_type;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a medlaeti");
                 }
                 cout << "Sladu inn verd a " << extras_type << ": ";
                 unsigned int price;
                 cin >> price;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a verdi a medlaeti");
                 }
 
                 u.createExtras(extras_type, price);
@@ -228,7 +228,7 @@ void UmsjonUI::main()
                 cin >> place;
                 if(!cin)
                 {
-                    throw InputErrorException("Invalid input on location");
+                    throw InputErrorException("Innslattarvilla a stadsetningu");
                 }
                 u.createLocation(place);
                 system("CLS");
@@ -243,7 +243,7 @@ void UmsjonUI::main()
         {
             Error er;
             er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
-            e.getMessage();
+            cout << e.getMessage() << endl;
             system("pause");
             cin.clear();
             cin.ignore(INT_MAX,'\n');

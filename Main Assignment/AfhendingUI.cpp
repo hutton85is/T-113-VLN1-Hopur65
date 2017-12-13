@@ -7,20 +7,37 @@ AfhendingUI::AfhendingUI()
 
 bool AfhendingUI::pickLocation()
 {
-    helperUI.displayHeader();
-    char input;
-    vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
-    for(unsigned int i = 0; i < availLocations.size(); i++)
+    try
     {
-        cout << i << ". " << availLocations[i] << endl;
+        helperUI.displayHeader();
+        char input;
+        vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
+        for(unsigned int i = 0; i < availLocations.size(); i++)
+        {
+            cout << i << ". " << availLocations[i] << endl;
+        }
+        cout << endl;
+
+        cout << "Veldu thina stadsetningu ur listanum: ";
+        cin >> input;
+        system("CLS");
+
+        if(!cin)
+        {
+            throw InputErrorException("Inslattarvilla a vali a stadsetningu");
+        }
+
+        afhending.setAfhendingLocation(availLocations[input - 48].place);
     }
-    cout << endl;
-
-    cout << "Veldu thina stadsetningu ur listanum: ";
-    cin >> input;
-    system("CLS");
-
-    afhending.setAfhendingLocation(availLocations[input - 48].place);
+    catch(InputErrorException e)
+    {
+        Error er;
+        er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+        cout << e.getMessage() << endl;
+        system("pause");
+        cin.clear();
+        cin.ignore(INT_MAX,'\n');
+    }
     return !(afhending.getCustomerVec().empty());
 }
 
@@ -71,7 +88,7 @@ void AfhendingUI::main()
                 cin >> input;
                 system("CLS");
 
-                if(!cin)
+                if(!cin || input < 0 || input > 3)
                 {
                     throw InputErrorException("Inslattarvilla i vallista AfhendingUI");
                 }
@@ -95,7 +112,7 @@ void AfhendingUI::main()
                     system("CLS");
                     if(!cin)
                     {
-                        throw InputErrorException("Invalid input on location");
+                        throw InputErrorException("Innslattarvilla a vali um pontun til ad skoda nanar");
                     }
 
                     helperUI.displayHeader();
@@ -106,7 +123,7 @@ void AfhendingUI::main()
                     cin >> choice;
                     if(!cin)
                     {
-                        throw InputErrorException("Invalid input on location");
+                        throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
                     }
 
                     // if choice is 'y', yes change order status to in progress
@@ -133,7 +150,9 @@ void AfhendingUI::main()
     {
         Error er;
         er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
-        e.getMessage();
+        cout << e.getMessage() << endl;
         system("pause");
+        cin.clear();
+        cin.ignore(INT_MAX,'\n');
     }
 }

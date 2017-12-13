@@ -68,7 +68,7 @@ void mainMenu()
         {
             Error er;
             er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
-            e.getMessage();
+            cout << e.getMessage() << endl;
             system("pause");
         }
     system("CLS");
