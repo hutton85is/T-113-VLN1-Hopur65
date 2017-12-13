@@ -24,7 +24,7 @@ bool AfhendingUI::pickLocation()
 
         if(!cin)
         {
-            throw InputErrorException("Inslattarvilla a vali a stadsetningu");
+            throw InputErrorException("Inslattarvilla a vali a stadsetningu i AfhendingUI");
         }
 
         afhending.setAfhendingLocation(availLocations[input].place);
@@ -82,7 +82,10 @@ void AfhendingUI::chooseSeeFinishedOrders()
     cout << "Veldu pontun til ad skoda nanar: ";
     cin >> customerID;
     system("CLS");
-    if(!cin)
+
+    int CustomerVecSize = afhending.getCustomerVec().size();
+
+    if(!cin || customerID < 0 || CustomerVecSize - 1 < customerID)
     {
         throw InputErrorException("Innslattarvilla a vali um pontun til ad skoda nanar");
     }

@@ -47,7 +47,7 @@ class Afhending
         *
         * @param customersVecNumber is the position of customer in customersVec
         */
-        void deliverOrder(unsigned int customersVecNumber);
+        void deliverOrder(int customersVecNumber);
 
     private:
 

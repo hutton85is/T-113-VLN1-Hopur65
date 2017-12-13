@@ -40,17 +40,13 @@ bool BakerUI::pickLocation()
         cout << "Veldu thina stadsetningu ur listanum: ";
         cin >> input;
         system("CLS");
+
         if(!cin || availLocationsSize <= input || input < 0)
         {
-            throw InputErrorException("Inslattarvilla i vallista UmsjonUI");
+            throw InputErrorException("Inslattarvilla a vali a stadsetningu i BakerUI");
         }
 
         baker.setBakerLocation(availLocations[input].place);
-
-        if(baker.getCustomerVec().empty())
-        {
-            return false;
-        }
     }
     catch(InputErrorException e)
     {
@@ -61,7 +57,7 @@ bool BakerUI::pickLocation()
         cin.clear();
         cin.ignore(INT_MAX,'\n');
     }
-    return true;
+    return !(baker.getCustomersVecDueProgress().empty() || baker.getCustomersVecInProgress().empty());
 }
 
 void BakerUI::displayCustomerDueProgressOrder(unsigned int customerNumber)

@@ -84,9 +84,14 @@ vector<Pizza> Afhending::getOrderVec(unsigned int customersVecNumber)
     return customerOrder;
 }
 
-void Afhending::deliverOrder(unsigned int customersVecNumber)
+void Afhending::deliverOrder(int customersVecNumber)
 {
-    // Set status of customer as delivered and paid
+    int customersVecSize = customersVec.size();
+    if(customersVecNumber < 0 || customersVecSize - 1 < customersVecNumber)
+    {
+        throw InputErrorException("Engin tilbuin pontun med thessu numeri");
+    }
+
     customersVec[customersVecNumber].orderPaid = true;
     customersVec[customersVecNumber].orderDelivered = true;
 
@@ -101,19 +106,24 @@ void Afhending::deliverOrder(unsigned int customersVecNumber)
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     rw.loadCustomer(newClient, customerOrder, pHelper, oldpathfile);
+
     // Update newClient received from file
     newClient = customersVec[customersVecNumber];
 
     // Remove all contents of existing file in order-folder for moving to folder delivered
     rw.removeAllContentsOfFile(oldpathfile);
+
     // Erase customer from customersVec
     customersVec.erase(customersVec.begin() + customersVecNumber);
+
     // Load all contents of order/customerlist.dat to be updated
     client loadClient;
     vector<client> tempVec;
     rw.loadSpecificVector(tempVec, "order/customerlist.dat", loadClient);
+
     // Remove all contents of directory in order folder for update
     rw.removeAllContentsOfFile("order/customerlist.dat");
+
     // Remove customer who got delivered from tempVec
     for(unsigned int i = 0; i < tempVec.size(); i++)
     {
@@ -124,6 +134,7 @@ void Afhending::deliverOrder(unsigned int customersVecNumber)
             break;
         }
     }
+
     // Add all contents with customer delivered removed
     for(unsigned int i = 0; i < tempVec.size(); i++)
     {
