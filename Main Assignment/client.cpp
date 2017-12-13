@@ -82,7 +82,6 @@ ostream& operator <<(ostream& outs, client& customer)
 
     outs << "Athugasemd: " << customer.comment << endl;
 
-    cout << endl;
     outs << "Heildarverd: " << customer.sumOfOrder << " kr.";
 
     return outs;

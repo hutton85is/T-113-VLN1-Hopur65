@@ -93,7 +93,12 @@ void SalaUI::choosePizzaMenu()
 
     vector<PizzaMenu> PizzaMenuVec = s.getLagerpMenu();
 
-    if(PizzaMenuVec.size())
+    // If pizza size has not been entered, do it now before adding pizza from the menu
+    if(s.getOrder()[s.getClient().orderCounter - 1].psize.empty())
+    {
+        choosePizzaSize();
+    }
+    else if(PizzaMenuVec.size())
     {
         displayVector(s.getLagerpMenu(), true);
 
@@ -326,6 +331,10 @@ void SalaUI::mainOrder()
 
             helperUI.displayHeader();
 
+            cout << endl;
+            cout << s << endl;
+            cout << endl;
+
             cout << "Skradu thina pontun : " << endl;
             cout << "Til thess ad velja pizza staerd veldu           1." << endl;
             cout << "Til thess ad velja pizza botn veldu             2." << endl;
@@ -338,9 +347,11 @@ void SalaUI::mainOrder()
             cout << "Til thess ad haetta vid pontun veldu            9." << endl;
 
             cout << endl;
+
             cout << "Veldu herna: ";
 
             cin >> input;
+
             system("CLS");
 
             if(!cin || input < 0 || input > 9)
