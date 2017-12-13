@@ -1,3 +1,8 @@
+/**
+* @brief Functional class for logging Exceptions
+*
+*/
+
 #ifndef ERROR_H
 #define ERROR_H
 
@@ -12,7 +17,6 @@ class Error
 {
     public:
         Error();
-        virtual ~Error();
         void displayError();
         vector <InputErrorException> getInputErrorExceptionVec();
         void logInputErrorException(InputErrorException newException, const char* fname);

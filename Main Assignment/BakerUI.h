@@ -1,3 +1,8 @@
+/**
+* @brief User interface for setting customers order as in progress and finished
+*
+*/
+
 #ifndef BAKERUI_H
 #define BAKERUI_H
 

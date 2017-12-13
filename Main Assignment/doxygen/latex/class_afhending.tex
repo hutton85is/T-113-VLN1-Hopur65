@@ -2,41 +2,59 @@
 \section{Afhending Class Reference}
 \label{class_afhending}\index{Afhending@{Afhending}}
 }
+Functional class for \hyperlink{class_afhending_u_i}{Afhending\-UI}.  
+
+
 {\tt \#include $<$Afhending.h$>$}
 
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{class_afhending_9365433a6f973ad929ffc0b458bc7c6f}{Afhending} ()
-\item 
+\hypertarget{class_afhending_9365433a6f973ad929ffc0b458bc7c6f}{
+\hyperlink{class_afhending_9365433a6f973ad929ffc0b458bc7c6f}{Afhending} ()}
+\label{class_afhending_9365433a6f973ad929ffc0b458bc7c6f}
+
+\begin{CompactList}\small\item\em Load a directory containing all customers waiting for and order. \item\end{CompactList}\item 
 void \hyperlink{class_afhending_411cc45b50d4a59a33d76f6c54e52f78}{set\-Afhending\-Location} (char current\-Location\mbox{[}32\mbox{]})
+\begin{CompactList}\small\item\em Set location of baker, and filter customers vector. \item\end{CompactList}\item 
+\hypertarget{class_afhending_3d38e7498fba59674c7d3838bf4c1824}{
+vector$<$ Pizza\-Locations $>$ {\bf get\-Pizza\-Locations} ()}
+\label{class_afhending_3d38e7498fba59674c7d3838bf4c1824}
+
 \item 
-vector$<$ \hyperlink{class_pizza_locations}{Pizza\-Locations} $>$ \hyperlink{class_afhending_3d38e7498fba59674c7d3838bf4c1824}{get\-Pizza\-Locations} ()
+\hypertarget{class_afhending_3970b0afe27b514282442b11592e1602}{
+vector$<$ client $>$ {\bf get\-Customer\-Vec} ()}
+\label{class_afhending_3970b0afe27b514282442b11592e1602}
+
 \item 
-vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_afhending_3970b0afe27b514282442b11592e1602}{get\-Customer\-Vec} ()
+\hypertarget{class_afhending_543bc751e47e95a5382a13e161387a1b}{
+string {\bf get\-Afhending\-Location} ()}
+\label{class_afhending_543bc751e47e95a5382a13e161387a1b}
+
 \item 
-string \hyperlink{class_afhending_543bc751e47e95a5382a13e161387a1b}{get\-Afhending\-Location} ()
-\item 
-vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_afhending_ad0cbeddec394b25c5eade57247f4110}{get\-Order\-Vec} (unsigned int customers\-Vec\-Number)
+vector$<$ Pizza $>$ \hyperlink{class_afhending_ad0cbeddec394b25c5eade57247f4110}{get\-Order\-Vec} (unsigned int customers\-Vec\-Number)
 \item 
 void \hyperlink{class_afhending_1d223b1559fc42935dfef28841735951}{deliver\-Order} (unsigned int customers\-Vec\-Number)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_afhending_85acd631eb078696afb9935bedeeb107}{
+char {\bf afhending\-Location} \mbox{[}32\mbox{]}}
+\label{class_afhending_85acd631eb078696afb9935bedeeb107}
+
+\item 
+\hypertarget{class_afhending_52cc86469dd41b9be5b7186d6bd00589}{
+vector$<$ client $>$ {\bf customers\-Vec}}
+\label{class_afhending_52cc86469dd41b9be5b7186d6bd00589}
+
 \end{CompactItemize}
 
 
 \subsection{Detailed Description}
-Functional class for \hyperlink{class_afhending_u_i}{Afhending\-UI} 
+Functional class for \hyperlink{class_afhending_u_i}{Afhending\-UI}. 
 
 
-
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_afhending_9365433a6f973ad929ffc0b458bc7c6f}{
-\index{Afhending@{Afhending}!Afhending@{Afhending}}
-\index{Afhending@{Afhending}!Afhending@{Afhending}}
-\subsubsection[Afhending]{\setlength{\rightskip}{0pt plus 5cm}Afhending::Afhending ()}}
-\label{class_afhending_9365433a6f973ad929ffc0b458bc7c6f}
-
-
-Load all a directory containing all customers waiting for an order 
 
 \subsection{Member Function Documentation}
 \hypertarget{class_afhending_1d223b1559fc42935dfef28841735951}{
@@ -53,24 +71,10 @@ EFTIR AD  COMMENTA
 \begin{description}
 \item[{\em customers\-Vec\-Number}]is the position of customer in customers\-Vec \end{description}
 \end{Desc}
-\hypertarget{class_afhending_543bc751e47e95a5382a13e161387a1b}{
-\index{Afhending@{Afhending}!getAfhendingLocation@{getAfhendingLocation}}
-\index{getAfhendingLocation@{getAfhendingLocation}!Afhending@{Afhending}}
-\subsubsection[getAfhendingLocation]{\setlength{\rightskip}{0pt plus 5cm}string Afhending::get\-Afhending\-Location ()}}
-\label{class_afhending_543bc751e47e95a5382a13e161387a1b}
-
-
-\hypertarget{class_afhending_3970b0afe27b514282442b11592e1602}{
-\index{Afhending@{Afhending}!getCustomerVec@{getCustomerVec}}
-\index{getCustomerVec@{getCustomerVec}!Afhending@{Afhending}}
-\subsubsection[getCustomerVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{classclient}{client} $>$ Afhending::get\-Customer\-Vec ()}}
-\label{class_afhending_3970b0afe27b514282442b11592e1602}
-
-
 \hypertarget{class_afhending_ad0cbeddec394b25c5eade57247f4110}{
 \index{Afhending@{Afhending}!getOrderVec@{getOrderVec}}
 \index{getOrderVec@{getOrderVec}!Afhending@{Afhending}}
-\subsubsection[getOrderVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza}{Pizza} $>$ Afhending::get\-Order\-Vec (unsigned int {\em customers\-Vec\-Number})}}
+\subsubsection[getOrderVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Pizza $>$ Afhending::get\-Order\-Vec (unsigned int {\em customers\-Vec\-Number})}}
 \label{class_afhending_ad0cbeddec394b25c5eade57247f4110}
 
 
@@ -81,19 +85,14 @@ Read orders from file for a customer at specific position in customers\-Vec
 \begin{description}
 \item[{\em customers\-Vec\-Number}]is the position of customer in customers\-Vec \end{description}
 \end{Desc}
-\hypertarget{class_afhending_3d38e7498fba59674c7d3838bf4c1824}{
-\index{Afhending@{Afhending}!getPizzaLocations@{getPizzaLocations}}
-\index{getPizzaLocations@{getPizzaLocations}!Afhending@{Afhending}}
-\subsubsection[getPizzaLocations]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_locations}{Pizza\-Locations} $>$ Afhending::get\-Pizza\-Locations ()}}
-\label{class_afhending_3d38e7498fba59674c7d3838bf4c1824}
-
-
 \hypertarget{class_afhending_411cc45b50d4a59a33d76f6c54e52f78}{
 \index{Afhending@{Afhending}!setAfhendingLocation@{setAfhendingLocation}}
 \index{setAfhendingLocation@{setAfhendingLocation}!Afhending@{Afhending}}
 \subsubsection[setAfhendingLocation]{\setlength{\rightskip}{0pt plus 5cm}void Afhending::set\-Afhending\-Location (char {\em current\-Location}\mbox{[}32\mbox{]})}}
 \label{class_afhending_411cc45b50d4a59a33d76f6c54e52f78}
 
+
+Set location of baker, and filter customers vector. 
 
 Find all customers from customerlist.dat that are from a specific location and whose orders have been finished, and are ready for a delivery
 
@@ -106,5 +105,5 @@ Find all customers from customerlist.dat that are from a specific location and w
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{_afhending_8h}{Afhending.h}\item 
-\hyperlink{_afhending_8cpp}{Afhending.cpp}\end{CompactItemize}
+Afhending.h\item 
+Afhending.cpp\end{CompactItemize}

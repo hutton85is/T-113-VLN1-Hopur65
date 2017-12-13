@@ -1,3 +1,9 @@
+/**
+* @brief A class that has some display helper functions
+*
+* Display helper functions are used throughout the program were constant display is needed
+*/
+
 #ifndef UIHELPER_H
 #define UIHELPER_H
 
@@ -9,7 +15,6 @@ class UIHelper
 {
     public:
         UIHelper();
-        virtual ~UIHelper();
         void displayHeader();
 };
 

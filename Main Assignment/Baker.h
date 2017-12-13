@@ -1,3 +1,9 @@
+/**
+* @brief Functional class for BakerUI
+*
+* Class can set customer order as being worked on and finished working on.
+*/
+
 #ifndef BAKER_H
 #define BAKER_H
 

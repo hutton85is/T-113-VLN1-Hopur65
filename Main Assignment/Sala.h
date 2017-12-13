@@ -1,5 +1,5 @@
 /**
-* Sala handles functionality for SalaUI.
+* @brief Sala handles functionality for SalaUI
 */
 
 #ifndef SALA_H

@@ -6,11 +6,6 @@ SalaUI::SalaUI()
 
 }
 
-SalaUI::~SalaUI()
-{
-    //dtor
-}
-
 template<typename Pizzaclass>
 void SalaUI::displayVector(vector<Pizzaclass> vec, bool choice)
 {

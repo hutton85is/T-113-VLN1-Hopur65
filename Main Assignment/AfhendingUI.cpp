@@ -55,7 +55,6 @@ void AfhendingUI::main()
     {
         unsigned int input;
 
-        // Only continue if there are some pending customers
         if (pickLocation())
         {
             while(true && afhending.getCustomerVec().size())

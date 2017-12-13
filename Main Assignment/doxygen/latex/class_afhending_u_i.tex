@@ -2,55 +2,52 @@
 \section{Afhending\-UI Class Reference}
 \label{class_afhending_u_i}\index{AfhendingUI@{AfhendingUI}}
 }
+User interface for delivering finished orders.  
+
+
 {\tt \#include $<$Afhending\-UI.h$>$}
 
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{class_afhending_u_i_9ab844012d187620ec223d97b0b27720}{Afhending\-UI} ()
-\item 
-void \hyperlink{class_afhending_u_i_ea83b916b3f52eec32ae6d54d59b4453}{main} ()
-\item 
+\hypertarget{class_afhending_u_i_ea83b916b3f52eec32ae6d54d59b4453}{
+void \hyperlink{class_afhending_u_i_ea83b916b3f52eec32ae6d54d59b4453}{main} ()}
+\label{class_afhending_u_i_ea83b916b3f52eec32ae6d54d59b4453}
+
+\begin{CompactList}\small\item\em Menu with available options. \item\end{CompactList}\item 
 bool \hyperlink{class_afhending_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}{pick\-Location} ()
+\begin{CompactList}\small\item\em choose location of baker and retrieve all customers with finished orders \item\end{CompactList}\item 
+\hypertarget{class_afhending_u_i_388ec3e6c0999970759fa9fdcacda10e}{
+void {\bf display\-All\-Customers} (bool show)}
+\label{class_afhending_u_i_388ec3e6c0999970759fa9fdcacda10e}
+
 \item 
-void \hyperlink{class_afhending_u_i_388ec3e6c0999970759fa9fdcacda10e}{display\-All\-Customers} (bool show)
+\hypertarget{class_afhending_u_i_537283a7f7677384872f66c6b1dc4491}{
+void {\bf display\-Customer\-Order} (unsigned int customer\-Number)}
+\label{class_afhending_u_i_537283a7f7677384872f66c6b1dc4491}
+
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
 \item 
-void \hyperlink{class_afhending_u_i_537283a7f7677384872f66c6b1dc4491}{display\-Customer\-Order} (unsigned int customer\-Number)
+\hypertarget{class_afhending_u_i_6d54613ddac2c68ed16224a0ac770eb5}{
+\hyperlink{class_afhending}{Afhending} {\bf afhending}}
+\label{class_afhending_u_i_6d54613ddac2c68ed16224a0ac770eb5}
+
+\item 
+\hypertarget{class_afhending_u_i_165ca02db075e280199e0970e3465900}{
+UIHelper {\bf helper\-UI}}
+\label{class_afhending_u_i_165ca02db075e280199e0970e3465900}
+
 \end{CompactItemize}
 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_afhending_u_i_9ab844012d187620ec223d97b0b27720}{
-\index{AfhendingUI@{Afhending\-UI}!AfhendingUI@{AfhendingUI}}
-\index{AfhendingUI@{AfhendingUI}!AfhendingUI@{Afhending\-UI}}
-\subsubsection[AfhendingUI]{\setlength{\rightskip}{0pt plus 5cm}Afhending\-UI::Afhending\-UI ()}}
-\label{class_afhending_u_i_9ab844012d187620ec223d97b0b27720}
-
+\subsection{Detailed Description}
+User interface for delivering finished orders. 
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_afhending_u_i_388ec3e6c0999970759fa9fdcacda10e}{
-\index{AfhendingUI@{Afhending\-UI}!displayAllCustomers@{displayAllCustomers}}
-\index{displayAllCustomers@{displayAllCustomers}!AfhendingUI@{Afhending\-UI}}
-\subsubsection[displayAllCustomers]{\setlength{\rightskip}{0pt plus 5cm}void Afhending\-UI::display\-All\-Customers (bool {\em show})}}
-\label{class_afhending_u_i_388ec3e6c0999970759fa9fdcacda10e}
-
-
-\hypertarget{class_afhending_u_i_537283a7f7677384872f66c6b1dc4491}{
-\index{AfhendingUI@{Afhending\-UI}!displayCustomerOrder@{displayCustomerOrder}}
-\index{displayCustomerOrder@{displayCustomerOrder}!AfhendingUI@{Afhending\-UI}}
-\subsubsection[displayCustomerOrder]{\setlength{\rightskip}{0pt plus 5cm}void Afhending\-UI::display\-Customer\-Order (unsigned int {\em customer\-Number})}}
-\label{class_afhending_u_i_537283a7f7677384872f66c6b1dc4491}
-
-
-\hypertarget{class_afhending_u_i_ea83b916b3f52eec32ae6d54d59b4453}{
-\index{AfhendingUI@{Afhending\-UI}!main@{main}}
-\index{main@{main}!AfhendingUI@{Afhending\-UI}}
-\subsubsection[main]{\setlength{\rightskip}{0pt plus 5cm}void Afhending\-UI::main ()}}
-\label{class_afhending_u_i_ea83b916b3f52eec32ae6d54d59b4453}
-
-
 \hypertarget{class_afhending_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}{
 \index{AfhendingUI@{Afhending\-UI}!pickLocation@{pickLocation}}
 \index{pickLocation@{pickLocation}!AfhendingUI@{Afhending\-UI}}
@@ -58,9 +55,13 @@ void \hyperlink{class_afhending_u_i_537283a7f7677384872f66c6b1dc4491}{display\-C
 \label{class_afhending_u_i_74d0d6b7d7493e8a9703bc8fbeb79f2e}
 
 
+choose location of baker and retrieve all customers with finished orders 
+
+\begin{Desc}
+\item[Returns:]true if there are customers available, else false \end{Desc}
 
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{_afhending_u_i_8h}{Afhending\-UI.h}\item 
-\hyperlink{_afhending_u_i_8cpp}{Afhending\-UI.cpp}\end{CompactItemize}
+Afhending\-UI.h\item 
+Afhending\-UI.cpp\end{CompactItemize}

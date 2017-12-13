@@ -1,5 +1,5 @@
 /**
-* Pizza keeps record of pizza orders made by customers and all available items to order
+* @brief Pizza keeps record of pizza orders made by customers and all available items to order
 */
 
 

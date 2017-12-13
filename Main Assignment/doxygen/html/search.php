@@ -8,7 +8,6 @@
 <div class="tabs">
   <ul>
     <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
-    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
     <li><a href="annotated.html"><span>Classes</span></a></li>
     <li><a href="files.html"><span>Files</span></a></li>
     <li>
@@ -375,7 +374,7 @@ main();
 
 
 ?>
-<hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 11:54:30 2017 for MainAssignment by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 13:49:57 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

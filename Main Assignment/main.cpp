@@ -1,5 +1,5 @@
 /**
-*    @file The main class for pizza software
+*    @brief The main class for pizza software
 */
 
 #include <iostream>

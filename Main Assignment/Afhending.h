@@ -1,5 +1,6 @@
 /**
-* Functional class for AfhendingUI
+* @brief Functional class for AfhendingUI
+*
 */
 
 
@@ -14,11 +15,14 @@ class Afhending
 {
     public:
         /**
-        * Load all a directory containing all customers waiting for an order
+        * @brief Load a directory containing all customers waiting for and order
+        *
         */
         Afhending();
 
         /**
+        * @brief Set location of baker, and filter customers vector
+        *
         * Find all customers from customerlist.dat that are from a specific location
         * and whose orders have been finished, and are ready for a delivery
         *

@@ -5,11 +5,6 @@ UIHelper::UIHelper()
     //ctor
 }
 
-UIHelper::~UIHelper()
-{
-    //dtor
-}
-
 void UIHelper::displayHeader()
 {
     cout << "---------------------------------------------------------" << endl;

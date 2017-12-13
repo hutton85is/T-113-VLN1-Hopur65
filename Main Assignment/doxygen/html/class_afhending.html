@@ -8,7 +8,6 @@
 <div class="tabs">
   <ul>
     <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
-    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
     <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
     <li><a href="files.html"><span>Files</span></a></li>
     <li>
@@ -28,57 +27,45 @@
     <li><a href="classes.html"><span>Alphabetical&nbsp;List</span></a></li>
     <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
   </ul></div>
-<h1>Afhending Class Reference</h1><!-- doxytag: class="Afhending" --><code>#include &lt;<a class="el" href="_afhending_8h-source.html">Afhending.h</a>&gt;</code>
+<h1>Afhending Class Reference</h1><!-- doxytag: class="Afhending" -->Functional class for <a class="el" href="class_afhending_u_i.html">AfhendingUI</a>.  
+<a href="#_details">More...</a>
+<p>
+<code>#include &lt;<a class="el" href="_afhending_8h-source.html">Afhending.h</a>&gt;</code>
 <p>
 <a href="class_afhending-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#9365433a6f973ad929ffc0b458bc7c6f">Afhending</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9365433a6f973ad929ffc0b458bc7c6f"></a><!-- doxytag: member="Afhending::Afhending" ref="9365433a6f973ad929ffc0b458bc7c6f" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#9365433a6f973ad929ffc0b458bc7c6f">Afhending</a> ()</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Load a directory containing all customers waiting for and order. <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#411cc45b50d4a59a33d76f6c54e52f78">setAfhendingLocation</a> (char currentLocation[32])</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; <a class="el" href="class_pizza_locations.html">PizzaLocations</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#3d38e7498fba59674c7d3838bf4c1824">getPizzaLocations</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set location of baker, and filter customers vector.  <a href="#411cc45b50d4a59a33d76f6c54e52f78"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="3d38e7498fba59674c7d3838bf4c1824"></a><!-- doxytag: member="Afhending::getPizzaLocations" ref="3d38e7498fba59674c7d3838bf4c1824" args="()" -->
+vector&lt; PizzaLocations &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPizzaLocations</b> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; <a class="el" href="classclient.html">client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#3970b0afe27b514282442b11592e1602">getCustomerVec</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="3970b0afe27b514282442b11592e1602"></a><!-- doxytag: member="Afhending::getCustomerVec" ref="3970b0afe27b514282442b11592e1602" args="()" -->
+vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomerVec</b> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#543bc751e47e95a5382a13e161387a1b">getAfhendingLocation</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="543bc751e47e95a5382a13e161387a1b"></a><!-- doxytag: member="Afhending::getAfhendingLocation" ref="543bc751e47e95a5382a13e161387a1b" args="()" -->
+string&nbsp;</td><td class="memItemRight" valign="bottom"><b>getAfhendingLocation</b> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; <a class="el" href="class_pizza.html">Pizza</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#ad0cbeddec394b25c5eade57247f4110">getOrderVec</a> (unsigned int customersVecNumber)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#ad0cbeddec394b25c5eade57247f4110">getOrderVec</a> (unsigned int customersVecNumber)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#1d223b1559fc42935dfef28841735951">deliverOrder</a> (unsigned int customersVecNumber)</td></tr>
 
+<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="85acd631eb078696afb9935bedeeb107"></a><!-- doxytag: member="Afhending::afhendingLocation" ref="85acd631eb078696afb9935bedeeb107" args="[32]" -->
+char&nbsp;</td><td class="memItemRight" valign="bottom"><b>afhendingLocation</b> [32]</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="52cc86469dd41b9be5b7186d6bd00589"></a><!-- doxytag: member="Afhending::customersVec" ref="52cc86469dd41b9be5b7186d6bd00589" args="" -->
+vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVec</b></td></tr>
+
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-Functional class for <a class="el" href="class_afhending_u_i.html">AfhendingUI</a> 
+Functional class for <a class="el" href="class_afhending_u_i.html">AfhendingUI</a>. 
 <p>
-<hr><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" name="9365433a6f973ad929ffc0b458bc7c6f"></a><!-- doxytag: member="Afhending::Afhending" ref="9365433a6f973ad929ffc0b458bc7c6f" args="()" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">Afhending::Afhending           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-Load all a directory containing all customers waiting for an order     </td>
-  </tr>
-</table>
 <hr><h2>Member Function Documentation</h2>
 <a class="anchor" name="1d223b1559fc42935dfef28841735951"></a><!-- doxytag: member="Afhending::deliverOrder" ref="1d223b1559fc42935dfef28841735951" args="(unsigned int customersVecNumber)" --><p>
 <table class="mdTable" cellpadding="2" cellspacing="0">
@@ -114,67 +101,13 @@ EFTIR AÐ COMMENTA<p>
     </td>
   </tr>
 </table>
-<a class="anchor" name="543bc751e47e95a5382a13e161387a1b"></a><!-- doxytag: member="Afhending::getAfhendingLocation" ref="543bc751e47e95a5382a13e161387a1b" args="()" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">string Afhending::getAfhendingLocation           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="3970b0afe27b514282442b11592e1602"></a><!-- doxytag: member="Afhending::getCustomerVec" ref="3970b0afe27b514282442b11592e1602" args="()" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">vector&lt; <a class="el" href="classclient.html">client</a> &gt; Afhending::getCustomerVec           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-    </td>
-  </tr>
-</table>
 <a class="anchor" name="ad0cbeddec394b25c5eade57247f4110"></a><!-- doxytag: member="Afhending::getOrderVec" ref="ad0cbeddec394b25c5eade57247f4110" args="(unsigned int customersVecNumber)" --><p>
 <table class="mdTable" cellpadding="2" cellspacing="0">
   <tr>
     <td class="mdRow">
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td class="md" nowrap valign="top">vector&lt; <a class="el" href="class_pizza.html">Pizza</a> &gt; Afhending::getOrderVec           </td>
+          <td class="md" nowrap valign="top">vector&lt; Pizza &gt; Afhending::getOrderVec           </td>
           <td class="md" valign="top">(&nbsp;</td>
           <td class="md" nowrap valign="top">unsigned int&nbsp;</td>
           <td class="mdname1" valign="top" nowrap> <em>customersVecNumber</em>          </td>
@@ -199,33 +132,6 @@ Read orders from file for a customer at specific position in customersVec<p>
     <tr><td valign="top"></td><td valign="top"><em>customersVecNumber</em>&nbsp;</td><td>is the position of customer in customersVec </td></tr>
   </table>
 </dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="3d38e7498fba59674c7d3838bf4c1824"></a><!-- doxytag: member="Afhending::getPizzaLocations" ref="3d38e7498fba59674c7d3838bf4c1824" args="()" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">vector&lt; <a class="el" href="class_pizza_locations.html">PizzaLocations</a> &gt; Afhending::getPizzaLocations           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
     </td>
   </tr>
 </table>
@@ -254,6 +160,8 @@ Read orders from file for a customer at specific position in customersVec<p>
     <td>
 
 <p>
+Set location of baker, and filter customers vector. 
+<p>
 Find all customers from customerlist.dat that are from a specific location and whose orders have been finished, and are ready for a delivery<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -264,8 +172,8 @@ Find all customers from customerlist.dat that are from a specific location and w
   </tr>
 </table>
 <hr>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_afhending_8h-source.html">Afhending.h</a><li><a class="el" href="_afhending_8cpp.html">Afhending.cpp</a></ul>
-<hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 11:54:30 2017 for MainAssignment by&nbsp;
+<li><a class="el" href="_afhending_8h-source.html">Afhending.h</a><li>Afhending.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 13:49:57 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

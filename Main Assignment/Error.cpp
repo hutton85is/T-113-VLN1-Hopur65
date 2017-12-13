@@ -7,11 +7,6 @@ Error::Error()
     rw.loadSpecificVector(inputErrorExceptionVec, "Exceptions/InputErrorException.dat", newInputErrorException);
 }
 
-Error::~Error()
-{
-    //dtor
-}
-
 vector <InputErrorException> Error::getInputErrorExceptionVec()
 {
     return inputErrorExceptionVec;

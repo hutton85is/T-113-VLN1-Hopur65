@@ -8,7 +8,6 @@
 <div class="tabs">
   <ul>
     <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
-    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
     <li><a href="annotated.html"><span>Classes</span></a></li>
     <li id="current"><a href="files.html"><span>Files</span></a></li>
     <li>
@@ -22,18 +21,13 @@
       </form>
     </li>
   </ul></div>
-<div class="tabs">
-  <ul>
-    <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-    <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
-  </ul></div>
-<h1>readWriteClass.h</h1><a href="read_write_class_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef READWRITECLASS_H</span>
+<h1>readWriteClass.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef READWRITECLASS_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define READWRITECLASS_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include "<a class="code" href="_pizza_8h.html">Pizza.h</a>"</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include "<a class="code" href="client_8h.html">client.h</a>"</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include "<a class="code" href="_sala_8h.html">Sala.h</a>"</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include "<a class="code" href="_pizza_helper_8h.html">PizzaHelper.h</a>"</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include "Pizza.h"</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include "client.h"</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include "Sala.h"</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include "PizzaHelper.h"</span>
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;string.h&gt;</span>
 <a name="l00009"></a>00009 <span class="preprocessor">#include "InputErrorException.h"</span>
 <a name="l00010"></a>00010 
@@ -41,27 +35,27 @@
 <a name="l00012"></a>00012 <span class="comment">*</span>
 <a name="l00013"></a>00013 <span class="comment">*/</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="classread_write_class.html">00015</a> <span class="keyword">class </span><a class="code" href="classread_write_class.html">readWriteClass</a>
+<a name="l00015"></a>00015 <span class="keyword">class </span>readWriteClass
 <a name="l00016"></a>00016 {
 <a name="l00017"></a>00017     <span class="keyword">public</span>:
-<a name="l00018"></a>00018         <a class="code" href="classread_write_class.html#6db1c799fac571a924d5f276094c2b5c">readWriteClass</a>();
-<a name="l00019"></a>00019         <span class="keyword">virtual</span> <a class="code" href="classread_write_class.html#17d5dddd8a25946f62055c4d78fb22d8">~readWriteClass</a>();
+<a name="l00018"></a>00018         readWriteClass();
+<a name="l00019"></a>00019         <span class="keyword">virtual</span> ~readWriteClass();
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021         <span class="comment">/*</span>
 <a name="l00022"></a>00022 <span class="comment">        * Function that writes a template class to binary file under filename</span>
 <a name="l00023"></a>00023 <span class="comment">        * and path under variable 'fname'. If the file does not exist, it is created.</span>
 <a name="l00024"></a>00024 <span class="comment">        */</span>
 <a name="l00025"></a>00025         <span class="keyword">template</span> &lt;<span class="keyword">class</span> pizzaClass&gt;
-<a name="l00026"></a>00026         <span class="keywordtype">void</span> <a class="code" href="classread_write_class.html#abb1ed8e2de573d0548c582c8df29de1">writeClassToFile</a>(pizzaClass&amp; classToWrite, <span class="keyword">const</span> <span class="keywordtype">char</span>* fname);
+<a name="l00026"></a>00026         <span class="keywordtype">void</span> writeClassToFile(pizzaClass&amp; classToWrite, <span class="keyword">const</span> <span class="keywordtype">char</span>* fname);
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028         <span class="comment">// Function that loads all vectors from database containing all items available for sale and stores them in Pizza class 'p'</span>
-<a name="l00029"></a>00029         <span class="keywordtype">void</span> <a class="code" href="classread_write_class.html#7a6da2d64d652963e15693695f38b019">loadAllVectors</a>(<a class="code" href="class_pizza.html">Pizza</a>&amp; p);
+<a name="l00029"></a>00029         <span class="keywordtype">void</span> loadAllVectors(Pizza&amp; p);
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031         <span class="comment">// Function that removes all contents of a file</span>
-<a name="l00032"></a>00032         <span class="keywordtype">void</span> <a class="code" href="classread_write_class.html#40de8d6c8e60d97ea037a48a0096fcfb">removeAllContentsOfFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fname);
+<a name="l00032"></a>00032         <span class="keywordtype">void</span> removeAllContentsOfFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* fname);
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034         <span class="comment">// load Pizza order with a specific customer</span>
-<a name="l00035"></a>00035         <span class="keywordtype">bool</span> <a class="code" href="classread_write_class.html#b078183ae301dfe3e5197f25677d3abc">loadCustomer</a>(<a class="code" href="classclient.html">client</a>&amp; customer, vector&lt;Pizza&gt;&amp; order, vector&lt;PizzaHelper&gt;&amp; pHelper, <span class="keyword">const</span> <span class="keywordtype">char</span>* fname);
+<a name="l00035"></a>00035         <span class="keywordtype">bool</span> loadCustomer(client&amp; customer, vector&lt;Pizza&gt;&amp; order, vector&lt;PizzaHelper&gt;&amp; pHelper, <span class="keyword">const</span> <span class="keywordtype">char</span>* fname);
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037         <span class="comment">/*</span>
 <a name="l00038"></a>00038 <span class="comment">        * boolean function that loads a vector from a specific file storing a template class</span>
@@ -70,7 +64,7 @@
 <a name="l00041"></a>00041 <span class="comment">        * pClass is a variable containing the template class to be loaded from a file</span>
 <a name="l00042"></a>00042 <span class="comment">        */</span>
 <a name="l00043"></a>00043         <span class="keyword">template</span> &lt;<span class="keyword">class</span> pizzaClass&gt;
-<a name="l00044"></a>00044         <span class="keywordtype">bool</span> <a class="code" href="classread_write_class.html#c853fce40cfb6790d054df75b933889f">loadSpecificVector</a>(vector&lt;pizzaClass&gt;&amp; loadVector, <span class="keyword">const</span> <span class="keywordtype">char</span>* fileName, pizzaClass&amp; pClass);
+<a name="l00044"></a>00044         <span class="keywordtype">bool</span> loadSpecificVector(vector&lt;pizzaClass&gt;&amp; loadVector, <span class="keyword">const</span> <span class="keywordtype">char</span>* fileName, pizzaClass&amp; pClass);
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046     <span class="keyword">private</span>:
 <a name="l00047"></a>00047 
@@ -79,7 +73,7 @@
 <a name="l00050"></a>00050 };
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052 <span class="preprocessor">#endif // READWRITECLASS_H</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 11:54:29 2017 for MainAssignment by&nbsp;
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 13:49:57 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>
