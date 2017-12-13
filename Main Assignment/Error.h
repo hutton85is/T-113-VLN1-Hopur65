@@ -1,5 +1,5 @@
 /**
-* @brief Functional class for logging Exceptions
+* @brief Functional class for ErrorUI and logging exceptions
 *
 */
 
@@ -16,14 +16,19 @@ using namespace std;
 class Error
 {
     public:
+
         Error();
+
         void displayError();
+
         vector <InputErrorException> getInputErrorExceptionVec();
+
         void logInputErrorException(InputErrorException newException);
 
         friend ostream& operator << (ostream& outs, Error& er);
 
     private:
+
         vector <InputErrorException> inputErrorExceptionVec;
 };
 

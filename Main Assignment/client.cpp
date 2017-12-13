@@ -18,11 +18,6 @@ client::client()
     deliverOrder = false;
 }
 
-client::~client()
-{
-    //dtor
-}
-
 ostream& operator <<(ostream& outs, client& customer)
 {
     if(customer.name[0] != '\0')

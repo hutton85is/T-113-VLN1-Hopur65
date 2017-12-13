@@ -39,19 +39,22 @@
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set baker location and customize vectors.  <a href="#b85151ecb20282d81b4dab489fea7dd8"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="3970b0afe27b514282442b11592e1602"></a><!-- doxytag: member="Baker::getCustomerVec" ref="3970b0afe27b514282442b11592e1602" args="()" -->
-vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomerVec</b> ()</td></tr>
+vector&lt; <a class="el" href="classclient.html">client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomerVec</b> ()</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8b798f098bfd9a23b11fa1d63d089609"></a><!-- doxytag: member="Baker::getCustomersVecInProgress" ref="8b798f098bfd9a23b11fa1d63d089609" args="()" -->
-vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomersVecInProgress</b> ()</td></tr>
+vector&lt; <a class="el" href="classclient.html">client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomersVecInProgress</b> ()</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4c05936fa38e14b768511921a3288c57"></a><!-- doxytag: member="Baker::getCustomersVecDueProgress" ref="4c05936fa38e14b768511921a3288c57" args="()" -->
-vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomersVecDueProgress</b> ()</td></tr>
+vector&lt; <a class="el" href="classclient.html">client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomersVecDueProgress</b> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baker.html#ad0cbeddec394b25c5eade57247f4110">getOrderVec</a> (unsigned int customersVecNumber)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ad0cbeddec394b25c5eade57247f4110"></a><!-- doxytag: member="Baker::getOrderVec" ref="ad0cbeddec394b25c5eade57247f4110" args="(unsigned int customersVecNumber)" -->
+vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getOrderVec</b> (unsigned int customersVecNumber)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baker.html#7c9256e53372bd3a698e40cf64003c50">getCustomersOrderDueProgress</a> (unsigned int customerNumber)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="7c9256e53372bd3a698e40cf64003c50"></a><!-- doxytag: member="Baker::getCustomersOrderDueProgress" ref="7c9256e53372bd3a698e40cf64003c50" args="(unsigned int customerNumber)" -->
+vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomersOrderDueProgress</b> (unsigned int customerNumber)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baker.html#96a7c1ec2dc23919a4e7ca8c399476e1">getCustomersOrderInProgress</a> (unsigned int customerNumber)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="96a7c1ec2dc23919a4e7ca8c399476e1"></a><!-- doxytag: member="Baker::getCustomersOrderInProgress" ref="96a7c1ec2dc23919a4e7ca8c399476e1" args="(unsigned int customerNumber)" -->
+vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getCustomersOrderInProgress</b> (unsigned int customerNumber)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="3d38e7498fba59674c7d3838bf4c1824"></a><!-- doxytag: member="Baker::getPizzaLocations" ref="3d38e7498fba59674c7d3838bf4c1824" args="()" -->
 vector&lt; PizzaLocations &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPizzaLocations</b> ()</td></tr>
@@ -61,17 +64,19 @@ string&nbsp;</td><td class="memItemRight" valign="bottom"><b>getBakerLocation</b
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baker.html#9616413c80f3814907a9c2399ac50438">workOnOrder</a> (unsigned int customersVecNumber)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set customer order as in progress.  <a href="#9616413c80f3814907a9c2399ac50438"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baker.html#222a16bf113b70cbe0388a7291978a57">finishOrder</a> (unsigned int customerID)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set customer order as.  <a href="#222a16bf113b70cbe0388a7291978a57"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="52cc86469dd41b9be5b7186d6bd00589"></a><!-- doxytag: member="Baker::customersVec" ref="52cc86469dd41b9be5b7186d6bd00589" args="" -->
-vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVec</b></td></tr>
+vector&lt; <a class="el" href="classclient.html">client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVec</b></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0b7dacb9817ff529ee046a5c369051fa"></a><!-- doxytag: member="Baker::customersVecInProgress" ref="0b7dacb9817ff529ee046a5c369051fa" args="" -->
-vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVecInProgress</b></td></tr>
+vector&lt; <a class="el" href="classclient.html">client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVecInProgress</b></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e9843b8d2c12d0911de538ebe51c1b0d"></a><!-- doxytag: member="Baker::customersVecDueProgress" ref="e9843b8d2c12d0911de538ebe51c1b0d" args="" -->
-vector&lt; client &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVecDueProgress</b></td></tr>
+vector&lt; <a class="el" href="classclient.html">client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVecDueProgress</b></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c8a23bee3af95af3a6fa8e3f631e9a92"></a><!-- doxytag: member="Baker::bakerLocation" ref="c8a23bee3af95af3a6fa8e3f631e9a92" args="[32]" -->
 char&nbsp;</td><td class="memItemRight" valign="bottom"><b>bakerLocation</b> [32]</td></tr>
@@ -108,99 +113,14 @@ Class can set customer order as being worked on and finished working on.
     <td>
 
 <p>
-Move customer from customersVecInProgress and rewrite file containing customer order with updated client class<p>
+Set customer order as. 
+<p>
+Move customer from customersVecInProgress and set status as finished. Rewrite file containing customer order with updated client class<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>customerID</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>customerID</em>&nbsp;</td><td>is the position of customer to update in vector </td></tr>
   </table>
 </dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="7c9256e53372bd3a698e40cf64003c50"></a><!-- doxytag: member="Baker::getCustomersOrderDueProgress" ref="7c9256e53372bd3a698e40cf64003c50" args="(unsigned int customerNumber)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">vector&lt; Pizza &gt; Baker::getCustomersOrderDueProgress           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">unsigned int&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap> <em>customerNumber</em>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-<dl compact><dt><b>Returns:</b></dt><dd>a vector only with customer orders due progress </dd></dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="96a7c1ec2dc23919a4e7ca8c399476e1"></a><!-- doxytag: member="Baker::getCustomersOrderInProgress" ref="96a7c1ec2dc23919a4e7ca8c399476e1" args="(unsigned int customerNumber)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">vector&lt; Pizza &gt; Baker::getCustomersOrderInProgress           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">unsigned int&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap> <em>customerNumber</em>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-<dl compact><dt><b>Returns:</b></dt><dd>a vector only with customer orders in progress </dd></dl>
-    </td>
-  </tr>
-</table>
-<a class="anchor" name="ad0cbeddec394b25c5eade57247f4110"></a><!-- doxytag: member="Baker::getOrderVec" ref="ad0cbeddec394b25c5eade57247f4110" args="(unsigned int customersVecNumber)" --><p>
-<table class="mdTable" cellpadding="2" cellspacing="0">
-  <tr>
-    <td class="mdRow">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td class="md" nowrap valign="top">vector&lt; Pizza &gt; Baker::getOrderVec           </td>
-          <td class="md" valign="top">(&nbsp;</td>
-          <td class="md" nowrap valign="top">unsigned int&nbsp;</td>
-          <td class="mdname1" valign="top" nowrap> <em>customersVecNumber</em>          </td>
-          <td class="md" valign="top">&nbsp;)&nbsp;</td>
-          <td class="md" nowrap></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-<table cellspacing="5" cellpadding="0" border="0">
-  <tr>
-    <td>
-      &nbsp;
-    </td>
-    <td>
-
-<p>
-<dl compact><dt><b>Returns:</b></dt><dd>a vector of all customer orders due progress and in progress </dd></dl>
     </td>
   </tr>
 </table>
@@ -265,6 +185,8 @@ Function that set's baker location and sort's orders into vector's depending on 
     <td>
 
 <p>
+Set customer order as in progress. 
+<p>
 Move customer from customersVecDueProgress to customersVecInProgress and rewrite file containing customer order with updated client class<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -276,7 +198,7 @@ Move customer from customersVecDueProgress to customersVecInProgress and rewrite
 </table>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_baker_8h-source.html">Baker.h</a><li>Baker.cpp</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 21:31:29 2017 for MainAssignment by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 21:43:41 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>
