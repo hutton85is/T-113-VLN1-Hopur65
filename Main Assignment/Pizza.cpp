@@ -6,7 +6,7 @@ Pizza::Pizza()
 
 Pizza::~Pizza()
 {
-    //dtor
+
 }
 
 

@@ -10,10 +10,12 @@
 #include "Pizza.h"
 #include "PizzaHelper.h"
 
-class client
+class Client
 {
     public:
-        client();
+
+        Client();
+        virtual ~Client();
 
         char name[64];
 
@@ -37,7 +39,7 @@ class client
 
         unsigned int orderCounter;
 
-        friend ostream& operator <<(ostream& outs, client& customer);
+        friend ostream& operator <<(ostream& outs, Client& customer);
 };
 
 #endif // CLIENT_H

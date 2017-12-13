@@ -1,11 +1,20 @@
-#include "readWriteClass.h"
+#include "ReadWriteClass.h"
 
-readWriteClass::readWriteClass()
+ReadWriteClass::ReadWriteClass()
 {
+<<<<<<< HEAD
+
+=======
 
 }
 
-void readWriteClass::loadAllVectors(Pizza& p)
+ReadWriteClass::~ReadWriteClass()
+{
+
+>>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
+}
+
+void ReadWriteClass::loadAllVectors(Pizza& p)
 {
     const char* fname = "data/crust.dat";
     PizzaCrust cr;
@@ -32,7 +41,7 @@ void readWriteClass::loadAllVectors(Pizza& p)
     loadSpecificVector<PizzaMenu>(p.pmenu, fname, menu);
 }
 
-bool readWriteClass::loadCustomer(client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname)
+bool ReadWriteClass::loadCustomer(Client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname)
 {
     ifstream file;
     file.open(fname, ios_base::binary|ios_base::app);
@@ -40,7 +49,7 @@ bool readWriteClass::loadCustomer(client& customer, vector<Pizza>& order, vector
     if(file.is_open())
     {
         // load customer from file
-        file.read((char*)(&customer), sizeof(client));
+        file.read((char*)(&customer), sizeof(Client));
 
         for(unsigned int j = 0; j < customer.orderCounter; j++)
         {
@@ -128,7 +137,7 @@ bool readWriteClass::loadCustomer(client& customer, vector<Pizza>& order, vector
     return false;
 }
 
-void readWriteClass::removeAllContentsOfFile(const char* fname)
+void ReadWriteClass::removeAllContentsOfFile(const char* fname)
 {
     ofstream file;
     file.open(fname);
@@ -136,7 +145,7 @@ void readWriteClass::removeAllContentsOfFile(const char* fname)
 }
 
 template <class pizzaClass>
-bool readWriteClass::loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass)
+bool ReadWriteClass::loadSpecificVector(vector<pizzaClass>& loadVector, const char* fileName, pizzaClass& pClass)
 {
     ifstream file;
     file.open(fileName, ios_base::binary);
@@ -158,7 +167,7 @@ bool readWriteClass::loadSpecificVector(vector<pizzaClass>& loadVector, const ch
     return false;
 }
 
-void readWriteClass::dummyLoader()
+void ReadWriteClass::dummyLoader()
 {
     PizzaToppings newToppings;
     PizzaCrust newCrust;
@@ -166,7 +175,7 @@ void readWriteClass::dummyLoader()
     PizzaExtras newExtras;
     PizzaLocations newLocations;
     PizzaSize newSize;
-    client newClient;
+    Client newClient;
     PizzaHelper newPizzaHelper;
     InputErrorException newInputErrorException;
 
@@ -177,17 +186,17 @@ void readWriteClass::dummyLoader()
     writeClassToFile<PizzaMenu>(newMenu, fname);
     writeClassToFile<PizzaLocations>(newLocations, fname);
     writeClassToFile<PizzaExtras>(newExtras, fname);
-    writeClassToFile<client>(newClient, fname);
+    writeClassToFile<Client>(newClient, fname);
     writeClassToFile<InputErrorException>(newInputErrorException, fname);
-    vector<client> loadVector;
-    loadSpecificVector<client>(loadVector, fname, newClient);
+    vector<Client> loadVector;
+    loadSpecificVector<Client>(loadVector, fname, newClient);
     writeClassToFile<PizzaHelper>(newPizzaHelper, fname);
     vector<InputErrorException> newInputErrorExceptionVec;
     loadSpecificVector<InputErrorException>(newInputErrorExceptionVec, fname, newInputErrorException);
 }
 
 template <class pizzaClass>
-void readWriteClass::writeClassToFile(pizzaClass& classToWrite, const char* fname)
+void ReadWriteClass::writeClassToFile(pizzaClass& classToWrite, const char* fname)
 {
     ofstream file;
     file.open(fname, ios_base::binary|ios_base::app);

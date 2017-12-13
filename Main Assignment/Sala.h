@@ -66,7 +66,7 @@ class Sala
         */
         void createOrder(string name, string address, int number, bool paid, bool delivery, string comment);
 
-        client getCustomerOrdersVector();
+        Client getCustomerOrdersVector();
 
         vector<PizzaCrust> getLagerpcrust();
 
@@ -81,8 +81,12 @@ class Sala
         vector<PizzaToppings> getLagerptoppings();
 
         vector<Pizza> getOrder();
+<<<<<<< HEAD
 
         client getClient();
+=======
+        Client getClient();
+>>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 
         friend ostream& operator <<(ostream& outs, Sala& s);
 
@@ -90,7 +94,7 @@ class Sala
 
         Pizza lager;
 
-        client newCustomer;
+        Client newCustomer;
 
         vector<Pizza> order;
 

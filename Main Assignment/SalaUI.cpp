@@ -185,7 +185,7 @@ void SalaUI::chooseDifferentPizzaLocation()
     {
         helperUI.displayHeader();
         cout << endl;
-        cout << "That er enginn stadur opnadur enntha" << endl;
+        cout << "Thad er enginn stadur opnadur enntha" << endl;
         cout << endl;
     }
 }
@@ -256,7 +256,7 @@ void SalaUI::finishOrder()
     s.createOrder(name, address, number, paid == 'j', delivery == 'j', comment);
 
     system("CLS");
-    cout << "HERE IS YOUR ORDER" << endl;
+    cout << "HERNA ER PONTUNIN TIN" << endl;
     cout << "----------------------------" << endl;
     cout << s << endl;
     cout << "----------------------------" << endl;
@@ -292,7 +292,7 @@ void SalaUI::choosePizzaLocation()
     displayVector(s.getLagerplocations(), true);
     cout << endl;
 
-    cout << "Enter what location you want to order from: ";
+    cout << "Sladu inn hvadan thu vilt panta pizzuna thina: ";
     cin >> input;
 
     int lagerLocationsVecSize = s.getLagerplocations().size();
@@ -310,7 +310,7 @@ void SalaUI::displayOrder()
     vector<Pizza> currentOrder = s.getOrder();
     for(unsigned int i = 0; i < currentOrder.size(); i++)
     {
-        cout << "   pizza order: " << i << endl;
+        cout << "   pizza pontun: " << i << endl;
         cout << currentOrder[i] << endl;
     }
 }

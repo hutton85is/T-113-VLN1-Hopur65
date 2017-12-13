@@ -2,7 +2,7 @@
 
 AfhendingUI::AfhendingUI()
 {
-    //ctor
+
 }
 
 bool AfhendingUI::pickLocation()
@@ -43,7 +43,7 @@ bool AfhendingUI::pickLocation()
 
 void AfhendingUI::displayAllCustomers(bool show)
 {
-    vector<client> customerVec = afhending.getCustomerVec();
+    vector<Client> customerVec = afhending.getCustomerVec();
     for(unsigned int i = 0; i < customerVec.size(); i++)
     {
         if(show)
@@ -57,7 +57,7 @@ void AfhendingUI::displayAllCustomers(bool show)
 
 void AfhendingUI::displayCustomerOrder(unsigned int customerNumber)
 {
-    vector<client> customer = afhending.getCustomerVec();
+    vector<Client> customer = afhending.getCustomerVec();
     vector<Pizza> order = afhending.getOrderVec(customerNumber);
     cout << customerNumber << ". " << customer[customerNumber] << endl;
     for(unsigned int i = 0; i < order.size(); i++)

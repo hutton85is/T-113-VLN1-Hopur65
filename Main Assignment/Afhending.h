@@ -32,7 +32,7 @@ class Afhending
 
         vector<PizzaLocations> getPizzaLocations();
 
-        vector<client> getCustomerVec();
+        vector<Client> getCustomerVec();
 
         string getAfhendingLocation();
 
@@ -55,7 +55,7 @@ class Afhending
 
         char afhendingLocation[32];
 
-        vector<client> customersVec;
+        vector<Client> customersVec;
 };
 
 #endif // AFHENDING_H

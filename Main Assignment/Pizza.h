@@ -13,11 +13,12 @@
 #include <fstream>
 
 #include "PizzaSize.h"
-#include "pizzatoppings.h"
-#include "pizzacrust.h"
-#include "pizzaextras.h"
-#include "pizzalocations.h"
-#include "pizzamenu.h"
+#include "PizzaToppings.h"
+#include "PizzaCrust.h"
+#include "PizzaCrust.h"
+#include "PizzaLocations.h"
+#include "PizzaMenu.h"
+#include "PizzaExtras.h"
 
 using namespace std;
 

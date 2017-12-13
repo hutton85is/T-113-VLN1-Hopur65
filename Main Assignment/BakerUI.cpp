@@ -2,12 +2,12 @@
 
 BakerUI::BakerUI()
 {
-    //ctor
+
 }
 
 void BakerUI::displayCustomerDueProgress()
 {
-    vector<client> customersVec = baker.getCustomersVecDueProgress();
+    vector<Client> customersVec = baker.getCustomersVecDueProgress();
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
         cout << i << ". " << customersVec[i] << endl;
@@ -16,7 +16,7 @@ void BakerUI::displayCustomerDueProgress()
 
 void BakerUI::displayCustomerInProgress()
 {
-    vector<client> customersVec = baker.getCustomersVecInProgress();
+    vector<Client> customersVec = baker.getCustomersVecInProgress();
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
         cout << i << ". " << customersVec[i] << endl;
@@ -62,7 +62,7 @@ bool BakerUI::pickLocation()
 
 void BakerUI::displayCustomerDueProgressOrder(unsigned int customerNumber)
 {
-    vector<client> customer = baker.getCustomersVecDueProgress();
+    vector<Client> customer = baker.getCustomersVecDueProgress();
     vector<Pizza> order = baker.getCustomersOrderDueProgress(customerNumber);
     cout << customerNumber << ". " << customer[customerNumber] << endl;
     for(unsigned int i = 0; i < order.size(); i++)
@@ -73,7 +73,7 @@ void BakerUI::displayCustomerDueProgressOrder(unsigned int customerNumber)
 
 void BakerUI::displayCustomerInProgressOrder(unsigned int customerNumber)
 {
-    vector<client> customer = baker.getCustomersVecInProgress();
+    vector<Client> customer = baker.getCustomersVecInProgress();
     vector<Pizza> order = baker.getCustomersOrderInProgress(customerNumber);
     cout << customerNumber << ". " << customer[customerNumber] << endl;
     for(unsigned int i = 0; i < order.size(); i++)
@@ -84,7 +84,7 @@ void BakerUI::displayCustomerInProgressOrder(unsigned int customerNumber)
 
 void BakerUI::displayAllOrders()
 {
-    vector<client> customerVec = baker.getCustomerVec();
+    vector<Client> customerVec = baker.getCustomerVec();
     for(unsigned int i = 0; i < customerVec.size(); i++)
     {
         cout << customerVec[i] << endl;
@@ -251,4 +251,3 @@ void BakerUI::main()
         system("pause");
     }
 }
-

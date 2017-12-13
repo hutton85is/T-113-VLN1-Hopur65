@@ -1,15 +1,14 @@
-#include "pizzalocations.h"
+#include "PizzaLocations.h"
 
 PizzaLocations::PizzaLocations()
 {
           place[0] = '\0';
           //pick_up = 0;
-    //ctor
 }
 
 PizzaLocations::~PizzaLocations()
 {
-    //dtor
+
 }
 ostream& operator <<(ostream& outs, PizzaLocations& p_locations)
 {

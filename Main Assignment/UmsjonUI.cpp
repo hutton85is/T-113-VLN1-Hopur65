@@ -5,6 +5,14 @@ UmsjonUI::UmsjonUI()
 
 }
 
+<<<<<<< HEAD
+=======
+UmsjonUI::~UmsjonUI()
+{
+
+}
+
+>>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 template<typename Pizzaclass>
 void UmsjonUI::displayVector(vector<Pizzaclass> vec, bool show)
 {
@@ -38,7 +46,7 @@ void UmsjonUI::createNewPizzaSize()
     }
 
     int price;
-    cout << "sladu inn verd a " << p_size << ": ";
+    cout << "Sladu inn verd a " << p_size << ": ";
     cin >> price;
 
     if(!cin || price < 0)
@@ -311,5 +319,3 @@ void UmsjonUI::main()
         }
     }
 }
-
-

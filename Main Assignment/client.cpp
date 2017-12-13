@@ -1,6 +1,6 @@
-#include "client.h"
+#include "Client.h"
 
-client::client()
+Client::Client()
 {
     name[0] = '\0';
     address[0] = '\0';
@@ -18,7 +18,13 @@ client::client()
     deliverOrder = false;
 }
 
-ostream& operator <<(ostream& outs, client& customer)
+Client::~Client()
+{
+
+}
+
+ostream& operator <<(ostream& outs, Client& customer)
+
 {
     if(customer.name[0] != '\0')
     {

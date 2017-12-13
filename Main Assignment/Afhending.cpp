@@ -2,19 +2,19 @@
 
 Afhending::Afhending()
 {
-    readWriteClass rw;
-    client loadClient;
+    ReadWriteClass rw;
+    Client loadClient;
     rw.loadSpecificVector(customersVec, "order/customerlist.dat", loadClient);
 }
 
-vector<client> Afhending::getCustomerVec()
+vector<Client> Afhending::getCustomerVec()
 {
     return customersVec;
 }
 
 vector<PizzaLocations> Afhending::getPizzaLocations()
 {
-    readWriteClass rw;
+    ReadWriteClass rw;
     PizzaLocations newPizzaLocation;
     vector<PizzaLocations> locationsVec;
     rw.loadSpecificVector(locationsVec, "data/locations.dat", newPizzaLocation);
@@ -30,8 +30,8 @@ void Afhending::setAfhendingLocation(char currentLocation[32])
 {
     strcpy(afhendingLocation, currentLocation);
 
-    readWriteClass rw;
-    vector<client> newCustomersVec;
+    ReadWriteClass rw;
+    vector<Client> newCustomersVec;
 
     // run through all orders to find which orders have same location as baker
     for (unsigned int i = 0; i < customersVec.size(); i++)
@@ -39,7 +39,7 @@ void Afhending::setAfhendingLocation(char currentLocation[32])
         // change to compare an array of char
         vector<Pizza> newOrder;
         vector<PizzaHelper> newpHelper;
-        client newClient;
+        Client newClient;
         string fname = "order/";
         fname.append(customersVec[i].name);
         fname.append(".dat");
@@ -72,8 +72,8 @@ void Afhending::setAfhendingLocation(char currentLocation[32])
 
 vector<Pizza> Afhending::getOrderVec(unsigned int customersVecNumber)
 {
-    readWriteClass rw;
-    client newClient;
+    ReadWriteClass rw;
+    Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     string fname = "order/";
@@ -96,14 +96,14 @@ void Afhending::deliverOrder(int customersVecNumber)
     customersVec[customersVecNumber].orderPaid = true;
     customersVec[customersVecNumber].orderDelivered = true;
 
-    readWriteClass rw;
+    ReadWriteClass rw;
     string fname = "order/";
     fname.append(customersVec[customersVecNumber].name);
     fname.append(".dat");
     const char* oldpathfile = fname.c_str();
 
     // Load customer from file to rewrite him to folder delivered
-    client newClient;
+    Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
     rw.loadCustomer(newClient, customerOrder, pHelper, oldpathfile);
@@ -116,9 +116,10 @@ void Afhending::deliverOrder(int customersVecNumber)
 
     customersVec.erase(customersVec.begin() + customersVecNumber);
 
-    // Load all customers pending service for updating
-    client loadClient;
-    vector<client> tempVec;
+    // Load all contents of order/customerlist.dat to be updated
+    Client loadClient;
+    vector<Client> tempVec;
+
     rw.loadSpecificVector(tempVec, "order/customerlist.dat", loadClient);
 
     // Remove all contents of directory in order folder for update

@@ -7,18 +7,17 @@
 
 
 */
-#include <iostream>
-#include <stdlib.h>
-
-
 #include "UmsjonUI.h"
 #include "SalaUI.h"
 #include "BakerUI.h"
-#include <stdlib.h>
 #include "AfhendingUI.h"
 #include "Error.h"
-#include <climits>
 #include "ErrorUI.h"
+
+#include <iostream>
+#include <stdlib.h>
+#include <stdlib.h>
+#include <climits>
 
 using namespace std;
 

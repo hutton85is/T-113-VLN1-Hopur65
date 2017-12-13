@@ -3,8 +3,6 @@
  *
  */
 
-
-
 #ifndef PIZZAEXTRAS_H
 #define PIZZAEXTRAS_H
 
@@ -25,6 +23,10 @@ class PizzaExtras
         int price;
 
         char extras_type[32];
+
+    private:
+
+
 };
 
 #endif // PIZZAEXTRAS_H

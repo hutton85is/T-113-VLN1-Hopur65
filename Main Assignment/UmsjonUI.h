@@ -40,6 +40,9 @@ class UmsjonUI
 
         void createNewPizzaLocation();
 
+        bool yorn(char answer);
+
+
         UIHelper helperUI;
 
         Umsjon u;

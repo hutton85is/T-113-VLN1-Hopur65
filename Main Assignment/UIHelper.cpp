@@ -2,7 +2,7 @@
 
 UIHelper::UIHelper()
 {
-    //ctor
+
 }
 
 void UIHelper::displayHeader()
