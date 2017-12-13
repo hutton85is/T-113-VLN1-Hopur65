@@ -1,8 +1,13 @@
+/**
+ * @brief A helper class to store count of items on a single pizza order
+ *
+ *
+ */
+
+
+
 #ifndef PIZZAHELPER_H
 #define PIZZAHELPER_H
-/*
-* This is a helper class for Pizza class. It stores how many items are in each vector for reading them out of a binary file
-*/
 
 class PizzaHelper
 {
@@ -11,10 +16,15 @@ class PizzaHelper
         virtual ~PizzaHelper();
 
         unsigned int crustCounter;
+
         unsigned int toppingsCounter;
+
         unsigned int extrasCounter;
+
         unsigned int menuCounter;
+
         unsigned int locationCounter;
+
         unsigned int sizeCounter;
 };
 

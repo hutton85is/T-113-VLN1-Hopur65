@@ -1,5 +1,5 @@
 /**
-* @brief Pizza keeps record of pizza orders made by customers and all available items to order
+* @brief Customer orders and all items available for sale are stored in this class
 *
 */
 
@@ -28,10 +28,15 @@ class Pizza
         virtual ~Pizza();
 
         vector <PizzaToppings> ptoppings;
+
         vector <PizzaSize> psize;
+
         vector <PizzaCrust> pcrust;
+
         vector <PizzaExtras> pextras;
+
         vector <PizzaMenu> pmenu;
+
         vector <PizzaLocations> plocations;
 
         int calculateSumOfOrder();

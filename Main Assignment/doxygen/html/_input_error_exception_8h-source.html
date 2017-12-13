@@ -38,19 +38,26 @@
 <a name="l00019"></a>00019 <span class="keyword">class </span>InputErrorException
 <a name="l00020"></a>00020 {
 <a name="l00021"></a>00021     <span class="keyword">public</span>:
-<a name="l00022"></a>00022         InputErrorException();
-<a name="l00023"></a>00023         InputErrorException(string message);
-<a name="l00024"></a>00024         string getMessage();
-<a name="l00025"></a>00025         <span class="keyword">friend</span> ostream&amp; operator &lt;&lt; (ostream&amp; outs, InputErrorException&amp; i);
-<a name="l00026"></a>00026         time_t getTime();
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="keyword">private</span>:
-<a name="l00029"></a>00029         <span class="keywordtype">char</span> message[64];
-<a name="l00030"></a>00030         time_t now;
-<a name="l00031"></a>00031 };
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023         InputErrorException();
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025         InputErrorException(string message);
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         string getMessage();
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <span class="keyword">friend</span> ostream&amp; operator &lt;&lt; (ostream&amp; outs, InputErrorException&amp; i);
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031         time_t getTime();
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#endif // INPUTERROREXCEPTION_H</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 21:43:40 2017 for MainAssignment by&nbsp;
+<a name="l00033"></a>00033     <span class="keyword">private</span>:
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035         <span class="keywordtype">char</span> message[64];
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037         time_t now;
+<a name="l00038"></a>00038 };
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="preprocessor">#endif // INPUTERROREXCEPTION_H</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Wed Dec 13 22:03:51 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

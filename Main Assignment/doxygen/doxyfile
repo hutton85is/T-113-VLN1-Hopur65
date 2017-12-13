@@ -98,7 +98,6 @@ WARN_LOGFILE            = "C:\Users\JohnRussellHutton\Documents\GitHub\T-113-VLN
 INPUT                  = \
 	"..\Umsjon.cpp" \
 	"..\Pizza.cpp" \
-	"..\MissingLocationException.cpp" \
 	"..\SalaUI.h" \
 	"..\pizzalocations.cpp" \
 	"..\Baker.cpp" \
@@ -111,7 +110,6 @@ INPUT                  = \
 	"..\main.cpp" \
 	"..\ErrorUI.h" \
 	"..\pizzacrust.cpp" \
-	"..\MissingLocationException.h" \
 	"..\pizzaextras.cpp" \
 	"..\OpenOrders.h" \
 	"..\pizzamenu.cpp" \
