@@ -3,6 +3,7 @@
 
 #include "Afhending.h"
 #include "UIHelper.h"
+#include "Error.h"
 
 class AfhendingUI
 {

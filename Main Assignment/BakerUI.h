@@ -4,6 +4,7 @@
 #include "UIHelper.h"
 #include "Baker.h"
 #include <cstdlib>
+#include "Error.h"
 
 class BakerUI
 {
