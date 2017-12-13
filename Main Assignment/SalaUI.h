@@ -1,5 +1,6 @@
 /**
 * @brief SalaUI handles all user interface interactions due to selling a pizza
+*
 */
 
 #ifndef SALAUI_H
@@ -38,6 +39,8 @@ class SalaUI
         void chooseDifferentPizzaLocation();
 
         void finishOrder();
+
+        void displayOrder();
 
         UIHelper helperUI;
 

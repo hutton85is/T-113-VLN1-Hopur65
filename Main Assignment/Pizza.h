@@ -1,5 +1,6 @@
 /**
 * @brief Pizza keeps record of pizza orders made by customers and all available items to order
+*
 */
 
 
@@ -26,7 +27,6 @@ class Pizza
         Pizza();
         virtual ~Pizza();
 
-        //Vectors containing classes of available items for sale
         vector <PizzaToppings> ptoppings;
         vector <PizzaSize> psize;
         vector <PizzaCrust> pcrust;
@@ -34,7 +34,6 @@ class Pizza
         vector <PizzaMenu> pmenu;
         vector <PizzaLocations> plocations;
 
-        /** Calculate sum of current order*/
         int calculateSumOfOrder();
 
         friend ostream& operator <<(ostream& out, Pizza& p);
