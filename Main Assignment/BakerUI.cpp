@@ -143,12 +143,20 @@ void BakerUI::main()
                             cout << "Veldu pontun til ad skoda nanar: ";
                             cin >> customerID;
                             system("CLS");
+                            if(!cin)
+                            {
+                                throw InputErrorException("Invalid input on location");
+                            }
                             helperUI.displayHeader();
                             displayCustomerDueProgressOrder(customerID);
 
                             char choice;
                             cout << "Velja pontun til ad vinna i? j/n: ";
                             cin >> choice;
+                            if(!cin)
+                            {
+                                throw InputErrorException("Invalid input on location");
+                            }
 
                             // if choice is 'y', yes change order status to in progress
                             if (choice == 'j')
@@ -176,6 +184,10 @@ void BakerUI::main()
                             cout << "Veldu pontun til ad skoda nanar: ";
                             cin >> customerID;
                             system("CLS");
+                            if(!cin)
+                            {
+                                throw InputErrorException("Invalid input on location");
+                            }
 
                             helperUI.displayHeader();
                             displayCustomerInProgressOrder(customerID);
@@ -183,6 +195,10 @@ void BakerUI::main()
                             char choice;
                             cout << "Velja pontun til ad klara? j/n: ";
                             cin >> choice;
+                            if(!cin)
+                            {
+                                throw InputErrorException("Invalid input on location");
+                            }
 
                             // if choice is 'y', yes change order status to in progress
                             if (choice == 'j')
