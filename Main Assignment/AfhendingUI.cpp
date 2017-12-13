@@ -5,25 +5,39 @@ AfhendingUI::AfhendingUI()
     //ctor
 }
 
-AfhendingUI::~AfhendingUI()
-{
-    //dtor
-}
-
 bool AfhendingUI::pickLocation()
 {
-    char input;
-    vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
-    for(unsigned int i = 0; i < availLocations.size(); i++)
+    try
     {
-        cout << i << ". " << availLocations[i] << endl;
+        helperUI.displayHeader();
+        int input;
+        vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
+        for(unsigned int i = 0; i < availLocations.size(); i++)
+        {
+            cout << i << ". " << availLocations[i] << endl;
+        }
+        cout << endl;
+
+        cout << "Veldu thina stadsetningu ur listanum: ";
+        cin >> input;
+        system("CLS");
+
+        if(!cin)
+        {
+            throw InputErrorException("Inslattarvilla a vali a stadsetningu");
+        }
+
+        afhending.setAfhendingLocation(availLocations[input - 48].place);
     }
-    cout << endl;
-
-    cout << "Veldu thina stadsetningu ur listanum" << endl;
-    cin >> input;
-
-    afhending.setAfhendingLocation(availLocations[input - 48].place);
+    catch(InputErrorException e)
+    {
+        Error er;
+        er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+        cout << e.getMessage() << endl;
+        system("pause");
+        cin.clear();
+        cin.ignore(INT_MAX,'\n');
+    }
     return !(afhending.getCustomerVec().empty());
 }
 
@@ -54,55 +68,91 @@ void AfhendingUI::displayCustomerOrder(unsigned int customerNumber)
 
 void AfhendingUI::main()
 {
-    char input;
-
-    // Only continue if there are some pending customers
-    if (pickLocation())
+    try
     {
-        while(true)
+        int input;
+
+        if (pickLocation())
         {
-            system("CLS");
-            cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
-            cout << "Til thess ad velja pontun til ad afhenda veldu            2. "  << endl;
-            cout << "Til thess ad haetta veldu                                 3. "  << endl;
-            cout << endl;
-
-            cin >> input;
-
-            if(input == '1')
+            while(true && afhending.getCustomerVec().size())
             {
                 system("CLS");
-                displayAllCustomers(false);
-                system("pause");
-            }
-            else if(input == '2')
-            {
-                system("CLS");
-                displayAllCustomers(true);
+                helperUI.displayHeader();
+                cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
+                cout << "Til thess ad velja pontun til ad afhenda veldu            2. "  << endl;
+                cout << "Til thess ad haetta veldu                                 3. "  << endl;
+                cout << endl;
+                cout << "Veldur her: ";
 
-                unsigned int customerID;
-                cout << "Veldu pontun til ad skoda nanar" << endl;
-                cin >> customerID;
+                cin >> input;
                 system("CLS");
 
-                displayCustomerOrder(customerID);
-
-                char choice;
-                cout << "Velja pontun til ad vinna i? j/n: ";
-                cin >> choice;
-
-                // if choice is 'y', yes change order status to in progress
-                if (choice == 'j')
+                if(!cin || input < 0 || input > 3)
                 {
-                    afhending.deliverOrder(customerID);
+                    throw InputErrorException("Inslattarvilla i vallista AfhendingUI");
                 }
-                system("pause");
-            }
-            else if(input == '3')
-            {
-                system("CLS");
-                break;
+
+                if(input == '1')
+                {
+                    helperUI.displayHeader();
+                    displayAllCustomers(false);
+                    cout << endl;
+                    system("pause");
+                }
+                else if(input == '2')
+                {
+                    helperUI.displayHeader();
+                    displayAllCustomers(true);
+
+                    int customerID;
+                    cout << endl;
+                    cout << "Veldu pontun til ad skoda nanar: ";
+                    cin >> customerID;
+                    system("CLS");
+                    if(!cin)
+                    {
+                        throw InputErrorException("Innslattarvilla a vali um pontun til ad skoda nanar");
+                    }
+
+                    helperUI.displayHeader();
+                    displayCustomerOrder(customerID);
+
+                    string choice;
+                    cout << "Velja pontun til ad vinna i? j/n: ";
+                    cin >> ws;
+                    getline(cin, choice);
+                    if(!cin)
+                    {
+                        throw InputErrorException("Innslattarvilla a vali um pontun til ad vinna i");
+                    }
+
+                    // if choice is 'y', yes change order status to in progress
+                    if (choice[0] == 'j')
+                    {
+                        afhending.deliverOrder(customerID);
+                    }
+                }
+                else if(input == '3')
+                {
+                    break;
+                }
             }
         }
+        else
+        {
+            helperUI.displayHeader();
+            cout << "Thad eru engar pantanir i bid: " << afhending.getAfhendingLocation() << endl;
+            cout << endl;
+            system("pause");
+        }
+    }
+    catch(InputErrorException e)
+    {
+        Error er;
+        er.logInputErrorException(e, "Exceptions/InputErrorException.dat");
+        cout << e.getMessage() << endl;
+        system("pause");
+        cin.clear();
+        cin.ignore(INT_MAX,'\n');
     }
 }

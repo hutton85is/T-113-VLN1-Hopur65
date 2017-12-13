@@ -1,3 +1,7 @@
+/**
+* @brief SalaUI handles all user interface interactions due to selling a pizza
+*/
+
 #ifndef SALAUI_H
 #define SALAUI_H
 
@@ -5,15 +9,21 @@
 #include <stdlib.h>
 #include <windows.h>
 
+#include "Error.h"
+#include "UIHelper.h"
+#include <climits>
+
+
 class SalaUI
 {
     public:
         SalaUI();
-        virtual ~SalaUI();
 
         void mainOrder();
 
     private:
+
+        UIHelper helperUI;
 
         Sala s;
 
@@ -24,12 +34,6 @@ class SalaUI
         */
         template <typename Pizzaclass>
         void displayVector(vector<Pizzaclass> vec, bool choice);
-
-        /*
-        * Display all items contained in an order
-        * s: contains a copy of Sala used to store the order and customer information
-        */
-        void displayFullOrder(Sala s);
 };
 
 #endif // SALAUI_H

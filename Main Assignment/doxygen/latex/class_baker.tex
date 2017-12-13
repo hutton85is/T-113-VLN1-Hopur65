@@ -1,0 +1,157 @@
+\hypertarget{class_baker}{
+\section{Baker Class Reference}
+\label{class_baker}\index{Baker@{Baker}}
+}
+Functional class for \hyperlink{class_baker_u_i}{Baker\-UI}.  
+
+
+{\tt \#include $<$Baker.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_baker_b85151ecb20282d81b4dab489fea7dd8}{set\-Baker\-Location} (char current\-Location\mbox{[}32\mbox{]})
+\item 
+\hypertarget{class_baker_3970b0afe27b514282442b11592e1602}{
+vector$<$ client $>$ {\bf get\-Customer\-Vec} ()}
+\label{class_baker_3970b0afe27b514282442b11592e1602}
+
+\item 
+\hypertarget{class_baker_8b798f098bfd9a23b11fa1d63d089609}{
+vector$<$ client $>$ {\bf get\-Customers\-Vec\-In\-Progress} ()}
+\label{class_baker_8b798f098bfd9a23b11fa1d63d089609}
+
+\item 
+\hypertarget{class_baker_4c05936fa38e14b768511921a3288c57}{
+vector$<$ client $>$ {\bf get\-Customers\-Vec\-Due\-Progress} ()}
+\label{class_baker_4c05936fa38e14b768511921a3288c57}
+
+\item 
+vector$<$ Pizza $>$ \hyperlink{class_baker_ad0cbeddec394b25c5eade57247f4110}{get\-Order\-Vec} (unsigned int customers\-Vec\-Number)
+\item 
+vector$<$ Pizza $>$ \hyperlink{class_baker_7c9256e53372bd3a698e40cf64003c50}{get\-Customers\-Order\-Due\-Progress} (unsigned int customer\-Number)
+\item 
+vector$<$ Pizza $>$ \hyperlink{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}{get\-Customers\-Order\-In\-Progress} (unsigned int customer\-Number)
+\item 
+\hypertarget{class_baker_3d38e7498fba59674c7d3838bf4c1824}{
+vector$<$ Pizza\-Locations $>$ {\bf get\-Pizza\-Locations} ()}
+\label{class_baker_3d38e7498fba59674c7d3838bf4c1824}
+
+\item 
+\hypertarget{class_baker_363b0d0c242923ca3a76ebd4e608cc2d}{
+string {\bf get\-Baker\-Location} ()}
+\label{class_baker_363b0d0c242923ca3a76ebd4e608cc2d}
+
+\item 
+void \hyperlink{class_baker_9616413c80f3814907a9c2399ac50438}{work\-On\-Order} (unsigned int customers\-Vec\-Number)
+\item 
+void \hyperlink{class_baker_222a16bf113b70cbe0388a7291978a57}{finish\-Order} (unsigned int customer\-ID)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_baker_52cc86469dd41b9be5b7186d6bd00589}{
+vector$<$ client $>$ {\bf customers\-Vec}}
+\label{class_baker_52cc86469dd41b9be5b7186d6bd00589}
+
+\item 
+\hypertarget{class_baker_0b7dacb9817ff529ee046a5c369051fa}{
+vector$<$ client $>$ {\bf customers\-Vec\-In\-Progress}}
+\label{class_baker_0b7dacb9817ff529ee046a5c369051fa}
+
+\item 
+\hypertarget{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{
+vector$<$ client $>$ {\bf customers\-Vec\-Due\-Progress}}
+\label{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}
+
+\item 
+\hypertarget{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}{
+char {\bf baker\-Location} \mbox{[}32\mbox{]}}
+\label{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Functional class for \hyperlink{class_baker_u_i}{Baker\-UI}. 
+
+Class can set customer order as being worked on and finished working on. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_baker_222a16bf113b70cbe0388a7291978a57}{
+\index{Baker@{Baker}!finishOrder@{finishOrder}}
+\index{finishOrder@{finishOrder}!Baker@{Baker}}
+\subsubsection[finishOrder]{\setlength{\rightskip}{0pt plus 5cm}void Baker::finish\-Order (unsigned int {\em customer\-ID})}}
+\label{class_baker_222a16bf113b70cbe0388a7291978a57}
+
+
+Move customer from customers\-Vec\-In\-Progress and rewrite file containing customer order with updated client class
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em customer\-ID}]\end{description}
+\end{Desc}
+\hypertarget{class_baker_7c9256e53372bd3a698e40cf64003c50}{
+\index{Baker@{Baker}!getCustomersOrderDueProgress@{getCustomersOrderDueProgress}}
+\index{getCustomersOrderDueProgress@{getCustomersOrderDueProgress}!Baker@{Baker}}
+\subsubsection[getCustomersOrderDueProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Pizza $>$ Baker::get\-Customers\-Order\-Due\-Progress (unsigned int {\em customer\-Number})}}
+\label{class_baker_7c9256e53372bd3a698e40cf64003c50}
+
+
+\begin{Desc}
+\item[Returns:]a vector only with customer orders due progress \end{Desc}
+\hypertarget{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}{
+\index{Baker@{Baker}!getCustomersOrderInProgress@{getCustomersOrderInProgress}}
+\index{getCustomersOrderInProgress@{getCustomersOrderInProgress}!Baker@{Baker}}
+\subsubsection[getCustomersOrderInProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Pizza $>$ Baker::get\-Customers\-Order\-In\-Progress (unsigned int {\em customer\-Number})}}
+\label{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}
+
+
+\begin{Desc}
+\item[Returns:]a vector only with customer orders in progress \end{Desc}
+\hypertarget{class_baker_ad0cbeddec394b25c5eade57247f4110}{
+\index{Baker@{Baker}!getOrderVec@{getOrderVec}}
+\index{getOrderVec@{getOrderVec}!Baker@{Baker}}
+\subsubsection[getOrderVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Pizza $>$ Baker::get\-Order\-Vec (unsigned int {\em customers\-Vec\-Number})}}
+\label{class_baker_ad0cbeddec394b25c5eade57247f4110}
+
+
+\begin{Desc}
+\item[Returns:]a vector of all customer orders due progress and in progress \end{Desc}
+\hypertarget{class_baker_b85151ecb20282d81b4dab489fea7dd8}{
+\index{Baker@{Baker}!setBakerLocation@{setBakerLocation}}
+\index{setBakerLocation@{setBakerLocation}!Baker@{Baker}}
+\subsubsection[setBakerLocation]{\setlength{\rightskip}{0pt plus 5cm}void Baker::set\-Baker\-Location (char {\em current\-Location}\mbox{[}32\mbox{]})}}
+\label{class_baker_b85151ecb20282d81b4dab489fea7dd8}
+
+
+Function that set's baker location and sort's orders into vector's depending on order status 'in progress' or 'due progress'
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em current\-Location}]is baker's location \end{description}
+\end{Desc}
+\hypertarget{class_baker_9616413c80f3814907a9c2399ac50438}{
+\index{Baker@{Baker}!workOnOrder@{workOnOrder}}
+\index{workOnOrder@{workOnOrder}!Baker@{Baker}}
+\subsubsection[workOnOrder]{\setlength{\rightskip}{0pt plus 5cm}void Baker::work\-On\-Order (unsigned int {\em customers\-Vec\-Number})}}
+\label{class_baker_9616413c80f3814907a9c2399ac50438}
+
+
+Move customer from customers\-Vec\-Due\-Progress to customers\-Vec\-In\-Progress and rewrite file containing customer order with updated client class
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em customers\-Vec\-Number}]is the position of customer to update in vector \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+Baker.h\item 
+Baker.cpp\end{CompactItemize}

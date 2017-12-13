@@ -15,10 +15,6 @@ class PizzaToppings
 
         int price;
         char toppings[32];
-
-    protected:
-
-    private:
 };
 
 #endif // PIZZATOPPINGS_H

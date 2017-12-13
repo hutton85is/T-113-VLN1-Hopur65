@@ -31,7 +31,7 @@ class Umsjon
         void createCrust(char crust_type[32], int price);
         void createToppings(char toppings[32], int price);
         void createPizzaSize(char p_size[32], int price);
-        void createMenu(char choose_pizza[32], int price);
+        void createMenu(char choose_pizza[32], double price, char toppings[128]);
         void createExtras(char extras_type[32], int price);
         /* Create a new location and put it on a corresponding vector in pizza class
         * and write to binary file

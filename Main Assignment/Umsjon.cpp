@@ -83,12 +83,17 @@ void Umsjon::createToppings(char toppings[32], int price)
     rw.writeClassToFile<PizzaToppings>(newToppings, fname);
 }
 
-void Umsjon::createMenu(char choose_pizza[32], int price)
+void Umsjon::createMenu(char choose_pizza[32], double price, char toppings[128])
 {
     PizzaMenu newMenu;
 
     strcpy(newMenu.choose_pizza, choose_pizza);
+    strcpy(newMenu.toppings, toppings);
     newMenu.price = price;
+
+    cout << toppings << endl;
+    cout << newMenu.toppings << endl;
+    system("pause");
 
     lager.pmenu.push_back(newMenu);
 

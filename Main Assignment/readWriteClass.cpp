@@ -173,6 +173,7 @@ void readWriteClass::dummyLoader()
     PizzaSize newSize;
     client newClient;
     PizzaHelper newPizzaHelper;
+    InputErrorException newInputErrorException;
 
     const char* fname = "s";
     writeClassToFile<PizzaCrust>(newCrust, fname);
@@ -182,9 +183,12 @@ void readWriteClass::dummyLoader()
     writeClassToFile<PizzaLocations>(newLocations, fname);
     writeClassToFile<PizzaExtras>(newExtras, fname);
     writeClassToFile<client>(newClient, fname);
+    writeClassToFile<InputErrorException>(newInputErrorException, fname);
     vector<client> loadVector;
     loadSpecificVector<client>(loadVector, fname, newClient);
     writeClassToFile<PizzaHelper>(newPizzaHelper, fname);
+    vector<InputErrorException> newInputErrorExceptionVec;
+    loadSpecificVector<InputErrorException>(newInputErrorExceptionVec, fname, newInputErrorException);
 }
 
 template <class pizzaClass>

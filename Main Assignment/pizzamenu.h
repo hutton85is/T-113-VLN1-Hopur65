@@ -13,10 +13,9 @@ class PizzaMenu
 
         friend ostream& operator <<(ostream& outs, PizzaMenu& p_menu);
 
-        int price;
+        double price;
         char choose_pizza[32];
-
-    private:
+        char toppings[128];
 };
 
 #endif // PIZZAMENU_H
