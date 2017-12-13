@@ -5,14 +5,6 @@ UmsjonUI::UmsjonUI()
 
 }
 
-<<<<<<< HEAD
-=======
-UmsjonUI::~UmsjonUI()
-{
-
-}
-
->>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 template<typename Pizzaclass>
 void UmsjonUI::displayVector(vector<Pizzaclass> vec, bool show)
 {

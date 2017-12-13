@@ -2,16 +2,7 @@
 
 ReadWriteClass::ReadWriteClass()
 {
-<<<<<<< HEAD
 
-=======
-
-}
-
-ReadWriteClass::~ReadWriteClass()
-{
-
->>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 }
 
 void ReadWriteClass::loadAllVectors(Pizza& p)

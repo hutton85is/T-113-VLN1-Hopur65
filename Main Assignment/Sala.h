@@ -8,13 +8,13 @@
 
 #include "Pizza.h"
 #include "PizzaSize.h"
-#include "pizzatoppings.h"
-#include "pizzacrust.h"
-#include "pizzaextras.h"
-#include "pizzalocations.h"
-#include "pizzamenu.h"
-#include "readWriteClass.h"
-#include "client.h"
+#include "PizzaToppings.h"
+#include "PizzaCrust.h"
+#include "PizzaExtras.h"
+#include "PizzaLocations.h"
+#include "PizzaMenu.h"
+#include "ReadWriteClass.h"
+#include "Client.h"
 #include <cstring>
 #include <stdlib.h>
 
@@ -81,12 +81,8 @@ class Sala
         vector<PizzaToppings> getLagerptoppings();
 
         vector<Pizza> getOrder();
-<<<<<<< HEAD
 
-        client getClient();
-=======
         Client getClient();
->>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 
         friend ostream& operator <<(ostream& outs, Sala& s);
 

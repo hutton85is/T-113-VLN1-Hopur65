@@ -18,13 +18,8 @@
 class ReadWriteClass
 {
     public:
-<<<<<<< HEAD
 
-        readWriteClass();
-=======
         ReadWriteClass();
-        virtual ~ReadWriteClass();
->>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 
         template <class pizzaClass>
 
@@ -38,12 +33,7 @@ class ReadWriteClass
 
         void removeAllContentsOfFile(const char* fname);
 
-<<<<<<< HEAD
-        bool loadCustomer(client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname);
-=======
-        // load Pizza order with a specific customer
         bool loadCustomer(Client& customer, vector<Pizza>& order, vector<PizzaHelper>& pHelper, const char* fname);
->>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 
         /**
         * @brief load a vector from file

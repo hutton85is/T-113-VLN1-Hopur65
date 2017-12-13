@@ -6,14 +6,6 @@ Umsjon::Umsjon()
     rw.loadAllVectors(lager);
 }
 
-<<<<<<< HEAD
-=======
-Umsjon::~Umsjon()
-{
-
-}
-
->>>>>>> f926114eaccea4974aa372e72f4890ab6b25fabd
 vector<PizzaCrust> Umsjon::getpcrust()
 {
     return lager.pcrust;

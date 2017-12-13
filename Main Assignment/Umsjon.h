@@ -15,12 +15,12 @@
 
 #include "Pizza.h"
 #include "PizzaSize.h"
-#include "pizzatoppings.h"
-#include "pizzacrust.h"
-#include "pizzaextras.h"
-#include "pizzalocations.h"
-#include "pizzamenu.h"
-#include "readWriteClass.h"
+#include "PizzaToppings.h"
+#include "PizzaCrust.h"
+#include "PizzaExtras.h"
+#include "PizzaLocations.h"
+#include "PizzaMenu.h"
+#include "ReadWriteClass.h"
 
 using namespace std;
 

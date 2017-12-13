@@ -18,8 +18,6 @@ class PizzaLocations
 
         PizzaLocations();
 
-        virtual ~PizzaLocations();
-
         friend ostream& operator <<(ostream& outs, PizzaLocations& p_locations);
 
         char place[32];

@@ -9,8 +9,3 @@ PizzaHelper::PizzaHelper()
     locationCounter = 0;
     sizeCounter = 0;
 }
-
-PizzaHelper::~PizzaHelper()
-{
-
-}

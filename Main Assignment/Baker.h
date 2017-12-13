@@ -7,7 +7,7 @@
 #ifndef BAKER_H
 #define BAKER_H
 
-#include "readWriteClass.h"
+#include "ReadWriteClass.h"
 #include <iostream>
 #include <string>
 

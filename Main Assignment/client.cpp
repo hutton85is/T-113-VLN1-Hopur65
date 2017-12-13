@@ -18,11 +18,6 @@ Client::Client()
     deliverOrder = false;
 }
 
-Client::~Client()
-{
-
-}
-
 ostream& operator <<(ostream& outs, Client& customer)
 
 {

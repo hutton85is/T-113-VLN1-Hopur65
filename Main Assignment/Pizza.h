@@ -26,7 +26,6 @@ class Pizza
 {
     public:
         Pizza();
-        virtual ~Pizza();
 
         vector <PizzaToppings> ptoppings;
 

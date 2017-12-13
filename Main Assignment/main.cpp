@@ -2,11 +2,6 @@
 *    @brief The main class for pizza software
 */
 
-/* Villutékk búin
-    Umsjon
-
-
-*/
 #include "UmsjonUI.h"
 #include "SalaUI.h"
 #include "BakerUI.h"

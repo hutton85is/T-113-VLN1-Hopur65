@@ -13,7 +13,6 @@ class PizzaHelper
 {
     public:
         PizzaHelper();
-        virtual ~PizzaHelper();
 
         unsigned int crustCounter;
 

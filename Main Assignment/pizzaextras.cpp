@@ -6,10 +6,6 @@ PizzaExtras::PizzaExtras()
         extras_type[0] = '\0';
 }
 
-PizzaExtras::~PizzaExtras()
-{
-
-}
 ostream& operator <<(ostream& outs, PizzaExtras& p_extras)
 {
     outs << p_extras.extras_type << " : " << p_extras.price;

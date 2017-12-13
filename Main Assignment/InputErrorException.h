@@ -12,7 +12,7 @@
 #include <ostream>
 #include <fstream>
 
-#include "readWriteClass.h"
+#include "ReadWriteClass.h"
 
 using namespace std;
 

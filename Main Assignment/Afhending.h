@@ -7,7 +7,7 @@
 #ifndef AFHENDING_H
 #define AFHENDING_H
 
-#include "readWriteClass.h"
+#include "ReadWriteClass.h"
 #include <iostream>
 #include <string>
 

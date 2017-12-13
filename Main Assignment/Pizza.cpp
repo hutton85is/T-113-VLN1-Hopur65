@@ -2,13 +2,8 @@
 
 Pizza::Pizza()
 {
-}
-
-Pizza::~Pizza()
-{
 
 }
-
 
 int Pizza::calculateSumOfOrder()
 {
