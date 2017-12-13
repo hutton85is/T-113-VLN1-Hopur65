@@ -2,6 +2,11 @@
 *    @brief The main class for pizza software
 */
 
+/* Villutékk búin
+    Umsjon
+
+
+*/
 #include <iostream>
 #include <stdlib.h>
 
