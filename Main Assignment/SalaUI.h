@@ -23,6 +23,22 @@ class SalaUI
 
     private:
 
+        void choosePizzaLocation();
+
+        void choosePizzaSize();
+
+        void choosePizzaCrust();
+
+        void choosePizzaTopping();
+
+        void choosePizzaMenu();
+
+        void choosePizzaExtras();
+
+        void chooseDifferentPizzaLocation();
+
+        void finishOrder();
+
         UIHelper helperUI;
 
         Sala s;

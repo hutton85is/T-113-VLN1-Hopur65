@@ -33,13 +33,13 @@ void mainMenu()
     cout << " 5. Til ad haetta                                        " << endl;
     cout << "                                                         " << endl;
 
-    unsigned int innskraning;
+    int innskraning;
     cout << "Veldu her: ";
     cin >> innskraning ;
 
     try
     {
-        if(!cin || innskraning > 5)
+        if(!cin || innskraning > 5 || innskraning < 1)
         {
             cin.clear();
             cin.ignore(INT_MAX,'\n');
