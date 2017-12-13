@@ -1,6 +1,7 @@
 #ifndef BAKERUI_H
 #define BAKERUI_H
 
+#include "UIHelper.h"
 #include "Baker.h"
 #include <cstdlib>
 
@@ -18,8 +19,6 @@ class BakerUI
 
         void displayCustomerInProgress();
 
-        void displayCustomerOrder(unsigned int customerNumber);
-
         void displayCustomerDueProgressOrder(unsigned int customerNumber);
 
         void displayCustomerInProgressOrder(unsigned int customerNumber);
@@ -33,6 +32,8 @@ class BakerUI
     private:
 
         Baker baker;
+
+        UIHelper helperUI;
 };
 
 #endif // BAKERUI_H

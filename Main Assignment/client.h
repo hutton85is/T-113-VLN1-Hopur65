@@ -26,8 +26,8 @@ class client
         // status for Afhending class, tells if order has to be delivered or will be picked up
         bool deliverOrder;
 
-        // A counter to know which pizza is currently being edited
-        unsigned int currentPizza;
+        // Total sum of order
+        int sumOfOrder;
 
         // store how many pizzas there are on an order
         unsigned int orderCounter;

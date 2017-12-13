@@ -1,3 +1,8 @@
+/**
+* Functional class for AfhendingUI
+*/
+
+
 #ifndef AFHENDING_H
 #define AFHENDING_H
 
@@ -8,29 +13,42 @@
 class Afhending
 {
     public:
+        /**
+        * Load all a directory containing all customers waiting for an order
+        */
         Afhending();
-        virtual ~Afhending();
 
-        // Set location of baker and retrieve all customers from same location that orders have been finished
+        /**
+        * Find all customers from customerlist.dat that are from a specific location
+        * and whose orders have been finished, and are ready for a delivery
+        *
+        * @param currentLocation is the location of delivery
+        */
         void setAfhendingLocation(char currentLocation[32]);
 
-        // Return all available pizza place locations
         vector<PizzaLocations> getPizzaLocations();
-
-        // Return customer vector 'customersVec'
         vector<client> getCustomerVec();
+        string getAfhendingLocation();
 
-        // Return pizza order of a chosen customer
+
+        /**
+        * Read orders from file for a customer at specific position in customersVec
+        *
+        * @param customersVecNumber is the position of customer in customersVec
+        */
         vector<Pizza> getOrderVec(unsigned int customersVecNumber);
 
-        // Set status of customer as in progress
+        /**
+        * EFTIR AÐ COMMENTA
+        *
+        * @param customersVecNumber is the position of customer in customersVec
+        */
         void deliverOrder(unsigned int customersVecNumber);
 
     private:
-        // Location of pizza place
+
         char afhendingLocation[32];
 
-        // A vector of all customers ordering from same location as baker
         vector<client> customersVec;
 };
 

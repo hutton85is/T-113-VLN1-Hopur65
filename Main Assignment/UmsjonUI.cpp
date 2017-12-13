@@ -11,10 +11,14 @@ UmsjonUI::~UmsjonUI()
 }
 
 template<typename Pizzaclass>
-void UmsjonUI::displayVector(vector<Pizzaclass> vec)
+void UmsjonUI::displayVector(vector<Pizzaclass> vec, bool show)
 {
     for (unsigned int i = 0; i < vec.size(); i++)
     {
+        if(show)
+        {
+            cout << i << ". ";
+        }
         cout << vec[i] << endl;
     }
     cout << endl;
@@ -33,12 +37,16 @@ void UmsjonUI::main(){
 
         int input;
 
+        helperUI.displayHeader();
         cout << "Til thess ad skra nyja pizza staerd veldu       1." << endl;
         cout << "Til thess ad skra nyja pizza crust veldu        2." << endl;
         cout << "Til thess ad skra nytt alegg veldu              3." << endl;
         cout << "Til thess ad skra nyja pizzu a matsedil veldu   4." << endl;
         cout << "Til thess ad skra nytt medlaeti veldu           5." << endl;
         cout << "Til thess ad skra nyjan afhendingarstad veldu   6." << endl;
+        cout << "Til thess ad haetta veldu                       7." << endl;
+        cout << endl;
+        cout << "Veldur her: ";
 
         cin >> input;
 
@@ -48,7 +56,8 @@ void UmsjonUI::main(){
 
         if(input == 1)
         {
-            displayVector(u.getpsize());
+            helperUI.displayHeader();
+            displayVector(u.getpsize(), false);
             cout << "Sladu inn nyja staerd af pizzu: ";
             char p_size[32];
             cin >> p_size;
@@ -60,7 +69,8 @@ void UmsjonUI::main(){
         }
         else if(input == 2)
         {
-            displayVector(u.getpcrust());
+            helperUI.displayHeader();
+            displayVector(u.getpcrust(), false);
             cout << "Sladu inn nyja typu af crust: ";
             char crust_type[32];
             cin >> crust_type;
@@ -72,11 +82,15 @@ void UmsjonUI::main(){
         }
         else if(input == 3)
         {
-            displayVector(u.getptoppings());
-            cout << "Enter new type of topping: ";
+            helperUI.displayHeader();
+            if(u.getptoppings().size())
+            {
+                displayVector(u.getptoppings(), false);
+            }
+            cout << "Sladu inn nyja tegund af aleggi: ";
             char toppings[32];
             cin >> toppings;
-            cout << "Enter price of " << toppings << ": ";
+            cout << "Sladu inn verd a " << toppings << ": ";
             int price;
             cin >> price;
             u.createToppings(toppings, price);
@@ -84,18 +98,61 @@ void UmsjonUI::main(){
         }
         else if(input == 4)
         {
-            displayVector(u.getpMenu());
+            helperUI.displayHeader();
+            displayVector(u.getpMenu(), false);
             cout << "Sladu inn nyja pizzu a matsedil: ";
             char choose_pizza[32];
             cin >> choose_pizza;
-            cout << "Sladu inn verd a " << choose_pizza << ": ";
-            int price;
+            system("CLS");
+
+            helperUI.displayHeader();
+            bool moreToppings = true;
+            string toppings = "";
+            vector<PizzaToppings> AllPizzaToppingsVec = u.getptoppings();
+            while(moreToppings)
+            {
+                int newToppingID;
+                displayVector(u.getptoppings(), true);
+                cout << "Sladu inn alegg til ad hafa a " << choose_pizza << ": ";
+                cin >> newToppingID;
+
+                string tempString(AllPizzaToppingsVec[newToppingID].toppings);
+
+                if(toppings == "")
+                {
+                    toppings = tempString;
+                }
+                else
+                {
+                    toppings = toppings + ", " + tempString;
+                }
+
+                cout << "Viltu velja fleiri alegg? j/n: ";
+                char yn;
+                cin >> yn;
+                if (yn == 'n')
+                {
+                    moreToppings = false;
+                }
+                system("CLS");
+            }
+
+            helperUI.displayHeader();
+
+            cout << "Sladu inn verd a " << choose_pizza << " sem hlutfall af grunn Pizzu: ";
+            double price;
             cin >> price;
-            u.createMenu(choose_pizza, price);
+
+            char *newToppings = new char[128];
+            strcpy(newToppings, toppings.c_str());
+
+            u.createMenu(choose_pizza, price, newToppings);
+            delete [] newToppings;
             system("CLS");
         }
         else if(input == 5){
-            displayVector(u.getpextras());
+            helperUI.displayHeader();
+            displayVector(u.getpextras(), false);
 
             cout << "Sladu inn nytt medlaeti: ";
             char extras_type[32];
@@ -108,13 +165,19 @@ void UmsjonUI::main(){
         }
         else if(input == 6)
         {
-            displayVector(u.getplocations());
+            helperUI.displayHeader();
+            displayVector(u.getplocations(), false);
 
             cout << "Sladu inn nyja stadsetningu pizza stadar: ";
             char place[32];
             cin >> place;
             u.createLocation(place);
             system("CLS");
+        }
+        else if(input == 7)
+        {
+            system("CLS");
+            break;
         }
         break;
     }

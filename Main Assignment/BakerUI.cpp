@@ -10,18 +10,6 @@ BakerUI::~BakerUI()
     //dtor
 }
 
-void BakerUI::displayCustomerOrder(unsigned int customerNumber)
-{
-    // DISPLAYS ALWAYS ALL ORDERS PENDING
-    vector<client> customer = baker.getCustomerVec();
-    vector<Pizza> order = baker.getOrderVec(customerNumber);
-    cout << customerNumber << ". " << customer[customerNumber] << endl;
-    for(unsigned int i = 0; i < order.size(); i++)
-    {
-        cout << "Pizza " << i+1 << ". " << order[i] << endl;
-    }
-}
-
 void BakerUI::displayCustomerDueProgress()
 {
     vector<client> customersVec = baker.getCustomersVecDueProgress();
@@ -42,6 +30,7 @@ void BakerUI::displayCustomerInProgress()
 
 bool BakerUI::pickLocation()
 {
+    helperUI.displayHeader();
     char input;
     vector<PizzaLocations> availLocations = baker.getPizzaLocations();
     for(unsigned int i = 0; i < availLocations.size(); i++)
@@ -50,8 +39,9 @@ bool BakerUI::pickLocation()
     }
     cout << endl;
 
-    cout << "Veldu thina stadsetningu ur listanum" << endl;
+    cout << "Veldu thina stadsetningu ur listanum: ";
     cin >> input;
+    system("CLS");
 
     baker.setBakerLocation(availLocations[input - 48].place);
     if(baker.getCustomerVec().empty())
@@ -96,39 +86,43 @@ void BakerUI::displayAllOrders()
 void BakerUI::main()
 {
     char input;
-
     // Only continue if there are some pending customers
     if (pickLocation())
     {
-        while(true)
+        while(true && baker.getCustomerVec().size())
         {
             system("CLS");
+            helperUI.displayHeader();
             cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
             cout << "Til thess ad velja pontun til ad vinna i veldu            2. "  << endl;
             cout << "Til thess ad velja pontun sem tilbuna veldu               3. "  << endl;
             cout << "Til thess ad haetta veldu                                 4. "  << endl;
             cout << endl;
+            cout << "Veldu her: ";
 
             cin >> input;
+            system("CLS");
 
             if(input == '1')
             {
-                system("CLS");
+                helperUI.displayHeader();
                 displayAllOrders();
+                cout << endl;
                 system("pause");
             }
             else if(input == '2')
             {
+                helperUI.displayHeader();
                 if (baker.getCustomersVecDueProgress().size())
                 {
-                    system("CLS");
                     displayCustomerDueProgress();
 
                     unsigned int customerID;
-                    cout << "Veldu pontun til ad skoda nanar" << endl;
+                    cout << endl;
+                    cout << "Veldu pontun til ad skoda nanar: ";
                     cin >> customerID;
                     system("CLS");
-
+                    helperUI.displayHeader();
                     displayCustomerDueProgressOrder(customerID);
 
                     char choice;
@@ -143,22 +137,26 @@ void BakerUI::main()
                 }
                 else
                 {
-                    cout << "Engin pöntun sem bidur afgreidslu" << endl;
+                    cout << "Engin pontun sem bidur afgreidslu: " << endl;
+                    cout << endl;
+                    system("pause");
                 }
-                system("pause");
             }
             else if(input == '3')
             {
+                helperUI.displayHeader();
+
                 if (baker.getCustomersVecInProgress().size())
                 {
-                    system("CLS");
                     displayCustomerInProgress();
 
                     unsigned int customerID;
-                    cout << "Veldu pontun til ad skoda nanar" << endl;
+                    cout << endl;
+                    cout << "Veldu pontun til ad skoda nanar: ";
                     cin >> customerID;
                     system("CLS");
 
+                    helperUI.displayHeader();
                     displayCustomerInProgressOrder(customerID);
 
                     char choice;
@@ -173,9 +171,10 @@ void BakerUI::main()
                 }
                 else
                 {
-                    cout << "Engin pöntun sem bidur afgreidslu" << endl;
+                    cout << "Engin pontun sem bidur afgreidslu: " << endl;
+                    cout << endl;
+                    system("pause");
                 }
-                system("pause");
             }
             else if(input == '4')
             {
@@ -185,8 +184,9 @@ void BakerUI::main()
     }
     else
     {
-        system("CLS");
-        cout << "There are no pending customers for " << baker.getBakerLocation() << endl;
+        helperUI.displayHeader();
+        cout << "Thad eru engar pantanir i bid: " << baker.getBakerLocation() << endl;
+        cout << endl;
         system("pause");
     }
 }

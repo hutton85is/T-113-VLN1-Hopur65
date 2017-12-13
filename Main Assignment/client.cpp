@@ -8,7 +8,8 @@ client::client()
     comment[0] = '\0';
 
     orderCounter = 0;
-    currentPizza = 0;
+
+    sumOfOrder = 0;
 
     orderPaid = false;
     inProgress = false;
@@ -85,5 +86,9 @@ ostream& operator <<(ostream& outs, client& customer)
     outs << endl;
     outs << "Athugasemd: ";
     outs << customer.comment;
+
+    cout << endl;
+    outs << "Heildarverd: " << customer.sumOfOrder << " kr.";
+
     return outs;
 }

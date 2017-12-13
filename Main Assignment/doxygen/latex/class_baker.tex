@@ -1,0 +1,207 @@
+\hypertarget{class_baker}{
+\section{Baker Class Reference}
+\label{class_baker}\index{Baker@{Baker}}
+}
+{\tt \#include $<$Baker.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_baker_e162daa1f48200ac1b0470ea143378af}{Baker} ()
+\item 
+virtual \hyperlink{class_baker_aca71cde6b6b1e6315b980d299ed63ba}{$\sim$Baker} ()
+\item 
+void \hyperlink{class_baker_b85151ecb20282d81b4dab489fea7dd8}{set\-Baker\-Location} (char current\-Location\mbox{[}32\mbox{]})
+\item 
+vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_3970b0afe27b514282442b11592e1602}{get\-Customer\-Vec} ()
+\item 
+vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_8b798f098bfd9a23b11fa1d63d089609}{get\-Customers\-Vec\-In\-Progress} ()
+\item 
+vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_4c05936fa38e14b768511921a3288c57}{get\-Customers\-Vec\-Due\-Progress} ()
+\item 
+vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_baker_ad0cbeddec394b25c5eade57247f4110}{get\-Order\-Vec} (unsigned int customers\-Vec\-Number)
+\item 
+vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_baker_7c9256e53372bd3a698e40cf64003c50}{get\-Customers\-Order\-Due\-Progress} (unsigned int customer\-Number)
+\item 
+vector$<$ \hyperlink{class_pizza}{Pizza} $>$ \hyperlink{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}{get\-Customers\-Order\-In\-Progress} (unsigned int customer\-Number)
+\item 
+vector$<$ \hyperlink{class_pizza_locations}{Pizza\-Locations} $>$ \hyperlink{class_baker_3d38e7498fba59674c7d3838bf4c1824}{get\-Pizza\-Locations} ()
+\item 
+string \hyperlink{class_baker_363b0d0c242923ca3a76ebd4e608cc2d}{get\-Baker\-Location} ()
+\item 
+void \hyperlink{class_baker_9616413c80f3814907a9c2399ac50438}{work\-On\-Order} (unsigned int customers\-Vec\-Number)
+\item 
+void \hyperlink{class_baker_222a16bf113b70cbe0388a7291978a57}{finish\-Order} (unsigned int customer\-ID)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_52cc86469dd41b9be5b7186d6bd00589}{customers\-Vec}
+\item 
+vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_0b7dacb9817ff529ee046a5c369051fa}{customers\-Vec\-In\-Progress}
+\item 
+vector$<$ \hyperlink{classclient}{client} $>$ \hyperlink{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{customers\-Vec\-Due\-Progress}
+\item 
+char \hyperlink{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}{baker\-Location} \mbox{[}32\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_baker_e162daa1f48200ac1b0470ea143378af}{
+\index{Baker@{Baker}!Baker@{Baker}}
+\index{Baker@{Baker}!Baker@{Baker}}
+\subsubsection[Baker]{\setlength{\rightskip}{0pt plus 5cm}Baker::Baker ()}}
+\label{class_baker_e162daa1f48200ac1b0470ea143378af}
+
+
+\hypertarget{class_baker_aca71cde6b6b1e6315b980d299ed63ba}{
+\index{Baker@{Baker}!~Baker@{$\sim$Baker}}
+\index{~Baker@{$\sim$Baker}!Baker@{Baker}}
+\subsubsection[$\sim$Baker]{\setlength{\rightskip}{0pt plus 5cm}Baker::$\sim$Baker ()\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
+\label{class_baker_aca71cde6b6b1e6315b980d299ed63ba}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_baker_222a16bf113b70cbe0388a7291978a57}{
+\index{Baker@{Baker}!finishOrder@{finishOrder}}
+\index{finishOrder@{finishOrder}!Baker@{Baker}}
+\subsubsection[finishOrder]{\setlength{\rightskip}{0pt plus 5cm}void Baker::finish\-Order (unsigned int {\em customer\-ID})}}
+\label{class_baker_222a16bf113b70cbe0388a7291978a57}
+
+
+Move customer from customers\-Vec\-In\-Progress and rewrite file containing customer order with updated client class
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em customer\-ID}]\end{description}
+\end{Desc}
+\hypertarget{class_baker_363b0d0c242923ca3a76ebd4e608cc2d}{
+\index{Baker@{Baker}!getBakerLocation@{getBakerLocation}}
+\index{getBakerLocation@{getBakerLocation}!Baker@{Baker}}
+\subsubsection[getBakerLocation]{\setlength{\rightskip}{0pt plus 5cm}string Baker::get\-Baker\-Location ()}}
+\label{class_baker_363b0d0c242923ca3a76ebd4e608cc2d}
+
+
+\hypertarget{class_baker_7c9256e53372bd3a698e40cf64003c50}{
+\index{Baker@{Baker}!getCustomersOrderDueProgress@{getCustomersOrderDueProgress}}
+\index{getCustomersOrderDueProgress@{getCustomersOrderDueProgress}!Baker@{Baker}}
+\subsubsection[getCustomersOrderDueProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza}{Pizza} $>$ Baker::get\-Customers\-Order\-Due\-Progress (unsigned int {\em customer\-Number})}}
+\label{class_baker_7c9256e53372bd3a698e40cf64003c50}
+
+
+\begin{Desc}
+\item[Returns:]a vector only with customer orders due progress \end{Desc}
+\hypertarget{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}{
+\index{Baker@{Baker}!getCustomersOrderInProgress@{getCustomersOrderInProgress}}
+\index{getCustomersOrderInProgress@{getCustomersOrderInProgress}!Baker@{Baker}}
+\subsubsection[getCustomersOrderInProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza}{Pizza} $>$ Baker::get\-Customers\-Order\-In\-Progress (unsigned int {\em customer\-Number})}}
+\label{class_baker_96a7c1ec2dc23919a4e7ca8c399476e1}
+
+
+\begin{Desc}
+\item[Returns:]a vector only with customer orders in progress \end{Desc}
+\hypertarget{class_baker_4c05936fa38e14b768511921a3288c57}{
+\index{Baker@{Baker}!getCustomersVecDueProgress@{getCustomersVecDueProgress}}
+\index{getCustomersVecDueProgress@{getCustomersVecDueProgress}!Baker@{Baker}}
+\subsubsection[getCustomersVecDueProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{classclient}{client} $>$ Baker::get\-Customers\-Vec\-Due\-Progress ()}}
+\label{class_baker_4c05936fa38e14b768511921a3288c57}
+
+
+\hypertarget{class_baker_8b798f098bfd9a23b11fa1d63d089609}{
+\index{Baker@{Baker}!getCustomersVecInProgress@{getCustomersVecInProgress}}
+\index{getCustomersVecInProgress@{getCustomersVecInProgress}!Baker@{Baker}}
+\subsubsection[getCustomersVecInProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{classclient}{client} $>$ Baker::get\-Customers\-Vec\-In\-Progress ()}}
+\label{class_baker_8b798f098bfd9a23b11fa1d63d089609}
+
+
+\hypertarget{class_baker_3970b0afe27b514282442b11592e1602}{
+\index{Baker@{Baker}!getCustomerVec@{getCustomerVec}}
+\index{getCustomerVec@{getCustomerVec}!Baker@{Baker}}
+\subsubsection[getCustomerVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{classclient}{client} $>$ Baker::get\-Customer\-Vec ()}}
+\label{class_baker_3970b0afe27b514282442b11592e1602}
+
+
+\hypertarget{class_baker_ad0cbeddec394b25c5eade57247f4110}{
+\index{Baker@{Baker}!getOrderVec@{getOrderVec}}
+\index{getOrderVec@{getOrderVec}!Baker@{Baker}}
+\subsubsection[getOrderVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza}{Pizza} $>$ Baker::get\-Order\-Vec (unsigned int {\em customers\-Vec\-Number})}}
+\label{class_baker_ad0cbeddec394b25c5eade57247f4110}
+
+
+\begin{Desc}
+\item[Returns:]a vector of all customer orders due progress and in progress \end{Desc}
+\hypertarget{class_baker_3d38e7498fba59674c7d3838bf4c1824}{
+\index{Baker@{Baker}!getPizzaLocations@{getPizzaLocations}}
+\index{getPizzaLocations@{getPizzaLocations}!Baker@{Baker}}
+\subsubsection[getPizzaLocations]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \hyperlink{class_pizza_locations}{Pizza\-Locations} $>$ Baker::get\-Pizza\-Locations ()}}
+\label{class_baker_3d38e7498fba59674c7d3838bf4c1824}
+
+
+\hypertarget{class_baker_b85151ecb20282d81b4dab489fea7dd8}{
+\index{Baker@{Baker}!setBakerLocation@{setBakerLocation}}
+\index{setBakerLocation@{setBakerLocation}!Baker@{Baker}}
+\subsubsection[setBakerLocation]{\setlength{\rightskip}{0pt plus 5cm}void Baker::set\-Baker\-Location (char {\em current\-Location}\mbox{[}32\mbox{]})}}
+\label{class_baker_b85151ecb20282d81b4dab489fea7dd8}
+
+
+Function that set's baker location and sort's orders into vector's depending on order status 'in progress' or 'due progress'
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em current\-Location}]is baker's location \end{description}
+\end{Desc}
+\hypertarget{class_baker_9616413c80f3814907a9c2399ac50438}{
+\index{Baker@{Baker}!workOnOrder@{workOnOrder}}
+\index{workOnOrder@{workOnOrder}!Baker@{Baker}}
+\subsubsection[workOnOrder]{\setlength{\rightskip}{0pt plus 5cm}void Baker::work\-On\-Order (unsigned int {\em customers\-Vec\-Number})}}
+\label{class_baker_9616413c80f3814907a9c2399ac50438}
+
+
+Move customer from customers\-Vec\-Due\-Progress to customers\-Vec\-In\-Progress and rewrite file containing customer order with updated client class
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em customers\-Vec\-Number}]is the position of customer to update in vector \end{description}
+\end{Desc}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}{
+\index{Baker@{Baker}!bakerLocation@{bakerLocation}}
+\index{bakerLocation@{bakerLocation}!Baker@{Baker}}
+\subsubsection[bakerLocation]{\setlength{\rightskip}{0pt plus 5cm}char \hyperlink{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}{Baker::baker\-Location}\mbox{[}32\mbox{]}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_baker_c8a23bee3af95af3a6fa8e3f631e9a92}
+
+
+\hypertarget{class_baker_52cc86469dd41b9be5b7186d6bd00589}{
+\index{Baker@{Baker}!customersVec@{customersVec}}
+\index{customersVec@{customersVec}!Baker@{Baker}}
+\subsubsection[customersVec]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{classclient}{client}$>$ \hyperlink{class_baker_52cc86469dd41b9be5b7186d6bd00589}{Baker::customers\-Vec}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_baker_52cc86469dd41b9be5b7186d6bd00589}
+
+
+\hypertarget{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{
+\index{Baker@{Baker}!customersVecDueProgress@{customersVecDueProgress}}
+\index{customersVecDueProgress@{customersVecDueProgress}!Baker@{Baker}}
+\subsubsection[customersVecDueProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{classclient}{client}$>$ \hyperlink{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}{Baker::customers\-Vec\-Due\-Progress}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_baker_e9843b8d2c12d0911de538ebe51c1b0d}
+
+
+\hypertarget{class_baker_0b7dacb9817ff529ee046a5c369051fa}{
+\index{Baker@{Baker}!customersVecInProgress@{customersVecInProgress}}
+\index{customersVecInProgress@{customersVecInProgress}!Baker@{Baker}}
+\subsubsection[customersVecInProgress]{\setlength{\rightskip}{0pt plus 5cm}vector$<$\hyperlink{classclient}{client}$>$ \hyperlink{class_baker_0b7dacb9817ff529ee046a5c369051fa}{Baker::customers\-Vec\-In\-Progress}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{class_baker_0b7dacb9817ff529ee046a5c369051fa}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{_baker_8h}{Baker.h}\item 
+\hyperlink{_baker_8cpp}{Baker.cpp}\end{CompactItemize}
