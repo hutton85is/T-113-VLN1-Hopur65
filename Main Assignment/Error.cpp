@@ -13,15 +13,16 @@ vector <InputErrorException> Error::getInputErrorExceptionVec()
 }
 
 
-void Error::logInputErrorException(InputErrorException newException, const char* fname)
+void Error::logInputErrorException(InputErrorException newException)
 {
+    const char* fname = "Exceptions/InputErrorException.dat";
     readWriteClass rw;
     rw.writeClassToFile(newException, fname);
 }
 
 ostream& operator << (ostream& outs, Error& er)
 {
-    outs << "Invalid input error exception count is: " <<  er.getInputErrorExceptionVec().size() << endl;
+    outs << "1. Invalid input error exception count is: " <<  er.getInputErrorExceptionVec().size() << endl;
 
     return outs;
 }

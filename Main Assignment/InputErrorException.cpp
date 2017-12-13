@@ -27,7 +27,7 @@ ostream& operator <<(ostream& outs, InputErrorException& i)
 {
     time_t temp = i.getTime();
     char* dt = ctime(&temp);
-    outs << i.getMessage() << " : " << dt << endl;
+    outs << i.getMessage() << " : " << dt;
 
     return outs;
 }
