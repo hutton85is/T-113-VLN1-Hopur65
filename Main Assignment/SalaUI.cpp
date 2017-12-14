@@ -309,6 +309,7 @@ void SalaUI::choosePizzaLocation()
 
     helperUI.displayHeader();
 
+
     // Set location at the very beginning of SalaUI
     displayVector(s.getLagerplocations(), true);
     cout << endl;
@@ -328,12 +329,6 @@ void SalaUI::choosePizzaLocation()
 
 void SalaUI::displayOrder()
 {
-    /*vector<Pizza> currentOrder = s.getOrder();
-    for(unsigned int i = 0; i < currentOrder.size(); i++)
-    {
-        cout << "   pizza pontun: " << i << endl;
-        cout << currentOrder[i] << endl;
-    }*/
     cout << s << endl;
 
 }

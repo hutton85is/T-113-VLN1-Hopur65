@@ -20,6 +20,10 @@ class UIHelper
         void displayHeader();
 
         void displayBelowHeader(string message);
+
+        void displayColumn(string col1, string col2);
+
+        void displayCloseTable();
 };
 
 #endif // UIHELPER_H

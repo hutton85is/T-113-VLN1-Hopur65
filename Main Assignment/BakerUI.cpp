@@ -47,6 +47,7 @@ bool BakerUI::pickLocation()
         }
 
         baker.setBakerLocation(availLocations[input].place);
+        return !(baker.getCustomerVec().empty());
     }
     catch(InputErrorException e)
     {
@@ -57,7 +58,8 @@ bool BakerUI::pickLocation()
         cin.clear();
         cin.ignore(INT_MAX,'\n');
     }
-    return !(baker.getCustomersVecDueProgress().empty() || baker.getCustomersVecInProgress().empty());
+    return false;
+    //return !(baker.getCustomerVec().empty());
 }
 
 void BakerUI::displayCustomerDueProgressOrder(unsigned int customerNumber)
@@ -246,7 +248,7 @@ void BakerUI::main()
     else
     {
         helperUI.displayHeader();
-        cout << "Thad eru engar pantanir i bid: " << baker.getBakerLocation() << endl;
+        cout << "Thad eru engar pantanir i bid: " << endl;
         cout << endl;
         system("pause");
     }

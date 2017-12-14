@@ -17,3 +17,15 @@ void UIHelper::displayBelowHeader(string message)
 {
     cout << " " << message << endl;
 }
+
+void UIHelper::displayColumn(string col1, string col2)
+{
+    cout << "--------------------------------" << endl;
+    cout << " " << col1 << " | " << col2 << endl;
+    cout << "--------------------------------" << endl;
+}
+
+void UIHelper::displayCloseTable()
+{
+    cout << "--------------------------------" << endl;
+}
