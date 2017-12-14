@@ -57,7 +57,7 @@ bool BakerUI::pickLocation()
         cin.clear();
         cin.ignore(INT_MAX,'\n');
     }
-    return !(baker.getCustomersVecDueProgress().empty() || baker.getCustomersVecInProgress().empty());
+    return !(baker.getCustomerVec().empty());
 }
 
 void BakerUI::displayCustomerDueProgressOrder(unsigned int customerNumber)
