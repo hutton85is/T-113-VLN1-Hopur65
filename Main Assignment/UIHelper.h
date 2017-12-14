@@ -18,6 +18,8 @@ class UIHelper
         UIHelper();
 
         void displayHeader();
+
+        void displayBelowHeader(string message);
 };
 
 #endif // UIHELPER_H

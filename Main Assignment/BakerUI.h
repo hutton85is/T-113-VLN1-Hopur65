@@ -9,7 +9,7 @@
 #include "UIHelper.h"
 #include "Baker.h"
 #include <cstdlib>
-#include "Error.h"
+#include "ErrorException.h"
 #include <climits>
 
 class BakerUI

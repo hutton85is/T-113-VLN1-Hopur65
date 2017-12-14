@@ -31,7 +31,7 @@ bool AfhendingUI::pickLocation()
     }
     catch(InputErrorException e)
     {
-        Error er;
+        ErrorException er;
         er.logInputErrorException(e);
         cout << e.getMessage() << endl;
         system("pause");
@@ -161,7 +161,7 @@ void AfhendingUI::main()
     }
     catch(InputErrorException e)
     {
-        Error er;
+        ErrorException er;
         er.logInputErrorException(e);
         cout << e.getMessage() << endl;
         system("pause");

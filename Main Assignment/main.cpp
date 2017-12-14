@@ -6,8 +6,8 @@
 #include "SalaUI.h"
 #include "BakerUI.h"
 #include "AfhendingUI.h"
-#include "Error.h"
-#include "ErrorUI.h"
+#include "ErrorException.h"
+#include "ErrorExceptionUI.h"
 
 #include <iostream>
 #include <stdlib.h>
@@ -18,7 +18,6 @@ using namespace std;
 
 void mainMenu()
 {
-    cout << "    Til thess ad skra thig inn veldu :                   " << endl;
     cout << "                                                         " << endl;
     cout << " 1. Fyrir umsjon                                         " << endl;
     cout << " 2. Fyrir bakara                                         " << endl;
@@ -31,6 +30,7 @@ void mainMenu()
 
     int innskraning;
     cout << "Veldu her: ";
+
     cin >> innskraning ;
 
     try
@@ -68,7 +68,7 @@ void mainMenu()
         else if (innskraning == 5)
         {
             system("CLS");
-            ErrorUI err;
+            ErrorExceptionUI err;
             err.mainUI();
         }
         else if (innskraning == 6)
@@ -78,7 +78,7 @@ void mainMenu()
     }
     catch(InputErrorException e)
     {
-        Error er;
+        ErrorException er;
         er.logInputErrorException(e);
         cout << e.getMessage() << endl;
         system("pause");
@@ -93,6 +93,7 @@ int main()
     while(true)
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Til thess ad skra thig inn veldu: ");
         mainMenu();
     }
 

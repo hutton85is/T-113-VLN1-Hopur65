@@ -30,6 +30,11 @@ class Umsjon
 
         Umsjon();
 
+        /**
+        * @brief All create functions generate a new item for sale or a location
+        *
+        */
+
         void createCrust(char crust_type[32], int price);
 
         void createToppings(char toppings[32], int price);

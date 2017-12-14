@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 #include "UIHelper.h"
-#include "Error.h"
+#include "ErrorException.h"
 #include <climits>
 
 

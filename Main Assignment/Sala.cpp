@@ -273,14 +273,12 @@ void Sala::calculateSumOfOrder()
 
 ostream& operator <<(ostream& outs, Sala& s)
 {
-    Client newClient = s.getClient();
     vector<Pizza> order = s.getOrder();
-
-    outs << newClient << endl;
 
     for(unsigned int i = 0; i < order.size(); i++)
     {
-        outs << order[i] << endl;
+        cout << "Pizza " << i + 1 << "." << endl;
+        outs << order[i];
     }
     return outs;
 }

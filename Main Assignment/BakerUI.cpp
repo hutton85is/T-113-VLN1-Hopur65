@@ -50,7 +50,7 @@ bool BakerUI::pickLocation()
     }
     catch(InputErrorException e)
     {
-        Error er;
+        ErrorException er;
         er.logInputErrorException(e);
         cout << e.getMessage() << endl;
         system("pause");
@@ -233,7 +233,7 @@ void BakerUI::main()
 
             catch(InputErrorException e)
             {
-                Error er;
+                ErrorException er;
                 er.logInputErrorException(e);
                 cout << e.getMessage() << endl;
                 system("pause");

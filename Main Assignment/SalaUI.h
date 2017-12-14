@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <windows.h>
 
-#include "Error.h"
+#include "ErrorException.h"
 #include "UIHelper.h"
 #include <climits>
 

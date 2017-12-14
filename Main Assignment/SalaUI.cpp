@@ -307,12 +307,14 @@ void SalaUI::choosePizzaLocation()
 
 void SalaUI::displayOrder()
 {
-    vector<Pizza> currentOrder = s.getOrder();
+    /*vector<Pizza> currentOrder = s.getOrder();
     for(unsigned int i = 0; i < currentOrder.size(); i++)
     {
         cout << "   pizza pontun: " << i << endl;
         cout << currentOrder[i] << endl;
-    }
+    }*/
+    cout << s << endl;
+
 }
 
 void SalaUI::mainOrder()
@@ -322,7 +324,7 @@ void SalaUI::mainOrder()
     }
     catch(InputErrorException e)
     {
-        Error er;
+        ErrorException er;
         er.logInputErrorException(e);
         cout << e.getMessage() << endl;
         system("pause");
@@ -411,7 +413,7 @@ void SalaUI::mainOrder()
         }
         catch(InputErrorException e)
         {
-            Error er;
+            ErrorException er;
             er.logInputErrorException(e);
             cout << e.getMessage() << endl;
             system("pause");

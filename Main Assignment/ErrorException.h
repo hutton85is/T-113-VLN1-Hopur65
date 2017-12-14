@@ -3,33 +3,34 @@
 *
 */
 
-#ifndef ERROR_H
-#define ERROR_H
+
+#ifndef ERROREXCEPTION_H
+#define ERROREXCEPTION_H
 
 #include <vector>
 #include "InputErrorException.h"
-#include "ErrorUI.h"
-
-using namespace std;
+#include "ErrorExceptionUI.h"
 
 
-class Error
+class ErrorException
 {
     public:
 
-        Error();
-
-        void displayError();
+        /**
+        * @brief Load exception into vector from file
+        *
+        */
+        ErrorException();
 
         vector <InputErrorException> getInputErrorExceptionVec();
 
         void logInputErrorException(InputErrorException newException);
 
-        friend ostream& operator << (ostream& outs, Error& er);
+        friend ostream& operator << (ostream& outs, ErrorException& er);
 
     private:
 
         vector <InputErrorException> inputErrorExceptionVec;
 };
 
-#endif // ERROR_H
+#endif // ERROREXCEPTION_H

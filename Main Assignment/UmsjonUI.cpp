@@ -302,7 +302,7 @@ void UmsjonUI::main()
         }
         catch(InputErrorException e)
         {
-            Error er;
+            ErrorException er;
             er.logInputErrorException(e);
             cout << e.getMessage() << endl;
             system("pause");

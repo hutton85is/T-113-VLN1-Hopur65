@@ -4,24 +4,22 @@
 * A user can view count of exceptions and then choose to view a particular exception and its message
 */
 
-#ifndef ERRORUI_H
-#define ERRORUI_H
 
-#include "Error.h"
+#ifndef ERROREXCEPTIONUI_H
+#define ERROREXCEPTIONUI_H
 
+#include "ErrorException.h"
 
-class ErrorUI
+class ErrorExceptionUI
 {
     public:
 
-        ErrorUI();
+        ErrorExceptionUI();
 
         void displayErrorCount();
 
         void mainUI();
 
-    private:
-
 };
 
-#endif // ERRORUI_H
+#endif // ERROREXCEPTIONUI_H

@@ -1,24 +1,23 @@
-#include "ErrorUI.h"
+#include "ErrorExceptionUI.h"
 
-ErrorUI::ErrorUI()
+ErrorExceptionUI::ErrorExceptionUI()
 {
 
 }
 
-void ErrorUI::displayErrorCount()
+void ErrorExceptionUI::displayErrorCount()
 {
     int input;
 
-    Error er;
-
-    cout << er << endl;
+    ErrorException err;
+    cout << err << endl;
     cout << "Veldu videigandi numer til ad skoda nanar allar villur: ";
     cin >> input;
 
     if(input == 1)
     {
-        Error er;
-        vector <InputErrorException> inputErrorExceptionVec = er.getInputErrorExceptionVec();
+        ErrorException er;
+        vector <InputErrorException> inputErrorExceptionVec = err.getInputErrorExceptionVec();
         for(unsigned int i = 0; i < inputErrorExceptionVec.size(); i++)
         {
             cout << inputErrorExceptionVec[i] << endl;
@@ -27,7 +26,7 @@ void ErrorUI::displayErrorCount()
 
 }
 
-void ErrorUI::mainUI(){
+void ErrorExceptionUI::mainUI(){
 
     displayErrorCount();
     system("pause");
