@@ -16,15 +16,23 @@ void UmsjonUI::displayVector(vector<Pizzaclass> vec, bool show)
         }
         cout << vec[i] << endl;
     }
-    cout << endl;
 }
 
 void UmsjonUI::createNewPizzaSize()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Ny staerd af pizzu");
+
+    cout << endl;
+    helperUI.displayColumn("Staerd", "Verd(kr.)");
+
     displayVector(u.getpsize(), false);
 
-    cout << "Sladu inn nyja staerd af pizzu: ";
+    helperUI.displayCloseTable();
+
+    cout << endl;
+
+    cout << "Sladu inn nyju staerdina her: ";
     string pSize;
     cin >> ws;
     getline(cin, pSize);
@@ -52,7 +60,14 @@ void UmsjonUI::createNewPizzaSize()
 void UmsjonUI::createNewPizzaCrust()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Ny staerd af pizzu botn");
+
+    cout << endl;
+    helperUI.displayColumn("Pizza botn", "Verd(kr.)");
     displayVector(u.getpcrust(), false);
+    helperUI.displayCloseTable();
+
+    cout << endl;
 
     string pCrust;
     cout << "Sladu inn nyja typu af botni: ";
@@ -82,11 +97,15 @@ void UmsjonUI::createNewPizzaCrust()
 void UmsjonUI::createNewPizzaTopping()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Ny tegund af aleggi");
 
-    if(u.getptoppings().size())
-    {
-        displayVector(u.getptoppings(), false);
-    }
+    cout << endl;
+    helperUI.displayColumn("Alegg", "Verd(kr.)");
+
+    displayVector(u.getptoppings(), false);
+    helperUI.displayCloseTable();
+
+    cout << endl;
 
     cout << "Sladu inn nyja tegund af aleggi: ";
 
@@ -114,8 +133,15 @@ void UmsjonUI::createNewPizzaTopping()
 void UmsjonUI::createNewPizzaMenu()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Ny pizza a matsedil");
+
+    cout << endl;
+    helperUI.displayColumn("Heiti Pizzu", "Aleggstegundir");
 
     displayVector(u.getpMenu(), false);
+    helperUI.displayCloseTable();
+
+    cout << endl;
 
     cout << "Sladu inn nyja pizzu a matsedil: ";
     string pMenu;
@@ -196,7 +222,14 @@ void UmsjonUI::createNewPizzaMenu()
 void UmsjonUI::createNewPizzaExtras()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Ny tegund af medlaeti");
+
+    cout << endl;
+    helperUI.displayColumn("Heiti medlaetis", "Verd(kr.)");
     displayVector(u.getpextras(), false);
+    helperUI.displayCloseTable();
+
+    cout << endl;
 
     cout << "Sladu inn nytt medlaeti: ";
     string pExtras;
@@ -224,7 +257,14 @@ void UmsjonUI::createNewPizzaExtras()
 void UmsjonUI::createNewPizzaLocation()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Nyr pizza stadur");
+
+    cout << endl;
+    helperUI.displayColumn("Stadsetning", "");
     displayVector(u.getplocations(), false);
+    helperUI.displayCloseTable();
+
+    cout << endl;
 
     cout << "Sladu inn nyja stadsetningu pizza stadar: ";
     string pLocations;
@@ -252,6 +292,8 @@ void UmsjonUI::main()
             int input;
 
             helperUI.displayHeader();
+            helperUI.displayBelowHeader("Skra nyjar vorur");
+            cout << endl;
             cout << "Til thess ad skra nyja pizza staerd veldu       1." << endl;
             cout << "Til thess ad skra nyja pizza crust veldu        2." << endl;
             cout << "Til thess ad skra nytt alegg veldu              3." << endl;
