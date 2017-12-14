@@ -23,11 +23,10 @@ void ErrorExceptionUI::displayErrorCount()
             cout << inputErrorExceptionVec[i] << endl;
         }
     }
-
 }
 
-void ErrorExceptionUI::mainUI(){
-
+void ErrorExceptionUI::mainUI()
+{
     displayErrorCount();
     system("pause");
 }
