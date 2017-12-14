@@ -130,7 +130,8 @@ void Afhending::deliverOrder(int customersVecNumber)
     {
         if(strcmp(tempVec[i].name, newClient.name) == 0)
         {
-            tempVec.erase(tempVec.begin() + customersVecNumber);
+            //tempVec.erase(tempVec.begin() + customersVecNumber);
+            tempVec.erase(tempVec.begin() + i);
             break;
         }
     }

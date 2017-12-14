@@ -152,23 +152,34 @@ void UmsjonUI::createNewPizzaMenu()
     strncpy(choose_pizza, pMenu.c_str(), sizeof(choose_pizza) - 1);
 
     system("CLS");
+
     if(!cin)
     {
         throw InputErrorException("Innslattarvilla a pizzu a matsedli");
     }
 
-    helperUI.displayHeader();
     bool moreToppings = true;
     string toppings = "";
     vector<PizzaToppings> AllPizzaToppingsVec = u.getptoppings();
+
     while(moreToppings)
     {
         vector<PizzaToppings> pToppingsVec = u.getptoppings();
         int pToppingsVecSize = pToppingsVec.size();
+
+        helperUI.displayHeader();
+        helperUI.displayBelowHeader("Ny pizza a matsedil");
+        cout << endl;
+
         displayVector(pToppingsVec, true);
 
+        //cout <<
+
         int newToppingID;
-        cout << "Sladu inn alegg til ad hafa a " << choose_pizza << ": ";
+
+        cout << endl;
+        cout << "Pizza " << choose_pizza << ": " << toppings << endl << endl;
+        cout << "Sladu inn nytt alegg ";
         cin >> newToppingID;
 
         if(!cin || newToppingID < 0 || pToppingsVecSize <= newToppingID)
@@ -203,8 +214,11 @@ void UmsjonUI::createNewPizzaMenu()
     }
 
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Ny pizza a matsedil");
 
-    cout << "Sladu inn verd a " << choose_pizza << " sem hlutfall af grunn Pizzu: ";
+    cout << endl;
+
+    cout << "Sladu inn verd a Pizza " << choose_pizza << " sem hlutfall af grunn Pizzu: ";
     double price;
     cin >> price;
     if(!cin || price < 0)
