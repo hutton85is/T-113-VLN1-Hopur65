@@ -8,30 +8,56 @@ SalaUI::SalaUI()
 
 void SalaUI::choosePizzaSize()
 {
-    displayVector(s.getLagerpsize(), true);
+    vector<PizzaSize> PizzaSizeVec = s.getLagerpsize();
 
-    int input;
-
-    cout << "Sladu inn hvada staerd af pizzu thu vilt: ";
-    cin >> input;
-
-    if(!cin)
+    if(PizzaSizeVec.size())
     {
-        throw InputErrorException("Innslattarvilla a pizzustaerd");
-    }
+        helperUI.displayHeader();
+        helperUI.displayBelowHeader("Skradu thina pontun");
+        cout << endl;
 
-    s.enterPizzaSize(input);
+        helperUI.displayColumn("Pizza staerd", "verd(kr.)");
+        displayVector(s.getLagerpsize(), true);
+        helperUI.displayCloseTable();
+        cout << endl;
+
+        int input;
+        cout << "Sladu inn hvada staerd af pizzu thu vilt: ";
+        cin >> input;
+
+        if(!cin)
+        {
+            throw InputErrorException("Innslattarvilla a pizzustaerd");
+        }
+
+        s.enterPizzaSize(input);
+    }
+    else
+    {
+        helperUI.displayHeader();
+        helperUI.displayBelowHeader("Skradu thina pontun");
+        cout << endl;
+
+        cout << "Thad er engin Pizza botn i bodi enntha" << endl;
+        cout << endl;
+        system("pause");
+    }
 }
 
 void SalaUI::choosePizzaCrust()
 {
-    helperUI.displayHeader();
-
     vector<PizzaCrust> PizzaCrustVec = s.getLagerpcrust();
 
     if(PizzaCrustVec.size())
     {
-        displayVector(PizzaCrustVec, true);
+        helperUI.displayHeader();
+        helperUI.displayBelowHeader("Skradu thina pontun");
+        cout << endl;
+
+        helperUI.displayColumn("Pizza botn", "verd(kr.)");
+        displayVector(s.getLagerpcrust(), true);
+        helperUI.displayCloseTable();
+        cout << endl;
 
         int input;
 
@@ -49,6 +75,8 @@ void SalaUI::choosePizzaCrust()
     else
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Skradu thina pontun");
+        cout << endl;
 
         cout << "Thad er engin Pizza botn i bodi enntha" << endl;
         cout << endl;
@@ -58,8 +86,6 @@ void SalaUI::choosePizzaCrust()
 
 void SalaUI::choosePizzaTopping()
 {
-    helperUI.displayHeader();
-
     vector<PizzaToppings> PizzaToppingsVec = s.getLagerptoppings();
 
     if(PizzaToppingsVec.size())
@@ -69,7 +95,14 @@ void SalaUI::choosePizzaTopping()
             int input;
 
             system("CLS");
+            helperUI.displayHeader();
+            helperUI.displayBelowHeader("Skradu thina pontun");
+            cout << endl;
+
+            helperUI.displayColumn("Alegg", "verd(kr.)");
             displayVector(s.getLagerptoppings(), true);
+            helperUI.displayCloseTable();
+            cout << endl;
             displayVector(s.getOrder()[s.getClient().orderCounter - 1].ptoppings, false);
 
             cout << endl;
@@ -96,8 +129,6 @@ void SalaUI::choosePizzaTopping()
             {
                 break;
             }
-
-
         }
     }
     else
@@ -111,6 +142,8 @@ void SalaUI::choosePizzaTopping()
 void SalaUI::choosePizzaMenu()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Skradu thina pontun");
+    cout << endl;
 
     vector<PizzaMenu> PizzaMenuVec = s.getLagerpMenu();
 
@@ -119,11 +152,16 @@ void SalaUI::choosePizzaMenu()
     {
         cout << "Thu tharft fyrst ad velja staerd pizzu!!" << endl;
         cout << endl;
+        system("pause");
+        system("CLS");
         choosePizzaSize();
     }
     else if(PizzaMenuVec.size())
     {
+        helperUI.displayColumn("Pizza a matsedli", "verd(kr.)");
         displayVector(s.getLagerpMenu(), true);
+        helperUI.displayCloseTable();
+        cout << endl;
 
         int input;
 
@@ -141,6 +179,8 @@ void SalaUI::choosePizzaMenu()
     else
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Skradu thina pontun");
+        cout << endl;
         cout << "Thad er engin pizza a matsedli i bodi enntha" << endl;
         cout << endl;
         system("pause");
@@ -150,12 +190,17 @@ void SalaUI::choosePizzaMenu()
 void SalaUI::choosePizzaExtras()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Skradu thina pontun");
+    cout << endl;
 
     vector<PizzaExtras> PizzaExtrasVec = s.getLagerpextras();
 
     if(PizzaExtrasVec.size())
     {
+        helperUI.displayColumn("Medlaeti", "verd(kr.)");
         displayVector(s.getLagerpextras(), true);
+        helperUI.displayCloseTable();
+        cout << endl;
 
         int input;
 
@@ -173,6 +218,8 @@ void SalaUI::choosePizzaExtras()
     else
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Skradu thina pontun");
+        cout << endl;
         cout << "Thad er ekkert medlaeti i bodi enntha" << endl;
         cout << endl;
     }
@@ -181,12 +228,17 @@ void SalaUI::choosePizzaExtras()
 void SalaUI::chooseDifferentPizzaLocation()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Skradu thina pontun");
+    cout << endl;
 
     vector<PizzaLocations> PizzaLocationsVec = s.getLagerplocations();
 
     if(PizzaLocationsVec.size())
     {
+        helperUI.displayColumn("Pizza stadur", "");
         displayVector(s.getLagerplocations(), true);
+        helperUI.displayCloseTable();
+        cout << endl;
 
         int input;
 
@@ -205,6 +257,8 @@ void SalaUI::chooseDifferentPizzaLocation()
     else
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Skradu thina pontun");
+        cout << endl;
         cout << endl;
         cout << "Thad er enginn stadur opnadur enntha" << endl;
         cout << endl;
@@ -214,6 +268,12 @@ void SalaUI::chooseDifferentPizzaLocation()
 void SalaUI::finishOrder()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Skradu thina pontun");
+    cout << endl;
+
+    displayOrder();
+    cout << endl;
+
     string name;
     cout << "Hvada nafn a ad vera a pontuninni: ";
     cin >> ws;
@@ -275,11 +335,22 @@ void SalaUI::finishOrder()
     }
 
     s.createOrder(name, address, number, paid == 'j', delivery == 'j', comment);
+    Client customer = s.getClient();
 
     system("CLS");
     cout << "HERNA ER PONTUNIN TIN" << endl;
     cout << "----------------------------" << endl;
-    cout << s << endl;
+    cout << customer << endl;
+    cout << "    Pontun greidd: ";
+    if(customer.orderPaid)
+    {
+        cout << "ja" << endl;
+    }
+    else
+    {
+        cout << "nei" << endl;
+    }
+    displayOrder();
     cout << "----------------------------" << endl;
     cout << endl;
     cout << endl;
@@ -308,7 +379,8 @@ void SalaUI::choosePizzaLocation()
     s.newPizza();
 
     helperUI.displayHeader();
-
+    helperUI.displayBelowHeader("Veldu Pizza stad");
+    cout << endl;
 
     // Set location at the very beginning of SalaUI
     displayVector(s.getLagerplocations(), true);
@@ -329,6 +401,7 @@ void SalaUI::choosePizzaLocation()
 
 void SalaUI::displayOrder()
 {
+    cout << "    " << s.getOrder()[0].plocations[0].place << endl << endl;
     cout << s << endl;
 
 }
@@ -360,8 +433,9 @@ void SalaUI::mainOrder()
             system("CLS");
 
             helperUI.displayHeader();
+            helperUI.displayBelowHeader("Skradu thina pontun");
+            cout << endl;
 
-            cout << "Skradu thina pontun : " << endl;
             cout << "Til thess ad velja pizza staerd veldu           1." << endl;
             cout << "Til thess ad velja pizza botn veldu             2." << endl;
             cout << "Til thess ad velja alegg a pizzuna veldu        3." << endl;

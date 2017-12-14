@@ -9,6 +9,7 @@
 #define ERROREXCEPTIONUI_H
 
 #include "ErrorException.h"
+#include "UIHelper.h"
 
 class ErrorExceptionUI
 {

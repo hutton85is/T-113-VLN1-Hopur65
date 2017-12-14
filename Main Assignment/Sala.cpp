@@ -277,7 +277,7 @@ ostream& operator <<(ostream& outs, Sala& s)
 
     for(unsigned int i = 0; i < order.size(); i++)
     {
-        cout << "Pizza " << i + 1 << "." << endl;
+        cout << "    Pizza " << i + 1 << "." << endl;
         outs << order[i];
     }
     return outs;
