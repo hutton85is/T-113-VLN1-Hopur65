@@ -64,20 +64,41 @@ void SalaUI::choosePizzaTopping()
 
     if(PizzaToppingsVec.size())
     {
-        displayVector(s.getLagerptoppings(), true);
-
-        int input;
-
-        cout << endl;
-        cout << "Hvernig alegg ma bjoda ther a pizzuna: ";
-        cin >> input;
-
-        if(!cin)
+        while (true)
         {
-            throw InputErrorException("Innslattarvilla a aleggi");
-        }
+            int input;
 
-        s.enterToppings(input);
+            system("CLS");
+            displayVector(s.getLagerptoppings(), true);
+            displayVector(s.getOrder()[s.getClient().orderCounter - 1].ptoppings, false);
+
+            cout << endl;
+            cout << "Hvernig alegg ma bjoda ther a pizzuna: ";
+            cin >> input;
+
+            if(!cin)
+            {
+                throw InputErrorException("Innslattarvilla a aleggi");
+            }
+
+            s.enterToppings(input);
+
+            cout << "Viltu velja fleiri alegg? j/n: ";
+            char jn;
+            cin >> jn;
+
+            if(!cin)
+            {
+                throw InputErrorException("Innslattarvilla a vali um fleiri alegg");
+            }
+
+            if (jn == 'n')
+            {
+                break;
+            }
+
+
+        }
     }
     else
     {
@@ -348,7 +369,7 @@ void SalaUI::mainOrder()
             cout << "Til thess ad panta medlaeti veldu               5." << endl;
             cout << "Til thess ad baeta vid pizzu veldu              6." << endl;
             cout << "Til thess ad breyta afhendingarstad veldu       7." << endl;
-            cout << "Til thess ad klara pöntun veldu                 8." << endl;
+            cout << "Til thess ad klara pontun veldu                 8." << endl;
             cout << "Til thess ad haetta vid pontun veldu            9." << endl;
 
             cout << endl;
