@@ -15,7 +15,6 @@ class Baker
 {
     public:
         Baker();
-        virtual ~Baker();
 
         /**
         * @brief Set baker location and customize vectors

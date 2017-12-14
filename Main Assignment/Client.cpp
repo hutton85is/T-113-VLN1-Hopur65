@@ -19,43 +19,14 @@ Client::Client()
 }
 
 ostream& operator <<(ostream& outs, Client& customer)
-
 {
     if(customer.name[0] != '\0')
     {
-        outs << customer.name << ", " << customer.address << " " << customer.addressNumber << endl;
+        outs << "    " << customer.name << ", " << customer.address << " " << customer.addressNumber << endl;
     }
-    outs << "Buid ad borga: ";
-    if (customer.orderPaid)
-    {
-        outs << "ja";
-    }
-    else
-    {
-        outs << "nei";
-    }
-    outs << endl;
-    outs << "verid ad baka pizzu: ";
-    if (customer.inProgress)
-    {
-        outs << "ja";
-    }
-    else
-    {
-        outs << "nei";
-    }
-    outs << endl;
-    outs << "buid ad baka pizzu: ";
-    if (customer.finished)
-    {
-        outs << "ja";
-    }
-    else
-    {
-        outs << "nei";
-    }
-    outs << endl;
-    outs << "heimsending: ";
+
+    outs << "    " << "heimsending: ";
+
     if(customer.deliverOrder)
     {
         outs << "ja";
@@ -65,20 +36,10 @@ ostream& operator <<(ostream& outs, Client& customer)
         outs << "nei";
     }
     outs << endl;
-    outs << "buid ad afhenda pizzu: ";
-    if (customer.orderDelivered)
-    {
-        outs << "ja";
-    }
-    else
-    {
-        outs << "nei";
-    }
-    outs << endl;
 
-    outs << "Athugasemd: " << customer.comment << endl;
+    outs << "    " << "Athugasemd: " << customer.comment << endl;
 
-    outs << "Heildarverd: " << customer.sumOfOrder << " kr.";
+    outs << "    " << "Heildarverd: " << customer.sumOfOrder << " kr.";
 
     return outs;
 }

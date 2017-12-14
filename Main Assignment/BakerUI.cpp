@@ -10,7 +10,18 @@ void BakerUI::displayCustomerDueProgress()
     vector<Client> customersVec = baker.getCustomersVecDueProgress();
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
-        cout << i << ". " << customersVec[i] << endl;
+        cout << i << ". " << endl;
+        cout << customersVec[i] << endl;
+        cout << "    Verid ad vinna i pontun: ";
+        if(customersVec[i].inProgress)
+        {
+            cout << "ja" << endl;
+        }
+        else
+        {
+            cout << "nei" << endl;
+        }
+        cout << "------------" << endl;
     }
 }
 
@@ -19,7 +30,27 @@ void BakerUI::displayCustomerInProgress()
     vector<Client> customersVec = baker.getCustomersVecInProgress();
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
-        cout << i << ". " << customersVec[i] << endl;
+        cout << i << ". " << endl;
+        cout << customersVec[i] << endl;
+        cout << "    Verid ad vinna i pontun: ";
+        if(customersVec[i].inProgress)
+        {
+            cout << "ja" << endl;
+        }
+        else
+        {
+            cout << "nei" << endl;
+        }
+        cout << "    Pontun tilbuin til afhendingar: ";
+        if(customersVec[i].finished)
+        {
+            cout << "ja" << endl;
+        }
+        else
+        {
+            cout << "nei" << endl;
+        }
+        cout << "------------" << endl;
     }
 }
 
@@ -28,9 +59,14 @@ bool BakerUI::pickLocation()
     try
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Bakari");
+        cout << endl;
         int input;
         vector<PizzaLocations> availLocations = baker.getPizzaLocations();
         int availLocationsSize = availLocations.size();
+        helperUI.displayBelowHeader("Pizza stadirnir okkar");
+        cout << endl;
+
         for(int i = 0; i < availLocationsSize; i++)
         {
             cout << i << ". " << availLocations[i] << endl;
@@ -59,37 +95,80 @@ bool BakerUI::pickLocation()
         cin.ignore(INT_MAX,'\n');
     }
     return false;
-    //return !(baker.getCustomerVec().empty());
 }
 
 void BakerUI::displayCustomerDueProgressOrder(unsigned int customerNumber)
 {
     vector<Client> customer = baker.getCustomersVecDueProgress();
     vector<Pizza> order = baker.getCustomersOrderDueProgress(customerNumber);
-    cout << customerNumber << ". " << customer[customerNumber] << endl;
+
+    cout << customer[customerNumber] << endl;
+
+    cout << "    Verid ad vinna i pontun: ";
+    if(customer[customerNumber].inProgress)
+    {
+        cout << "ja" << endl;
+    }
+    else
+    {
+        cout << "nei" << endl;
+    }
+
+    cout << endl;
+
     for(unsigned int i = 0; i < order.size(); i++)
     {
-        cout << "Pizza " << i+1 << ". " << order[i] << endl;
+        cout << "   *Pizza " << i+1 << ". " << endl;
+        cout << order[i];
     }
+    cout << "------------" << endl;
+    cout << endl;
 }
 
 void BakerUI::displayCustomerInProgressOrder(unsigned int customerNumber)
 {
     vector<Client> customer = baker.getCustomersVecInProgress();
     vector<Pizza> order = baker.getCustomersOrderInProgress(customerNumber);
-    cout << customerNumber << ". " << customer[customerNumber] << endl;
+
+    cout << customer[customerNumber] << endl;
+
+    cout << "    Verid ad vinna i pontun: ";
+    if(customer[customerNumber].inProgress)
+    {
+        cout << "ja" << endl;
+    }
+    else
+    {
+        cout << "nei" << endl;
+    }
+
+    cout << endl;
+
     for(unsigned int i = 0; i < order.size(); i++)
     {
-        cout << "Pizza " << i+1 << ". " << order[i] << endl;
+        cout << "   *Pizza " << i+1 << ". " << endl;
+        cout << order[i];
     }
+    cout << "------------" << endl;
+    cout << endl;
 }
 
 void BakerUI::displayAllOrders()
 {
     vector<Client> customerVec = baker.getCustomerVec();
+
     for(unsigned int i = 0; i < customerVec.size(); i++)
     {
         cout << customerVec[i] << endl;
+        cout << "    Verid ad vinna i pontun: ";
+        if(customerVec[i].inProgress)
+        {
+            cout << "ja" << endl;
+        }
+        else
+        {
+            cout << "nei" << endl;
+        }
         cout << "------------" << endl;
     }
 }
@@ -97,12 +176,16 @@ void BakerUI::displayAllOrders()
 void BakerUI::chooseSeeAllOrders()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Bakari");
+    cout << endl;
     displayAllOrders();
 }
 
 void BakerUI::chooseSeeDueOrders()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Bakari");
+    cout << endl;
     if (baker.getCustomersVecDueProgress().size())
     {
         displayCustomerDueProgress();
@@ -117,6 +200,8 @@ void BakerUI::chooseSeeDueOrders()
             throw InputErrorException("Innslattarvilla a pontun til ad skoda nanar");
         }
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Bakari");
+        cout << endl;
         displayCustomerDueProgressOrder(customerID);
 
         string choice;
@@ -145,6 +230,8 @@ void BakerUI::chooseSeeDueOrders()
 void BakerUI::chooseSeeInProgressOrders()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Bakari");
+    cout << endl;
 
     if (baker.getCustomersVecInProgress().size())
     {
@@ -161,6 +248,8 @@ void BakerUI::chooseSeeInProgressOrders()
         }
 
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Bakari");
+        cout << endl;
         displayCustomerInProgressOrder(customerID);
 
         string choice;
@@ -198,6 +287,8 @@ void BakerUI::main()
             {
                 system("CLS");
                 helperUI.displayHeader();
+                helperUI.displayBelowHeader("Bakari");
+                cout << endl;
                 cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
                 cout << "Til thess ad velja pontun til ad vinna i veldu            2. "  << endl;
                 cout << "Til thess ad velja pontun sem tilbuna veldu               3. "  << endl;
@@ -248,6 +339,8 @@ void BakerUI::main()
     else
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Bakari");
+        cout << endl;
         cout << "Thad eru engar pantanir i bid: " << endl;
         cout << endl;
         system("pause");

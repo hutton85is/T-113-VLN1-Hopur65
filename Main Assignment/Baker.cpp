@@ -7,11 +7,6 @@ Baker::Baker()
     rw.loadSpecificVector(customersVec, "order/customerlist.dat", loadClient);
 }
 
-Baker::~Baker()
-{
-
-}
-
 void Baker::workOnOrder(unsigned int customersVecNumber)
 {
     for(unsigned int i = 0; i < customersVec.size(); i++)

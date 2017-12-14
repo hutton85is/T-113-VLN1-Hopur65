@@ -10,6 +10,8 @@ bool AfhendingUI::pickLocation()
     try
     {
         helperUI.displayHeader();
+        helperUI.displayBelowHeader("Afhending");
+        cout << endl;
         int input;
         vector<PizzaLocations> availLocations = afhending.getPizzaLocations();
         for(unsigned int i = 0; i < availLocations.size(); i++)
@@ -44,13 +46,41 @@ bool AfhendingUI::pickLocation()
 void AfhendingUI::displayAllCustomers(bool show)
 {
     vector<Client> customerVec = afhending.getCustomerVec();
+
     for(unsigned int i = 0; i < customerVec.size(); i++)
     {
         if(show)
         {
-            cout << i << ". ";
+            cout << i << ". " << endl;
         }
         cout << customerVec[i] << endl;
+        cout << "    Pontun tilbuin: ";
+        if (customerVec[i].finished)
+        {
+            cout << "ja" << endl;
+        }
+        else
+        {
+            cout << "nei" << endl;
+        }
+        cout << "    Pontun afhent: ";
+        if (customerVec[i].orderDelivered)
+        {
+            cout << "ja" << endl;
+        }
+        else
+        {
+            cout << "nei" << endl;
+        }
+        cout << "    Heimsending: ";
+        if (customerVec[i].deliverOrder)
+        {
+            cout << "ja" << endl;
+        }
+        else
+        {
+            cout << "nei" << endl;
+        }
         cout << "------------" << endl;
     }
 }
@@ -59,22 +89,58 @@ void AfhendingUI::displayCustomerOrder(unsigned int customerNumber)
 {
     vector<Client> customer = afhending.getCustomerVec();
     vector<Pizza> order = afhending.getOrderVec(customerNumber);
-    cout << customerNumber << ". " << customer[customerNumber] << endl;
+
+    cout << customer[customerNumber] << endl;
+    cout << "    Pontun tilbuin: ";
+    if (customer[customerNumber].finished)
+    {
+        cout << "ja" << endl;
+    }
+    else
+    {
+        cout << "nei" << endl;
+    }
+    cout << "    Pontun afhent: ";
+    if (customer[customerNumber].orderDelivered)
+    {
+        cout << "ja" << endl;
+    }
+    else
+    {
+        cout << "nei" << endl;
+    }
+    cout << "    Heimsending: ";
+    if (customer[customerNumber].deliverOrder)
+    {
+        cout << "ja" << endl;
+    }
+    else
+    {
+        cout << "nei" << endl;
+    }
+    cout << endl;
     for(unsigned int i = 0; i < order.size(); i++)
     {
-        cout << "Pizza " << i+1 << ". " << order[i] << endl;
+        cout << "   *Pizza " << i+1 << ". " << endl;
+        cout << order[i] << endl;
     }
+    cout << "------------" << endl;
+    cout << endl;
 }
 
 void AfhendingUI::chooseSeeAllOrders()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Afhending");
+    cout << endl;
     displayAllCustomers(false);
 }
 
 void AfhendingUI::chooseSeeFinishedOrders()
 {
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Afhending");
+    cout << endl;
     displayAllCustomers(true);
 
     int customerID;
@@ -91,6 +157,8 @@ void AfhendingUI::chooseSeeFinishedOrders()
     }
 
     helperUI.displayHeader();
+    helperUI.displayBelowHeader("Afhending");
+    cout << endl;
     displayCustomerOrder(customerID);
 
     string choice;
@@ -121,6 +189,8 @@ void AfhendingUI::main()
             {
                 system("CLS");
                 helperUI.displayHeader();
+                helperUI.displayBelowHeader("Afhending");
+                cout << endl;
                 cout << "Til thess ad sja allar pantanir veldu                     1. "  << endl;
                 cout << "Til thess ad velja pontun til ad afhenda veldu            2. "  << endl;
                 cout << "Til thess ad haetta veldu                                 3. "  << endl;
@@ -154,6 +224,8 @@ void AfhendingUI::main()
         else
         {
             helperUI.displayHeader();
+            helperUI.displayBelowHeader("Afhending");
+            cout << endl;
             cout << "Thad eru engar pantanir i bid: " << afhending.getAfhendingLocation() << endl;
             cout << endl;
             system("pause");
