@@ -8,7 +8,8 @@
 <div class="tabs">
   <ul>
     <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
-    <li id="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
     <li><a href="files.html"><span>Files</span></a></li>
     <li>
       <form action="search.php" method="get">
@@ -23,17 +24,16 @@
   </ul></div>
 <div class="tabs">
   <ul>
-    <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
     <li><a href="classes.html"><span>Alphabetical&nbsp;List</span></a></li>
-    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
-    <li><a href="functions.html"><span>Data&nbsp;Fields</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
   </ul></div>
 <h1>Afhending Class Reference</h1><!-- doxytag: class="Afhending" -->Functional class for <a class="el" href="class_afhending_u_i.html">AfhendingUI</a>.  
 <a href="#_details">More...</a>
 <p>
 <code>#include &lt;<a class="el" href="_afhending_8h-source.html">Afhending.h</a>&gt;</code>
 <p>
-<table border="0" cellpadding="0" cellspacing="0">
+<a href="class_afhending-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9365433a6f973ad929ffc0b458bc7c6f"></a><!-- doxytag: member="Afhending::Afhending" ref="9365433a6f973ad929ffc0b458bc7c6f" args="()" -->
@@ -55,6 +55,13 @@ string&nbsp;</td><td class="memItemRight" valign="bottom"><b>getAfhendingLocatio
 <tr><td class="memItemLeft" nowrap align="right" valign="top">vector&lt; Pizza &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#ad0cbeddec394b25c5eade57247f4110">getOrderVec</a> (unsigned int customersVecNumber)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afhending.html#b3cb078e2502d2eb7e6e67623cbe30b9">deliverOrder</a> (int customersVecNumber)</td></tr>
+
+<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="85acd631eb078696afb9935bedeeb107"></a><!-- doxytag: member="Afhending::afhendingLocation" ref="85acd631eb078696afb9935bedeeb107" args="[32]" -->
+char&nbsp;</td><td class="memItemRight" valign="bottom"><b>afhendingLocation</b> [32]</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="52cc86469dd41b9be5b7186d6bd00589"></a><!-- doxytag: member="Afhending::customersVec" ref="52cc86469dd41b9be5b7186d6bd00589" args="" -->
+vector&lt; <a class="el" href="class_client.html">Client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVec</b></td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -167,7 +174,7 @@ Find all customers from customerlist.dat that are from a specific location and w
 </table>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_afhending_8h-source.html">Afhending.h</a><li>Afhending.cpp</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 07:45:07 2017 for MainAssignment by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 18:31:04 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

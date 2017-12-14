@@ -8,7 +8,8 @@
 <div class="tabs">
   <ul>
     <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
-    <li id="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
     <li><a href="files.html"><span>Files</span></a></li>
     <li>
       <form action="search.php" method="get">
@@ -23,21 +24,53 @@
   </ul></div>
 <div class="tabs">
   <ul>
-    <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
     <li><a href="classes.html"><span>Alphabetical&nbsp;List</span></a></li>
-    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
-    <li><a href="functions.html"><span>Data&nbsp;Fields</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
   </ul></div>
 <h1>UmsjonUI Class Reference</h1><!-- doxytag: class="UmsjonUI" -->User interface for creating new Pizza items for sale and new Pizza locations.  
 <a href="#_details">More...</a>
 <p>
 <code>#include &lt;<a class="el" href="_umsjon_u_i_8h-source.html">UmsjonUI.h</a>&gt;</code>
 <p>
-<table border="0" cellpadding="0" cellspacing="0">
+<a href="class_umsjon_u_i-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ea83b916b3f52eec32ae6d54d59b4453"></a><!-- doxytag: member="UmsjonUI::main" ref="ea83b916b3f52eec32ae6d54d59b4453" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
+
+<tr><td colspan="2"><br><h2>Private Member Functions</h2></td></tr>
+<tr><td class="memTemplParams" nowrap colspan="2"><a class="anchor" name="f5fa5a8e9efaecd233787825f22c4e76"></a><!-- doxytag: member="UmsjonUI::displayVector" ref="f5fa5a8e9efaecd233787825f22c4e76" args="(vector&lt; Pizzaclass &gt; vec, bool show)" -->
+template&lt;typename Pizzaclass&gt; </td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>displayVector</b> (vector&lt; Pizzaclass &gt; vec, bool show)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="2a76c0048b7abe066f689391edd05050"></a><!-- doxytag: member="UmsjonUI::createNewPizzaSize" ref="2a76c0048b7abe066f689391edd05050" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>createNewPizzaSize</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="d82f98afaa60f9b7aa136ac05bbef7d1"></a><!-- doxytag: member="UmsjonUI::createNewPizzaCrust" ref="d82f98afaa60f9b7aa136ac05bbef7d1" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>createNewPizzaCrust</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b6dd1d961e6e445e67f6288bb25e1948"></a><!-- doxytag: member="UmsjonUI::createNewPizzaTopping" ref="b6dd1d961e6e445e67f6288bb25e1948" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>createNewPizzaTopping</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="be4b3b11d694731b7018d73e6c617eaa"></a><!-- doxytag: member="UmsjonUI::createNewPizzaMenu" ref="be4b3b11d694731b7018d73e6c617eaa" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>createNewPizzaMenu</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="57adf7fe39920c6081db2c3a74aa26b9"></a><!-- doxytag: member="UmsjonUI::createNewPizzaExtras" ref="57adf7fe39920c6081db2c3a74aa26b9" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>createNewPizzaExtras</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a1bdd947ceee8f7069edc6bbc9c508cf"></a><!-- doxytag: member="UmsjonUI::createNewPizzaLocation" ref="a1bdd947ceee8f7069edc6bbc9c508cf" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>createNewPizzaLocation</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e1489f835e125c37fb30e595797d971d"></a><!-- doxytag: member="UmsjonUI::yorn" ref="e1489f835e125c37fb30e595797d971d" args="(char answer)" -->
+bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>yorn</b> (char answer)</td></tr>
+
+<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="165ca02db075e280199e0970e3465900"></a><!-- doxytag: member="UmsjonUI::helperUI" ref="165ca02db075e280199e0970e3465900" args="" -->
+UIHelper&nbsp;</td><td class="memItemRight" valign="bottom"><b>helperUI</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="7b774effe4a349c6dd82ad4f4f21d34c"></a><!-- doxytag: member="UmsjonUI::u" ref="7b774effe4a349c6dd82ad4f4f21d34c" args="" -->
+Umsjon&nbsp;</td><td class="memItemRight" valign="bottom"><b>u</b></td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -45,7 +78,7 @@ User interface for creating new Pizza items for sale and new Pizza locations.
 <p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_umsjon_u_i_8h-source.html">UmsjonUI.h</a><li>UmsjonUI.cpp</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 07:45:07 2017 for MainAssignment by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 18:31:04 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

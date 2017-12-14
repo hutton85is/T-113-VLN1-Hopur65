@@ -8,7 +8,8 @@
 <div class="tabs">
   <ul>
     <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
-    <li id="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
     <li><a href="files.html"><span>Files</span></a></li>
     <li>
       <form action="search.php" method="get">
@@ -23,17 +24,16 @@
   </ul></div>
 <div class="tabs">
   <ul>
-    <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
     <li><a href="classes.html"><span>Alphabetical&nbsp;List</span></a></li>
-    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
-    <li><a href="functions.html"><span>Data&nbsp;Fields</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
   </ul></div>
 <h1>Baker Class Reference</h1><!-- doxytag: class="Baker" -->Functional class for <a class="el" href="class_baker_u_i.html">BakerUI</a>.  
 <a href="#_details">More...</a>
 <p>
 <code>#include &lt;<a class="el" href="_baker_8h-source.html">Baker.h</a>&gt;</code>
 <p>
-<table border="0" cellpadding="0" cellspacing="0">
+<a href="class_baker-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baker.html#b85151ecb20282d81b4dab489fea7dd8">setBakerLocation</a> (char currentLocation[32])</td></tr>
@@ -69,6 +69,19 @@ string&nbsp;</td><td class="memItemRight" valign="bottom"><b>getBakerLocation</b
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baker.html#222a16bf113b70cbe0388a7291978a57">finishOrder</a> (unsigned int customerID)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set customer order as.  <a href="#222a16bf113b70cbe0388a7291978a57"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="52cc86469dd41b9be5b7186d6bd00589"></a><!-- doxytag: member="Baker::customersVec" ref="52cc86469dd41b9be5b7186d6bd00589" args="" -->
+vector&lt; <a class="el" href="class_client.html">Client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVec</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0b7dacb9817ff529ee046a5c369051fa"></a><!-- doxytag: member="Baker::customersVecInProgress" ref="0b7dacb9817ff529ee046a5c369051fa" args="" -->
+vector&lt; <a class="el" href="class_client.html">Client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVecInProgress</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e9843b8d2c12d0911de538ebe51c1b0d"></a><!-- doxytag: member="Baker::customersVecDueProgress" ref="e9843b8d2c12d0911de538ebe51c1b0d" args="" -->
+vector&lt; <a class="el" href="class_client.html">Client</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>customersVecDueProgress</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c8a23bee3af95af3a6fa8e3f631e9a92"></a><!-- doxytag: member="Baker::bakerLocation" ref="c8a23bee3af95af3a6fa8e3f631e9a92" args="[32]" -->
+char&nbsp;</td><td class="memItemRight" valign="bottom"><b>bakerLocation</b> [32]</td></tr>
+
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Functional class for <a class="el" href="class_baker_u_i.html">BakerUI</a>. 
@@ -186,7 +199,7 @@ Move customer from customersVecDueProgress to customersVecInProgress and rewrite
 </table>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_baker_8h-source.html">Baker.h</a><li>Baker.cpp</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 07:45:07 2017 for MainAssignment by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 18:31:04 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>

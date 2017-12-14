@@ -8,7 +8,8 @@
 <div class="tabs">
   <ul>
     <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
-    <li id="current"><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+    <li id="current"><a href="annotated.html"><span>Classes</span></a></li>
     <li><a href="files.html"><span>Files</span></a></li>
     <li>
       <form action="search.php" method="get">
@@ -23,17 +24,16 @@
   </ul></div>
 <div class="tabs">
   <ul>
-    <li><a href="annotated.html"><span>Data&nbsp;Structures</span></a></li>
+    <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
     <li><a href="classes.html"><span>Alphabetical&nbsp;List</span></a></li>
-    <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
-    <li><a href="functions.html"><span>Data&nbsp;Fields</span></a></li>
+    <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
   </ul></div>
 <h1>ReadWriteClass Class Reference</h1><!-- doxytag: class="ReadWriteClass" -->Data class that writes/reads/removes classes from files.  
 <a href="#_details">More...</a>
 <p>
 <code>#include &lt;<a class="el" href="_read_write_class_8h-source.html">ReadWriteClass.h</a>&gt;</code>
 <p>
-<table border="0" cellpadding="0" cellspacing="0">
+<a href="class_read_write_class-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2"><a class="anchor" name="abb1ed8e2de573d0548c582c8df29de1"></a><!-- doxytag: member="ReadWriteClass::writeClassToFile" ref="abb1ed8e2de573d0548c582c8df29de1" args="(pizzaClass &amp;classToWrite, const char *fname)" -->
@@ -55,13 +55,47 @@ template&lt;class pizzaClass&gt; </td></tr>
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_read_write_class.html#c853fce40cfb6790d054df75b933889f">loadSpecificVector</a> (vector&lt; pizzaClass &gt; &amp;loadVector, const char *fileName, pizzaClass &amp;pClass)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">load a vector from file <br></td></tr>
+<tr><td colspan="2"><br><h2>Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_read_write_class.html#a73e0ba1f66bb2de1f0f36586b54afc7">dummyLoader</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dummy loader needed for template classes.  <a href="#a73e0ba1f66bb2de1f0f36586b54afc7"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Data class that writes/reads/removes classes from files. 
 <p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="a73e0ba1f66bb2de1f0f36586b54afc7"></a><!-- doxytag: member="ReadWriteClass::dummyLoader" ref="a73e0ba1f66bb2de1f0f36586b54afc7" args="()" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void ReadWriteClass::dummyLoader           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Dummy loader needed for template classes. 
+<p>
+This dummy loader is needed or other classes dont recognize functions in <a class="el" href="_read_write_class_8h-source.html">readWriteClass.h</a> and get 'undefined reference error'     </td>
+  </tr>
+</table>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_read_write_class_8h-source.html">ReadWriteClass.h</a><li>ReadWriteClass.cpp</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 07:45:07 2017 for MainAssignment by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Thu Dec 14 18:31:04 2017 for MainAssignment by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.5 </small></address>
 </body>
