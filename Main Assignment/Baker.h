@@ -54,7 +54,7 @@ class Baker
         void workOnOrder(unsigned int customersVecNumber);
 
         /**
-        * @brief Set customer order as
+        * @brief Set customer order as finished
         *
         * Move customer from customersVecInProgress and set status as finished.
         * Rewrite file containing customer order with updated client class

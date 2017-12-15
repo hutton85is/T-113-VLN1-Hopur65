@@ -9,6 +9,11 @@ Baker::Baker()
 
 void Baker::workOnOrder(unsigned int customersVecNumber)
 {
+    ReadWriteClass rw;
+    // Get all customers with open orders for update
+    customersVec.clear();
+    Client tempClient;
+    rw.loadSpecificVector(customersVec, "order/customerlist.dat", tempClient);
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
         if(strcmp(customersVec[i].name, customersVecDueProgress[customersVecNumber].name) == 0)
@@ -21,7 +26,6 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
     customersVecDueProgress[customersVecNumber].inProgress = true;
 
     // Load customer from file to rewrite him changing status on working on pizza order
-    ReadWriteClass rw;
     Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
@@ -96,6 +100,12 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
 
 void Baker::finishOrder(unsigned int customersVecNumber)
 {
+    ReadWriteClass rw;
+    // Get all customers with open orders for update
+    customersVec.clear();
+    Client tempClient;
+    rw.loadSpecificVector(customersVec, "order/customerlist.dat", tempClient);
+
     // Update customersVec as finished
     for(unsigned int i = 0; i < customersVec.size(); i++)
     {
@@ -109,7 +119,6 @@ void Baker::finishOrder(unsigned int customersVecNumber)
     customersVecInProgress[customersVecNumber].finished = true;
 
     // Load customer from file to rewrite him changing status to finished on order
-    ReadWriteClass rw;
     Client newClient;
     vector<Pizza> customerOrder;
     vector<PizzaHelper> pHelper;
