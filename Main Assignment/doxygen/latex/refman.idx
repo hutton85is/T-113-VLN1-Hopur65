@@ -1,31 +1,35 @@
-\indexentry{Afhending@{Afhending}|hyperpage}{5}
-\indexentry{Afhending@{Afhending}!deliverOrder@{deliverOrder}|hyperpage}{6}
-\indexentry{deliverOrder@{deliverOrder}!Afhending@{Afhending}|hyperpage}{6}
-\indexentry{Afhending@{Afhending}!getOrderVec@{getOrderVec}|hyperpage}{6}
-\indexentry{getOrderVec@{getOrderVec}!Afhending@{Afhending}|hyperpage}{6}
-\indexentry{Afhending@{Afhending}!setAfhendingLocation@{setAfhendingLocation}|hyperpage}{6}
-\indexentry{setAfhendingLocation@{setAfhendingLocation}!Afhending@{Afhending}|hyperpage}{6}
-\indexentry{AfhendingUI@{AfhendingUI}|hyperpage}{7}
-\indexentry{AfhendingUI@{Afhending\discretionary {-}{}{}UI}!pickLocation@{pickLocation}|hyperpage}{7}
-\indexentry{pickLocation@{pickLocation}!AfhendingUI@{Afhending\discretionary {-}{}{}UI}|hyperpage}{7}
-\indexentry{Baker@{Baker}|hyperpage}{8}
-\indexentry{Baker@{Baker}!finishOrder@{finishOrder}|hyperpage}{8}
-\indexentry{finishOrder@{finishOrder}!Baker@{Baker}|hyperpage}{8}
-\indexentry{Baker@{Baker}!setBakerLocation@{setBakerLocation}|hyperpage}{8}
-\indexentry{setBakerLocation@{setBakerLocation}!Baker@{Baker}|hyperpage}{8}
-\indexentry{Baker@{Baker}!workOnOrder@{workOnOrder}|hyperpage}{9}
-\indexentry{workOnOrder@{workOnOrder}!Baker@{Baker}|hyperpage}{9}
-\indexentry{BakerUI@{BakerUI}|hyperpage}{10}
-\indexentry{BakerUI@{Baker\discretionary {-}{}{}UI}!pickLocation@{pickLocation}|hyperpage}{10}
-\indexentry{pickLocation@{pickLocation}!BakerUI@{Baker\discretionary {-}{}{}UI}|hyperpage}{10}
-\indexentry{Client@{Client}|hyperpage}{11}
-\indexentry{ErrorUI@{ErrorUI}|hyperpage}{12}
-\indexentry{PizzaHelper@{PizzaHelper}|hyperpage}{13}
-\indexentry{ReadWriteClass@{ReadWriteClass}|hyperpage}{14}
-\indexentry{Sala@{Sala}|hyperpage}{15}
-\indexentry{Sala@{Sala}!createOrder@{createOrder}|hyperpage}{16}
-\indexentry{createOrder@{createOrder}!Sala@{Sala}|hyperpage}{16}
-\indexentry{Sala@{Sala}!enterCrust@{enterCrust}|hyperpage}{16}
-\indexentry{enterCrust@{enterCrust}!Sala@{Sala}|hyperpage}{16}
-\indexentry{SalaUI@{SalaUI}|hyperpage}{17}
-\indexentry{UmsjonUI@{UmsjonUI}|hyperpage}{18}
+\indexentry{std@{std}|hyperpage}{5}
+\indexentry{Afhending@{Afhending}|hyperpage}{7}
+\indexentry{Afhending@{Afhending}!deliverOrder@{deliverOrder}|hyperpage}{8}
+\indexentry{deliverOrder@{deliverOrder}!Afhending@{Afhending}|hyperpage}{8}
+\indexentry{Afhending@{Afhending}!getOrderVec@{getOrderVec}|hyperpage}{8}
+\indexentry{getOrderVec@{getOrderVec}!Afhending@{Afhending}|hyperpage}{8}
+\indexentry{Afhending@{Afhending}!setAfhendingLocation@{setAfhendingLocation}|hyperpage}{8}
+\indexentry{setAfhendingLocation@{setAfhendingLocation}!Afhending@{Afhending}|hyperpage}{8}
+\indexentry{AfhendingUI@{AfhendingUI}|hyperpage}{9}
+\indexentry{AfhendingUI@{Afhending\discretionary {-}{}{}UI}!pickLocation@{pickLocation}|hyperpage}{9}
+\indexentry{pickLocation@{pickLocation}!AfhendingUI@{Afhending\discretionary {-}{}{}UI}|hyperpage}{9}
+\indexentry{Baker@{Baker}|hyperpage}{10}
+\indexentry{Baker@{Baker}!finishOrder@{finishOrder}|hyperpage}{10}
+\indexentry{finishOrder@{finishOrder}!Baker@{Baker}|hyperpage}{10}
+\indexentry{Baker@{Baker}!setBakerLocation@{setBakerLocation}|hyperpage}{11}
+\indexentry{setBakerLocation@{setBakerLocation}!Baker@{Baker}|hyperpage}{11}
+\indexentry{Baker@{Baker}!workOnOrder@{workOnOrder}|hyperpage}{11}
+\indexentry{workOnOrder@{workOnOrder}!Baker@{Baker}|hyperpage}{11}
+\indexentry{BakerUI@{BakerUI}|hyperpage}{12}
+\indexentry{BakerUI@{Baker\discretionary {-}{}{}UI}!pickLocation@{pickLocation}|hyperpage}{12}
+\indexentry{pickLocation@{pickLocation}!BakerUI@{Baker\discretionary {-}{}{}UI}|hyperpage}{12}
+\indexentry{Client@{Client}|hyperpage}{13}
+\indexentry{ErrorException@{ErrorException}|hyperpage}{14}
+\indexentry{ErrorExceptionUI@{ErrorExceptionUI}|hyperpage}{15}
+\indexentry{PizzaHelper@{PizzaHelper}|hyperpage}{16}
+\indexentry{ReadWriteClass@{ReadWriteClass}|hyperpage}{17}
+\indexentry{ReadWriteClass@{Read\discretionary {-}{}{}Write\discretionary {-}{}{}Class}!dummyLoader@{dummyLoader}|hyperpage}{17}
+\indexentry{dummyLoader@{dummyLoader}!ReadWriteClass@{Read\discretionary {-}{}{}Write\discretionary {-}{}{}Class}|hyperpage}{17}
+\indexentry{Sala@{Sala}|hyperpage}{18}
+\indexentry{Sala@{Sala}!createOrder@{createOrder}|hyperpage}{19}
+\indexentry{createOrder@{createOrder}!Sala@{Sala}|hyperpage}{19}
+\indexentry{Sala@{Sala}!enterCrust@{enterCrust}|hyperpage}{19}
+\indexentry{enterCrust@{enterCrust}!Sala@{Sala}|hyperpage}{19}
+\indexentry{SalaUI@{SalaUI}|hyperpage}{20}
+\indexentry{UmsjonUI@{UmsjonUI}|hyperpage}{21}

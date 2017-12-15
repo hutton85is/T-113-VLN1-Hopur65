@@ -1,42 +1,49 @@
-\contentsline {chapter}{\numberline {1}Main\discretionary {-}{}{}Assignment Hierarchical Index}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Main\discretionary {-}{}{}Assignment Class Hierarchy}{1}{section.1.1}
-\contentsline {chapter}{\numberline {2}Main\discretionary {-}{}{}Assignment Data Structure Index}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Main\discretionary {-}{}{}Assignment Data Structures}{3}{section.2.1}
-\contentsline {chapter}{\numberline {3}Main\discretionary {-}{}{}Assignment Data Structure Documentation}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Afhending Class Reference}{5}{section.3.1}
+\contentsline {chapter}{\numberline {1}Main\discretionary {-}{}{}Assignment Namespace Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Main\discretionary {-}{}{}Assignment Namespace List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Main\discretionary {-}{}{}Assignment Class Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Main\discretionary {-}{}{}Assignment Class List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Main\discretionary {-}{}{}Assignment Namespace Documentation}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}std Namespace Reference}{5}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Member Function Documentation}{6}{subsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.2.1}deliverOrder}{6}{subsubsection.3.1.2.1}
-\contentsline {subsubsection}{\numberline {3.1.2.2}getOrderVec}{6}{subsubsection.3.1.2.2}
-\contentsline {subsubsection}{\numberline {3.1.2.3}setAfhendingLocation}{6}{subsubsection.3.1.2.3}
-\contentsline {section}{\numberline {3.2}Afhending\discretionary {-}{}{}UI Class Reference}{7}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{7}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Member Function Documentation}{7}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}pickLocation}{7}{subsubsection.3.2.2.1}
-\contentsline {section}{\numberline {3.3}Baker Class Reference}{8}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{8}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Member Function Documentation}{8}{subsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.2.1}finishOrder}{8}{subsubsection.3.3.2.1}
-\contentsline {subsubsection}{\numberline {3.3.2.2}setBakerLocation}{9}{subsubsection.3.3.2.2}
-\contentsline {subsubsection}{\numberline {3.3.2.3}workOnOrder}{9}{subsubsection.3.3.2.3}
-\contentsline {section}{\numberline {3.4}Baker\discretionary {-}{}{}UI Class Reference}{10}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{10}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Member Function Documentation}{10}{subsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.2.1}pickLocation}{10}{subsubsection.3.4.2.1}
-\contentsline {section}{\numberline {3.5}Client Class Reference}{11}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{11}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Error\discretionary {-}{}{}UI Class Reference}{12}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{12}{subsection.3.6.1}
-\contentsline {section}{\numberline {3.7}Pizza\discretionary {-}{}{}Helper Class Reference}{13}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{13}{subsection.3.7.1}
-\contentsline {section}{\numberline {3.8}Read\discretionary {-}{}{}Write\discretionary {-}{}{}Class Class Reference}{14}{section.3.8}
-\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{14}{subsection.3.8.1}
-\contentsline {section}{\numberline {3.9}Sala Class Reference}{15}{section.3.9}
-\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{15}{subsection.3.9.1}
-\contentsline {subsection}{\numberline {3.9.2}Member Function Documentation}{16}{subsection.3.9.2}
-\contentsline {subsubsection}{\numberline {3.9.2.1}createOrder}{16}{subsubsection.3.9.2.1}
-\contentsline {subsubsection}{\numberline {3.9.2.2}enterCrust}{16}{subsubsection.3.9.2.2}
-\contentsline {section}{\numberline {3.10}Sala\discretionary {-}{}{}UI Class Reference}{17}{section.3.10}
-\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{17}{subsection.3.10.1}
-\contentsline {section}{\numberline {3.11}Umsjon\discretionary {-}{}{}UI Class Reference}{18}{section.3.11}
-\contentsline {subsection}{\numberline {3.11.1}Detailed Description}{18}{subsection.3.11.1}
+\contentsline {chapter}{\numberline {4}Main\discretionary {-}{}{}Assignment Class Documentation}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Afhending Class Reference}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Member Function Documentation}{8}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}deliverOrder}{8}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}getOrderVec}{8}{subsubsection.4.1.2.2}
+\contentsline {subsubsection}{\numberline {4.1.2.3}setAfhendingLocation}{8}{subsubsection.4.1.2.3}
+\contentsline {section}{\numberline {4.2}Afhending\discretionary {-}{}{}UI Class Reference}{9}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{9}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Member Function Documentation}{9}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}pickLocation}{9}{subsubsection.4.2.2.1}
+\contentsline {section}{\numberline {4.3}Baker Class Reference}{10}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{10}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Member Function Documentation}{10}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}finishOrder}{10}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}setBakerLocation}{11}{subsubsection.4.3.2.2}
+\contentsline {subsubsection}{\numberline {4.3.2.3}workOnOrder}{11}{subsubsection.4.3.2.3}
+\contentsline {section}{\numberline {4.4}Baker\discretionary {-}{}{}UI Class Reference}{12}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{12}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Member Function Documentation}{12}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}pickLocation}{12}{subsubsection.4.4.2.1}
+\contentsline {section}{\numberline {4.5}Client Class Reference}{13}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{13}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Error\discretionary {-}{}{}Exception Class Reference}{14}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{14}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}Error\discretionary {-}{}{}Exception\discretionary {-}{}{}UI Class Reference}{15}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{15}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}Pizza\discretionary {-}{}{}Helper Class Reference}{16}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{16}{subsection.4.8.1}
+\contentsline {section}{\numberline {4.9}Read\discretionary {-}{}{}Write\discretionary {-}{}{}Class Class Reference}{17}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{17}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.2}Member Function Documentation}{17}{subsection.4.9.2}
+\contentsline {subsubsection}{\numberline {4.9.2.1}dummyLoader}{17}{subsubsection.4.9.2.1}
+\contentsline {section}{\numberline {4.10}Sala Class Reference}{18}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{19}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Member Function Documentation}{19}{subsection.4.10.2}
+\contentsline {subsubsection}{\numberline {4.10.2.1}createOrder}{19}{subsubsection.4.10.2.1}
+\contentsline {subsubsection}{\numberline {4.10.2.2}enterCrust}{19}{subsubsection.4.10.2.2}
+\contentsline {section}{\numberline {4.11}Sala\discretionary {-}{}{}UI Class Reference}{20}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{20}{subsection.4.11.1}
+\contentsline {section}{\numberline {4.12}Umsjon\discretionary {-}{}{}UI Class Reference}{21}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{21}{subsection.4.12.1}

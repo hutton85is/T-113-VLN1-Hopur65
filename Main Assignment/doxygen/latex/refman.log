@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.18)  14 DEC 2017 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.18)  15 DEC 2017 10:39
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -370,9 +370,9 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 
 Writing index file refman.idx
 (refman.aux (class_afhending_u_i.aux) (class_baker.aux) (class_baker_u_i.aux)
-(class_client.aux) (class_error_u_i.aux) (class_pizza_helper.aux)
-(class_read_write_class.aux) (class_sala.aux) (class_sala_u_i.aux)
-(class_umsjon_u_i.aux))
+(class_client.aux) (class_error_exception.aux) (class_error_exception_u_i.aux)
+(class_pizza_helper.aux) (class_read_write_class.aux) (class_sala.aux)
+(class_sala_u_i.aux) (class_umsjon_u_i.aux))
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -389,14 +389,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 28.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 28.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (C:\Users\JohnRussellHutton\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pd
@@ -482,61 +484,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 44.
-(hierarchy.tex
+(namespaces.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
 
 Underfull \hbox (badness 10000) detected at line 3
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 4
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 5
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 6
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 7
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 8
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 9
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 10
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 11
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 12
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 13
 [][]
  []
 
@@ -545,7 +497,7 @@ Underfull \hbox (badness 10000) detected at line 13
 <to be read again> 
                    \relax 
 l.46 \chapter
-             {Main\-Assignment Data Structure Index} [1
+             {Main\-Assignment Class Index} [1
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
@@ -555,7 +507,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.46 \chapter
-             {Main\-Assignment Data Structure Index} [2
+             {Main\-Assignment Class Index} [2
 
 ]
 Chapter 2.
@@ -614,17 +566,27 @@ Underfull \hbox (badness 10000) detected at line 13
 [][]
  []
 
+
+Underfull \hbox (badness 10000) detected at line 14
+[][]
+ []
+
 ) [3] [4
 
 ]
 Chapter 3.
+(namespacestd.tex
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 10.
+) [5] [6
+
+]
+Chapter 4.
 (class_afhending.tex
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 8.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 10.
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 13.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
@@ -650,26 +612,23 @@ Underfull \hbox (badness 10000) detected at line 19
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 50.
-
-Underfull \vbox (badness 1112) has occurred while \output is active []
-
- [5]
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 63.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 
  []
 
-) [6]
+) [8]
 \openout2 = `class_afhending_u_i.aux'.
 
  (class_afhending_u_i.tex
@@ -683,11 +642,11 @@ Underfull \hbox (badness 10000) detected at line 19
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
-) [7
+) [9
 
 ]
 \openout2 = `class_baker.aux'.
@@ -729,31 +688,31 @@ Underfull \hbox (badness 10000) detected at line 58
 [][]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
-
- []
-
-[8
+[10
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 97--97
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 
  []
 
 
-Underfull \hbox (badness 1824) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
+
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 133--134
 []\T1/ptm/m/n/10 Move cus-tomer from customers-Vec-Due-Progress to customers-Ve
 c-In-Progress and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 
  []
 
-) [9]
+) [11]
 \openout2 = `class_baker_u_i.aux'.
 
  (class_baker_u_i.tex
@@ -767,36 +726,52 @@ Underfull \hbox (badness 10000) detected at line 59
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
 
  []
 
-) [10
+) [12
 
 
 ]
 \openout2 = `class_client.aux'.
 
- (class_client.tex) [11
+ (class_client.tex) [13
 
 
 ]
-\openout2 = `class_error_u_i.aux'.
+\openout2 = `class_error_exception.aux'.
 
- (class_error_u_i.tex) [12
+ (class_error_exception.tex
+Underfull \hbox (badness 10000) detected at line 17
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17
+[][]
+ []
+
+) [14
+
+
+]
+\openout2 = `class_error_exception_u_i.aux'.
+
+ (class_error_exception_u_i.tex) [15
 
 
 ]
 \openout2 = `class_pizza_helper.aux'.
 
-
-(class_pizza_helper.tex) [13
+ (class_pizza_helper.tex) [16
 
 
 ]
 \openout2 = `class_read_write_class.aux'.
 
- (class_read_write_class.tex
+
+(class_read_write_class.tex
 Underfull \hbox (badness 1596) in paragraph at lines 14--16
 []\T1/ptm/m/n/10 template$\OML/cmm/m/it/10 <$\T1/ptm/m/n/10 class pizza-Class$\
 OML/cmm/m/it/10 >$ \T1/ptm/m/n/10 void \T1/ptm/b/n/10 write-Class-To-File \T1/p
@@ -823,7 +798,17 @@ Underfull \hbox (badness 10000) detected at line 37
 [][]
  []
 
-) [14
+
+Underfull \hbox (badness 10000) detected at line 42
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 42
+[][]
+ []
+
+) [17
 
 
 ]
@@ -869,63 +854,66 @@ Underfull \hbox (badness 10000) detected at line 56
 [][]
  []
 
-[15
+[18
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
 
  []
 
-) [16]
+) [19]
 \openout2 = `class_sala_u_i.aux'.
 
- (class_sala_u_i.tex) [17
+ (class_sala_u_i.tex) [20
 
 
 ]
 \openout2 = `class_umsjon_u_i.aux'.
 
- (class_umsjon_u_i.tex) [18
+ (class_umsjon_u_i.tex) [21
 
 
 ]
 No file refman.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 64.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 64.
 (refman.aux (class_afhending_u_i.aux) (class_baker.aux) (class_baker_u_i.aux)
-(class_client.aux) (class_error_u_i.aux) (class_pizza_helper.aux)
-(class_read_write_class.aux) (class_sala.aux) (class_sala_u_i.aux)
-(class_umsjon_u_i.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+(class_client.aux) (class_error_exception.aux) (class_error_exception_u_i.aux)
+(class_pizza_helper.aux) (class_read_write_class.aux) (class_sala.aux)
+(class_sala_u_i.aux) (class_umsjon_u_i.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 64.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 64.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 91B07F8CB6C561720E41AAD5896CAB3E;1163.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
+(rerunfilecheck)             Checksum: A13537BB6853F0EDF226BFF363A3B5CA;1370.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 64.
  ) 
 Here is how much of TeX's memory you used:
- 6835 strings out of 493333
- 105311 string characters out of 3139158
- 190173 words of memory out of 3000000
- 10035 multiletter control sequences out of 15000+200000
+ 6965 strings out of 493333
+ 110438 string characters out of 3139158
+ 192960 words of memory out of 3000000
+ 10085 multiletter control sequences out of 15000+200000
  41948 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,13n,43p,381b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
-utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (22 pages, 156443 bytes).
+ 32i,12n,43p,381b,410s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{_read_write_class_8h-source} has been referenced 
+but does not exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
+mb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on refman.pdf (25 pages, 175287 bytes).
 PDF statistics:
- 437 PDF objects out of 1000 (max. 8388607)
- 167 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 553 PDF objects out of 1000 (max. 8388607)
+ 238 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
