@@ -20,8 +20,6 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
 
     customersVecDueProgress[customersVecNumber].inProgress = true;
 
-    customersVecInProgress.push_back(customersVecDueProgress[customersVecNumber]);
-
     // Load customer from file to rewrite him changing status on working on pizza order
     ReadWriteClass rw;
     Client newClient;
@@ -35,9 +33,14 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
 
     // Remove all contents of exisisting file, for update
     rw.removeAllContentsOfFile(pathfile);
+    rw.removeAllContentsOfFile("order/customerlist.dat");
 
-    // Write client class to file and path 'fname'
+    // update client class in files
     rw.writeClassToFile(customersVecDueProgress[customersVecNumber], pathfile);
+    for (unsigned int i = 0; i < customersVec.size(); i++)
+    {
+        rw.writeClassToFile(customersVec[i], "order/customerlist.dat");
+    }
 
     for (unsigned int j = 0; j < customersVecDueProgress[customersVecNumber].orderCounter; j++)
     {
@@ -81,7 +84,14 @@ void Baker::workOnOrder(unsigned int customersVecNumber)
         }
     }
 
-    customersVecDueProgress.erase(customersVecDueProgress.begin() + customersVecNumber);
+    // Update customer vectors
+    customersVec.clear();
+
+    customersVecInProgress.clear();
+
+    customersVecDueProgress.clear();
+
+    setBakerLocation(bakerLocation);
 }
 
 void Baker::finishOrder(unsigned int customersVecNumber)
@@ -91,13 +101,11 @@ void Baker::finishOrder(unsigned int customersVecNumber)
     {
         if(strcmp(customersVec[i].name, customersVecInProgress[customersVecNumber].name) == 0)
         {
-            // customer found erase it from customersVec
-            customersVec.erase(customersVec.begin() + customersVecNumber);
+            customersVec[i].finished = true;
             break;
         }
     }
 
-    // Set status of customer as finished
     customersVecInProgress[customersVecNumber].finished = true;
 
     // Load customer from file to rewrite him changing status to finished on order
@@ -113,9 +121,15 @@ void Baker::finishOrder(unsigned int customersVecNumber)
 
     // Remove all contents of existing file, for update
     rw.removeAllContentsOfFile(pathfile);
+    rw.removeAllContentsOfFile("order/customerlist.dat");
 
-    // Write client class to file and path 'fname'
+    // Update client class in files
     rw.writeClassToFile(customersVecInProgress[customersVecNumber], pathfile);
+    for (unsigned int i = 0; i < customersVec.size(); i++)
+    {
+        rw.writeClassToFile(customersVec[i], "order/customerlist.dat");
+    }
+
 
     for (unsigned int j = 0; j < customersVecInProgress[customersVecNumber].orderCounter; j++)
     {
@@ -158,8 +172,15 @@ void Baker::finishOrder(unsigned int customersVecNumber)
             rw.writeClassToFile(customerOrder[j].plocations[i], pathfile);
         }
     }
-    // Erase the element after pushing it on another vector and writing it to file with in progress status
-    customersVecInProgress.erase(customersVecInProgress.begin() + customersVecNumber);
+
+    // Update customer vectors
+    customersVec.clear();
+
+    customersVecInProgress.clear();
+
+    customersVecDueProgress.clear();
+
+    setBakerLocation(bakerLocation);
 }
 
 string Baker::getBakerLocation()
