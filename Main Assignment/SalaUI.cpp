@@ -88,52 +88,62 @@ void SalaUI::choosePizzaTopping()
 {
     vector<PizzaToppings> PizzaToppingsVec = s.getLagerptoppings();
 
-    if(PizzaToppingsVec.size())
+    if(s.getOrder()[s.getClient().orderCounter - 1].psize.size())
     {
-        while (true)
+
+        if(PizzaToppingsVec.size())
         {
-            int input;
-
-            system("CLS");
-            helperUI.displayHeader();
-            helperUI.displayBelowHeader("Skradu thina pontun");
-            cout << endl;
-
-            helperUI.displayColumn("Alegg", "verd(kr.)");
-            displayVector(s.getLagerptoppings(), true);
-            helperUI.displayCloseTable();
-            cout << endl;
-            displayVector(s.getOrder()[s.getClient().orderCounter - 1].ptoppings, false);
-
-            cout << endl;
-            cout << "Hvernig alegg ma bjoda ther a pizzuna: ";
-            cin >> input;
-
-            if(!cin)
+            while (true)
             {
-                throw InputErrorException("Innslattarvilla a aleggi");
+                int input;
+
+                system("CLS");
+                helperUI.displayHeader();
+                helperUI.displayBelowHeader("Skradu thina pontun");
+                cout << endl;
+
+                helperUI.displayColumn("Alegg", "verd(kr.)");
+                displayVector(s.getLagerptoppings(), true);
+                helperUI.displayCloseTable();
+                cout << endl;
+                displayVector(s.getOrder()[s.getClient().orderCounter - 1].ptoppings, false);
+
+                cout << endl;
+                cout << "Hvernig alegg ma bjoda ther a pizzuna: ";
+                cin >> input;
+
+                if(!cin)
+                {
+                    throw InputErrorException("Innslattarvilla a aleggi");
+                }
+
+                s.enterToppings(input);
+
+                cout << "Viltu velja fleiri alegg? j/n: ";
+                char jn;
+                cin >> jn;
+
+                if(!cin)
+                {
+                    throw InputErrorException("Innslattarvilla a vali um fleiri alegg");
+                }
+
+                if (jn == 'n')
+                {
+                    break;
+                }
             }
-
-            s.enterToppings(input);
-
-            cout << "Viltu velja fleiri alegg? j/n: ";
-            char jn;
-            cin >> jn;
-
-            if(!cin)
-            {
-                throw InputErrorException("Innslattarvilla a vali um fleiri alegg");
-            }
-
-            if (jn == 'n')
-            {
-                break;
-            }
+        }
+        else
+        {
+            cout << "Thad eru engin alegg i bodi enntha" << endl;
+            cout << endl;
+            system("pause");
         }
     }
     else
     {
-        cout << "Thad eru engin alegg i bodi enntha" << endl;
+        cout << "Vinsamlega veldu pizza staerd fyrst" << endl;
         cout << endl;
         system("pause");
     }
@@ -159,7 +169,14 @@ void SalaUI::choosePizzaMenu()
     else if(PizzaMenuVec.size())
     {
         helperUI.displayColumn("Pizza a matsedli", "verd(kr.)");
-        displayVector(s.getLagerpMenu(), true);
+        //displayVector(s.getLagerpMenu(), true);
+        for(unsigned int i = 0; i < PizzaMenuVec.size(); i++)
+        {
+            int pSizePrice = s.getOrder()[s.getClient().orderCounter - 1].psize[0].price;
+            double pMenuPrice = PizzaMenuVec[i].price;
+            int sum = pSizePrice * pMenuPrice;
+            cout << i << ". " << PizzaMenuVec[i] << " - " <<  sum  << endl;
+        }
         helperUI.displayCloseTable();
         cout << endl;
 
